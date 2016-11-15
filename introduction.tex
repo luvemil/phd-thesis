@@ -1,4 +1,9 @@
-Let $\mathcal{A}$ be a \emph{good} category (abelian/exact/triangulated) and $\mathcal{W}$ a full subcategory of $\mathcal{A}$ closed by direct summands and extensions, and consider the category $\underline{\mathcal{A}}=\dfrac{\mathcal{A}}{\mathcal{W}}$.
+Let $\mathcal{A}$ be a \emph{good} category (abelian/exact/triangulated). The precise meaning of this will have to be clarified later (probably, the recent Nakaoka-Palu's paper is the right setting). But, whatever the choice, two things should happen. First, idempotents should split in $\mathcal{A}$. Secondly,  each torsion pair considered  in $\mathcal{A}$ should be functorial on both sides. If $(\mathcal{T},\mathcal{F})$ is such a torsion pair, we will denote by $t:\mathcal{A}\longrightarrow\mathcal{T}$ (resp. $f:\mathcal{A}\longrightarrow\mathcal{F}$) the right (resp. left) adjoint of the inclusion functor and, also, the composition $\mathcal{A}\stackrel{t}{\longrightarrow}\mathcal{T}\stackrel{i}{\hookrightarrow}\mathcal{A}$ (resp. $\mathcal{A}\stackrel{f}{\longrightarrow}\mathcal{F}\stackrel{j}{\hookrightarrow}\mathcal{A}$), where $\mathcal{T}\stackrel{i}{\hookrightarrow}\mathcal{A}$
+(resp. $\mathcal{F}\stackrel{j}{\hookrightarrow}\mathcal{A}$) is the inclusion functor. The functoriality should then give rise to an admissible sequence $t(M)\longrightarrow M\longrightarrow f(M)$, for each object $M\in\mathcal{A}$ (e.g. if $\mathcal{A}$ is abelian, that sequence should be short exact, if $\mathcal{A}$ is exact it should be a conflation, if $A$ is triangulated it should be a triangle).
+
+
+
+$\mathcal{W}$ a full subcategory of $\mathcal{A}$ closed by direct summands and extensions, and consider the category $\underline{\mathcal{A}}=\dfrac{\mathcal{A}}{\mathcal{W}}$.
 
 Let $(\mathcal{X},\mathcal{Y})$ be a orthogonal pair in $\underline{\mathcal{A}}$ and consider the following classes in $\mathcal{A}$:
 \begin{align*}
@@ -44,31 +49,41 @@ Let $(\mathcal{X},\mathcal{Y})$ be a orthogonal pair in $\underline{\mathcal{A}}
   in particular $\mathcal{A}(N,N)=0$, i.e. $N=0$.
 \end{enumerate}
 
-It follows the following
-\begin{lemma}
-  Let $(\mathcal{T}_1,\mathcal{F}_1)$ and $(\mathcal{T}_2,\mathcal{F}_2)$ be two orthogonal pairs in $\mathcal{A}$ such that $\mathcal{T}_2\subseteq \mathcal{T}_1$ and $\mathcal{T}_2\cap \mathcal{F}_1=0$. Then, $\mathcal{W}=\mathcal{T}_1\cap\mathcal{F}_2$.
-\end{lemma}
-\todo{add proof or at least explanation}
-
 \sepline
 
-If $\mathbb{t}=(\mathcal{T},\mathcal{F})$ is a orthogonal pair in an abelian and locally small category $\mathcal{A}$, then $\mathbb{t}$ is a torsion pair.
-\todo{add proof?}
+If $\mathbb{t}=(\mathcal{T},\mathcal{F})$ is a orthogonal pair in a cocomplete and locally small abelian category $\mathcal{A}$, then $\mathbb{t}$ is a torsion pair. Indeed, if $M$ is any object and we consider the set $\mathcal{T}_M$ of subobjects of $M$ which are in $\mathcal{T}$, then $t(M):=\sum_{T\in\mathcal{T}_M}T$ is subobject of $M$ which is an epimorphic image of $\coprod_{T\in\mathcal{T}_M}$ and, hence, we have that $t(M)\in\mathcal{T}_M$.
+If we had a nonzero morphism $f:T'\longrightarrow M/t(M)$, where $T'\in\mathcal{T}$, then we would have that $\text{Im}(f)=\tilde{T}/t(M)$ is a nonzero submodule of $M/t(M)$ which is in $\mathcal{T}$. Since $\mathcal{T}$ is closed under extensions and we have an exact sequence $0\rightarrow t(M)\longrightarrow\tilde{T}\longrightarrow \tilde{T}/t(M)\rightarrow 0$, we conclude that $\tilde{T}\in\mathcal{T}$. But then we have that $\tilde{T}\in\mathcal{T}_M$, which is a contradiction since $t(M)$ contains all subobjects in $\mathcal{T}_M$.
 
 \sepline
 
 \begin{lemma}
-  Let $(\mathcal{T}_1,\mathcal{F}_1)$ and $(\mathcal{T}_2,\mathcal{F}_2)$ be torsion pairs in $\mathcal{A}$ such that $(\underline{\mathcal{T}_1},\underline{\mathcal{F}_2})$ is a orthogonal pair in $\underline{\mathcal{A}}$. Then $\mathrm{add}(\mathcal{T}_2\ast \mathcal{W}) = \mathcal{T}_1$ and $\mathrm{add}(\mathcal{W}\ast\mathcal{F}_1) = \mathcal{F}_2$.
+  Let $(\mathcal{T}_1,\mathcal{F}_1)$ and $(\mathcal{T}_2,\mathcal{F}_2)$ be torsion pairs in $\mathcal{A}$, with associated radical functors $t_i$ and coradical functors $f_i$ ($i=1,w$), respectively. Suppose that they satisfy the following conditions:
+    \begin{enumerate}
+    \item[a)] $\mathcal{T}_2\subseteq\mathcal{T}_1$ (equivalently, $\mathcal{F}_1\subseteq\mathcal{F}_2$)
+    \item[b)] $\mathcal{T}_2\cap\mathcal{F}_1=0$.
+    \item[c)] $ $
+    \end{enumerate}
+    If we put $\mathcal{W}=\mathcal{T}_1\cap\mathcal{F}_2$. Then the following assertions hold:
+
+    \begin{enumerate}
+    \item $\mathcal{T}_1$ consists of those objects $X\in\mathcal{A}$ such that $f_2(X)\in\mathcal{W}$. We will write $\mathcal{T}_1=\mathcal{T}_2\star\mathcal{W}$.
+    \item $\mathcal{F}_2$ consists of those objects $Y\in\mathcal{A}$ such that $t_1(Y)\in\mathcal{W}$. We will write $\mathcal{F}_2=\mathcal{W}\star\mathcal{F}_1$.
+    \end{enumerate}
+
 \end{lemma}
 
 \begin{proof}
-  Let $T_1$ be in $\mathcal{T}_1$ and consider its approximation sequence   \todo{Explain this better}
+We just prove assertion 1, and assertion 2 will follow by duality.
+Let us take $X\in\mathcal{T}_2\star\mathcal{W}$. Since we have an admissible sequence $t_2(X)\longrightarrow X\longrightarrow f_2(X)$ whose outer terms are in $\mathcal{T}_2$ and $\mathcal{W}$, respectively, and these two classes are contained in $\mathcal{T}_1$ we conclude that $\mathcal{T}'_1\subseteq\mathcal{T}_1$, because $\mathcal{T}_1$ is closed under taking extensions in $\mathcal{A}$.
+
+
+
+  Let $T_1$ be in $\mathcal{T}_1$ and consider its canonical admissible sequence
 
   \begin{equation}
-    t_2(T_1)\to T_1\nto{f} f_2(T_1)\nto{+}.
+    t_2(T_1)\to T_1\nto{f} f_2(T_1).
   \end{equation}
-
-  Consider the following diagram
+    Note that $\underline{f}=0$ because of condition c) in the statement. It follows that $f$ decomposes  in the form $f:T_1\stackrel{\gamma}{\longrightarrow}W\stackrel{\phi}{\longrightarrow}f_2(T_1)$, where $W\in\mathcal{W}$. We then consider the following admissible pullback diagram
   \begin{equation}
     \begin{tikzcd}
       t_2(T_1)\arrow{r}\arrow[equal]{d} &
@@ -79,7 +94,7 @@ If $\mathbb{t}=(\mathcal{T},\mathcal{F})$ is a orthogonal pair in an abelian and
           f_2(T_1)
     \end{tikzcd}
   \end{equation}
-  where the square on the right is a homological pullback, and the arrow $\phi:W\to f_2(T_1)$ is such that $f=\phi\circ \gamma$ for some $\gamma:T_1\to W$, since $\underline{\mathcal{A}}(T_1,f_2(T_1))=0$.
+
 
   Then, there exist a (non necessarely unique) $\eta:T_1\to \widehat{T}_1$ making the following diagram commute.
 
@@ -95,7 +110,7 @@ If $\mathbb{t}=(\mathcal{T},\mathcal{F})$ is a orthogonal pair in an abelian and
     \end{tikzcd}
   \end{equation}
 
-  Hence, $T_1 <_\oplus \widehat{T}_1\in \mathcal{T}_2  \ast \mathcal{W}$, i.e. $\mathrm{add}(\mathcal{T}_2\ast \mathcal{W}) = \mathcal{T}_1$.
+  Hence, $T_1 <_\oplus \widehat{T}_1\in \mathcal{T}_2  \ast \mathcal{W}$. This implies that  $\mathcal{T}_1\subseteq \mathrm{add}(\mathcal{T}_2\ast \mathcal{W})$. The proof will be finished once we check that $\mathcal{T}_2\ast \mathcal{W}$ is closed under direct summands. But this is a direct consequence of the functoriality of the torsion pair.
+  Indeed if we have admissible torsion sequences $t_2(M)\longrightarrow M\longrightarrow f_2(M)$ and $t_2(N)\longrightarrow N\longrightarrow f_2(N)$, then the coproduct sequence $t_2(M)\oplus t_2(N)\longrightarrow M\oplus N\longrightarrow f_2(M)\oplus f_2(N)$ is the admissible torsion sequence for $M\oplus N$. The fact that $M\oplus N\in\mathcal{T}_2\ast \mathcal{W}$ is then equivalent to the fact that $f_2(M)\oplus f_2(N)\in\mathcal{W}$. Since $\mathcal{W}$ is closed under direct summands, we conclude that $f_2(M)\in\mathcal{W}$ and, hence, that $M\in\mathcal{T}_2\ast\mathcal{W}$.
 
-  Dually, $\mathrm{add}(\mathcal{W}\ast\mathcal{F}_1) = \mathcal{F}_2$.
 \end{proof}
