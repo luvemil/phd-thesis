@@ -1,4 +1,4 @@
-Let $\mathcal{A}$ be a \emph{good} category (abelian, exact, triangulated) and $\mathcal{W}$ a full subcategory of $\mathcal{A}$ closed by direct summands and extensions, and consider the category $\underline{\mathcal{A}}=\dfrac{\mathcal{A}}{\mathcal{W}}$.
+Let $\mathcal{A}$ be a \emph{good} category (abelian/exact/triangulated) and $\mathcal{W}$ a full subcategory of $\mathcal{A}$ closed by direct summands and extensions, and consider the category $\underline{\mathcal{A}}=\dfrac{\mathcal{A}}{\mathcal{W}}$.
 
 Let $(\mathcal{X},\mathcal{Y})$ be a orthogonal pair in $\underline{\mathcal{A}}$ and consider the following classes in $\mathcal{A}$:
 \begin{align*}
@@ -44,6 +44,58 @@ Let $(\mathcal{X},\mathcal{Y})$ be a orthogonal pair in $\underline{\mathcal{A}}
   in particular $\mathcal{A}(N,N)=0$, i.e. $N=0$.
 \end{enumerate}
 
+It follows the following
+\begin{lemma}
+  Let $(\mathcal{T}_1,\mathcal{F}_1)$ and $(\mathcal{T}_2,\mathcal{F}_2)$ be two orthogonal pairs in $\mathcal{A}$ such that $\mathcal{T}_2\subseteq \mathcal{T}_1$ and $\mathcal{T}_2\cap \mathcal{F}_1=0$. Then, $\mathcal{W}=\mathcal{T}_1\cap\mathcal{F}_2$.
+\end{lemma}
+\todo{add proof or at least explanation}
+
 \sepline
 
 If $\mathbb{t}=(\mathcal{T},\mathcal{F})$ is a orthogonal pair in an abelian and locally small category $\mathcal{A}$, then $\mathbb{t}$ is a torsion pair.
+\todo{add proof?}
+
+\sepline
+
+\begin{lemma}
+  Let $(\mathcal{T}_1,\mathcal{F}_1)$ and $(\mathcal{T}_2,\mathcal{F}_2)$ be torsion pairs in $\mathcal{A}$ such that $(\underline{\mathcal{T}_1},\underline{\mathcal{F}_2})$ is a orthogonal pair in $\underline{\mathcal{A}}$. Then $\mathrm{add}(\mathcal{T}_2\ast \mathcal{W}) = \mathcal{T}_1$ and $\mathrm{add}(\mathcal{W}\ast\mathcal{F}_1) = \mathcal{F}_2$.
+\end{lemma}
+
+\begin{proof}
+  Let $T_1$ be in $\mathcal{T}_1$ and consider its approximation sequence   \todo{Explain this better}
+
+  \begin{equation}
+    t_2(T_1)\to T_1\nto{f} f_2(T_1)\nto{+}.
+  \end{equation}
+
+  Consider the following diagram
+  \begin{equation}
+    \begin{tikzcd}
+      t_2(T_1)\arrow{r}\arrow[equal]{d} &
+        \widehat{T}_1\arrow{r}\arrow{d} &
+          W\arrow{d}{\phi}\\
+      t_2(T_1)\arrow{r}&
+        T_1\arrow{r}{f}&
+          f_2(T_1)
+    \end{tikzcd}
+  \end{equation}
+  where the square on the right is a homological pullback, and the arrow $\phi:W\to f_2(T_1)$ is such that $f=\phi\circ \gamma$ for some $\gamma:T_1\to W$, since $\underline{\mathcal{A}}(T_1,f_2(T_1))=0$.
+
+  Then, there exist a (non necessarely unique) $\eta:T_1\to \widehat{T}_1$ making the following diagram commute.
+
+  \begin{equation}
+    \begin{tikzcd}
+      T_1\arrow[bend right]{ddr}[']{1}\arrow[dashed]{dr}{\eta}\arrow[bend left]{rrd}{\gamma}&&\\
+      &
+        \widehat{T}_1\arrow{r}\arrow{d}&
+          W\arrow{d}{\phi}\\
+      &
+        T_1\arrow{r}{f}&
+          f_2(T_1)
+    \end{tikzcd}
+  \end{equation}
+
+  Hence, $T_1 <_\oplus \widehat{T}_1\in \mathcal{T}_2  \ast \mathcal{W}$, i.e. $\mathrm{add}(\mathcal{T}_2\ast \mathcal{W}) = \mathcal{T}_1$.
+
+  Dually, $\mathrm{add}(\mathcal{W}\ast\mathcal{F}_1) = \mathcal{F}_2$.
+\end{proof}
