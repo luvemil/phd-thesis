@@ -1,0 +1,49 @@
+Let $\mathcal{A}$ be a \emph{good} category (abelian, exact, triangulated) and $\mathcal{W}$ a full subcategory of $\mathcal{A}$ closed by direct summands and extensions, and consider the category $\underline{\mathcal{A}}=\dfrac{\mathcal{A}}{\mathcal{W}}$.
+
+Let $(\mathcal{X},\mathcal{Y})$ be a orthogonal pair in $\underline{\mathcal{A}}$ and consider the following classes in $\mathcal{A}$:
+\begin{align*}
+  \mathcal{T} &= \{ T\in\mathcal{A} | \underline{T}\in\mathcal{X} \} \\
+  \mathcal{F} &= \{ F\in\mathcal{A} | \underline{F}\in\mathcal{Y} \}.
+\end{align*}
+
+\begin{lemma}
+  In the previous notation, $(\mathcal{T}, \mathcal{T}^\perp)$ is a orthogonal pair.
+\end{lemma}
+
+\begin{proof}
+  In order to prove it we need to show that $^\perp(\mathcal{T}^\perp) = \mathcal{T}$.
+
+  Let $M\in {^\perp(\mathcal{T}^\perp)}$, this means that
+  \begin{equation}
+    \mathcal{A}(M,Y) = 0
+  \end{equation}
+  whenever
+  \begin{equation}
+    \mathcal{A}(T,Y) = 0\,\forall T\in\mathcal{T}.
+  \end{equation}
+
+  However, if $\mathcal{A}(T,Y)=0$ $\forall T\in\mathcal{T}$, then $\underline{\mathcal{A}}(\underline{X},\underline{Y})=0$ $\forall \underline{X}\in\mathcal{X}$. Hence, $\underline{Y}\in\mathcal{Y}$.
+  So $\underline{\mathcal{A}}(\underline{M},\underline{Y})=0$ $\forall \underline{Y}\in\mathcal{Y}$. Hence, $\underline{M}\in\mathcal{X}$ and so $M\in\mathcal{T}$.
+
+  We have proved that $^\perp(\mathcal{T}^\perp) \subseteq \mathcal{T}$, the converse inclusion is trivial.
+\end{proof}
+
+\begin{rmk}
+  The dual statement holds for $\mathcal{F}$. Notice that have we also proved that if $\mathcal{A}(T,Y)=0$ $\forall T\in\mathcal{T}$, then $\underline{Y}\in\mathcal{Y}$ and hence $Y\in\mathcal{F}$. That is, $\mathcal{T}^\perp \subseteq \mathcal{F}$ and dually $^\perp\mathcal{F}\subseteq \mathcal{T}$.
+\end{rmk}
+
+\sepline
+
+\bf Properties of $(\mathcal{T},\mathcal{T}^\perp)$ and $(^\perp\mathcal{F},\mathcal{F})$: \rm
+\begin{enumerate}
+  \item $^\perp\mathcal{F}\subseteq\mathcal{T}$ and $\mathcal{T}^\perp\subseteq \mathcal{F}$.
+  \item $\mathcal{T}\cap\mathcal{F} = \mathcal{W}$.
+  In fact, $M\in\mathcal{T}\cap\mathcal{F}$ iff $\underline{M}\in\mathcal{X}\cap\mathcal{Y}=0$, which happens iff $M<_\oplus W$ for some $W\in\mathcal{W}$,
+  but $\mathcal{W}$ is closed by direct summands, hence $M\in\mathcal{W}$.
+  \item If $N\in\mathcal{T}^\perp \cap{^\perp\mathcal{F}}$, then $N=0$. It follows from $N\in\mathcal{T}^\perp \cap{^\perp\mathcal{F}}\subseteq\mathcal{F}\cap\mathcal{T}=\mathcal{W}$. But $\mathcal{W}\subseteq\mathcal{T}$, hence $\mathcal{A}(W',N)=0$ $\forall W'\in\mathcal{W}$,
+  in particular $\mathcal{A}(N,N)=0$, i.e. $N=0$.
+\end{enumerate}
+
+\sepline
+
+If $\mathbb{t}=(\mathcal{T},\mathcal{F})$ is a orthogonal pair in an abelian and locally small category $\mathcal{A}$, then $\mathbb{t}$ is a torsion pair.

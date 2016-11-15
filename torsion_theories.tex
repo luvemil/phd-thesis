@@ -1,0 +1,94 @@
+\documentclass[a4paper]{article}
+\usepackage{hyperref}
+\usepackage[hmargin=4cm]{geometry}
+\overfullrule=2cm
+\geometry{a4paper, left=1cm, right = 6.5cm, heightrounded,
+    vmargin={2.5cm,3cm},marginparwidth=5.5cm}
+\usepackage[colorinlistoftodos, textwidth=\marginparwidth, color=yellow,textsize=footnotesize]{todonotes}
+
+\let\amsamp=&
+\usepackage{mathtools}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{tikz-cd}
+\usepackage{verbatim}
+\pagestyle{headings}
+\usepackage[utf8]{inputenc}
+
+\usepackage{indentfirst}
+\usepackage{microtype}
+\usepackage{amsthm}
+\usepackage{cleveref}
+
+\usepackage{tikz}
+\newcommand{\sepline}{
+\begin{center}
+  \rule[1ex]{.5\textwidth}{.5pt}
+\end{center}
+}
+\usepackage{mathbbol}
+
+\title{Torsion theories in \emph{good} categories}
+\author{Marco Tarantino}
+\date{\today}
+
+%hyphenation
+\hyphenation{Gro-then-dieck}
+
+% Appendix
+\usepackage{appendix}
+
+% Bibliography
+\usepackage[style=numeric,
+  backend=biber,
+  url=false,
+  isbn=false,
+  doi=false]{biblatex}
+\addbibresource{biblio.bib}
+\usepackage[nottoc,notlof,notlot]{tocbibind} %add bibliography to toc
+
+% Theorems
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{corollary}[thm]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{remark}
+\newtheorem*{rmk}{Remark}
+\newtheorem*{notation}{Notation}
+\newtheorem{example}{Example}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\hocat}[1]{\ensuremath{\mathrm{\textbf{Ho~}}#1}}
+\newcommand{\ac}[1]{\mathcal{\widetilde{#1}}}
+\newcommand{\pretext}[2]{\text{#1}\,#2}
+\newcommand{\dg}[1]{\pretext{dg}{#1}}
+\newcommand{\ex}[1]{\pretext{ex}{#1}}
+\newcommand{\dw}[1]{\pretext{dw}{#1}}
+\newcommand{\dwext}{\mathrm{\text{dw}}}
+\newcommand{\ch}[1]{\mathbf{C}(#1)}
+\newcommand{\chac}[1]{\mathbf{C}_\mathrm{ac}(#1)}
+\newcommand{\zet}{\mathbb{Z}}
+\newcommand{\ext}[3]{\mathrm{Ext}^{#1}_{#2}\left(#3\right)}
+\newcommand{\myhom}[2]{\mathrm{Hom}_{#1}(#2)}
+\newcommand{\kcat}[1]{\mathbf{K}(#1)}
+\newcommand{\homplex}[2]{\textit{Hom}_{#1}(#2)}
+\newcommand{\Mod}[1]{\ensuremath{\mathrm{\textup{Mod-}}#1}}
+\newcommand{\Cot}[1]{\ensuremath{\mathrm{\textup{Cot-}}#1}}
+\newcommand{\Inj}[1]{\ensuremath{\mathrm{\textup{Inj-}}#1}}
+\newcommand{\Flat}[1]{\ensuremath{\mathrm{\textup{Flat-}}#1}}
+
+\newcommand{\Ker}{\ensuremath{\mathrm{\textup{Ker\,}}}}
+\newcommand{\Img}{\ensuremath{\mathrm{\textup{Im\,}}}}
+
+\begin{document}
+
+\input{introduction.tex}
+
+\printbibliography
+
+\end{document}
