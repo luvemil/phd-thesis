@@ -1,0 +1,122 @@
+\clearpage
+
+\section{Abelian categories}
+
+Now we work in an abelian category with two torsion pairs $(\mathcal{T}_1,\mathcal{F}_1)$
+and $(\mathcal{T}_2,\mathcal{F}_2)$ such that $t_2(\mathcal{F}_1)\subseteq \mathcal{F}_1$ and
+$f_1(\mathcal{T}_2)\subseteq \mathcal{T}_2$ and let $\mathcal{W}=\mathcal{T}_2\cap\mathcal{F}_1$.
+
+Recall that $(\underline{\mathcal{T}_1\ast\mathcal{W}},\underline{\mathcal{F}_1})$
+(resp. $(\underline{\mathcal{T}_2},\underline{\mathcal{W}\ast\mathcal{F}_2})$) is a left (resp. right)
+functorial torsion pair in $\underline{\mathcal{A}} = \dfrac{\mathcal{A}}{\mathcal{W}}$. Moreover, they
+satisfy $TC1-3,3^*$.
+
+\begin{lemma}
+  The inclusion $i:\mathcal{T}_1\ast \mathcal{W}\hookrightarrow \mathcal{A}$ admits a right adjoint
+  $\widehat{t}$.
+\end{lemma}
+
+\begin{proof}
+  For $M\in\mathcal{A}$ consider the exact sequence
+  \begin{equation*}
+    0\rightarrow T_1\rightarrow M\rightarrow f_1(M) \rightarrow 0
+  \end{equation*}
+  with $T_1\in\mathcal{T}_1$ and $f_1(M)\in\mathcal{F}$. Take $t_2f_1(M)\hookrightarrow f_1(M)$ and observe
+  that $t_2f_1(M)\in \mathcal{W}$. Call it $W_M$ and take the pullback diagram
+  \begin{equation*}
+    \begin{tikzcd}
+      \widehat{t}(M)\arrow{r}\arrow{d}
+        & W_M\arrow[tail]{d}\\
+      M \arrow[two heads]{r}
+        & f_1(M)
+    \end{tikzcd}
+  \end{equation*}
+  then $\widehat{t}(M)\in\mathcal{T}_1\ast\mathcal{W}$.
+
+  Now for any morphism $\widehat{T}\to M$ with $\widehat{T}\in\widehat{\mathcal{T}}$ the solid part
+  of the following diagram commutes
+  \begin{equation*}
+    \begin{tikzcd}
+      T\arrow[tail]{r}\arrow[equal]{d}
+        & \widehat{t}(M)\arrow[two heads]{r}\arrow{d}\arrow[from=dd,bend left=50,dotted]
+          & W\arrow{d}\\
+      T \arrow[tail,crossing over]{r}
+        & M\arrow[two heads]{r}
+          & f_1(M)\\
+      T_1\arrow[tail]{r}
+        & \widehat{T}\arrow[two heads]{r}\arrow{u}
+          & W_1\arrow[dashed]{u}\arrow[bend right=50,dashed]{uu}
+    \end{tikzcd}
+  \end{equation*}
+  Since the composition $T_1\to \widehat{T}\to M\to f_1(M)$ is zero, there exists the dashed
+  morphism $W_1\to f_1(M)$, which lifts to the morphism $W_1\to W$ (since $W\to f_1(M)$ is a $\mathcal{W}$-precover).
+  Hence, there is a morphism $\widehat{T}\to \widehat{t}(M)$ making the diagram commutative. This means that
+  \begin{equation*}
+    \mathcal{A}(\widehat{T},\widehat{t}(M))\nto{\mathcal{A}(\widehat{T},\widehat{t}(M)\to M)}
+      \mathcal{A}(\widehat{T},M)
+  \end{equation*}
+  is surjective. But it is also injective, since $\Ker (\widehat{t}(M),M)=0$. Hence, it is an iso and $\widehat{t}$ is
+  right adjoint to $i$.\todo{functoriality should follow immediately}
+\end{proof}
+
+\begin{lemma}
+  Let $\widehat{T}_1\in\mathcal{T}_1\ast\mathcal{W}$, i.e. there is an exact sequence
+  \begin{equation*}
+    0\to t_1(\widehat{T}_1)\to \widehat{T}_1\to W_1\to 0.
+  \end{equation*}
+  If
+  \begin{equation*}
+    \begin{tikzcd}
+      \widehat{T}_1\arrow[two heads]{r}{p}\arrow{d}{g}
+        & W_1\arrow{d}{g'} \\
+      \widehat{T}'_1\arrow{r}{q}&N
+    \end{tikzcd}
+  \end{equation*}
+  is a pushout diagram, then $N\in\mathcal{T}_1\ast\mathcal{W}$.
+\end{lemma}
+
+\begin{proof}
+  Since it is a pushout, $\widehat{T}'_1 \to N$ is epi, then consider $\widehat{t}(N)$
+  and the following commutative diagram
+  \begin{equation*}
+    \begin{tikzcd}
+      \widehat{T}'_1\arrow[two heads]{rr}{q} \arrow[dashed]{dr}{\rho}
+        & & N\\
+        & \widehat{t}(N)\arrow[tail]{ur}{\varepsilon}
+          &
+    \end{tikzcd}
+  \end{equation*}
+  where the map $\widehat{T}'_1\to \widehat{t}(N)$ is given by the adjunction $(i,\widehat{t})$.
+  Since $q=\varepsilon\circ\rho$ is epi, then $\varepsilon$ is epi. But it is mono, so it is an isomorphism,
+  hence $N\in\mathcal{T}_1\ast\mathcal{W}$.
+\end{proof}
+
+\begin{lemma}
+  In the same notation as the previous lemma, if $\varphi:N\to P$ is any map s.t. $\underline{\varphi}\circ \underline{q} = \underline{0}$ in
+  $\underline{\mathcal{A}}$, then $\varphi$ factors through $\mathcal{W}$.
+\end{lemma}
+
+\begin{proof}
+  Since $\underline{\varphi}\circ\underline{q}=\underline{0}$ it means that $\varphi\circ q$ factors through $\mathcal{W}$, hence we
+  have that the solid part of the following diagram is commutative.
+  \begin{equation*}
+    \begin{tikzcd}
+      0\arrow{r}
+        & t_1(T'_1)\arrow{r}\arrow{d}
+          & \widehat{T}_1\arrow{r}\arrow{d}
+            & W_1\arrow{r}\arrow{d}\arrow[bend left, dashed]{dd}
+              & 0\\
+      0\arrow{r}
+        & X\arrow{r}
+          & \widehat{T}'_1\arrow{r}\arrow[equal]{d}
+            & N\arrow[crossing over]{dr}{\varphi}\arrow[dotted]{d}
+              &\\
+        & & \widehat{T}'_1\arrow{r}
+            & W\arrow{r}
+              & P
+    \end{tikzcd}
+  \end{equation*}
+  Since $t_1(T'_1)\to \widehat{T}_1\to \widehat{T}'_1\to W$ is zero, there is the dashed morphism $W_1\to W$ making the
+  diagram commute. Since the square on the right is a pushout there is a map $N\to W$, and again the diagram commutes.
+  Hence $\varphi$ factors through $\mathcal{W}$.
+\end{proof}
