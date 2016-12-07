@@ -35,6 +35,7 @@ satisfy $TC1-3,3^*$.
 
   Now for any morphism $\widehat{T}\to M$ with $\widehat{T}\in\widehat{\mathcal{T}}$ the solid part
   of the following diagram commutes
+  \todo{$\widehat{T}\to M$ is mono by Buhler prop. 2.14: pullback of monic along epic is monic}
   \begin{equation*}
     \begin{tikzcd}
       T\arrow[tail]{r}\arrow[equal]{d}
@@ -119,4 +120,151 @@ satisfy $TC1-3,3^*$.
   Since $t_1(T'_1)\to \widehat{T}_1\to \widehat{T}'_1\to W$ is zero, there is the dashed morphism $W_1\to W$ making the
   diagram commute. Since the square on the right is a pushout there is a map $N\to W$, and again the diagram commutes.
   Hence $\varphi$ factors through $\mathcal{W}$.
+\end{proof}
+
+\clearpage
+
+\addtocounter{thm}{5}
+
+\begin{lemma}
+  If $\mathcal{H}$ is balanced (i.e. mono and epi implies iso), then whenever $f:H_1\to H_2$
+  is mono and epi in $\mathcal{H}$, there are bicartesian squares in $\mathcal{A}$
+  \begin{equation*}
+    \begin{tikzcd}
+      F_1\arrow{r}\arrow{d}\arrow[phantom,"\ulcorner",very near start]{dr}
+        \arrow[phantom,"\lrcorner",very near end]{dr}
+        & H_1\arrow{r}\arrow{d}{f}\arrow[phantom,"\ulcorner",very near start]{dr}
+          \arrow[phantom,"\lrcorner",very near end]{dr}
+          & W_1\arrow{d}\\
+      W_2\arrow{r}
+        & H_2\arrow{r}
+          & T_2
+    \end{tikzcd}
+  \end{equation*}
+  where $W_1=f_1(H_1)$ and $W_2=t_2(H_2)$. In particular there is an exact sequence
+  \begin{equation*}
+    0\to F_1\to W_1\oplus W_2 \to T_2\to 0.
+  \end{equation*}
+\end{lemma}
+
+\begin{proof}
+  We can build the pullback on the left and the pushout on the right as usual
+  \begin{equation}\label{lem12:eq1}
+    \begin{tikzcd}
+      F_1\arrow{r}\arrow{d}\arrow[phantom,"\ulcorner",very near start]{dr}
+        & H_1\arrow{r}{r}\arrow{d}{f}\arrow[phantom,"\lrcorner",very near end]{dr}
+          & W_1\arrow{d}{s}\\
+      W_2\arrow{r}
+        & H_2\arrow{r}{f^C}
+          & T_2
+    \end{tikzcd}
+  \end{equation}
+
+  We will only prove that the square on the right hand side is a pullback, since the proof
+  that the left square is a pushout is dual. The statetment that the square on the right is
+  a pushout is equivalent to saying that there is an exact sequence
+  \begin{equation}\label{lem12:eq2}
+    \begin{tikzcd}
+      H_1\arrow{r}{
+        \begin{psmallmatrix}
+          f \\ r
+        \end{psmallmatrix}
+      }
+        & H_1\oplus W_1 \arrow{r}{
+          \begin{psmallmatrix}
+            f^C \amsamp s
+          \end{psmallmatrix}
+        }
+          & T_2\arrow{r}
+            & 0
+    \end{tikzcd}
+  \end{equation}
+
+  Since $f$ is both a mono and an epi in $\mathcal{H}$, then it is an iso and hence
+  both a section and a retraction. Consider $g:H_2\to H_1$ such that
+  $\underline{g}\circ\underline{f} = \underline{1_{H_1}}$, that is there are maps $\alpha:H_1\to W$ and
+  $\beta:W\to H_1$ such that
+  \begin{equation*}
+    \begin{tikzcd}
+      H_1\arrow{r}{
+        \begin{psmallmatrix}
+          f\\ \alpha
+        \end{psmallmatrix}
+      }\arrow[bend right]{rr}[']{1_{H_1}}
+      & H_2\oplus W \arrow{r}{
+        \begin{psmallmatrix}
+          g\amsamp \beta
+        \end{psmallmatrix}
+        }
+        & H_1
+    \end{tikzcd}
+  \end{equation*}
+  is commutative in $\mathcal{A}$, and hence $H_1$ is a direct summand of $H_2\oplus W$. We can actually choose $W=W_1$,
+  in fact consider the commutative diagram
+  \begin{equation*}
+    \begin{tikzcd}
+      H_1\arrow[equal]{d}\arrow{r}{
+        \begin{psmallmatrix}
+          f \\ r
+        \end{psmallmatrix}
+      }
+        & H_1\oplus W_1 \arrow{r}{
+          \begin{psmallmatrix}
+            f^C \amsamp s
+          \end{psmallmatrix}
+        }\arrow{d}{
+          \begin{psmallmatrix}
+            1 \amsamp 0\\
+            0 \amsamp \rho
+          \end{psmallmatrix}
+        }
+          & T_2
+      \\
+      H_1\arrow{r}{
+        \begin{psmallmatrix}
+          f\\ \alpha
+        \end{psmallmatrix}
+      }\arrow[bend right]{rr}[']{1_{H_1}}
+      & H_2\oplus W \arrow{r}{
+        \begin{psmallmatrix}
+          g\amsamp \beta
+        \end{psmallmatrix}
+        }
+        & H_1
+    \end{tikzcd}
+  \end{equation*}
+  where $\rho:W_1\to W$ comes from the fact that $H_1\to W_1$ is a $\mathcal{W}$-preenvelope. Hence,
+  $
+    \begin{psmallmatrix}
+      g\amsamp \beta
+    \end{psmallmatrix}
+    \circ
+    \begin{psmallmatrix}
+      1 \amsamp 0\\
+      0 \amsamp \rho
+    \end{psmallmatrix}
+    \circ
+    \begin{psmallmatrix}
+      f \\ r
+    \end{psmallmatrix}
+    = 1_{H_1}
+  $, that is $H_1$ is a direct summand of $H_2\oplus W_1$. Moreover, it means that
+  $
+    \begin{psmallmatrix}
+      g\amsamp \beta
+    \end{psmallmatrix}
+  $ is a section, that is the sequence in \eqref{lem12:eq2} is also exact on the left and
+  the corresponding square in \eqref{lem12:eq1} is a pullback diagram.
+
+  Since both squares in \eqref{lem12:eq1} are bicartesian, it follows that the square
+  \begin{equation*}
+    \begin{tikzcd}
+      F_1\arrow{r}\arrow{d}
+        \arrow[phantom,"\ulcorner",very near start]{dr}
+        \arrow[phantom,"\lrcorner",very near end]{dr}
+        & W_1\arrow{d}\\
+      W_2\arrow{r}& T_2
+    \end{tikzcd}
+  \end{equation*}
+  is bicartesian as well.
 \end{proof}
