@@ -1,0 +1,40 @@
+\clearpage
+
+\section{Axiomatization}
+
+Let $\mathcal{X}$ be an additive category \todo{with what?}, we give the following axioms
+
+\begin{enumerate}
+  \item[A1] $(\mathcal{T}_1,\mathcal{F}_1)$ and $(\mathcal{T}_2,\mathcal{F}_2)$ are respectively a left functorial and a
+  right functorial torsion pair \todo{define torsion pairs in additive categories}
+  \item[A2] $\mathcal{T}_2\subseteq \mathcal{T}_1$ (equiv. $\mathcal{F}_1\subseteq\mathcal{F}_2$)
+  \item[A3] Each morphism $T_1\nto{f}M$ in $\mathcal{X}$, with $T_1\in\mathcal{T}_1$ has a pseudocokernel
+  $M\nto{\pi_f}\PCok (f)$ in $\mathcal{X}$ with the following properties:
+  \begin{enumerate}
+    \item[a] If $M\in\mathcal{T}_1$, then $\PCok(f) \in\mathcal{T_1}$
+    \item If $g:M\to F_2$ is a morphism s.t. $g\circ f=0$ and $F_2\in\mathcal{F}_2$, then there is a
+    \emph{unique} morphism $\gamma:\PCok(f)\to F_2$ such that
+    \begin{equation*}
+      \begin{tikzcd}
+        T_1\arrow{r}{f}\arrow[dashed]{drr}{0}
+          & M\arrow{rr}{\pi_f}\arrow{dr}{g}
+            & & \PCok(f)\arrow[dashed]{dl}{\gamma} \\
+          & & F_2
+              &
+      \end{tikzcd}
+    \end{equation*}
+    is commutative.
+  \end{enumerate}
+  \item[A3$^*$] Dual of \textbf{A3}.
+  \item[A3$'$] Each morphism in $\mathcal{T}_1$ has a pseudocokernel in $\mathcal{T}_1$ which completes the following
+  diagram in a unique way wrt $\mathcal{F}_2$:
+  \begin{equation*}
+    \begin{tikzcd}
+      T_1\arrow{r}{f}\arrow[dashed]{drr}
+        & T_1'\arrow{dr}\arrow{rr}
+          & & \PCok_\mathcal{T_1}(f)\arrow[dashed]{dl}{\exists!} \\
+        & & F_2
+            &
+    \end{tikzcd}
+  \end{equation*}
+\end{enumerate}

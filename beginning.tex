@@ -1,0 +1,91 @@
+% \section{Description of $\underline{\mathcal{C}} $ within $\underline{\mathcal{C}}$}
+\section{The Nakaoka setting}
+
+We are in the same setting of Nakaoka: $\mathcal{C}$ is a triangulated category,
+and $(\mathcal{U},\mathcal{V})$ is a cotorsion pair in $\mathcal{C}$, i.e.
+\begin{enumerate}
+  \item $\mathcal{C}(\mathcal{U},\mathcal{V}[1])=0$
+  \item $\mathcal{C}=\mathcal{U}\ast \mathcal{V}[1]$, where $X\in \mathcal{M}\ast\mathcal{N}$ if and only if there
+  is a distinguished triangle
+  \begin{equation*}
+    M\to X\to N[1] \to M[1]
+  \end{equation*}
+  with $M\in \mathcal{M}$ and $N\in\mathcal{N}$.
+\end{enumerate}
+
+Then, we put $\mathcal{W}=\mathcal{U}\cap\mathcal{V}$ and define $\underline{\mathcal{C}}=\mathcal{C}/\mathcal{W}$,
+and similarly for $\underline{\mathcal{U}}$, $\underline{\mathcal{V}}$, etc.
+
+We define the following full subcategories of $\mathcal{C}$:
+\begin{itemize}
+  \item $\mathcal{C}^+ = \mathcal{W}\ast\mathcal{V}[1]$
+  \item $\mathcal{C}^- = \mathcal{U}[-1]\ast\mathcal{W}$
+\end{itemize}
+together with their respective quotients $\underline{\mathcal{C}}^+$ and $\underline{\mathcal{C}}^-$.
+Then, we have the following lemma.
+
+\begin{lemma}\label{sec1:lem1}
+  Let $X\in\mathcal{C}$, TFAE:
+  \begin{enumerate}
+    \item $\underline{X} \in \underline{\mathcal{C}}^+$,
+    \item There is a monomorphism $\underline{X}\to \underline{V[1]}$ in
+    $\underline{\mathcal{C}}$, for some $V\in\mathcal{V}$.
+  \end{enumerate}
+\end{lemma}
+
+The dual also holds:
+
+\begin{lemma}
+  Let $X\in\mathcal{C}$, TFAE:
+  \begin{enumerate}
+    \item $\underline{X} \in \underline{\mathcal{C}}^-$,
+    \item There is an epimorphism $\underline{U[-1]}\to \underline{X}$ in
+    $\underline{\mathcal{C}}$, for some $U\in\mathcal{U}$.
+  \end{enumerate}
+\end{lemma}
+
+\begin{corollary}
+  If $(\mathcal{U},\mathcal{V})$ is a cotorsion pair in a triangulated category
+  $\mathcal{C}$, then:
+  \begin{enumerate}
+    \item $^\perp\underline{\mathcal{V}} = \underline{\mathcal{C}}^-$
+    \item $\underline{\mathcal{U}}^\perp = \underline{\mathcal{C}}^+$
+  \end{enumerate}
+\end{corollary}
+
+\begin{lemma}\label{sec1:lem2}
+  Let $F:\underline{\mathcal{C}}\to\underline{\mathcal{C}}^+$ be the left adjoint
+  of the inclusion functor $j:\underline{\mathcal{C}}^+ \into \underline{\mathcal{C}}$.
+  If $\lambda:1_{\underline{\mathcal{C}}} \to j\circ F$ is the unit of the adjunction, then there is a pseudokernel-pseudocokernel
+  sequence
+  \begin{equation*}
+    U_C\nto{u}C\nto{\lambda_{C}}(j\circ F)(C)\nto{+}
+  \end{equation*}
+  in $\underline{\mathcal{C}}$ such that $U_C\in \mathcal{U}$.
+\end{lemma}
+
+With dual:
+
+\begin{lemma}
+  Let $G:\underline{\mathcal{C}}\to\underline{\mathcal{C}}^-$ be the left adjoint
+  of the inclusion functor $i:\underline{\mathcal{C}}^-\into \underline{\mathcal{C}}$.
+  If $\varepsilon:i\circ G \to 1_{\underline{\mathcal{C}}}$ is the co-unit of the adjunction, then there is a pseudokernel-pseudocokernel
+  sequence
+  \begin{equation*}
+    (i\circ G)(C) \nto{\varepsilon_{C}} C\nto V_C \nto{+}
+  \end{equation*}
+  in $\underline{\mathcal{C}}$ such that $V_C\in \mathcal{V}$.
+\end{lemma}
+
+\begin{corollary}
+  $(\underline{\mathcal{C}}^-,\underline{\mathcal{V}})$ and $(\underline{\mathcal{U}},\underline{\mathcal{C}}^+)$ are orthogonal
+  pairs in $\underline{\mathcal{C}}$ provided $\mathcal{C}$ has split idempotents.
+\end{corollary}
+
+\begin{rmk}
+  \begin{enumerate}
+    \item By prop 5.3 Nakaoka \todo{add better reference} we have that $\underline{\mathcal{C}}^+$ has cokernels and,
+    dually, $\underline{\mathcal{C}}^-$ has kernels.
+    \item We have inclusions $\mathcal{V}\subseteq \mathcal{C}^+$ and $\mathcal{U}\subseteq\mathcal{C}^-$ \todo{see page 5.5 of the notes}
+  \end{enumerate}
+\end{rmk}
