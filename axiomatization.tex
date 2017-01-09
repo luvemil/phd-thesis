@@ -38,3 +38,34 @@ Let $\mathcal{X}$ be an additive category \todo{with what?}, we give the followi
     \end{tikzcd}
   \end{equation*}
 \end{enumerate}
+
+With these axioms we can prove that the heart has kernels and cokernels.
+
+\begin{lemma}\label{sec2:lem6}
+  The heart $\mathcal{H}=\mathcal{T}_1\cap\mathcal{F}_2$ has kernels and cokernels.
+\end{lemma}
+
+\begin{rmk}
+  If $\mathcal{X}$ is abelian, then:
+  \begin{enumerate}
+    \item $f:H\to H'$ is mono in $\mathcal{H}$ iff $\Ker_\mathcal{X}(f)\in\mathcal{F}_1$
+    \item $f:H\to H'$ is epi in $\mathcal{H}$ iff $\Coker_\mathcal{X}(f)\in\mathcal{T}_2$
+  \end{enumerate}
+\end{rmk}
+
+\begin{prop}\label{sec2:prop1}
+  Let $(\mathcal{T}_1,\mathcal{F}_1)$ and $(\mathcal{T}_2,\mathcal{F}_2)$ be two torsion pairs
+  in the abelian category $\mathcal{A}$. TFAE:
+  \begin{enumerate}
+    \item $\mathcal{H}$ is abelian.
+    \item We have:
+    \begin{enumerate}
+      \item If $f:H\to H'$ is a morphism in $\mathcal{H}$ such that
+      $\Ker_\mathcal{A}(f)\in\mathcal{F}_1$, then $\Ker_\mathcal{A}(f)=0$.
+      \item If $f:H\to H'$ is a morphism in $\mathcal{H}$ such that
+      $\Coker_\mathcal{A}(f)\in\mathcal{T}_2$, then $\Coker_\mathcal{A}(f)=0$.
+      \item $\mathcal{H}$ is closed by kernels of epics and cokernels of monics.
+    \end{enumerate}
+    \item $\mathcal{H}$ is an exact abelian subcategory of $\mathcal{A}$.\todo{?}
+  \end{enumerate}
+\end{prop}
