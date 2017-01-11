@@ -33,7 +33,7 @@ We give another set of axioms:
   \begin{enumerate}
     \item[2] If $(\mathcal{U},\mathcal{V})$ is a cotorsion pair in a triangulated
     category (as in Nakaoka's work \todo{Add reference}) produces an example.
-    \item Let $\mathcal{D}$ be a triangulated category with two $t$-structures
+    \item[3] Let $\mathcal{D}$ be a triangulated category with two $t$-structures
     $(\mathcal{U}_1,\mathcal{U}_1^\perp)$ and $(\mathcal{U}_2,\mathcal{U}_2^\perp)$ such that
     $\mathcal{U}_1[1]\subseteq\mathcal{U}_2\subseteq\mathcal{U}_1$. Then, these satisfy
     axioms \textbf{TC1}-\textbf{TC3},textbf{TC3$^*$}, hence $\mathcal{H}=\mathcal{U}_1\cap\mathcal{U}_2^\perp$ has
@@ -52,3 +52,21 @@ We give another set of axioms:
     \end{enumerate}
   \end{enumerate}
 \end{examples}
+
+We can see a special case of example 3 in the case of the derived category of a ring.
+Let $R$ be a ring, consider the t-structure $(\mathcal{U}_1,\mathcal{U}_1^\perp)=(\mathcal{D}^{\leq 0}(R), \mathcal{D}^{>0}(R))$
+in $\mathcal{D}(R)$. Given an idempotent ideal $I=I^2\lhd R$, it defines three classes of modules
+\begin{align*}
+  \mathcal{C}_I &= \{ C\in\Mod R | IC=C\}\\
+  \mathcal{T}_I &= \{ T\in\Mod R | IT=0\} \\
+  \mathcal{F}_I &= \{ F\in\Mod R | Ix \neq 0 \forall x\in F\setminus \{0\} \}
+\end{align*}
+such that $(\mathcal{C}_I, \mathcal{T}_I)$ and $(\mathcal{T}_I,\mathcal{F}_I)$ make two torsion pairs.
+We call the triple $(\mathcal{C}_I,\mathcal{T}_I,\mathcal{F}_I)$ a TTP triple.
+
+We define the t-structure $(\mathcal{U}_2,\mathcal{U}_2^\perp)$ as the Happel-Reiten-Smalo t-structure
+associated to the torsion pair $(\mathcal{C}_I,\mathcal{T}_I)$ in $\Mod R$:
+\begin{align*}
+  \mathcal{U}_2 &= \{ U_2\in\mathcal{D}^{\leq 0}(R) | H^0(U_2)\in\mathcal{C}_I \} \\
+  \mathcal{U}_2^\perp &= \{ V_2\in\mathcal{D}^{\geq 0}(R) | H^0(V_2)\in\mathcal{T}_I \}.
+\end{align*}
