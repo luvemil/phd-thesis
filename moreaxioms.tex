@@ -1,0 +1,54 @@
+\clearpage
+
+\section{More Axioms}
+
+We give another set of axioms:
+
+\begin{enumerate}
+  \item[TC1] $(\mathcal{T}_1, \mathcal{F}_1)$ and $(\mathcal{T}_2,\mathcal{F}_2)$ are two respectively
+  left functorial and right functorial torsion pairs in $\mathcal{X}$.
+  \item[TC2] $\mathcal{T}_2\subseteq\mathcal{T}_1$ (equivalently $\mathcal{F}_1\subseteq\mathcal{F}_2$).
+  \item[TC3] For any morphism $g:T_1 \to T_1'$ in $\mathcal{T}_1$ has a pseudocokernel in $\mathcal{T}_1$ which
+  completes diagrams in a unique way wrt $\mathcal{F}_2$.
+  \item[TC3$^*$] Dual of \textbf{TC3}.
+  \item[TC4]\todo{explain this axiom}
+  \begin{equation*}
+    \begin{tikzcd}
+      F_1\arrow{r}{f^K}
+        & H_1\arrow{r}{^\forall f}\arrow[dashed]{d}
+          & H_2 \arrow{r}{f^C}\arrow[equal]{d}
+            & T_1 \arrow{d}\\
+      i_1t_1(F_2)\arrow[dashed]{ur}\arrow{r}{\varepsilon}
+        & F\arrow{r}
+          & H_2\arrow{r}
+            & j_2f_2(T_1)
+    \end{tikzcd}
+  \end{equation*}
+  \item[TC4$^*$] Dual of \textbf{TC4}.
+\end{enumerate}
+
+\textbf{EXAMPLES}\todo{add examples from page 2, 9/11/16}
+
+\begin{examples}
+  \begin{enumerate}
+    \item[2] If $(\mathcal{U},\mathcal{V})$ is a cotorsion pair in a triangulated
+    category (as in Nakaoka's work \todo{Add reference}) produces an example.
+    \item Let $\mathcal{D}$ be a triangulated category with two $t$-structures
+    $(\mathcal{U}_1,\mathcal{U}_1^\perp)$ and $(\mathcal{U}_2,\mathcal{U}_2^\perp)$ such that
+    $\mathcal{U}_1[1]\subseteq\mathcal{U}_2\subseteq\mathcal{U}_1$. Then, these satisfy
+    axioms \textbf{TC1}-\textbf{TC3},textbf{TC3$^*$}, hence $\mathcal{H}=\mathcal{U}_1\cap\mathcal{U}_2^\perp$ has
+    kernels and cokernels. Moreover, TFAE:
+    \begin{enumerate}
+      \item \textbf{TC4} holds.
+      \item If $V_1\to H_1\nto{f}\to H_2\nto{+}$ is a distinguished triangle such
+      that $H_1, H_2\in\mathcal{H}$ and $V_1\in\mathcal{U}_1^\perp$, then $V_1\in\mathcal{U}_2^\perp[-1]$.
+    \end{enumerate}
+    And, dually, there is an equivalence of the following:
+    \begin{enumerate}
+      \item \textbf{TC4$^*$} holds.
+      \item If $H_1\nto{f}H_2\to U_2\nto{+}$ is a distinguished triangle such
+      that $H_1,H_2\in\mathcal{H}$ and $U_2\in\mathcal{U}_2$, then $U_2\in\mathcal{U}_2[1]$.\todo{These last two are
+      not dual. Check which is the correct version.}
+    \end{enumerate}
+  \end{enumerate}
+\end{examples}
