@@ -125,7 +125,38 @@ We give another set of axioms:
     \end{tikzcd}
   \end{equation*}
   for some $H_1'\underset{\oplus}{<} H_1$ such that
-  $\tau_{\mathcal{U}_1}(\alpha)$ vanishes on $H_1'$.
+  $(\alpha)$ vanishes on $H_1'$. If we consider the solid part of the diagram
+  \begin{equation*}
+    \begin{tikzcd}
+      & H_1'\arrow[dashed]{dl}
+      \arrow{d}{
+        \begin{psmallmatrix}
+          1 \\ 0
+        \end{psmallmatrix}
+      }\arrow{dr}{0}
+        & & &\\
+      \mathrm{Cone}(\tau_{\mathcal{U}_1}(\alpha))[-1]\arrow{r}
+        & H_1\arrow{r}{\tau_{\mathcal{U}_1}(\alpha)}
+          & \tau_{\mathcal{U}_1}(V_2)\arrow[dashed]{r}{+}
+            & {}
+    \end{tikzcd}
+  \end{equation*}
+  we can construct the dashed arrow, and the fact that the triangle commutes means
+  that $H_1'\underset{\oplus}{<}\mathrm{Cone}(\tau_{\mathcal{U}_1}(\alpha))[-1]$.
+
+  Observe that $\mathrm{Cone}(\alpha)=\mathrm{Cone}(\lambda)[-1]$, since
+  the square
+  \begin{equation*}
+    \begin{tikzcd}
+      \mathrm{Cone}(f)[-1]\arrow{r}{f^K}\arrow{d}{\lambda[-1]}
+        & H_1\arrow{d}{\alpha} \\
+      \tau_{\mathcal{U}_2^\perp}(\mathrm{Cone}(f))[-1]\arrow{r}
+        & V_2
+    \end{tikzcd}
+  \end{equation*}
+  is a pullback. Moreover, $\mathrm{Cone}(\lambda)[-1] = (\tau_{\mathcal{U}_2}(\mathrm{Cone}(f))[1])[-1]
+  =\mathcal{U}_2}(\mathrm{Cone}(f))$. Hence, $\mathrm{Cone}(\alpha)\in \mathcal{U}_2$,
+  $\tau^{\mathcal{U}_1^\perp}(\mathrm{Cone}(\alpha))=0$ and $\tau_{\mathcal{U}_1}(V_2)\cong V_2$.
 \end{proof}
 
 We can see a special case of example 3 in the case of the derived category of a ring.
