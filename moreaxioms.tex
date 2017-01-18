@@ -53,7 +53,7 @@ We give another set of axioms:
   \end{enumerate}
 \end{examples}
 
-\begin{proof}[of the equivalences in example 3]
+\begin{proof}[Proof of the equivalences in example 3]
   Let's $\mathcal{D}$ be a triangulated category with two t-structures as in example 3. The pseudocokernel
   of a morphism in $\mathcal{U}_1$ can be computed by taking the cone in $\mathcal{D}$, i.e. given a morphism
   $f:U_1\to U_1'$ in $\mathcal{U}_1$ we can compute a pseudocokernel in $\mathcal{U}_1$ by completing $f$
@@ -125,7 +125,7 @@ We give another set of axioms:
     \end{tikzcd}
   \end{equation*}
   for some $H_1'\underset{\oplus}{<} H_1$ such that
-  $(\alpha)$ vanishes on $H_1'$. If we consider the solid part of the diagram
+  $\alpha$ vanishes on $H_1'$. If we consider the solid part of the diagram
   \begin{equation*}
     \begin{tikzcd}
       & H_1'\arrow[dashed]{dl}
@@ -155,8 +155,35 @@ We give another set of axioms:
     \end{tikzcd}
   \end{equation*}
   is a pullback. Moreover, $\mathrm{Cone}(\lambda)[-1] = (\tau_{\mathcal{U}_2}(\mathrm{Cone}(f))[1])[-1]
-  =\mathcal{U}_2}(\mathrm{Cone}(f))$. Hence, $\mathrm{Cone}(\alpha)\in \mathcal{U}_2$,
+  =\tau_{\mathcal{U}_2}(\mathrm{Cone}(f))$. Hence, $\mathrm{Cone}(\alpha)\in \mathcal{U}_2$,
   $\tau^{\mathcal{U}_1^\perp}(\mathrm{Cone}(\alpha))=0$ and $\tau_{\mathcal{U}_1}(V_2)\cong V_2$.
+
+  We can then write $V_2\underset{\oplus}{<}H_1$ and consider the commutative diagram
+  \begin{equation*}
+    \begin{tikzcd}
+      H_1 \cong H_1'\oplus V_2\arrow{r}{
+        \begin{psmallmatrix}
+          f' \amsamp \tilde{f}
+        \end{psmallmatrix}
+      }\arrow{d}{
+        \begin{psmallmatrix}
+          0 \amsamp 1
+        \end{psmallmatrix}
+      }
+        & H_2\arrow[equal]{d}\\
+      V_2\arrow{r}
+        & H_2
+    \end{tikzcd}
+  \end{equation*}
+  so $f'=0$. Hence, the inclusion $
+  \begin{psmallmatrix}
+    1 \\ 0
+  \end{psmallmatrix}:H_1'\to H_1'\oplus V_2$ can be lifted to
+  $\mathrm{Cone}(f)[-1]$ and $H_1'\underset{\oplus}{<}\mathrm{Cone}(f)[-1]$.
+  Since $\mathrm{Cone}(f)[-1]\in \mathcal{U}_1^\perp$, so does $H_1'$. Similarly,
+  $H_1'\in\mathcal{U}_1$ because $H_1\in\mathcal{U}_1$. Hence, $H_1'=0$ and $\alpha:H_1\to V_2$ is an iso.
+  The same follows for $\lambda$. Therefore, $\mathrm{Cone}(f)\in\mathcal{U}_2^\perp$ which
+  proves \textbf{1.b}.
 \end{proof}
 
 We can see a special case of example 3 in the case of the derived category of a ring.
