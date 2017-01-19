@@ -1,6 +1,6 @@
 \clearpage
 
-\section{More Axioms}
+\section{Second approach to axiomatization}
 
 We give another set of axioms:
 
@@ -29,29 +29,27 @@ We give another set of axioms:
 
 \textbf{EXAMPLES}\todo{add examples from page 2, 9/11/16}
 
-\begin{examples}
+\begin{enumerate}
+  \item[2] If $(\mathcal{U},\mathcal{V})$ is a cotorsion pair in a triangulated
+  category (as in Nakaoka's work \todo{Add reference}) produces an example.
+  \item[3] Let $\mathcal{D}$ be a triangulated category with two $t$-structures
+  $(\mathcal{U}_1,\mathcal{U}_1^\perp)$ and $(\mathcal{U}_2,\mathcal{U}_2^\perp)$ such that
+  $\mathcal{U}_1[1]\subseteq\mathcal{U}_2\subseteq\mathcal{U}_1$. Then, these satisfy
+  axioms \textbf{TC1}-\textbf{TC3},\textbf{TC3$^*$}, hence $\mathcal{H}=\mathcal{U}_1\cap\mathcal{U}_2^\perp$ has
+  kernels and cokernels. Moreover, TFAE:
   \begin{enumerate}
-    \item[2] If $(\mathcal{U},\mathcal{V})$ is a cotorsion pair in a triangulated
-    category (as in Nakaoka's work \todo{Add reference}) produces an example.
-    \item[3] Let $\mathcal{D}$ be a triangulated category with two $t$-structures
-    $(\mathcal{U}_1,\mathcal{U}_1^\perp)$ and $(\mathcal{U}_2,\mathcal{U}_2^\perp)$ such that
-    $\mathcal{U}_1[1]\subseteq\mathcal{U}_2\subseteq\mathcal{U}_1$. Then, these satisfy
-    axioms \textbf{TC1}-\textbf{TC3},\textbf{TC3$^*$}, hence $\mathcal{H}=\mathcal{U}_1\cap\mathcal{U}_2^\perp$ has
-    kernels and cokernels. Moreover, TFAE:
-    \begin{enumerate}
-      \item[1.a] \textbf{TC4} holds.
-      \item[1.b] If $V_1\to H_1\nto{f}\to H_2\nto{+}$ is a distinguished triangle such
-      that $H_1, H_2\in\mathcal{H}$ and $V_1\in\mathcal{U}_1^\perp$, then $V_1\in\mathcal{U}_2^\perp[-1]$.
-    \end{enumerate}
-    And, dually, there is an equivalence of the following:
-    \begin{enumerate}
-      \item[2.a] \textbf{TC4$^*$} holds.
-      \item[2.b]\label{ax:eqa} If $H_1\nto{f}H_2\to U_2\nto{+}$ is a distinguished triangle such
-      that $H_1,H_2\in\mathcal{H}$ and $U_2\in\mathcal{U}_2$, then $U_2\in\mathcal{U}_2[1]$.\todo{These last two are
-      not dual. Check which is the correct version.}
-    \end{enumerate}
+    \item[1.a] \textbf{TC4} holds.
+    \item[1.b] If $V_1\to H_1\nto{f}\to H_2\nto{+}$ is a distinguished triangle such
+    that $H_1, H_2\in\mathcal{H}$ and $V_1\in\mathcal{U}_1^\perp$, then $V_1\in\mathcal{U}_2^\perp[-1]$.
   \end{enumerate}
-\end{examples}
+  And, dually, there is an equivalence of the following:
+  \begin{enumerate}
+    \item[2.a] \textbf{TC4$^*$} holds.
+    \item[2.b]\label{ax:eqa} If $H_1\nto{f}H_2\to U_2\nto{+}$ is a distinguished triangle such
+    that $H_1,H_2\in\mathcal{H}$ and $U_2\in\mathcal{U}_2$, then $U_2\in\mathcal{U}_2[1]$.\todo{These last two are
+    not dual. Check which is the correct version.}
+  \end{enumerate}
+\end{enumerate}
 
 \begin{proof}[Proof of the equivalences in example 3]
   Let's $\mathcal{D}$ be a triangulated category with two t-structures as in example 3. The pseudocokernel
