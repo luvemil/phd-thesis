@@ -61,6 +61,7 @@
 \newtheorem*{rmk}{Remark}
 \newtheorem*{notation}{Notation}
 \newtheorem{example}{Example}
+\newtheorem*{examples}{Examples}
 
 \newcommand{\cat}[1]{\mathcal{#1}}
 \newcommand{\hocat}[1]{\ensuremath{\mathrm{\textbf{Ho~}}#1}}
@@ -83,9 +84,22 @@
 \newcommand{\Flat}[1]{\ensuremath{\mathrm{\textup{Flat-}}#1}}
 
 \newcommand{\Ker}{\ensuremath{\mathrm{\textup{Ker\,}}}}
+\newcommand{\Coker}{\ensuremath{\mathrm{\textup{Coker\,}}}}
 \newcommand{\Img}{\ensuremath{\mathrm{\textup{Im\,}}}}
+\newcommand{\PCok}{\ensuremath{\mathrm{\textup{PCok\,}}}}
+\newcommand{\PKer}{\ensuremath{\mathrm{\textup{PKer\,}}}}
+
 
 \newcommand{\nto}[1]{\xrightarrow{#1}}
+\newcommand{\into}{\hookrightarrow}
+
+% new \oset macro
+\makeatletter
+\newcommand{\oset}[3][0ex]{%
+  \mathrel{\mathop{#3}\limits^{
+    \vbox to#1{\kern-2\ex@
+    \hbox{$\scriptstyle#2$}\vss}}}}
+\makeatother
 
 \begin{document}
 
@@ -94,6 +108,8 @@
 \input{induced_torsion_theories.tex}
 
 \input{abelian_categories.tex}
+
+\input{moreaxioms.tex}
 
 \printbibliography
 
