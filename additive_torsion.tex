@@ -1,0 +1,54 @@
+\section{Torsion pairs}
+
+We fix an additive category $\mathcal{X}$ with pseudokernels and pseudocokernels
+on which idempotents split.
+
+\begin{definition}
+  A pair $\mathbb{t}=(\mathcal{T},\mathcal{F})$ of full subcategories of $\mathcal{X}$
+  is a torsion pair in $\mathcal{X}$ if:
+  \begin{enumerate}
+    \item
+    \begin{align*}
+      \mathcal{F}&=\mathcal{T}^\perp = \{X\in\mathcal{X}\,|\,\mathcal{X}(\mathcal{T},X)=0\},\\
+      \mathcal{T}&={^\perp\mathcal{F}} = \{X\in\mathcal{X}\,|\,\mathcal{X}(X,\mathcal{F})=0\};
+    \end{align*}
+    \item FOr each $M\in\mathcal{X}$ there is a pseudokernel-pseudocokernel sequence
+    \begin{equation*}
+      \begin{tikzcd}
+        T_M\arrow{r}{\varepsilon_M}& M\arrow{r}{\lambda_M}&F^M
+      \end{tikzcd}
+    \end{equation*}
+    where $T_M\in\mathcal{T}$ and $F^M\in\mathcal{F}$.
+  \end{enumerate}
+
+  If in addition the assignment $M\mapsto t(M) :=T_M$ (resp. $M\mapsto f(M):=F^M)$ is
+  functorial and defines an adjoint pair $(i,t)$ (resp. $(f,j)$), where $i:\mathcal{T}\into \mathcal{X}$
+  (resp. $j:\mathcal{F}\into \mathcal{X}$) is the inclusion functor, then we say that
+  $\mathbb{t}$ is left (resp. right) functorial. In such a case,
+  $\varepsilon$ (resp. $\lambda$) is the counit (resp. unit) of the given adjoint pair. We say
+  that $\mathbb{t}$ is functorial if it is right and left functorial.
+\end{definition}
+
+\begin{rmk}
+  Let $\mathbb{t}=(\mathcal{T},\mathcal{F})$ be a left functorial torsion pair in $\mathcal{X}$.
+  Then
+  \begin{enumerate}
+    \item[(a)] For any $M\in\mathcal{X}, T'\in\mathcal{T}$ and $\alpha\in\mathcal{X}(T',M)$ there
+    is a unique $\alpha'\in\mathcal{X}(T',t(M))$ such that $\varepsilon_M\circ\alpha'=\alpha$, i.e.
+    \begin{equation*}
+      \begin{tikzcd}
+        & T'\arrow[dashed]{ld}{exists!\,\alpha'}\arrow{d}{\alpha}\\
+        t(M)\arrow{r}{\varepsilon_M}&M
+      \end{tikzcd}
+    \end{equation*}
+    \item[(b)] Let $g:T_1\to T_2$ be a morphism in $\mathcal{T}$, which admits a pseudocokernel
+    $g^C:T_2\to\PCok_\mathcal{T}(g)$ in $\mathcal{T}$. Then $g^c$ is a pseudocokernel of $g$
+    in $\mathcal{X}$.
+  \end{enumerate}
+\end{rmk}
+
+\begin{proof}
+  see Octavio's notes
+\end{proof}
+
+The dual also holds.
