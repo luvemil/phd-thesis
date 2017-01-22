@@ -3,6 +3,26 @@
 \section{Induced torsion theories}
 % TODO: add previous part in the notes about one single torsion pair $(F, Fperp)$ in A
 % and a class $W < Fperp$ satisfying some nice conditions, from Saorin's notes
+
+\begin{lemma}
+  Let $\mathcal{A}$ be a (nice) category and $\mathcal{W}\subseteq\mathcal{A}$ a subcategory
+  such that $\mathrm{add}(\mathcal{W})=\mathcal{W}$. If $(^\perp\mathcal{F},\mathcal{F})$ is a torsion pair
+  such that $\mathcal{W}\subseteq \mathcal{F}$, then $(^\perp(\underline{\mathcal{F}}),\underline{\mathcal{F}})$
+  is an orthogonal pair in $\underline{\mathcal{A}}=\dfrac{\mathcal{A}}{\mathcal{W}}$.
+\end{lemma}
+
+\begin{lemma}
+  Let $\mathcal{A}$ and $\mathcal{W}\subseteq\mathcal{A}$ be defined as above and let
+  $(^\perp\mathcal{F},\mathcal{F})$ be a torsion pair in $\mathcal{A}$ such that $\mathcal{W}\subseteq\mathcal{F}$.
+  Call $p:\mathcal{A}\to \underline{\mathcal{A}}$ the quotient functor.
+  The following assertions hold:
+  \begin{enumerate}
+    \item $p^{-1}(^\perp(\underline{\mathcal{F}}))=\mathrm{add}(^\perp\mathcal{F}\ast\mathcal{W})$.
+    \item If $\mathcal{W}$ is precovering in $\mathcal{F}$, then $(^\perp\underline{\mathcal{F}},\underline{\mathcal{F}})$
+    is a torsion pair in $\underline{\mathcal{A}}$.
+  \end{enumerate}
+\end{lemma}
+
 \begin{lemma}
   Let $\mathcal{A}$ be a (nice) category with a torsion pair $(^\perp\mathcal{F}, \mathcal{F})$ and a precovering class
   $\mathcal{W}\subseteq \mathcal{F}$ such that for any $F\in\mathcal{F}$ there is an admissible
