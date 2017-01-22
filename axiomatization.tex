@@ -2,70 +2,125 @@
 
 \section{Axiomatization}
 
-Let $\mathcal{X}$ be an additive category \todo{with what?}, we give the following axioms
+\begin{definition}
+  Let $\mathcal{X}$ be an additive category with pseudokernels and pseudocokernels, a \emph{compatible}
+  torsion pair $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ in $\mathcal{X}$ consists of the two pairs
+  $\mathbb{t}_1=(\mathcal{T}_1,\mathcal{F}_1)$ and $\mathbb{t}_2=(\mathcal{T}_2,\mathcal{F}_2)$ of full subcategories
+  of $\mathcal{X}$ satisfying the following axioms:
 
-\begin{enumerate}
-  \item[A1] $(\mathcal{T}_1,\mathcal{F}_1)$ and $(\mathcal{T}_2,\mathcal{F}_2)$ are respectively a left functorial and a
-  right functorial torsion pair \todo{define torsion pairs in additive categories}
-  \item[A2] $\mathcal{T}_2\subseteq \mathcal{T}_1$ (equiv. $\mathcal{F}_1\subseteq\mathcal{F}_2$)
-  \item[A3] Each morphism $T_1\nto{f}M$ in $\mathcal{X}$, with $T_1\in\mathcal{T}_1$ has a pseudocokernel
-  $M\nto{\pi_f}\PCok (f)$ in $\mathcal{X}$ with the following properties:
   \begin{enumerate}
-    \item[a] If $M\in\mathcal{T}_1$, then $\PCok(f) \in\mathcal{T_1}$
-    \item If $g:M\to F_2$ is a morphism s.t. $g\circ f=0$ and $F_2\in\mathcal{F}_2$, then there is a
-    \emph{unique} morphism $\gamma:\PCok(f)\to F_2$ such that
+    \item[(CT1)] $\mathbb{t}_1=(\mathcal{T}_1,\mathcal{F}_1)$ and $\mathbb{t}_2=(\mathcal{T}_2,\mathcal{F}_2)$ are respectively a left functorial and a
+    right functorial torsion pair \todo{define torsion pairs in additive categories}
+    \item[(CT2)] $\mathcal{T}_2\subseteq \mathcal{T}_1$ (equiv. $\mathcal{F}_1\subseteq\mathcal{F}_2$)
+    \item[(CT3)] Any morphism $g:T_1\to T_1'$ in $\mathcal{T}_1$ iadmits a pseudocokernel $g^C:T_1'\to\PCok_\mathcal{X}(g)$,
+    with $T_1'':=\PCok_\mathcal{X}(g)\in\mathcal{T}_1$, such that
     \begin{equation*}
       \begin{tikzcd}
-        T_1\arrow{r}{f}\arrow[dashed]{drr}{0}
-          & M\arrow{rr}{\pi_f}\arrow{dr}{g}
-            & & \PCok(f)\arrow[dashed]{dl}{\gamma} \\
-          & & F_2
-              &
+        0\arrow{r} &(T_1'',-)_{|\mathcal{F}_2}\arrow{r}{(g^C,-)}
+        & (T_1',-)_{|\mathcal{F}_2}\arrow{r}{(g,-)}& (T_1,-)_{|\mathcal{F}_2}
       \end{tikzcd}
     \end{equation*}
-    is commutative.
+    is an exact sequence of functors.
+    \item[(CT3)$^{op}$] Dual of \textbf{(CT3)}.
   \end{enumerate}
-  \item[A3$^*$] Dual of \textbf{A3}.
-  \item[A3$'$] Each morphism in $\mathcal{T}_1$ has a pseudocokernel in $\mathcal{T}_1$ which completes the following
-  diagram in a unique way wrt $\mathcal{F}_2$:
+\end{definition}
+
+\begin{notation}
+  In the case of a compatible torsion pair $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ in $\mathcal{X}$,
+  we have the adjoint pairs
   \begin{equation*}
     \begin{tikzcd}
-      T_1\arrow{r}{f}\arrow[dashed]{drr}
-        & T_1'\arrow{dr}\arrow{rr}
-          & & \PCok_\mathcal{T_1}(f)\arrow[dashed]{dl}{\exists!} \\
-        & & F_2
-            &
+      (i_1,t_1):\mathcal{T}_1\arrow[hook, shift left]{r}{i_1}
+        & \mathcal{X}\arrow[shift left]{l}{t_1}
+        & \mathrm{and}
+        & (t_2,j_2):\mathcal{F}_2\arrow[hook, shift right]{r}[']{j_2}
+          & \mathcal{X}\arrow[shift right]{l}[']{t_2}
     \end{tikzcd}
   \end{equation*}
-\end{enumerate}
+
+  In this case there are also the counit $\varepsilon_{1,M}:t_1(M)\to M$ and the
+  unit $\lambda_{2,M}:M\to f_2(M)$. The heart of $\mathbb{t}$ is defined as
+  $\mathcal{H}=\mathcal{H}_\mathbb{t}:=\mathcal{T}_1\cap\mathcal{F}_2$.
+\end{notation}
+
+\begin{lemma}
+  Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a compatible torsion pair in $\mathcal{X}$.
+  Then the following statements hold true.
+  \begin{enumerate}
+    \item[(a)] $\mathcal{F}_1\cap\mathcal{T}_2=0$,
+    \item[(b)] $f_2(\mathcal{T}_1)\subseteq\mathcal{H}$ and $t_1(\mathcal{F}_2)\subseteq\mathcal{H}$.
+  \end{enumerate}
+\end{lemma}
+
+\begin{prop}
+  Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a compatible torsion pair in $\mathcal{X}$. Then, for any $f:H\to H'$
+  in $\mathcal{H}$ we have that:
+  \begin{enumerate}
+    \item[(a)] $f$ is a monomorphism in $\mathcal{H}$ if and only if there is a pseudokernel
+    $\PKer_{\mathcal{F}_2}(f)\in\mathcal{F}_1$;
+    \item[(b)] $f$ is an epimorphism in $\mathcal{H}$ if and only if there is a pseudocokernel
+    $\PCok_{\mathcal{T}_1}(f)\in\mathcal{T}_2$.
+  \end{enumerate}
+\end{prop}
+
+\begin{definition}
+  A compatible torsion pair $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ in $\mathcal{X}$
+  is strong if the following axioms hold:
+  \begin{enumerate}
+    \item[(CT4)] Let $f:H_1\to H_2$ in $\mathcal{H}$ be such that there is a pseudokernel
+    $\PKer_{\mathcal{F}_2}(f)\in\mathcal{F}_1$. Then, for the commutative diagram
+    \begin{equation*}
+      \begin{tikzcd}
+        & H_1\arrow{d}{a}\arrow{r}{f}
+          & H_2\arrow[equal]{d}\arrow{r}{f^C}
+            & T_1:=\PCok_\mathcal{X}(f)\arrow{d}{\lambda_{2,T_1}}\\
+        t_1(F)_2\arrow{r}{\varepsilon_{1,F_2}}
+        & F_2:=\PKer_\mathcal{X}(g)\arrow{r}{g^K}
+          & H_2\arrow{r}{g}
+            & f_2(T_1)
+      \end{tikzcd}
+    \end{equation*}
+    there exists a morphism $b:t_1(F_2)\to H_1$ such that $ab=\varepsilon_{1,F_2}$.
+    \item[(CT4)$^{op}$] Dual
+  \end{enumerate}
+\end{definition}
 
 With these axioms we can prove that the heart has kernels and cokernels.
 
-\begin{lemma}\label{sec2:lem6}
-  The heart $\mathcal{H}=\mathcal{T}_1\cap\mathcal{F}_2$ has kernels and cokernels.
-\end{lemma}
-
-\begin{rmk}
-  If $\mathcal{X}$ is abelian, then:
+\begin{thm}
+  Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a compatible torsion pair in $\mathcal{X}$. Then, the following are
+  equivalent:
   \begin{enumerate}
-    \item $f:H\to H'$ is mono in $\mathcal{H}$ iff $\Ker_\mathcal{X}(f)\in\mathcal{F}_1$
-    \item $f:H\to H'$ is epi in $\mathcal{H}$ iff $\Coker_\mathcal{X}(f)\in\mathcal{T}_2$
+    \item[(a)] $\mathbb{t}$ is strong,
+    \item[(b)] $\mathcal{H}$ is an abelian category.
   \end{enumerate}
-\end{rmk}
+\end{thm}
 
-\begin{prop}\label{sec2:prop1}
-  Let $(\mathcal{T}_1,\mathcal{F}_1)$ and $(\mathcal{T}_2,\mathcal{F}_2)$ be two torsion pairs
-  in the abelian category $\mathcal{A}$. TFAE:
-  \begin{enumerate}
-    \item $\mathcal{H}$ is abelian.
-    \item We have:
-    \begin{enumerate}
-      \item If $f:H\to H'$ is a morphism in $\mathcal{H}$ such that
-      $\Ker_\mathcal{A}(f)\in\mathcal{F}_1$, then $\Ker_\mathcal{A}(f)=0$.
-      \item If $f:H\to H'$ is a morphism in $\mathcal{H}$ such that
-      $\Coker_\mathcal{A}(f)\in\mathcal{T}_2$, then $\Coker_\mathcal{A}(f)=0$.
-      \item $\mathcal{H}$ is closed by kernels of epics and cokernels of monics.
-    \end{enumerate}
-    \item $\mathcal{H}$ is an exact abelian subcategory of $\mathcal{A}$.\todo{?}
-  \end{enumerate}
-\end{prop}
+% \begin{lemma}\label{sec2:lem6}
+%   The heart $\mathcal{H}=\mathcal{T}_1\cap\mathcal{F}_2$ has kernels and cokernels.
+% \end{lemma}
+%
+% \begin{rmk}
+%   If $\mathcal{X}$ is abelian, then:
+%   \begin{enumerate}
+%     \item $f:H\to H'$ is mono in $\mathcal{H}$ iff $\Ker_\mathcal{X}(f)\in\mathcal{F}_1$
+%     \item $f:H\to H'$ is epi in $\mathcal{H}$ iff $\Coker_\mathcal{X}(f)\in\mathcal{T}_2$
+%   \end{enumerate}
+% \end{rmk}
+%
+% \begin{prop}\label{sec2:prop1}
+%   Let $(\mathcal{T}_1,\mathcal{F}_1)$ and $(\mathcal{T}_2,\mathcal{F}_2)$ be two torsion pairs
+%   in the abelian category $\mathcal{A}$. TFAE:
+%   \begin{enumerate}
+%     \item $\mathcal{H}$ is abelian.
+%     \item We have:
+%     \begin{enumerate}
+%       \item If $f:H\to H'$ is a morphism in $\mathcal{H}$ such that
+%       $\Ker_\mathcal{A}(f)\in\mathcal{F}_1$, then $\Ker_\mathcal{A}(f)=0$.
+%       \item If $f:H\to H'$ is a morphism in $\mathcal{H}$ such that
+%       $\Coker_\mathcal{A}(f)\in\mathcal{T}_2$, then $\Coker_\mathcal{A}(f)=0$.
+%       \item $\mathcal{H}$ is closed by kernels of epics and cokernels of monics.
+%     \end{enumerate}
+%     \item $\mathcal{H}$ is an exact abelian subcategory of $\mathcal{A}$.\todo{?}
+%   \end{enumerate}
+% \end{prop}
