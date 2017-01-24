@@ -55,8 +55,19 @@
 \begin{prop}
   Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a compatible torsion pair in $\mathcal{X}$ and
   $f:H_1\to H_2$ be a morphism in $\mathcal{H}$. Then
-  \begin{enumerate}
-    \item[(a)] if $f^C:H_2\to T_1$ is the pseudocokernel of $f$, given by \ref{ax:ct3}
+  \begin{enumerate}[ref=(a)]
+    \item if $f^C:H_2\to T_1$ is the pseudocokernel of $f$, given by \ref{ax:ct3}
+    and $\lambda_{2,T_1}:T_1\to f_2(T_1)$, then
+    \begin{equation*}
+      \Coker(H_1\nto{f}H_2) = (H_2\nto{\tilde{f}^C})f_1(T_1))
+    \end{equation*}
+    in $\mathcal{H}$, where $\tilde{f}^C:=\lambda_{2,T_1}\circ f^C$;
+    \item if $f^K:F_2\to H_1$ is the pseudokernel of $f$, given by \ref{ax:ct3}$^\ast$
+    and $\varepsilon_{1,F_2}:t_1(F_2)\to F_2$, then
+    \begin{equation*}
+      \Ker(H_1\nto{f} H_2) = (t_1(F_2)\nto{\tilde{f}^K}H_1)
+    \end{equation*}
+    in $\mathcal{H}$, where $\tilde{f}^K=f^K\circ \varepsilon_{1,F_2}$.
   \end{enumerate}
 \end{prop}
 
@@ -74,8 +85,9 @@
 \begin{definition}
   A compatible torsion pair $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ in $\mathcal{X}$
   is strong if the following axioms hold:
-  \begin{enumerate}
-    \item[(CT4)] Let $f:H_1\to H_2$ in $\mathcal{H}$ be such that there is a pseudokernel
+  \begin{torsionaxioms}
+    \setcounter{enumi}{3}
+    \item Let $f:H_1\to H_2$ in $\mathcal{H}$ be such that there is a pseudokernel
     $\PKer_{\mathcal{F}_2}(f)\in\mathcal{F}_1$. Then, for the commutative diagram
     \begin{equation*}
       \begin{tikzcd}
@@ -89,8 +101,8 @@
       \end{tikzcd}
     \end{equation*}
     there exists a morphism $b:t_1(F_2)\to H_1$ such that $ab=\varepsilon_{1,F_2}$.
-    \item[(CT4)$^{op}$] Dual
-  \end{enumerate}
+    \varitem{^\ast} Dual
+  \end{torsionaxioms}
 \end{definition}
 
 With these axioms we can prove that the heart has kernels and cokernels.
@@ -98,11 +110,13 @@ With these axioms we can prove that the heart has kernels and cokernels.
 \begin{thm}
   Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a compatible torsion pair in $\mathcal{X}$. Then, the following are
   equivalent:
-  \begin{enumerate}
-    \item[(a)] $\mathbb{t}$ is strong,
-    \item[(b)] $\mathcal{H}$ is an abelian category.
+  \begin{enumerate}[ref=(a)]
+    \item $\mathbb{t}$ is strong,
+    \item $\mathcal{H}$ is an abelian category.
   \end{enumerate}
 \end{thm}
+
+\subsection{The case of an abelian category}
 
 % \begin{lemma}\label{sec2:lem6}
 %   The heart $\mathcal{H}=\mathcal{T}_1\cap\mathcal{F}_2$ has kernels and cokernels.
