@@ -8,11 +8,11 @@
   $\mathbb{t}_1=(\mathcal{T}_1,\mathcal{F}_1)$ and $\mathbb{t}_2=(\mathcal{T}_2,\mathcal{F}_2)$ of full subcategories
   of $\mathcal{X}$ satisfying the following axioms:
 
-  \begin{enumerate}
-    \item[(CT1)] $\mathbb{t}_1=(\mathcal{T}_1,\mathcal{F}_1)$ and $\mathbb{t}_2=(\mathcal{T}_2,\mathcal{F}_2)$ are respectively a left functorial and a
+  \begin{torsionaxioms}
+    \item $\mathbb{t}_1=(\mathcal{T}_1,\mathcal{F}_1)$ and $\mathbb{t}_2=(\mathcal{T}_2,\mathcal{F}_2)$ are respectively a left functorial and a
     right functorial torsion pair \todo{define torsion pairs in additive categories}
-    \item[(CT2)] $\mathcal{T}_2\subseteq \mathcal{T}_1$ (equiv. $\mathcal{F}_1\subseteq\mathcal{F}_2$)
-    \item[(CT3)] Any morphism $g:T_1\to T_1'$ in $\mathcal{T}_1$ iadmits a pseudocokernel $g^C:T_1'\to\PCok_\mathcal{X}(g)$,
+    \item $\mathcal{T}_2\subseteq \mathcal{T}_1$ (equiv. $\mathcal{F}_1\subseteq\mathcal{F}_2$)
+    \item\label{ax:ct3} Any morphism $g:T_1\to T_1'$ in $\mathcal{T}_1$ iadmits a pseudocokernel $g^C:T_1'\to\PCok_\mathcal{X}(g)$,
     with $T_1'':=\PCok_\mathcal{X}(g)\in\mathcal{T}_1$, such that
     \begin{equation*}
       \begin{tikzcd}
@@ -21,8 +21,8 @@
       \end{tikzcd}
     \end{equation*}
     is an exact sequence of functors.
-    \item[(CT3)$^{op}$] Dual of \textbf{(CT3)}.
-  \end{enumerate}
+    \varitem{^\ast} Dual of \ref{ax:ct3}.
+  \end{torsionaxioms}
 \end{definition}
 
 \begin{notation}
@@ -51,6 +51,14 @@
     \item[(b)] $f_2(\mathcal{T}_1)\subseteq\mathcal{H}$ and $t_1(\mathcal{F}_2)\subseteq\mathcal{H}$.
   \end{enumerate}
 \end{lemma}
+
+\begin{prop}
+  Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a compatible torsion pair in $\mathcal{X}$ and
+  $f:H_1\to H_2$ be a morphism in $\mathcal{H}$. Then
+  \begin{enumerate}
+    \item[(a)] if $f^C:H_2\to T_1$ is the pseudocokernel of $f$, given by \ref{ax:ct3}
+  \end{enumerate}
+\end{prop}
 
 \begin{prop}
   Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a compatible torsion pair in $\mathcal{X}$. Then, for any $f:H\to H'$
