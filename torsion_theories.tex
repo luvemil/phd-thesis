@@ -106,7 +106,7 @@
 \makeatletter
 \newenvironment{statements}[1]
  {\renewcommand\varitem[1]{\item[(#1\arabic{enumi})\rlap{$##1$}]%
-    \edef\@currentlabel{(#1\arabic{enumi}{$##1$})}}%
+    \edef\@currentlabel{\unexpanded{\textbf}{(#1\arabic{enumi}){$##1$}}}}%
   \enumerate[label=(#1\arabic*), ref=\textbf{(#1\arabic*)}]}
  {\endenumerate}
 \makeatother
