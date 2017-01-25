@@ -128,7 +128,21 @@ Consider $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$.
 \end{rmk}
 
 \begin{proof}
-  Let $\mathcal{T}_2\subseteq\mathcal{T}_1$, we need to show that
+  Let $\mathcal{T}_2\subseteq\mathcal{T}_1$, we need to show that \cref{ax:ct1},
+  \cref{ax:ct3} and \cref{ax:ct3op} hold.
+  \begin{torsionaxioms}
+    \item It is well known that any torsion pair in an abelian category is functorial.
+    \setcounter{enumi}{2}
+    \item Let $g:T_1\to T_1'$ be a morphism in $\mathcal{T}_1$. Consider the cokernel morphism
+    of $g$ in $\mathcal{A}$
+    \begin{equation*}
+      \Coker_\mathcal{A}(T_1\nto{g}T_1')=(T_1'\nto{c_g}\Coker(g)).
+    \end{equation*}
+    Since $\mathcal{T}_1$ is closed under quotient objects, we get that $\Coker(g)\in\mathcal{T}_1$.
+    Therefore, we can choose $c_g:T_1'\to\Coker(g)$ as $g^C:T_1'\to\PCok_\mathcal{A}(g)$.\todo{Is there an explicit choice
+    that we made somewhere before when we talk about $\PCok_\mathcal{A}$?}
+    \varitem{^\ast} Anologous to the previous.
+  \end{torsionaxioms}
 \end{proof}
 
 % \begin{lemma}\label{sec2:lem6}
