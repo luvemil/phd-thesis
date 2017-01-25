@@ -46,16 +46,16 @@
 \begin{lemma}
   Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a compatible torsion pair in $\mathcal{X}$.
   Then the following statements hold true.
-  \begin{enumerate}[label=(a)]
+  \begin{enumerate}[label=(\alph*)]
     \item $\mathcal{F}_1\cap\mathcal{T}_2=0$,
     \item $f_2(\mathcal{T}_1)\subseteq\mathcal{H}$ and $t_1(\mathcal{F}_2)\subseteq\mathcal{H}$.
   \end{enumerate}
 \end{lemma}
 
-\begin{prop}
+\begin{prop}\label{prop:1.3}
   Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a compatible torsion pair in $\mathcal{X}$ and
   $f:H_1\to H_2$ be a morphism in $\mathcal{H}$. Then
-  \begin{enumerate}[label=(a)]
+  \begin{enumerate}[label=(\alph*)]
     \item if $f^C:H_2\to T_1$ is the pseudocokernel of $f$, given by \ref{ax:ct3}
     and $\lambda_{2,T_1}:T_1\to f_2(T_1)$, then
     \begin{equation*}
@@ -71,13 +71,13 @@
   \end{enumerate}
 \end{prop}
 
-\begin{prop}
+\begin{prop}\label{prop:1.4}
   Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a compatible torsion pair in $\mathcal{X}$. Then, for any $f:H\to H'$
   in $\mathcal{H}$ we have that:
-  \begin{enumerate}[label=(a)]
-    \item $f$ is a monomorphism in $\mathcal{H}$ if and only if there is a pseudokernel
+  \begin{enumerate}[label=(\alph*)]
+    \item\label{prop:1.4:a} $f$ is a monomorphism in $\mathcal{H}$ if and only if there is a pseudokernel
     $\PKer_{\mathcal{F}_2}(f)\in\mathcal{F}_1$;
-    \item $f$ is an epimorphism in $\mathcal{H}$ if and only if there is a pseudocokernel
+    \item\label{prop:1.4:b} $f$ is an epimorphism in $\mathcal{H}$ if and only if there is a pseudocokernel
     $\PCok_{\mathcal{T}_1}(f)\in\mathcal{T}_2$.
   \end{enumerate}
 \end{prop}
@@ -122,7 +122,7 @@ Let's consider the case $\mathcal{X}=\mathcal{A}$ of an Abelian category with
 two torsion pairs $\mathbb{t}_i=(\mathcal{T}_i,\mathcal{F}_i)$ for $i=1,2$.
 Consider $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$.
 
-\begin{rmk}\label{rmk:abeliancats}
+\begin{rmk}\label{rmk:2.2}
   In the case of an Abelian category $\mathcal{X}=\mathcal{A}$, we have that
   $\mathbb{t}$ is compatible if and only if $\mathcal{T}_2\subseteq\mathcal{T}_1$.
 \end{rmk}
@@ -144,6 +144,235 @@ Consider $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$.
     \varitem{^\ast} Anologous to the previous.
   \end{torsionaxioms}
 \end{proof}
+
+\begin{corollary}\label{cor:2.3}
+  Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a torsion pair in $\mathcal{A}$ with $\mathcal{T}_2\subseteq\mathcal{T}_1$.
+  Then, for $f:H_1\to H_2$ in $\mathcal{H}$, the following statements hold:
+  \begin{enumerate}[label=(\alph*),ref=(\alph*)]
+    \item\label{cor:2.3:a} the cokernel of $f$ in $\mathcal{H}$ is the composition of the morphisms
+      \begin{equation*}
+        \begin{tikzcd}
+          H_2\arrow{r}{c_f}&\Coker(f)\arrow{r}{\lambda_{2,\Coker(f)}}&f_2(\Coker(f));
+        \end{tikzcd}
+      \end{equation*}
+    \item\label{cor:2.3:b} the kernel of $f$ in $\mathcal{H}$ is the composition of the morphisms
+      \begin{equation*}
+        \begin{tikzcd}
+          t_1(\Ker(f))\arrow{r}{\varepsilon_{1,\Ker(f)}}&\Ker(f)\arrow{r}{k_f}&H_1;
+        \end{tikzcd}
+      \end{equation*}
+    \item\label{cor:2.3:c} $f$ is an epimorphism in $\mathcal{H}$ if and only if $\Coker(f)\in\mathcal{T}_2$;
+    \item\label{cor:2.3:d} $f$ is a monomorphism in $\mathcal{H}$ if and only if $\Ker(f)\in\mathcal{F}_1$.
+  \end{enumerate}
+\end{corollary}
+
+\begin{proof}
+  \ref{cor:2.3:a} and \ref{cor:2.3:b} follow from the proof of \cref{rmk:2.2}\todo{this should be a remark, fix it}
+  and \cref{prop:1.3}.
+
+  \ref{cor:2.3:c}
+  \begin{enumerate}
+    \item[$\Leftarrow$] is trivial.
+    \item[$\Rightarrow$] By \cref{prop:1.4} \ref{prop:1.4:b} there exists $f^C:H_2\to T_2$, where
+      $T_2=\Coker_{T_1}(f)\in\mathcal{T}_2$. Then, we have
+
+      \begin{minipage}[b]{0.45\linewidth}
+        \begin{equation*}
+          \begin{tikzcd}[column sep=tiny]
+            H_2\arrow{rr}{f^C}\arrow{dr}[']{c_f}
+              & & T_2 \arrow[dashed, shift right]{ld}[']{u}\\
+              & \Coker(f)\arrow[dashed, shift right]{ur}[']{v}
+          \end{tikzcd}
+        \end{equation*}
+      \end{minipage}
+      \begin{minipage}[b]{0.45\linewidth}
+        \begin{equation*}
+          \text{such that }
+          \left\{
+          \begin{array}{c}
+            uf^C = c_f,\\
+            vc_f = f^C.
+          \end{array}
+          \right.
+        \end{equation*}
+      \end{minipage}
+
+      Hence, $uvc_f=c_f$, but $c_f$ is epi, therefore $uv=1$. Hence, $\Coker(f)$ is a direct
+      summand of $T_2\in\mathcal{T}_2$ so $\Coker(f)\in\mathcal{T}_2$.
+  \end{enumerate}
+
+  \ref{cor:2.3:d} Similar to the previous proof.
+\end{proof}
+
+\begin{thm}
+  Let $\mathbb{t}_i=(\mathcal{T}_i,\mathcal{F}_i)$ be a torsion pair in an abelian category
+  $\mathcal{A}$, for $i=1,2$, such that $\mathcal{T}_2\subseteq \mathcal{T}_1$. Then, for
+  $\mathcal{H}:=\mathcal{T}_1\cap\mathcal{F}_2$ the following statements are equivalent:
+  \begin{enumerate}[label=(\alph*)]
+    \item $\mathcal{H}$ is an abelian category.
+    \item The following conditions hold:
+      \begin{enumerate}[label=(\alph{enumi}\arabic*)]
+        \item For any $f:H\to H'$ in $\mathcal{H}$, with $\Ker(f)\in\mathcal{F}_1$,
+        we have that $\Ker(f)=0$.
+        \item For any $f:H\to H'$ in $\mathcal{H}$, with $\Coker(f)\in\mathcal{T}_2$,
+        we have that $\Coker(f)=0$.
+        \item $\mathcal{H}$ is closed under kernels (resp. cokernels) of epimorphisms
+        (resp. monomorphisms) in $\mathcal{A}$.
+      \end{enumerate}
+    \item $\mathcal{H}$ is closed under kernels and cokernels in $\mathcal{A}$.
+  \end{enumerate}
+\end{thm}
+
+\subsection{Related torsion pairs in triangulated categories}
+
+Let $\mathcal{X}=\mathcal{T}$ be a triangulated category on which idempotents split.
+We start by recalling the definition of a t-structure in $\mathcal{T}$.
+
+\begin{definition}
+  A pair $(\mathcal{A},\mathcal{B})$ of full subcategories of $\mathcal{T}$ is a t-structure
+  in $\mathcal{T}$ if
+  \begin{enumerate}[label=(\alph*)]
+    \item $\mathbb{t}=(\mathcal{A},\mathcal{B}[-1])$ is a torsion pair in $\mathcal{T}$, and
+    \item $\mathcal{A}[1]\subseteq \mathcal{A}$.
+  \end{enumerate}
+\end{definition}
+
+\begin{rmk}
+  It is well known that any t-structure $(\mathcal{A},\mathcal{B})$ in $\mathcal{T}$
+  gives a functional torsion pair $\mathbb{t}=(\mathcal{A},\mathcal[-1])$ and
+  $\mathbb{B}[-1]\subseteq\mathcal{B}$. Furthermore, $\mathcal{A}$ and
+  $\mathcal{B}$ are closed under extensions and direct summands. Note that the t-structure
+  $(\mathcal{A},\mathcal{B})$ depends only on $\mathcal{A}$, since $\mathcal{B}=\mathcal{A}^\perp[1]$.
+\end{rmk}
+
+\begin{definition}
+  A \emph{related} torsion pair $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ in triangulated category
+  $\mathcal{T}$ consists of the torsion pairs $\mathbb{t}_1=(\mathcal{T}_1,\mathcal{F}_1)$
+  and $\mathbb{t}=(\mathcal{T}_2,\mathcal{F}_2)$ in $\mathcal{T}$ such that
+  $\mathcal{T}_1[1]\subseteq \mathcal{T}_2\subseteq\mathcal{T}_1$.
+\end{definition}
+
+\begin{prop}
+  Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a related torsion pair in $\mathcal{T}$. Then
+  \begin{enumerate}[label=(\alph*)]
+    \item $(\mathcal{T}_1,\mathcal{F}_1[1])$ and $(\mathcal{T}_2,\mathcal{F}_2[1])$
+    are t-structures in $\mathcal{T}$;
+    \item $\mathbb{t}$ is a compatible torsion pair in $\mathcal{T}$;
+    \item the heart $\mathcal{H}_\mathbb{t} := \mathcal{T}_1\cap\mathcal{F}_2[1]$ is a preabelian category.
+  \end{enumerate}
+\end{prop}
+
+\begin{definition}
+  A related torsion pair $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ in the triangulated category
+  $\mathcal{T}$ is \emph{strong} if for any morphism $f:H_1\to H_2$, in $\mathcal{H}:=\mathcal{T}_1\cap\mathcal{F}_2$,
+  and a distinguished triangle $Z\to H_1\nto{f}H_2\to Z[1]$, the following conditions
+  hold true
+  \begin{relatedtorsion}
+    \item $Z\in\mathcal{F}_1$ if and only if $Z\in\mathcal{F}_2[-1]$;
+    \item $Z[1]\in\mathcal{T}_2$ if and only if $Z\in\mathcal{T}_1$.
+  \end{relatedtorsion}
+\end{definition}
+
+\begin{thm}\label{thm:2.6}
+  Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a strongly related torsion pair in
+  the triangulated category $\mathcal{T}$. Then, the heart $\mathcal{H}=\mathcal{H}_\mathbb{t}$
+  is an abelian category.
+\end{thm}
+
+\begin{example}
+  Let $(\mathcal{A},\mathcal{B})$ be a t-structure in $\mathcal{T}$. Consider
+  $\mathbb{t}_1:=(\mathcal{A},\mathcal{B}[-1])$ and $\mathbb{t}_2 :=(\mathcal{A}[1],\mathcal{B})$.
+  It is not hard to see that $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ is a strongly related
+  torsion pair in $\mathcal{T}$. In this case, by \cref{thm:2.6}, we get that $\mathcal{H}=\mathcal{A}\cap\mathcal{B}$
+  is an abelian category (BBD theorem).
+\end{example}
+
+\begin{example}
+  Let $R$ be any (associative with 1) ring. Consider the triangulated category $\mathcal{T}:=\mathcal{D}(R)$.
+  The derived category $\mathcal{D}(R)$ has the so called natural t-structure
+  $(\mathcal{D}^{\leq 0}(R),\mathcal{D}^{\geq}(R))$ where
+  \begin{align*}
+    \mathcal{D}^{\leq 0}(R) &:= \{ X\in\mathcal{D}(R) \,|\,H^i(X)=0\text{ for } i>0\},\\
+    \mathcal{D}^{\geq 0}(R) &:= \{ X\in\mathcal{D}(R) \,|\,H^i(x)=0\text{ for } i<0\}.
+  \end{align*}
+\end{example}
+
+\begin{thm}\label{thm:2.9}
+  Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a related torsion pair in a triangulated
+  category $\mathcal{T}$. Then, the following statements are equivalent.
+  \begin{enumerate}[label=(\alph*)]
+    \item For any distinguished triangle $V\to H_1\nto{f}H_2\nto{+}$, with
+      $f$ a morphism in $\mathcal{H}=\mathcal{H}_\mathbb{t}:=\mathcal{T}_1\cap\mathcal{F}_2$,
+      we have that
+      \begin{equation*}
+        V\in\mathcal{F}_1 \Rightarrow V[1]\in\mathcal{F}_2.
+      \end{equation*}
+    \item For any monomorphism $\alpha:H_1\into H_2$, in the abelian category
+      $\mathcal{H}_1:=\mathcal{T}_1\cap\mathcal{F}_1[1]$, with $H_1,H_2\in\mathcal{H}$,
+      we have that $\Coker_{\mathcal{H}_1}(\alpha)\in\mathcal{H}$.
+    \item $\mathcal{H}$ is closed under kernels and cokernels in the abelian category
+      $\mathcal{H}_1$
+    \item $\mathcal{H}$ is an abelian category.
+    \item For any epimorphism $H\onto X$ in $\mathcal{H}_1$, with $H\in\mathcal{H}$,
+      we have that $X\in\mathcal{H}$ (i.e. $\mathcal{H}$ is closed under quotients in $\mathcal{H}_1$).
+  \end{enumerate}
+\end{thm}
+
+Let $t=(\mathcal{A},\mathcal{B})$ be a pair of full subcategories of the triangulated
+category $\mathcal{T}$. We will use the following notation:
+\begin{align*}
+  t[1] &:= (\mathcal{A}[1],\mathcal{B}[1]),\\
+  \overline{t} &:= (\mathcal{A},\mathcal{B}[1]).
+\end{align*}
+
+Note that $\overline{t}$ is a t-structure in $\mathcal{T}$ if and only if $t$ is a torsion
+pair $\mathcal{T}$ such that $\mathcal{A}[1]\subseteq\mathcal{A}$.
+
+\begin{rmk}
+  Consider $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$, where $\mathbb{t}_i:=(\mathcal{U}_i,\mathcal{U}_i^\perp)$ for
+  $i=1,2$. We have
+  \begin{enumerate}
+    \item $\mathcal{H}_\mathbb{t}:=\mathcal{U}_1\cap\mathcal{U}_2^\perp$,
+      $\mathcal{H}_i:=\mathcal{U}_i\cap\mathcal{U}_i^\perp[1]$,
+    \item $\mathbb{t}' :=(\mathbb{t}_2,\mathbb{t}_1[1])$
+  \end{enumerate}
+
+  Note that
+  \begin{enumerate}
+    \setcounter{enumi}{2}
+    \item $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ is a related torsion pair in $\mathcal{T}$
+      \begin{align*}
+        \Leftrightarrow \mathcal{U}_1[1]\subseteq\mathcal{U}_2\subseteq\mathcal{U}_1
+        \Leftrightarrow \mathcal{U}_2[1]\subseteq\mathcal{U}_1[1]\subseteq\mathcal{U}_2
+        \Leftrightarrow \mathbb{t}'=(\mathbb{t}_2,\mathbb{t}_1[1]) \text{ is a related torsion pair in }\mathcal{T}.
+      \end{align*}
+    \item Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ is a related torsion pair in $\mathcal{T}$. In
+      this case, we have
+      \begin{align*}
+        &\mathcal{H}_\mathbb{t} = \mathcal{U}_1\cap\mathcal{U}_2^\perp,~
+        \mathcal{H}_{\mathbb{t}'}=\mathcal{U}_2\cap \mathcal{U}_1^\perp[1],\\
+        & \mathrm{Pol}_{\mathcal{H}_1}^{-1}(\overline{\mathbb{t}}_2)=
+        \mathrm{Pol}_{\mathcal{H}_1}^{-1}(\mathcal{U}_2,\mathcal{U}_2^\perp[1])=
+        (\mathcal{H}_{\mathbb{t}'},\mathcal{H}_{\mathbb{t}}),\\
+        &\mathrm{Pol}_{\mathcal{H}_2}^{-1}(\overline{\mathbb{t}}_1[1])=
+        \mathrm{Pol}_{\mathcal{H}_1}^{-1}(\mathcal{U}_1[1],\mathcal{U}_1^\perp[2])=
+        (\mathcal{H}_{\mathbb{t}}[1],\mathcal{H}_{\mathbb{t}'}).
+      \end{align*}
+
+      Thus, $(\mathcal{H}_{\mathbb{t}'},\mathcal{H}_\mathbb{t})$ is a torsion pair in the abelian
+      category $\mathcal{H}_1$,
+      $(\mathcal{H}_\mathbb{t}[1],\mathcal{H}_{\mathbb{t}'})$ is a torsion pair in the abelian category
+      $\mathcal{H}_2$.
+  \end{enumerate}
+\end{rmk}
+
+\begin{corollary}
+  Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a related torsion pair in a triangulated category
+  $\mathcal{T}$. Then, the following statements are equivalent:
+  \begin{enumerate}[label=(\alph*)]
+    \item
+  \end{enumerate}
+\end{corollary}
 
 % \begin{lemma}\label{sec2:lem6}
 %   The heart $\mathcal{H}=\mathcal{T}_1\cap\mathcal{F}_2$ has kernels and cokernels.
