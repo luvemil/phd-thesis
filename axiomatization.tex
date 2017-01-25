@@ -9,9 +9,9 @@
   of $\mathcal{X}$ satisfying the following axioms:
 
   \begin{torsionaxioms}
-    \item $\mathbb{t}_1=(\mathcal{T}_1,\mathcal{F}_1)$ and $\mathbb{t}_2=(\mathcal{T}_2,\mathcal{F}_2)$ are respectively a left functorial and a
+    \item\label{ax:ct1} $\mathbb{t}_1=(\mathcal{T}_1,\mathcal{F}_1)$ and $\mathbb{t}_2=(\mathcal{T}_2,\mathcal{F}_2)$ are respectively a left functorial and a
     right functorial torsion pair \todo{define torsion pairs in additive categories}
-    \item $\mathcal{T}_2\subseteq \mathcal{T}_1$ (equiv. $\mathcal{F}_1\subseteq\mathcal{F}_2$)
+    \item\label{ax:ct2} $\mathcal{T}_2\subseteq \mathcal{T}_1$ (equiv. $\mathcal{F}_1\subseteq\mathcal{F}_2$)
     \item\label{ax:ct3} Any morphism $g:T_1\to T_1'$ in $\mathcal{T}_1$ iadmits a pseudocokernel $g^C:T_1'\to\PCok_\mathcal{X}(g)$,
     with $T_1'':=\PCok_\mathcal{X}(g)\in\mathcal{T}_1$, such that
     \begin{equation*}
@@ -21,7 +21,7 @@
       \end{tikzcd}
     \end{equation*}
     is an exact sequence of functors.
-    \varitem{^\ast} Dual of \ref{ax:ct3}.
+    \varitem{^\ast}\label{ax:ct3op} Dual of \ref{ax:ct3}. \ref{ax:ct3op}
   \end{torsionaxioms}
 \end{definition}
 
@@ -117,6 +117,19 @@ With these axioms we can prove that the heart has kernels and cokernels.
 \end{thm}
 
 \subsection{The case of an abelian category}
+
+Let's consider the case $\mathcal{X}=\mathcal{A}$ of an Abelian category with
+two torsion pairs $\mathbb{t}_i=(\mathcal{T}_i,\mathcal{F}_i)$ for $i=1,2$.
+Consider $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$.
+
+\begin{rmk}\label{rmk:abeliancats}
+  In the case of an Abelian category $\mathcal{X}=\mathcal{A}$, we have that
+  $\mathbb{t}$ is compatible if and only if $\mathcal{T}_2\subseteq\mathcal{T}_1$.
+\end{rmk}
+
+\begin{proof}
+  Let $\mathcal{T}_2\subseteq\mathcal{T}_1$, we need to show that
+\end{proof}
 
 % \begin{lemma}\label{sec2:lem6}
 %   The heart $\mathcal{H}=\mathcal{T}_1\cap\mathcal{F}_2$ has kernels and cokernels.
