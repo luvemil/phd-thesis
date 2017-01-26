@@ -40,7 +40,8 @@ satisfy $TC1-3,3^*$.
     \begin{tikzcd}
       T\arrow[tail]{r}\arrow[equal]{d}
         & \widehat{t}(M)\arrow[two heads]{r}\arrow{d}\arrow[from=dd,bend left=50,dotted]
-          & W\arrow{d}\\
+          \arrow[phantom,"\ulcorner",very near start]{dr}
+          & W\arrow[tail]{d}\\
       T \arrow[tail,crossing over]{r}
         & M\arrow[two heads]{r}
           & f_1(M)\\
@@ -56,7 +57,7 @@ satisfy $TC1-3,3^*$.
     \mathcal{A}(\widehat{T},\widehat{t}(M))\nto{\mathcal{A}(\widehat{T},\widehat{t}(M)\to M)}
       \mathcal{A}(\widehat{T},M)
   \end{equation*}
-  is surjective. But it is also injective, since $\Ker (\widehat{t}(M),M)=0$. Hence, it is an iso and $\widehat{t}$ is
+  is surjective. But it is also injective, since $\Ker (\widehat{t}(M)\to M)=0$. Hence, it is an iso and $\widehat{t}$ is
   right adjoint to $i$.\todo{functoriality should follow immediately}
 \end{proof}
 
@@ -151,10 +152,10 @@ satisfy $TC1-3,3^*$.
   We can build the pullback on the left and the pushout on the right as usual
   \begin{equation}\label{lem12:eq1}
     \begin{tikzcd}
-      F_1\arrow{r}\arrow{d}\arrow[phantom,"\ulcorner",very near start]{dr}
+      F_1\arrow{r}{f^K}\arrow{d}{u}\arrow[phantom,"\ulcorner",very near start]{dr}
         & H_1\arrow{r}{r}\arrow{d}{f}\arrow[phantom,"\lrcorner",very near end]{dr}
           & W_1\arrow{d}{s}\\
-      W_2\arrow{r}
+      W_2\arrow{r}{v}
         & H_2\arrow{r}{f^C}
           & T_2
     \end{tikzcd}
@@ -170,7 +171,7 @@ satisfy $TC1-3,3^*$.
           f \\ r
         \end{psmallmatrix}
       }
-        & H_1\oplus W_1 \arrow{r}{
+        & H_2\oplus W_1 \arrow{r}{
           \begin{psmallmatrix}
             f^C \amsamp s
           \end{psmallmatrix}
@@ -179,6 +180,10 @@ satisfy $TC1-3,3^*$.
             & 0
     \end{tikzcd}
   \end{equation}
+  \todo{$H_1\oplus T_2\cong H_2\cong W_1$
+  $\Rightarrow$ $T_2\in\mathcal{W}\ast\mathcal{F}$
+  $W'\into T_2\overset{0}{\onto} F'$, with
+  $W'\in\mathcal{W},T_2\in\mathcal{T}_2, F'\in\mathcal{F}_2$, hence $T_2\in\mathcal{W}$.}
 
   Since $f$ is both a mono and an epi in $\mathcal{H}$, then it is an iso and hence
   both a section and a retraction. Consider $g:H_2\to H_1$ such that
@@ -208,9 +213,9 @@ satisfy $TC1-3,3^*$.
           f \\ r
         \end{psmallmatrix}
       }
-        & H_1\oplus W_1 \arrow{r}{
+        & H_2\oplus W_1 \arrow{r}{
           \begin{psmallmatrix}
-            f^C \amsamp s
+            f^C \amsamp -s
           \end{psmallmatrix}
         }\arrow{d}{
           \begin{psmallmatrix}
@@ -251,7 +256,7 @@ satisfy $TC1-3,3^*$.
   $, that is $H_1$ is a direct summand of $H_2\oplus W_1$. Moreover, it means that
   $
     \begin{psmallmatrix}
-      g\amsamp \beta
+      f \\ r
     \end{psmallmatrix}
   $ is a section, that is the sequence in \eqref{lem12:eq2} is also exact on the left and
   the corresponding square in \eqref{lem12:eq1} is a pullback diagram.
