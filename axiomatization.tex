@@ -10,7 +10,7 @@
 
   \begin{torsionaxioms}
     \item\label{ax:ct1} $\mathbb{t}_1=(\mathcal{T}_1,\mathcal{F}_1)$ and $\mathbb{t}_2=(\mathcal{T}_2,\mathcal{F}_2)$ are respectively a left functorial and a
-    right functorial torsion pair \todo{define torsion pairs in additive categories}
+    right functorial torsion pair
     \item\label{ax:ct2} $\mathcal{T}_2\subseteq \mathcal{T}_1$ (equiv. $\mathcal{F}_1\subseteq\mathcal{F}_2$)
     \item\label{ax:ct3} Any morphism $g:T_1\to T_1'$ in $\mathcal{T}_1$ iadmits a pseudocokernel $g^C:T_1'\to\PCok_\mathcal{X}(g)$,
     with $T_1'':=\PCok_\mathcal{X}(g)\in\mathcal{T}_1$, such that
@@ -295,7 +295,77 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
     \mathcal{D}^{\leq 0}(R) &:= \{ X\in\mathcal{D}(R) \,|\,H^i(X)=0\text{ for } i>0\},\\
     \mathcal{D}^{\geq 0}(R) &:= \{ X\in\mathcal{D}(R) \,|\,H^i(x)=0\text{ for } i<0\}.
   \end{align*}
+
+  For any ideal $I\trianglelefteq R$, we have the TTF-triple $(\mathcal{C}_I,\mathcal{T}_I,\mathcal{F}_I)$
+  associated to $I$, where
+  \begin{align*}
+    \mathcal{C}_I &:= \{M\in\Mod{R}\,|\,IM=M\},\\
+    \mathcal{T}_I &:= \{M\in\Mod{R}\,|\,IM=0\}\cong \Mod{\frac{R}{I}},\\
+    \mathcal{F}_I &:= \{M\in\Mod{R}\,|\,Ix=0\text{ and }x\in M\Rightarrow x=0\}.
+  \end{align*}
+
+  Consider the t-structure (Happel-Reiten-Smalo) $(\mathcal{D}^{\leq 0}_{t_I}(R), \mathcal{D}^{\geq 0}_{t_I}(R))$
+  associated to the torsion pair $t_I=(\mathcal{C}_I,\mathcal{T}_I)$, where
+  \begin{align*}
+    \mathcal{D}^{\leq 0}_{t_I}(R) &:= \{ X\in\mathcal{D}^{\leq 0}(R)\,|\, H^0(X)\in\mathcal{C}_I \},\\
+    \mathcal{D}^{\geq 0}_{t_I}(R) &:= \{ X\in\mathcal{D}^{\geq 0}(R)\,|\, H^0(X)\in\mathcal{T}_I \}.
+  \end{align*}
+
+  It can be seen that $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ where
+  $\mathbb{t}_1:=(\mathcal{D}^{\leq 0}(R),\mathcal{D}^{\geq 1}(R))$ and
+  $\mathbb{T}_2:=(\mathcal{D}^{\leq 0}_{t_I}(R),\mathcal{D}^{\geq 1}_{t_I}(R))$, is a strongly
+  related torsion pair in $\mathcal{T}=\mathcal{D}(R)$.
 \end{example}
+
+We recall the following bijection given by A. Polishchuk, and in order to do that,
+for a t-structure $(\mathcal{U}_1,\mathcal{U}_1^\perp[1])$ in $\mathcal{T}$, we have the cohomological
+functor $H^0_1:\mathcal{T}\to \mathcal{H}_1:=\mathcal{U}_1\cap\mathcal{U}_1^\perp[1]$
+($\mathcal{H}_1$ is an abelian category).
+
+\begin{prop}[Polishchuk]\label{prop:2.7}
+  Let $(\mathcal{U}_1,\mathcal{U}_1^\perp[1])$ be a t-structure in a triangulated category.
+  Then we have a bijection (Polishchuk's bijection)
+  \begin{equation*}
+    \begin{tikzcd}
+      \left\{
+      \begin{array}{c}
+        \text{torsion pairs in} \\
+        \mathcal{H}_1=\mathcal{U}_1\cap \mathcal{U}_1^\perp[1]
+      \end{array}
+      \right\}
+      \arrow[leftrightarrow]{r}{\mathrm{Pol}_{\mathcal{H}_1}}
+        &
+        \left\{
+          \begin{array}{c}
+            \text{t-structures }
+            (\mathcal{U}_2,\mathcal{U}_2^\perp) \\
+            \text{ in } \mathcal{D}
+            \text{ satisfying } \\ \mathcal{U}_1[1]\subseteq \mathcal{U}_2\subseteq\mathcal{U}_1
+          \end{array}
+        \right\}\\
+      (\mathcal{X},\mathcal{Y})\arrow[mapsto]{r}
+        & (\mathcal{U}_2,\mathcal{U}_2^\perp[1])\\
+      (\mathcal{U}_2\cap\mathcal{H}_1,\mathcal{U}_2^\perp\cap\mathcal{H}_1)\arrow[mapsfrom]{r}
+        & (\mathcal{U}_2,\mathcal{U}_2^\perp[1])
+    \end{tikzcd}
+  \end{equation*}
+  where
+  \begin{align*}
+    \mathcal{U}_2 = \{X\in\mathcal{U}_1\,|\,H^0_1(X)\in\mathcal{X}\}\\
+    \mathcal{U}_2^\perp = \{Y\in\mathcal{U}_1^\perp\,|\,H^0_1(Y)\in\mathcal{Y}\}.
+  \end{align*}
+\end{prop}
+
+\begin{rmk}\label{rmk:2.8}
+  \begin{enumerate}[label=(\arabic*)]
+    \item\label{rmk:2.8:1} Note that $\mathrm{Pol}^{-1}_{\mathcal{H}_1}(\mathcal{U}_2,\mathcal{U}^\perp_2[1])=
+      (\mathcal{U}_2\cap\mathcal{U}_1^\perp[1],\mathcal{H})$, where
+      $\mathcal{H}:=\mathcal{U}_1\cap\mathcal{U}_2^\perp$.
+
+    \item By \ref{rmk:2.8:1}, it follows that $\mathcal{H}$ is a torsion free class in the abelian category
+      $\mathcal{H}_1:=\mathcal{U}_1\cap\mathcal{U}_1^\perp[1]$.
+  \end{enumerate}
+\end{rmk}
 
 \begin{thm}\label{thm:2.9}
   Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a related torsion pair in a triangulated
