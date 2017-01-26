@@ -342,9 +342,9 @@ pair $\mathcal{T}$ such that $\mathcal{A}[1]\subseteq\mathcal{A}$.
     \setcounter{enumi}{2}
     \item $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ is a related torsion pair in $\mathcal{T}$
       \begin{align*}
-        \Leftrightarrow \mathcal{U}_1[1]\subseteq\mathcal{U}_2\subseteq\mathcal{U}_1
-        \Leftrightarrow \mathcal{U}_2[1]\subseteq\mathcal{U}_1[1]\subseteq\mathcal{U}_2
-        \Leftrightarrow \mathbb{t}'=(\mathbb{t}_2,\mathbb{t}_1[1]) \text{ is a related torsion pair in }\mathcal{T}.
+        &\Leftrightarrow \mathcal{U}_1[1]\subseteq\mathcal{U}_2\subseteq\mathcal{U}_1\\
+        &\Leftrightarrow \mathcal{U}_2[1]\subseteq\mathcal{U}_1[1]\subseteq\mathcal{U}_2\\
+        &\Leftrightarrow \mathbb{t}'=(\mathbb{t}_2,\mathbb{t}_1[1]) \text{ is a related torsion pair in }\mathcal{T}.
       \end{align*}
     \item Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ is a related torsion pair in $\mathcal{T}$. In
       this case, we have
@@ -370,9 +370,88 @@ pair $\mathcal{T}$ such that $\mathcal{A}[1]\subseteq\mathcal{A}$.
   Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a related torsion pair in a triangulated category
   $\mathcal{T}$. Then, the following statements are equivalent:
   \begin{enumerate}[label=(\alph*)]
-    \item
+    \item For any distinguished triangle $V\to H_1\nto{f}H_2\nto{+}$, with
+    $f$ a morphism in $\mathcal{H}_{\mathbb{t}'}=\mathcal{T}_2\cap\mathcal{F}_1[1]$,
+    we have that $V\in\mathcal{F}_2$ implies $V\in\mathcal{F}_1$.
+    \item For any monomorphism $\alpha:H_1\into H_2$, in the abelian category
+    $\mathcal{H}_2:=\mathcal{T}_2\cap\mathcal{F}_2[1]$, with $H_1,H_2\in\mathcal{H}_{\mathbb{t}'}$,
+    we have that $\Coker_{\mathcal{H}_2}(\alpha)\in\mathcal{H}_{\mathbb{t}'}$.
+    \item $\mathcal{H}_{\mathbb{t}'}$ is closed under kernels and cokernels in
+    the abelian category $\mathcal{H}_2$.
+    \item $\mathcal{H}_{\mathbb{t}'}$ is an abelian category.
+    \item $\mathcal{H}_{\mathbb{t}'}$ is closed under quotients in $\mathcal{H}_2$.
   \end{enumerate}
 \end{corollary}
+
+We recall that a torsion pair $(\mathcal{T},\mathcal{F})$ in an abelian category
+$\mathcal{A}$ is cohereditary if the class $\mathcal{F}$ is closed under quotients
+in $\mathcal{A}$.
+
+\begin{definition}
+  For a triangulated category $\mathcal{T}$, we consider the following classes:
+  \begin{enumerate}
+    \item $RtAb(\mathcal{T}):=\{\text{related torsion pairs }\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)
+      \text{ in }\mathcal{T}\text{ s.t. }\mathcal{H}_\mathbb{t}\text{ is abelian}\}$;
+    \item
+      \begin{align*}
+        \mathrm{t-}stCoh(\mathcal{T}) &:=
+        \left\{
+        \begin{array}{c}
+          \text{pairs }(\overline{\mathbb{t}}_1,\tau)\text{ s.t. }
+          \overline{\mathbb{t}}_1\text{ is a t-structure in }\mathcal{T}\text{ and }
+          \tau\text{ is a}\\
+          \text{ cohereditary torsion pair in the abelian category } \\
+          \mathcal{H}_1:=\mathcal{U}_1\cap\mathcal{U}_1^\perp[1]
+        \end{array}
+        \right\};
+      \end{align*}
+    \item[1\rlap{$^\prime$}.] $RtAb^\prime(\mathcal{T}):=\{\text{related torsion pairs }\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)
+      \text{ in }\mathcal{T}\text{ s.t. }\mathcal{H}_{\mathbb{t}'}\text{ is abelian}\}$;
+    \item[2\rlap{$^\prime$}.]
+      \begin{align*}
+        \mathrm{t-}stCoh^\prime(\mathcal{T}) &:=
+        \left\{
+        \begin{array}{c}
+          \text{pairs }(\overline{\mathbb{t}}_2,\tau)\text{ s.t. }
+          \overline{\mathbb{t}}_2\text{ is a t-structure in }\mathcal{T}\text{ and }
+          \tau\text{ is a}\\
+          \text{ cohereditary torsion pair in the abelian category } \\
+          \mathcal{H}_2:=\mathcal{U}_2\cap\mathcal{U}_2^\perp[1]
+        \end{array}
+        \right\}.
+      \end{align*}
+  \end{enumerate}
+\end{definition}
+
+\begin{thm}\label{thm:2.11}
+  For a triangulated category $\mathcal{T}$, the following statements hold true.
+  \begin{enumerate}[label=(\alph*)]
+    \item There is a bijective correspondence
+      \begin{equation*}
+        \begin{tikzcd}[row sep=tiny]
+          RtAb(\mathcal{T})\arrow[leftrightarrow]{r}{\alpha}
+            & \mathrm{t}-stCoh(\mathcal{T})\\
+          \mathbb{t}\arrow[mapsto]{r}
+            & (\overline{\mathbb{t}}_1,\mathrm{Pol}^{-1}_{\mathcal{H}_1}(\overline{\mathbb{t}}_2))\\
+          (\mathbb{t}_1,\mathbb{t}_2)\arrow[mapsfrom]{r}
+            & (\overline{\mathbb{t}}_1,\tau)
+        \end{tikzcd}
+      \end{equation*}
+      where $\overline{\mathbb{t}}_2=\mathrm{Pol}_{\mathcal{H}_1}(\tau)$.
+    \item There is a bijective correspondence
+      \begin{equation*}
+        \begin{tikzcd}
+          RtAb^\prime(\mathcal{T})\arrow[leftrightarrow]{r}{\alpha'}
+            & \mathrm{t}-stCoh^\prime(\mathcal{T})\\
+          \mathbb{t}\arrow[mapsto]{r}
+            & (\overline{\mathbb{t}}_2,\mathrm{Pol}^{-1}_{\mathcal{H}_2}(\overline{\mathbb{t}}_1[1]))\\
+          (\mathbb{t}_1,\mathbb{t}_2)\arrow[mapsfrom]{r}
+            & (\overline{\mathbb{t}}_2,\tau)
+        \end{tikzcd}
+      \end{equation*}
+      where $\overline{\mathbb{t}}_1=\mathrm{Pol}_{\mathcal{H}_2}(\tau)[-1]$.
+  \end{enumerate}
+\end{thm}
 
 % \begin{lemma}\label{sec2:lem6}
 %   The heart $\mathcal{H}=\mathcal{T}_1\cap\mathcal{F}_2$ has kernels and cokernels.
