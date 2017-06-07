@@ -31,7 +31,7 @@ on which idempotents split.
   that $\mathbb{t}$ is functorial if it is right and left functorial.
 \end{definition}
 
-\begin{rmk}
+\begin{rmk}\label{rmk:1.1}
   Let $\mathbb{t}=(\mathcal{T},\mathcal{F})$ be a left functorial torsion pair in $\mathcal{X}$.
   Then
   \begin{enumerate}
@@ -44,13 +44,35 @@ on which idempotents split.
       \end{tikzcd}
     \end{equation*}
     \item[(b)] Let $g:T_1\to T_2$ be a morphism in $\mathcal{T}$, which admits a pseudocokernel
-    $g^C:T_2\to\PCok_\mathcal{T}(g)$ in $\mathcal{T}$. Then $g^c$ is a pseudocokernel of $g$
+    $g^C:T_2\to\PCok_\mathcal{T}(g)$ in $\mathcal{T}$. Then $g^C$ is a pseudocokernel of $g$
     in $\mathcal{X}$.
   \end{enumerate}
 \end{rmk}
 
 \begin{proof}
-  see Octavio's notes
+  \begin{enumerate}[label=(\alph*)]
+    \item\label{rmk:1.1:proof:a}  Since $(i,t)$ is an adjoint pair, we have a functorial isomorphism
+      \begin{equation*}
+        \Theta:\myhom{\mathcal{T}}{T',t(M)}\nto{\sim}\myhom{\mathcal{X}}{i(T'),M}=\myhom{\mathcal{X}}{T',M}.
+      \end{equation*}
+
+      Let $\alpha':=\Theta^{-1}(\alpha)$. Then, $\varepsilon_M\circ \alpha'=\Theta(\alpha')=\alpha$.
+    \item Let $X\in\mathcal{X}$ and $h:T_2\to X$ such that $hg=0$. Consider the commutative diagram
+    \begin{equation*}
+      \begin{tikzcd}
+        T_1\arrow{r}{g}
+          & T_2\arrow{r}{g^C}\arrow{d}{h}\arrow[dashed]{dr}{\exists h'}
+            & \PCok_\mathcal{T}(g)\arrow[dashed]{d}{\exists h''}\\
+          & X
+            & t(X)\arrow{l}{\varepsilon_X}.
+      \end{tikzcd}
+    \end{equation*}
+    Then, $h'\circ g=0$. In fact, $0=h\circ g=\varepsilon_X \circ h' \circ g$
+    and $\varepsilon_X\circ 0=0$, so, by \ref{rmk:1.1:proof:a}, $h'\circ g=0$.
+
+    Since $h'\circ g=0$, it follows that there is a map $h'':\PCok_\mathcal{T}(g)\to t(X)$
+    such that $h''\circ g^C=h'$. Finally, $h=(\varepsilon_X\circ h'')\circ g^C$.
+  \end{enumerate}
 \end{proof}
 
 The dual also holds.
