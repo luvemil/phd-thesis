@@ -34,8 +34,8 @@ on which idempotents split.
 \begin{rmk}\label{rmk:1.1}
   Let $\mathbb{t}=(\mathcal{T},\mathcal{F})$ be a left functorial torsion pair in $\mathcal{X}$.
   Then
-  \begin{enumerate}
-    \item[(a)] For any $M\in\mathcal{X}, T'\in\mathcal{T}$ and $\alpha\in\mathcal{X}(T',M)$ there
+  \begin{enumerate}[label=(\alph*)]
+    \item\label{rmk:1.1a} For any $M\in\mathcal{X}, T'\in\mathcal{T}$ and $\alpha\in\mathcal{X}(T',M)$ there
     is a unique $\alpha'\in\mathcal{X}(T',t(M))$ such that $\varepsilon_M\circ\alpha'=\alpha$, i.e.
     \begin{equation*}
       \begin{tikzcd}
@@ -43,7 +43,7 @@ on which idempotents split.
         t(M)\arrow{r}{\varepsilon_M}&M
       \end{tikzcd}
     \end{equation*}
-    \item[(b)] Let $g:T_1\to T_2$ be a morphism in $\mathcal{T}$, which admits a pseudocokernel
+    \item\label{rmk:1.1b} Let $g:T_1\to T_2$ be a morphism in $\mathcal{T}$, which admits a pseudocokernel
     $g^C:T_2\to\PCok_\mathcal{T}(g)$ in $\mathcal{T}$. Then $g^C$ is a pseudocokernel of $g$
     in $\mathcal{X}$.
   \end{enumerate}

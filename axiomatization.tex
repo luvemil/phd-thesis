@@ -98,12 +98,12 @@
     \end{equation*}
     with $T_1\in\mathcal{T}_1$ and $f_2(T_1)\in\mathcal{H}$ (by \cref{lem:1.2}).
     Since $H\in\mathcal{H}\subseteq \mathcal{F}_2$, by \ref{ax:ct3} there is a
-    unique $f':T_1\to H$ such that $f'f^C=g$. Since $\mathbb{t}_2$ is right functorial,
+    unique $f':T_1\to H$ such that $f'f^C=g$. By Remark \ref{rmk:1.1} \todo{Add a proper reference to part a of the rmk},
     there is a $f'':f_2(T_1)\to H$ making the diagram commute. Hence, $g=f''\circ \tilde{f}^C$.
 
     As for unicity, let $r:f_2(T_1)\to H$, such that $g=r\circ \tilde{f}^C$. Then,
     $(f''\circ\lambda_{2,T_1})\circ f^C = (r\circ \lambda_{2,T_1})\circ f^C$,
-    so $f''\circ \lambda_{2,T_1}=r\circ \lambda_{2,T_1}$ by $\ref{ax:ct3}$, and $f''=r$.
+    so $f''\circ \lambda_{2,T_1}=r\circ \lambda_{2,T_1}$ by $\ref{ax:ct3}$, and $f''=r$ by \emph{RMK1.1a}\todo{Add a proper reference}.
     \item Dual.
   \end{enumerate}
 \end{proof}
@@ -190,6 +190,31 @@ With these axioms we can prove that the heart has kernels and cokernels.
     \item $\mathcal{H}$ is an abelian category.
   \end{enumerate}
 \end{thm}
+
+\begin{proof}
+  By definition $\mathcal{H}$ is an additive subcategory of $\mathcal{X}$. In order to prove
+  that $(a)$ implies $(b)$ \todo{Check referencing in TeX} observe that
+  $\mathcal{H}$ is preabelian by \cref{prop:1.3}. To prove that $\mathcal{H}$ is abelian, we
+  just need to show that any monomorphism (resp. epimorphism) is the kernel (resp. cokernel) of some
+  morphism in $\mathcal{H}$.
+
+  Let $f:H_1\to H_2$ be a monomorphism in $\mathcal{H}$. By \ref{ax:ct3} and \ref{ax:ct3op} we can
+  consider the solid part of the commutative diagram
+  \begin{equation*}
+    \begin{tikzcd}
+      & H_1\arrow{r}{f}\arrow{d}{a}
+        & H_2\arrow{r}{f^C}\arrow[equal]{d}
+          & T_1 = \PCok_\mathcal{X}(f)\\
+      t_1(F_2)\arrow[dashed]{ur}{b}\arrow{r}{\varepsilon_{1,F_2}}\arrow{d}{\lambda_{2,T_1}}
+        & F_2=\PKer_\mathcal{X}(g)\arrow{r}{g^K}
+          & H_2\arrow{r}{g}
+            & f_2(T_1)
+    \end{tikzcd}
+  \end{equation*}
+  where $gf = \lambda_{2,T_1}(f^C f)=0$, so there exists $a:H_1\to F_2$. Note that $\exists \PKer_{\mathcal{F}_2}(f)\in\mathcal{F}_1$
+  since $f$ is a monomorphism in $\mathcal{H}$ (by \cref{prop:1.4}\ref{prop:1.4:a}). So
+  by CT4 \todo{Add proper reference} there is a map $b:t_1(F_2)\to H_1$ making the diagram commute.
+\end{proof}
 
 \subsection{The case of an abelian category}
 
