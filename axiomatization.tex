@@ -21,7 +21,7 @@
       \end{tikzcd}
     \end{equation*}
     is an exact sequence of functors.
-    \varitem{^\ast}\label{ax:ct3op} Dual of \ref{ax:ct3}. \ref{ax:ct3op}
+    \varitem{^\ast}\label{ax:ct3op} Dual of \ref{ax:ct3}.
   \end{torsionaxioms}
 \end{definition}
 
@@ -98,12 +98,12 @@
     \end{equation*}
     with $T_1\in\mathcal{T}_1$ and $f_2(T_1)\in\mathcal{H}$ (by \cref{lem:1.2}).
     Since $H\in\mathcal{H}\subseteq \mathcal{F}_2$, by \ref{ax:ct3} there is a
-    unique $f':T_1\to H$ such that $f'f^C=g$. By Remark \ref{rmk:1.1} \todo{Add a proper reference to part a of the rmk},
+    unique $f':T_1\to H$ such that $f'f^C=g$. By \cref{rmk:1.1}\ref{rmk:1.1a},
     there is a $f'':f_2(T_1)\to H$ making the diagram commute. Hence, $g=f''\circ \tilde{f}^C$.
 
     As for unicity, let $r:f_2(T_1)\to H$, such that $g=r\circ \tilde{f}^C$. Then,
     $(f''\circ\lambda_{2,T_1})\circ f^C = (r\circ \lambda_{2,T_1})\circ f^C$,
-    so $f''\circ \lambda_{2,T_1}=r\circ \lambda_{2,T_1}$ by $\ref{ax:ct3}$, and $f''=r$ by \emph{RMK1.1a}\todo{Add a proper reference}.
+    so $f''\circ \lambda_{2,T_1}=r\circ \lambda_{2,T_1}$ by $\ref{ax:ct3}$, and $f''=r$ by \cref{rmk:1.1}\ref{rmk:1.1a}
     \item Dual.
   \end{enumerate}
 \end{proof}
@@ -162,7 +162,7 @@
   is strong if the following axioms hold:
   \begin{torsionaxioms}
     \setcounter{enumi}{3}
-    \item Let $f:H_1\to H_2$ in $\mathcal{H}$ be such that there is a pseudokernel
+    \item\label{ax:ct4} Let $f:H_1\to H_2$ in $\mathcal{H}$ be such that there is a pseudokernel
     $\PKer_{\mathcal{F}_2}(f)\in\mathcal{F}_1$. Then, for the commutative diagram
     \begin{equation*}
       \begin{tikzcd}
@@ -176,7 +176,7 @@
       \end{tikzcd}
     \end{equation*}
     there exists a morphism $b:t_1(F_2)\to H_1$ such that $ab=\varepsilon_{1,F_2}$.
-    \varitem{^\ast} Dual
+    \varitem{^\ast}\label{ax:ct4op} Dual
   \end{torsionaxioms}
 \end{definition}
 
@@ -217,7 +217,7 @@ With these axioms we can prove that the heart has kernels and cokernels.
       \end{equation*}
       where $gf = \lambda_{2,T_1}(f^C f)=0$, so there exists $a:H_1\to F_2$. Note that $\exists \PKer_{\mathcal{F}_2}(f)\in\mathcal{F}_1$
       since $f$ is a monomorphism in $\mathcal{H}$ (by \cref{prop:1.4}\ref{prop:1.4:a}). So
-      by CT4 \todo{Add proper reference} there is a map $b:t_1(F_2)\to H_1$ making the diagram commute.
+      by \ref{ax:ct4} \todo{Add proper reference} there is a map $b:t_1(F_2)\to H_1$ making the diagram commute.
 
       We claim that $\Ker g = f$. Let $\alpha:H\to H_2$ be a morphism such that $g\alpha =0$. Since
       $F_2 = \PKer_\mathcal{X}(g)$, there is a morphism $\alpha':H\to F_2$ such that $g^K\alpha'=\alpha$.
@@ -240,8 +240,8 @@ With these axioms we can prove that the heart has kernels and cokernels.
       any morphism $\alpha:H \to H_2$ such that $g\alpha =0$ factors through $f$. To conclude that $f$ is
       a kernel of $g$, it suffice to observe that $f$ is a monomorphism, so $\alpha'''$ must be unique.
 
-    \item[$(b)\Rightarrow (a)$] Let $\mathcal{H}$ be an abelian category. We only check $(CT4)$ \todo{Fix reference}
-    since the proof of $(CT4)^\star$ is analogous.
+    \item[$(b)\Rightarrow (a)$] Let $\mathcal{H}$ be an abelian category. We only check \ref{ax:ct4} \todo{Fix reference}
+    since the proof of \ref{ax:ct4op} is analogous.
 
     Consider the solid part of the commutative diagram
     \begin{equation*}
@@ -260,7 +260,7 @@ With these axioms we can prove that the heart has kernels and cokernels.
     and $\mathcal{H}$ is abelian, we have that $f=\Ker \Coker (f)$. On the other hand, by
     \ref{rmk:1.1} $(a)$ there is $\beta:H_1\to t_1(F_2)$ such that $\varepsilon_{1,F_2}\beta = a$
     completing the diagram above. Since $f=\Ker \Coker(f)$, it follows that $\beta$ is
-    an isomorphism. Therefore, $(CT4)$ follows by setting $b:=\beta^{-1}$.
+    an isomorphism. Therefore, \ref{ax:ct4} follows by setting $b:=\beta^{-1}$.
   \end{enumerate}
 \end{proof}
 
