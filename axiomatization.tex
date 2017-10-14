@@ -436,6 +436,164 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
 \end{example}
 
 \begin{example}
+  Let $\mathcal{D}$ be a triangulated category with two $t$-structures
+  $(\mathcal{U}_1,\mathcal{U}_1^\perp)$ and $(\mathcal{U}_2,\mathcal{U}_2^\perp)$ such that
+  $\mathcal{U}_1[1]\subseteq\mathcal{U}_2\subseteq\mathcal{U}_1$. Then, these satisfy
+  axioms \textbf{TC1}-\textbf{TC3},\textbf{TC3$^*$}, hence $\mathcal{H}=\mathcal{U}_1\cap\mathcal{U}_2^\perp$ has
+  kernels and cokernels. Moreover, TFAE:
+  \begin{enumerate}
+    \item[1.a] \textbf{TC4} holds.
+    \item[1.b] If $V_1\to H_1\nto{f}\to H_2\nto{+}$ is a distinguished triangle such
+    that $H_1, H_2\in\mathcal{H}$ and $V_1\in\mathcal{U}_1^\perp$, then $V_1\in\mathcal{U}_2^\perp[-1]$.
+  \end{enumerate}
+  And, dually, there is an equivalence of the following:
+  \begin{enumerate}
+    \item[2.a] \textbf{TC4$^*$} holds.
+    \item[2.b]\label{ax:eqa} If $H_1\nto{f}H_2\to U_2\nto{+}$ is a distinguished triangle such
+    that $H_1,H_2\in\mathcal{H}$ and $U_2\in\mathcal{U}_2$, then $U_2\in\mathcal{U}_1[1]$.
+  \end{enumerate}
+\end{example}
+
+\begin{proof}[Proof of the equivalences in example 3]
+  Let's $\mathcal{D}$ be a triangulated category with two t-structures as in example 3. The pseudocokernel
+  of a morphism in $\mathcal{U}_1$ can be computed by taking the cone in $\mathcal{D}$, i.e. given a morphism
+  $f:U_1\to U_1'$ in $\mathcal{U}_1$ we can compute a pseudocokernel in $\mathcal{U}_1$ by completing $f$
+  to a triangle
+  \begin{equation*}
+    U_1\nto{f}U_1'\to \mathrm{Cone}(f)\nto{+}.
+  \end{equation*}
+  Moreover, this pseudocokernel satisfies \textbf{TC3}.
+
+  Now, assume that \textbf{TC1}-\textbf{TC3},\textbf{TC3*} are satisfied together with axiom
+  \textbf{1.b}, and consider the solid part of the diagram as in \textbf{TC4}:
+  \begin{equation*}
+    \begin{tikzcd}
+      \mathrm{Cone}(f)[-1]\arrow{r}{f^K}
+        & H_1\arrow{r}{f}\arrow{d}{\alpha}
+          & H_1\arrow{r}{f^C}\arrow[equal]{d}
+            & \mathrm{Cone}(f)\arrow{d}{\lambda}\\
+      \tau_{\mathcal{U}_1}(V_2)\arrow{r}{\varepsilon}\arrow[dotted]{ur}{\beta}
+        & V_2\arrow{r}
+          & H_2\arrow{r}
+            & \tau^{\mathcal{U}_2^\perp}\mathrm{Cone}(f)
+    \end{tikzcd}
+  \end{equation*}
+  with $\mathrm{Cone}(f)[-1]\in\mathcal{U}_1^\perp$ and where the upper row is a
+  distinguished triangle. By \textbf{1.b} then it belongs
+  to $\mathcal{U}_2^\perp[-1]$, i.e. $\mathrm{Cone}(f)\in\mathcal{U}_2^\perp$, so
+  $\lambda$ is an iso, conseguently $\alpha$ is an iso and so is $\varepsilon$, so
+  there exist a map $\beta=\alpha^{-1}\circ\varepsilon$ making the diagram commute, that
+  is \textbf{TC4} holds.
+
+  Conversely, assume that \textbf{TC1}-\textbf{TC3},\textbf{TC3*} are satisfied together with
+  \textbf{TC4}. Consider again the solid part of the diagram
+  \begin{equation*}
+    \begin{tikzcd}
+      \mathrm{Cone}(f)[-1]\arrow{r}{f^K}\arrow{d}{\lambda[-1]}
+        & H_1\arrow{r}{f}\arrow{d}{\alpha}
+          & H_1\arrow{r}{f^C}\arrow[equal]{d}
+            & \mathrm{Cone}(f)\arrow{d}{\lambda}\\
+      \tau_{\mathcal{U}_2^\perp}(\mathrm{Cone}(f))[-1]\arrow{r}
+        & V_2\arrow{r}
+          & H_2\arrow{r}
+            & \tau^{\mathcal{U}_2^\perp}\mathrm{Cone}(f)\\
+        & \tau_{\mathcal{U}_1}(V_2)\arrow{u}{\varepsilon}\arrow[dotted, crossing over, bend left=70]{uu}[near end,']{\beta}
+        & &
+    \end{tikzcd}
+  \end{equation*}
+  with $\mathrm{Cone}(f)[-1]\in\mathcal{U}_1^\perp$. Neeman \todo{Add reference} guarantees
+  that $\alpha$ can be taken so that the square on the left is a pullback. Axiom \textbf{TC4}
+  gives the existence of $\beta:\tau_{\mathcal{U}_1}(V_2)\to H_1$ such that $\alpha\circ\beta=\varepsilon$.
+
+  Since $\tau_{\mathcal{U}_1}$ is a functor, there is also a morphism
+  $\tau_{\mathcal{U}_1}(\alpha):\tau_{\mathcal{U}_1}(H_1)=H_1\to \tau_{\mathcal{U}_1}(V_2)$ such that
+  $\varepsilon\circ\tau_{\mathcal{U}_1}(\alpha)=\alpha$, hence
+  $\varepsilon\circ\tau_{\mathcal{U}_1}(\alpha)\circ\beta = \varepsilon$. By the functoriality of
+  the torsion pair $(\mathcal{U}_1,\mathcal{U}_1^\perp)$, this means that
+  $\tau_{\mathcal{U}_1}(\alpha)\circ\beta=1_{\tau_{\mathcal{U}_1}(V_2)}$. Then, $\mathcal{\beta}$ is a section.
+
+  Hence, we can write $\tau_{\mathcal{U}_1}(\alpha):H_1\to \tau_{\mathcal{U}_1}(V_2)$
+  as
+  \begin{equation*}
+    \begin{tikzcd}
+      \tau_{\mathcal{U}_1}(\alpha):\tau_{\mathcal{U}_1}(V_2)\oplus H_1'
+      \arrow{r}{
+          \begin{psmallmatrix}
+            \ast \amsamp 0
+          \end{psmallmatrix}
+          }
+        & \tau_{\mathcal{U}_1}(V_2)
+    \end{tikzcd}
+  \end{equation*}
+  for some $H_1'\underset{\oplus}{<} H_1$ such that
+  $\alpha$ vanishes on $H_1'$. If we consider the solid part of the diagram
+  \begin{equation*}
+    \begin{tikzcd}
+      & H_1'\arrow[dashed]{dl}
+      \arrow{d}{
+        \begin{psmallmatrix}
+          1 \\ 0
+        \end{psmallmatrix}
+      }\arrow{dr}{0}
+        & & &\\
+      \mathrm{Cone}(\tau_{\mathcal{U}_1}(\alpha))[-1]\arrow{r}
+        & H_1\arrow{r}{\tau_{\mathcal{U}_1}(\alpha)}
+          & \tau_{\mathcal{U}_1}(V_2)\arrow[dashed]{r}{+}
+            & {}
+    \end{tikzcd}
+  \end{equation*}
+  we can construct the dashed arrow, and the fact that the triangle commutes means
+  that $H_1'\underset{\oplus}{<}\mathrm{Cone}(\tau_{\mathcal{U}_1}(\alpha))[-1]$.
+
+  Observe that $\mathrm{Cone}(\alpha)=\mathrm{Cone}(\lambda)[-1]$, since
+  the square
+  \begin{equation*}
+    \begin{tikzcd}
+      \mathrm{Cone}(f)[-1]\arrow{r}{f^K}\arrow{d}{\lambda[-1]}
+        & H_1\arrow{d}{\alpha} \\
+      \tau_{\mathcal{U}_2^\perp}(\mathrm{Cone}(f))[-1]\arrow{r}
+        & V_2
+    \end{tikzcd}
+  \end{equation*}
+  is a pullback. Moreover, $\mathrm{Cone}(\lambda)[-1] = (\tau_{\mathcal{U}_2}(\mathrm{Cone}(f))[1])[-1]
+  =\tau_{\mathcal{U}_2}(\mathrm{Cone}(f))$. Hence, $\mathrm{Cone}(\alpha)\in \mathcal{U}_2$ and
+  $\tau^{\mathcal{U}_1^\perp}(\mathrm{Cone}(\alpha))=0$, that is,
+  $\mathrm{Cone}(\alpha)\in\mathcal{U}_1$, and since there is a distinguished triangle
+  \begin{equation*}
+    H_1\nto{\alpha} V_2\to \mathrm{Cone}(\alpha)\nto{+}
+  \end{equation*}
+  with $H_1,\mathrm{Cone}(\alpha)\in\mathcal{U}_1$ it follows that
+  $V_2\in\mathcal{U}_1$. Hence, $\tau_{\mathcal{U}_1}(V_2)\cong V_2$.
+
+  We can then write $V_2\underset{\oplus}{<}H_1$ and consider the commutative diagram
+  \begin{equation*}
+    \begin{tikzcd}
+      H_1 \cong H_1'\oplus V_2\arrow{r}{
+        \begin{psmallmatrix}
+          f' \amsamp \tilde{f}
+        \end{psmallmatrix}
+      }\arrow{d}{
+        \begin{psmallmatrix}
+          0 \amsamp 1
+        \end{psmallmatrix}
+      }
+        & H_2\arrow[equal]{d}\\
+      V_2\arrow{r}
+        & H_2
+    \end{tikzcd}
+  \end{equation*}
+  so $f'=0$. Hence, the inclusion $
+  \begin{psmallmatrix}
+    1 \\ 0
+  \end{psmallmatrix}:H_1'\to H_1'\oplus V_2$ can be lifted to
+  $\mathrm{Cone}(f)[-1]$ and $H_1'\underset{\oplus}{<}\mathrm{Cone}(f)[-1]$.
+  Since $\mathrm{Cone}(f)[-1]\in \mathcal{U}_1^\perp$, so does $H_1'$. Similarly,
+  $H_1'\in\mathcal{U}_1$ because $H_1\in\mathcal{U}_1$. Hence, $H_1'=0$ and $\alpha:H_1\to V_2$ is an iso.
+  The same follows for $\lambda$. Therefore, $\mathrm{Cone}(f)\in\mathcal{U}_2^\perp$ which
+  proves \textbf{1.b}.
+\end{proof}
+
+\begin{example}
   Let $R$ be any (associative with 1) ring. Consider the triangulated category $\mathcal{T}:=\mathcal{D}(R)$.
   The derived category $\mathcal{D}(R)$ has the so called natural t-structure
   $(\mathcal{D}^{\leq 0}(R),\mathcal{D}^{\geq}(R))$ where
