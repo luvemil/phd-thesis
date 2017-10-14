@@ -439,16 +439,16 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
   Let $\mathcal{D}$ be a triangulated category with two $t$-structures
   $(\mathcal{U}_1,\mathcal{U}_1^\perp)$ and $(\mathcal{U}_2,\mathcal{U}_2^\perp)$ such that
   $\mathcal{U}_1[1]\subseteq\mathcal{U}_2\subseteq\mathcal{U}_1$. Then, these satisfy
-  axioms \textbf{TC1}-\textbf{TC3},\textbf{TC3$^*$}, hence $\mathcal{H}=\mathcal{U}_1\cap\mathcal{U}_2^\perp$ has
+  axioms \ref{ax:ct1}-\ref{ax:ct3},\ref{ax:ct3op}, hence $\mathcal{H}=\mathcal{U}_1\cap\mathcal{U}_2^\perp$ has
   kernels and cokernels. Moreover, TFAE:
   \begin{enumerate}
-    \item[1.a] \textbf{TC4} holds.
-    \item[1.b] If $V_1\to H_1\nto{f}\to H_2\nto{+}$ is a distinguished triangle such
+    \item[1.a] \ref{ax:ct4} holds.
+    \item[1.b] If $V_1\to H_1\nto{f} H_2\nto{+}$ is a distinguished triangle such
     that $H_1, H_2\in\mathcal{H}$ and $V_1\in\mathcal{U}_1^\perp$, then $V_1\in\mathcal{U}_2^\perp[-1]$.
   \end{enumerate}
   And, dually, there is an equivalence of the following:
   \begin{enumerate}
-    \item[2.a] \textbf{TC4$^*$} holds.
+    \item[2.a] \ref{ax:ct4op} holds.
     \item[2.b]\label{ax:eqa} If $H_1\nto{f}H_2\to U_2\nto{+}$ is a distinguished triangle such
     that $H_1,H_2\in\mathcal{H}$ and $U_2\in\mathcal{U}_2$, then $U_2\in\mathcal{U}_1[1]$.
   \end{enumerate}
@@ -462,10 +462,10 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
   \begin{equation*}
     U_1\nto{f}U_1'\to \mathrm{Cone}(f)\nto{+}.
   \end{equation*}
-  Moreover, this pseudocokernel satisfies \textbf{TC3}.
+  Moreover, this pseudocokernel satisfies \ref{ax:ct3}.
 
-  Now, assume that \textbf{TC1}-\textbf{TC3},\textbf{TC3*} are satisfied together with axiom
-  \textbf{1.b}, and consider the solid part of the diagram as in \textbf{TC4}:
+  Now, assume that \ref{ax:ct1}-\ref{ax:ct3},\ref{ax:ct3op} are satisfied together with axiom
+  \textbf{1.b}, and consider the solid part of the diagram as in \ref{ax:ct4}:
   \begin{equation*}
     \begin{tikzcd}
       \mathrm{Cone}(f)[-1]\arrow{r}{f^K}
@@ -483,10 +483,10 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
   to $\mathcal{U}_2^\perp[-1]$, i.e. $\mathrm{Cone}(f)\in\mathcal{U}_2^\perp$, so
   $\lambda$ is an iso, conseguently $\alpha$ is an iso and so is $\varepsilon$, so
   there exist a map $\beta=\alpha^{-1}\circ\varepsilon$ making the diagram commute, that
-  is \textbf{TC4} holds.
+  is \ref{ax:ct4} holds.
 
-  Conversely, assume that \textbf{TC1}-\textbf{TC3},\textbf{TC3*} are satisfied together with
-  \textbf{TC4}. Consider again the solid part of the diagram
+  Conversely, assume that \ref{ax:ct1}-\ref{ax:ct3},\ref{ax:ct3op} are satisfied together with
+  \ref{ax:ct4}. Consider again the solid part of the diagram
   \begin{equation*}
     \begin{tikzcd}
       \mathrm{Cone}(f)[-1]\arrow{r}{f^K}\arrow{d}{\lambda[-1]}
@@ -502,7 +502,7 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
     \end{tikzcd}
   \end{equation*}
   with $\mathrm{Cone}(f)[-1]\in\mathcal{U}_1^\perp$. Neeman \todo{Add reference} guarantees
-  that $\alpha$ can be taken so that the square on the left is a pullback. Axiom \textbf{TC4}
+  that $\alpha$ can be taken so that the square on the left is a pullback. Axiom \ref{ax:ct4}
   gives the existence of $\beta:\tau_{\mathcal{U}_1}(V_2)\to H_1$ such that $\alpha\circ\beta=\varepsilon$.
 
   Since $\tau_{\mathcal{U}_1}$ is a functor, there is also a morphism
