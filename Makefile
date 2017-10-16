@@ -10,7 +10,5 @@ TEXOP=-output-directory $(BDIR)
 
 all: torsion_theories
 
-new: general_torsion
-
 clean:
 	rm *.aux *.bcf *.log *.blg *.bbl *.out *.run.xml
