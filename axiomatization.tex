@@ -1,161 +1,8 @@
 \clearpage
 
-\section{Axiomatization}
 
-\begin{definition}
-  Let $\mathcal{X}$ be an additive category with pseudokernels and pseudocokernels, a \emph{compatible}
-  torsion pair $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ in $\mathcal{X}$ consists of the two pairs
-  $\mathbb{t}_1=(\mathcal{T}_1,\mathcal{F}_1)$ and $\mathbb{t}_2=(\mathcal{T}_2,\mathcal{F}_2)$ of full subcategories
-  of $\mathcal{X}$ satisfying the following axioms:
+\subsection{Abelian Nakaoka contexts}
 
-  \begin{torsionaxioms}
-    \item\label{ax:ct1} $\mathbb{t}_1=(\mathcal{T}_1,\mathcal{F}_1)$ and $\mathbb{t}_2=(\mathcal{T}_2,\mathcal{F}_2)$ are respectively a left functorial and a
-    right functorial torsion pair
-    \item\label{ax:ct2} $\mathcal{T}_2\subseteq \mathcal{T}_1$ (equiv. $\mathcal{F}_1\subseteq\mathcal{F}_2$)
-    \item\label{ax:ct3} Any morphism $g:T_1\to T_1'$ in $\mathcal{T}_1$ admits a pseudocokernel $g^C:T_1'\to\PCok_\mathcal{X}(g)$,
-    with $T_1'':=\PCok_\mathcal{X}(g)\in\mathcal{T}_1$, such that
-    \begin{equation*}
-      \begin{tikzcd}
-        0\arrow{r} &(T_1'',-)_{|\mathcal{F}_2}\arrow{r}{(g^C,-)}
-        & (T_1',-)_{|\mathcal{F}_2}\arrow{r}{(g,-)}& (T_1,-)_{|\mathcal{F}_2}
-      \end{tikzcd}
-    \end{equation*}
-    is an exact sequence of functors.
-    \varitem{^\ast}\label{ax:ct3op} Dual of \ref{ax:ct3}.
-  \end{torsionaxioms}
-\end{definition}
-
-\begin{notation}
-  In the case of a compatible torsion pair $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ in $\mathcal{X}$,
-  we have the adjoint pairs
-  \begin{equation*}
-    \begin{tikzcd}
-      (i_1,t_1):\mathcal{T}_1\arrow[hook, shift left]{r}{i_1}
-        & \mathcal{X}\arrow[shift left]{l}{t_1}
-        & \mathrm{and}
-        & (t_2,j_2):\mathcal{F}_2\arrow[hook, shift right]{r}[']{j_2}
-          & \mathcal{X}\arrow[shift right]{l}[']{t_2}
-    \end{tikzcd}
-  \end{equation*}
-
-  In this case there are also the counit $\varepsilon_{1,M}:t_1(M)\to M$ and the
-  unit $\lambda_{2,M}:M\to f_2(M)$. The heart of $\mathbb{t}$ is defined as
-  $\mathcal{H}=\mathcal{H}_\mathbb{t}:=\mathcal{T}_1\cap\mathcal{F}_2$.
-\end{notation}
-
-\begin{lemma}\label{lem:1.2}
-  Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a compatible torsion pair in $\mathcal{X}$.
-  Then the following statements hold true.
-  \begin{enumerate}[label=(\alph*)]
-    \item $\mathcal{F}_1\cap\mathcal{T}_2=0$,
-    \item $f_2(\mathcal{T}_1)\subseteq\mathcal{H}$ and $t_1(\mathcal{F}_2)\subseteq\mathcal{H}$.
-  \end{enumerate}
-\end{lemma}
-
-\begin{proof}
-  \begin{enumerate}[label=(\alph*)]
-    \item Since $\mathcal{T}_2\subseteq\mathcal{T}_1$, we have $\mathcal{F}_1\cap\mathcal{T}_2\subseteq \mathcal{F}_1\cap\mathcal{T}_1=0$.
-    \item Let $T_2\in\mathcal{T}_2$ and $F_2\in\mathcal{F}_2$. Then,
-    \begin{equation*}
-      \myhom{\mathcal{X}}{T_2,t_1(F_2)}\cong \myhom{\mathcal{X}}{T_2,F_2}=0.
-    \end{equation*}
-    Hence, $t_1(F_2)\in\mathcal{T}_2^\perp = \mathcal{F}_2$. An analogous proof shows that $f_2(\mathcal{T}_1)\subseteq\mathcal{T}_1$.
-  \end{enumerate}
-\end{proof}
-
-\begin{prop}\label{prop:1.3}
-  Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a compatible torsion pair in $\mathcal{X}$ and
-  $f:H_1\to H_2$ be a morphism in $\mathcal{H}$. Then
-  \begin{enumerate}[label=(\alph*)]
-    \item\label{prop:1.3:a} if $f^C:H_2\to T_1$ is the pseudocokernel of $f$, given by \ref{ax:ct3}
-    and $\lambda_{2,T_1}:T_1\to f_2(T_1)$, then
-    \begin{equation*}
-      \Coker(H_1\nto{f}H_2) = (H_2\nto{\tilde{f}^C}f_1(T_1))
-    \end{equation*}
-    in $\mathcal{H}$, where $\tilde{f}^C:=\lambda_{2,T_1}\circ f^C$;
-    \item\label{prop:1.3:b} if $f^K:F_2\to H_1$ is the pseudokernel of $f$, given by \ref{ax:ct3op}%$^\ast$
-    and $\varepsilon_{1,F_2}:t_1(F_2)\to F_2$, then
-    \begin{equation*}
-      \Ker(H_1\nto{f} H_2) = (t_1(F_2)\nto{\tilde{f}^K}H_1)
-    \end{equation*}
-    in $\mathcal{H}$, where $\tilde{f}^K=f^K\circ \varepsilon_{1,F_2}$.
-  \end{enumerate}
-\end{prop}
-
-\begin{proof}
-  \begin{enumerate}[label=(\alph*)]
-    \item Let $g:H_2\to H$ in $\mathcal{H}$ such that $gf=0$. And consider the solid part of
-    the following diagram
-    \begin{equation*}
-      \begin{tikzcd}
-        H_1\arrow{r}{f}
-          & H_2\arrow{r}{f^C}\arrow{d}{g}
-            & T_1\arrow[dashed]{dl}[description]{f'}\arrow{r}{\lambda_{2,T_1}}
-              & f_2(T_1)\arrow[dashed]{dll}[description]{f''}\\
-          & H
-            & &
-      \end{tikzcd}
-    \end{equation*}
-    with $T_1\in\mathcal{T}_1$ and $f_2(T_1)\in\mathcal{H}$ (by \cref{lem:1.2}).
-    Since $H\in\mathcal{H}\subseteq \mathcal{F}_2$, by \ref{ax:ct3} there is a
-    unique $f':T_1\to H$ such that $f'f^C=g$. By \cref{rmk:1.1}\ref{rmk:1.1a},
-    there is a $f'':f_2(T_1)\to H$ making the diagram commute. Hence, $g=f''\circ \tilde{f}^C$.
-
-    As for unicity, let $r:f_2(T_1)\to H$, such that $g=r\circ \tilde{f}^C$. Then,
-    $(f''\circ\lambda_{2,T_1})\circ f^C = (r\circ \lambda_{2,T_1})\circ f^C$,
-    so $f''\circ \lambda_{2,T_1}=r\circ \lambda_{2,T_1}$ by $\ref{ax:ct3}$, and $f''=r$ by \cref{rmk:1.1}\ref{rmk:1.1a}
-    \item Dual.
-  \end{enumerate}
-\end{proof}
-
-\begin{prop}\label{prop:1.4}
-  Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a compatible torsion pair in $\mathcal{X}$. Then, for any $f:H\to H'$
-  in $\mathcal{H}$ we have that:
-  \begin{enumerate}[label=(\alph*)]
-    \item\label{prop:1.4:a} $f$ is a monomorphism in $\mathcal{H}$ if and only if there is a pseudokernel
-    $\PKer_{\mathcal{F}_2}(f)\in\mathcal{F}_1$;
-    \item\label{prop:1.4:b} $f$ is an epimorphism in $\mathcal{H}$ if and only if there is a pseudocokernel
-    $\PCok_{\mathcal{T}_1}(f)\in\mathcal{T}_2$.
-  \end{enumerate}
-\end{prop}
-
-\begin{proof}
-  \begin{enumerate}[label=(\alph*)]
-    \item Let $f:H\to H'$ be a morphism in $\mathcal{H}$. By \cref{prop:1.3:b} there is a diagram
-    \begin{equation*}
-      \begin{tikzcd}
-        F_2\arrow{r}{f^K}
-          & H\arrow{r}{f}
-            & H'\\
-        t_1{F_2}\arrow{u}{\varepsilon_{1,F_2}}\arrow{ur}{\tilde{f}^K}
-      \end{tikzcd}
-    \end{equation*}
-    with $\Ker(H\nto{f} H') = (t_1(F_2)\nto{\tilde{f}^K}H)$.
-
-    Assume that $f$ is a monomorphism, then $t_1(F_2)=0$, so $0=\myhom{\mathcal{X}}{Z,t_1(F_2)}\cong
-    \myhom{\mathcal{X}}{Z,F_2}$ for all $Z\in\mathcal{T}_1$. Hence, $F_2\in\mathcal{F}_1$.
-
-    Conversely, let $f':F_1\to H$ be a pseudokernel of $f$ in $\mathcal{F}_2$, with $F_1\in\mathcal{F}_1$. Consider the
-    solid part of the diagram
-    \begin{equation*}
-      \begin{tikzcd}
-        t_1(F_2)\arrow{d}{\varepsilon_{1,F_2}}\arrow{dr}{\tilde{f}^K}
-        & &\\
-      F_2\arrow[dashed,shift right]{d}[']{u}\arrow{r}{f^K}
-        & H\arrow{r}{f}
-          & H'\\
-      F_1\arrow[dashed,shift right]{u}[']{v}\arrow{ur}{f'}
-        & &.
-      \end{tikzcd}
-    \end{equation*}
-    Since $f^K$ and $f'$ are pseudokernel of $f$ in $\mathcal{F}_2$, there exist $u$ and $v$ such
-    that $f'=f^K\circ v$ and $f^K=f'\circ u$. Therefore, $f^K=f^K\circ v\circ u$, and so
-    $\tilde{f}^K=f^K\circ\varepsilon_{1,F_2}=f^K\circ v\circ u\circ\varepsilon_{1,F_2}$. Notice
-    that $u\circ \varepsilon_{1,F_2}=0$ since $\myhom{\mathcal{X}}{\mathcal{T}_1,\mathcal{F}_1}=0$.
-    Thus, $f$ has the zero morphism as its kernel in $\mathcal{H}$, i.e. $f$ is a monomorphism.
-    \item Dual.
-  \end{enumerate}
-\end{proof}
 
 \begin{definition}
   A compatible torsion pair $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ in $\mathcal{X}$
@@ -264,6 +111,22 @@ With these axioms we can prove that the heart has kernels and cokernels.
   \end{enumerate}
 \end{proof}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Particular cases (t\'itulo provisional)}
 \subsection{The case of an abelian category}
 
 Let's consider the case $\mathcal{X}=\mathcal{A}$ of an Abelian category with
@@ -371,7 +234,7 @@ Consider $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$.
   \end{enumerate}
 \end{thm}
 
-\subsection{Related torsion pairs in triangulated categories}
+\subsection{Twin torsion pairs in triangulated categories}
 
 Let $\mathcal{X}=\mathcal{T}$ be a triangulated category on which idempotents split.
 We start by recalling the definition of a t-structure in $\mathcal{T}$.

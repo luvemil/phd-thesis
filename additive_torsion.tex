@@ -1,78 +1,262 @@
 \clearpage
 
-\section{Torsion pairs}
+\section{Nakaoka contexts in additive categories}
 
-We fix an additive category $\mathcal{X}$ with pseudokernels and pseudocokernels
-on which idempotents split.
+Let $\mathcal{X}$ be a pointed category. Recall that, given a map $\phi\colon X\to Y$, a map $\psi\colon Y\to Z$ such that $\psi\phi=0$ is said to be a {\em pseudocokernel} for $\phi$ if any other morphism $\psi'\colon Y\to Z'$ such that $\psi'\phi=0$ factors (not necessarily uniquely) through $\psi$. Pseudokernels can be defined dually.
+
+\medskip\noindent
+{\bf Convention.} We fix  trough this section an additive category $\mathcal{X}$ where  idempotents split, and in which any morphism has at least a pseudokernel and a pseudocokernel.
+
+\medskip
+In this section, after some generalities about torsion pairs, we introduce the notion of a ``Nakaoka context" in $\mathcal X$ and we associate to it a full subcategory $\mathcal H$ of $\mathcal X$, called the heart. We then give conditions on a given Nakaoka context for the heart to be pre-Abelian, semi-Abelian, integral and, lastly, Abelian. 
+
+\subsection{Generalities on torsion pairs}
+
+For a class of objects $\mathcal A\subseteq \mathcal X$ we introduce the following notations
+\[
+\mathcal A^\perp = \{X\in\mathcal{X}:\mathcal{X}(\mathcal A,X)=0\}\quad \text{ and }\quad {^\perp\mathcal A} = \{X\in\mathcal{X}:\mathcal{X}(X,\mathcal A)=0\}.
+\]
+In the following definition we recall the concept of torsion pair in $\mathcal X$, which is just an adaptation of the notion of torsion pair in Abelian categories to our broader context:
 
 \begin{definition}
-  A pair $\mathbb{t}=(\mathcal{T},\mathcal{F})$ of full subcategories of $\mathcal{X}$
-  is a torsion pair in $\mathcal{X}$ if:
-  \begin{enumerate}
-    \item
-    \begin{align*}
-      \mathcal{F}&=\mathcal{T}^\perp = \{X\in\mathcal{X}\,|\,\mathcal{X}(\mathcal{T},X)=0\},\\
-      \mathcal{T}&={^\perp\mathcal{F}} = \{X\in\mathcal{X}\,|\,\mathcal{X}(X,\mathcal{F})=0\};
-    \end{align*}
-    \item FOr each $M\in\mathcal{X}$ there is a pseudokernel-pseudocokernel sequence
-    \begin{equation*}
-      \begin{tikzcd}
-        T_M\arrow{r}{\varepsilon_M}& M\arrow{r}{\lambda_M}&F^M
-      \end{tikzcd}
-    \end{equation*}
-    where $T_M\in\mathcal{T}$ and $F^M\in\mathcal{F}$.
-  \end{enumerate}
-
-  If in addition the assignment $M\mapsto t(M) :=T_M$ (resp. $M\mapsto f(M):=F^M)$ is
-  functorial and defines an adjoint pair $(i,t)$ (resp. $(f,j)$), where $i:\mathcal{T}\into \mathcal{X}$
-  (resp. $j:\mathcal{F}\into \mathcal{X}$) is the inclusion functor, then we say that
-  $\mathbb{t}$ is left (resp. right) functorial. In such a case,
-  $\varepsilon$ (resp. $\lambda$) is the counit (resp. unit) of the given adjoint pair. We say
-  that $\mathbb{t}$ is functorial if it is right and left functorial.
+A pair $\mathbb{t}=(\mathcal{T},\mathcal{F})$ of full subcategories of $\mathcal{X}$ is  a {\em torsion pair} if:
+\begin{enumerate}
+\item[\rm (TP.1)] $\mathcal{F}=\mathcal{T}^\perp$ and $\mathcal{T}={^\perp\mathcal{F}}$;
+\item[\rm (TP.2)] given $X\in\mathcal{X}$ there is a pseudokernel-pseudocokernel sequence
+\begin{equation*}
+\begin{tikzcd}
+T_X\arrow{r}{\varepsilon_X}& X\arrow{r}{\lambda_X}&F^X,
+\end{tikzcd}
+\end{equation*}
+where $T_X\in\mathcal{T}$ and $F^X\in\mathcal{F}$.
+\end{enumerate}
 \end{definition}
 
-\begin{rmk}\label{rmk:1.1}
-  Let $\mathbb{t}=(\mathcal{T},\mathcal{F})$ be a left functorial torsion pair in $\mathcal{X}$.
-  Then
-  \begin{enumerate}[label=(\alph*)]
-    \item\label{rmk:1.1a} For any $M\in\mathcal{X}, T'\in\mathcal{T}$ and $\alpha\in\mathcal{X}(T',M)$ there
-    is a unique $\alpha'\in\mathcal{X}(T',t(M))$ such that $\varepsilon_M\circ\alpha'=\alpha$, i.e.
-    \begin{equation*}
-      \begin{tikzcd}
-        & T'\arrow[dashed]{ld}[']{\exists!\,\alpha'}\arrow{d}{\alpha}\\
-        t(M)\arrow{r}{\varepsilon_M}&M
-      \end{tikzcd}
-    \end{equation*}
-    \item\label{rmk:1.1b} Let $g:T_1\to T_2$ be a morphism in $\mathcal{T}$, which admits a pseudocokernel
-    $g^C:T_2\to\PCok_\mathcal{T}(g)$ in $\mathcal{T}$. Then $g^C$ is a pseudocokernel of $g$
-    in $\mathcal{X}$.
-  \end{enumerate}
-\end{rmk}
+\begin{definition}
+A torsion pair $\mathbb{t}=(\mathcal{T},\mathcal{F})$  is said to be {\em left} (resp. {\em right}) {\em functorial} if $\T$ (resp. $\F$) is a coreflective (resp. reflective) subcategory of $\X$. 
+%
+% the assignment $X\mapsto t(X) :=T_X$ (resp. $X\mapsto f(X):=F^X)$ is functorial and defines an adjoint pair $(i,t)$ (resp. $(f,j)$), where $i\colon\mathcal{T}\into \mathcal{X}$ (resp. $j\colon\mathcal{F}\into \mathcal{X}$) is the inclusion functor.
+%In such a case, we denote by $\varepsilon$ (resp. $\lambda$) the counit (resp. unit) of the given adjoint pair.\\
+Furthermore, we say that $\mathbb{t}$ is {\em functorial} if it is both left and right functorial.
+\end{definition}
 
+It is a classical result that torsion pairs in Abelian categories are automatically functorial. Similarly, $t$-structures in triangulated categories are examples of functorial torsion pairs. 
+  
+In the following lemma we collect two basic observations about left functorial torsion pairs. The proof is omitted as it is essentially an exercise on the definitions.
+
+\begin{lemma}\label{rmk:1.1}
+Let $\mathbb{t}=(\mathcal{T},\mathcal{F})$ be a left functorial torsion pair in $\mathcal{X}$. Then
+\begin{enumerate}[label=(\alph*)]
+\item\label{rmk:1.1a} for any $M\in\mathcal{X}$, $T'\in\mathcal{T}$ and $\alpha\in\mathcal{X}(T',M)$ there is a unique $\alpha'\in\mathcal{X}(T',t(M))$ such that $\varepsilon_M\circ\alpha'=\alpha$;
+%    , i.e.
+%    \begin{equation*}
+%      \begin{tikzcd}
+%        & T'\arrow[dashed]{ld}[']{\exists!\,\alpha'}\arrow{d}{\alpha}\\
+%        t(M)\arrow{r}{\varepsilon_M}&M
+%      \end{tikzcd}
+%    \end{equation*}
+\item\label{rmk:1.1b} for a morphis $g:T_1\to T_2$ in $\mathcal{T}$, any pseudocokernel $g^C:T_2\to C$ in $\mathcal T$ is also a pseudocokernel of $g$ in $\mathcal{X}$.
+\end{enumerate}
+\end{lemma}
+%\begin{proof}
+%(a) Since $(i,t)$ is an adjoint pair, we have a functorial isomorphism
+%\begin{equation*}
+%\Theta:\myhom{\mathcal{T}}{T',t(M)}\nto{\sim}\myhom{\mathcal{X}}{i(T'),M}=\myhom{\mathcal{X}}{T',M}.
+%\end{equation*}
+%Let $\alpha':=\Theta^{-1}(\alpha)$. Then, $\varepsilon_M\circ \alpha'=\Theta(\alpha')=\alpha$.
+%
+%\smallskip\noindent
+%(b) Let $X\in\mathcal{X}$ and $h:T_2\to X$ such that $hg=0$. Consider the commutative diagram
+%\begin{equation*}
+%\begin{tikzcd}
+%T_1\arrow{r}{g} & T_2\arrow{r}{g^C}\arrow{d}{h}\arrow[dashed]{dr}{\exists h'} & \PCok_\mathcal{T}(g)\arrow[dashed]{d}{\exists h''}\\
+%  & X  & t(X)\arrow{l}{\varepsilon_X}.
+%\end{tikzcd}
+%\end{equation*}
+%Then, $h'\circ g=0$. In fact, $0=h\circ g=\varepsilon_X \circ h' \circ g$ and $\varepsilon_X\circ 0=0$, so, by \ref{rmk:1.1:proof:a}, $h'\circ g=0$. Since $h'\circ g=0$, it follows that there is a map $h'':\PCok_\mathcal{T}(g)\to t(X)$ such that $h''\circ g^C=h'$. Finally, $h=(\varepsilon_X\circ h'')\circ g^C$.
+%\end{proof}
+
+\subsection{Nakaoka contexts and the heart construction}
+
+We start this subsection giving the main definition of the paper:
+
+\begin{definition}
+A \emph{Nakaoka context} is a pair $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ of torsion pairs in $\mathcal{X}$, satisfying the following axioms:
+\begin{torsionaxioms}
+\item\label{ax:ct1} $\mathbb{t}_1=(\mathcal{T}_1,\mathcal{F}_1)$ and $\mathbb{t}_2=(\mathcal{T}_2,\mathcal{F}_2)$ are respectively a left functorial and a right functorial torsion pair;
+\item\label{ax:ct2} $\mathcal{T}_2\subseteq \mathcal{T}_1$ (equiv. $\mathcal{F}_1\subseteq\mathcal{F}_2$).
+\end{torsionaxioms}
+\end {definition}
+
+
+\begin{notation}
+For a Nakaoka context $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ in $\mathcal{X}$, we will always take $\t_1=(\T_1,\F_1)$ and $\t_2=(\T_2,\F_2)$. Furthermore, we will use the following notation for the corresponding coreflection and reflection:
+\begin{equation*}
+\begin{tikzcd}
+(i_1,t_1)\colon\mathcal{T}_1\arrow[hook, shift left]{r}{i_1}
+& \mathcal{X}\arrow[shift left]{l}{t_1}
+& \mathrm{and}
+& (t_2,j_2)\colon\mathcal{F}_2\arrow[hook, shift right]{r}[']{j_2}
+& \mathcal{X}\arrow[shift right]{l}[']{f_2}.
+\end{tikzcd}
+\end{equation*}
+The counit of the first adjunction will be denoted by $\varepsilon_{1}\colon t_1i_1\to \id_\X$, while the unit of the second will be denoted by  $\lambda_{2}\colon \id_\X \to f_2i_2$.
+\end{notation}
+ 
+ 
+\begin{definition}
+The {\em heart} of a Nakaoka context $\mathbb{t}=(\t_1,\t_2)$ is $\mathcal{H}=\mathcal{H}_\mathbb{t}:=\mathcal{T}_1\cap\mathcal{F}_2$. 
+\end{definition}
+
+In the following lemma, we collect two general observations about Nakaoka contexts.
+
+\begin{lemma}\label{lem:1.2}
+The following statements hold true for a Nakaoka context $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$:
+\begin{enumerate}[label=(\alph*)]
+\item $\mathcal{F}_1\cap\mathcal{T}_2=0$;
+\item $f_2(\mathcal{T}_1)\subseteq\mathcal{H}$ and $t_1(\mathcal{F}_2)\subseteq\mathcal{H}$.
+\end{enumerate}
+\end{lemma}
 \begin{proof}
-  \begin{enumerate}[label=(\alph*)]
-    \item\label{rmk:1.1:proof:a}  Since $(i,t)$ is an adjoint pair, we have a functorial isomorphism
-      \begin{equation*}
-        \Theta:\myhom{\mathcal{T}}{T',t(M)}\nto{\sim}\myhom{\mathcal{X}}{i(T'),M}=\myhom{\mathcal{X}}{T',M}.
-      \end{equation*}
+(a) Since $\mathcal{T}_2\subseteq\mathcal{T}_1$, we have $\mathcal{F}_1\cap\mathcal{T}_2\subseteq \mathcal{F}_1\cap\mathcal{T}_1=0$.
 
-      Let $\alpha':=\Theta^{-1}(\alpha)$. Then, $\varepsilon_M\circ \alpha'=\Theta(\alpha')=\alpha$.
-    \item Let $X\in\mathcal{X}$ and $h:T_2\to X$ such that $hg=0$. Consider the commutative diagram
-    \begin{equation*}
-      \begin{tikzcd}
-        T_1\arrow{r}{g}
-          & T_2\arrow{r}{g^C}\arrow{d}{h}\arrow[dashed]{dr}{\exists h'}
-            & \PCok_\mathcal{T}(g)\arrow[dashed]{d}{\exists h''}\\
-          & X
-            & t(X)\arrow{l}{\varepsilon_X}.
-      \end{tikzcd}
-    \end{equation*}
-    Then, $h'\circ g=0$. In fact, $0=h\circ g=\varepsilon_X \circ h' \circ g$
-    and $\varepsilon_X\circ 0=0$, so, by \ref{rmk:1.1:proof:a}, $h'\circ g=0$.
-
-    Since $h'\circ g=0$, it follows that there is a map $h'':\PCok_\mathcal{T}(g)\to t(X)$
-    such that $h''\circ g^C=h'$. Finally, $h=(\varepsilon_X\circ h'')\circ g^C$.
-  \end{enumerate}
+\smallskip\noindent
+(b) Let $T_2\in\mathcal{T}_2$ and $F_2\in\mathcal{F}_2$. Then, $\mathcal{X}(T_2,t_1(F_2))\cong \mathcal{X}(T_2,F_2)=0$.
+Hence, $t_1(F_2)\in\mathcal{T}_2^\perp = \mathcal{F}_2$. An analogous proof shows that $f_2(\mathcal{T}_1)\subseteq\mathcal{T}_1$.
 \end{proof}
 
-The dual also holds.
+In the following lemma we introduce a technical condition under which we can easily construct kernels of morphisms in the heart of a given Nakaoka context:
+
+\begin{lemma}\label{lemma_contruction_kernels}
+Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a Nakaoka context and let $f\colon H\to H'$ be a morphism in the heart $\H=\H_\t$. If there is a morphism $f^K\colon K\to H$, with $K\in \F_2$, such that the following sequence is exact in $\Func(\T_1, \Ab)$
+\[
+(*)\qquad 0\to (-,K)\restriction_{\T_1}\to (-,H)\restriction_{\T_1}\to (-,H')\restriction_{\T_1},
+\]
+then the composition $f^K\circ \varepsilon_{1,K}\colon t_1K\to K\to H$ is a kernel for $f$ in $\H$.
+\end{lemma}
+\begin{proof}
+Consider the exact sequence in $(*)$ and notice that it gives, by restriction of the functors, an exact sequence of the form:
+\[
+0\to (-,K)\restriction_{\H}\to (-,H)\restriction_{\H}\to (-,H')\restriction_{\H}.
+\]
+The map $\varepsilon_{1,K}\colon t_1K\to K$, induces a natural isomorphism $(-,t_1K)\restriction_\H \to (-,K)\restriction_\H$, so we get an exact sequence 
+\[
+\xymatrix@C=13pt{
+0\ar[rr]&& (-,t_1K)\restriction_{\H}\ar[rr]^{k\circ \varepsilon_{1,K}\circ -}&& (-,H)\restriction_{\H}\ar[rr]&& (-,H')\restriction_{\H}.
+}
+\]
+To conclude one notices that, since $t_1K\in\H$ by Lemma \ref{lem:1.2}, the above exact sequence means exactly that $f^K\circ \varepsilon_{1,K}$ is a kernel of $f$.
+\end{proof}
+
+\subsection{Pre-abelian Nakaoka contexts}
+
+Let us start recalling that an additive category is  {\em pre-Abelian} if any of its morphisms has a kernel and a cokernel. In view of  Lemma \ref{lemma_contruction_kernels}, it is natural to introduce the following definition:
+
+\begin{definition}
+A Nakaoka context is said to be {\em pre-Abelian} if it satisfies the following axioms:
+\begin{torsionaxioms}\setcounter{enumi}{2}
+%\item\label{ax:ct1} $\mathbb{t}_1=(\mathcal{T}_1,\mathcal{F}_1)$ and $\mathbb{t}_2=(\mathcal{T}_2,\mathcal{F}_2)$ are respectively a left functorial and a right functorial torsion pair
+%\item\label{ax:ct2} $\mathcal{T}_2\subseteq \mathcal{T}_1$ (equiv. $\mathcal{F}_1\subseteq\mathcal{F}_2$)
+\item\label{ax:ct3} any  $g\colon H\to H'$ in $\H(\subseteq \T_1)$ admits a pseudocokernel $g^C\colon H'\to C$ in $\T_1$, such that
+\begin{equation*}
+\begin{tikzcd}
+0\arrow{r} &(C,-)_{|\mathcal{F}_2}\arrow{r}{(g^C,-)} & (H',-)_{|\mathcal{F}_2}\arrow{r}{(g,-)}& (H,-)_{|\mathcal{F}_2}
+\end{tikzcd}
+\end{equation*}
+is an exact sequence in $\Func(\F_2,\Ab)$. 
+\varitem{^\ast}\label{ax:ct3op} Dual of \ref{ax:ct3}.
+\end{torsionaxioms}
+\end{definition}
+
+
+
+\begin{thm}
+For a pre-Abelian Nakaoka context $\t=(\t_1,\t_2)$, the heart $\H=\H_\t$ is a pre-Abelian category.
+\end{thm}
+\begin{proof}
+This is a consequence of the axioms, Lemma \ref{lemma_contruction_kernels} and its dual.
+\end{proof}
+
+In the following proposition we give a characterization of those morphisms that are monomorphisms in the heart. For this, remember that, in a pre-Abelian category, a morphism is mono if and only if its kernel is trivial. 
+
+\begin{prop}\label{prop:1.4}
+The following are equivalent for a morphism $f\colon H\to H'$ in the heart $\H=\H_\t$ of a pre-Abelian Nakaoka context $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$:
+\begin{enumerate}[label=(\alph*)]
+\item $f$ is a monomorphism (in $\mathcal{H}$);
+\item there is a pseudokernel $f^K\colon K\to H$ of $f$ in $\F_2$ such that $K\in \F_1$. 
+\end{enumerate}
+\end{prop}
+\begin{proof}
+For any morphism $f\colon H\to H'$ in $\H$, by the axiom (CT.$3^*$), we can consider a diagram as follows
+\begin{equation*}
+\begin{tikzcd}
+F_2\arrow{r}{f^K} & H\arrow{r}{f} & H'\\
+t_1{F_2}\arrow{u}{\varepsilon_{1,F_2}}\arrow{ur}[']{\tilde{f}^K}
+\end{tikzcd}
+\end{equation*}
+where $F_2\in \F_2$ is a pseudo-kernel of $f$ in $\F_2$ and, by Lemma ********, $t_1F_2\to H$ is the kernel of $f$ in $\H$.
+
+\smallskip\noindent
+(a)$\Rightarrow$(b). Since $f$ is a monomorphism in $\H$, its kernel is trivial, that is, $t_1F_2=0$. Hence, $0=\mathcal{X}(Z,t_1(F_2))\cong \mathcal{X}(Z,F_2)$ for all $Z\in\mathcal{T}_1$, that is, $F_2\in\T_1^{\perp}=\mathcal{F}_1$.
+
+\smallskip\noindent
+(b)$\Rightarrow$(a). Conversely, let $f':F_1\to H$ be a pseudokernel of $f$ in $\mathcal{F}_2$, with $F_1\in\mathcal{F}_1$. Consider the solid part of the diagram
+\begin{equation*}
+\begin{tikzcd}
+t_1(F_2)\arrow{d}{\varepsilon_{1,F_2}}\arrow{dr}{\tilde{f}^K} & &\\
+F_2\arrow[dashed,shift right]{d}[']{u}\arrow{r}{f^K} & H\arrow{r}{f} & H'\\
+F_1\arrow[dashed,shift right]{u}[']{v}\arrow{ur}{f'} & &.
+\end{tikzcd}
+\end{equation*}
+Since $f^K$ and $f'$ are pseudokernel of $f$ in $\mathcal{F}_2$, there exist $u$ and $v$ such that $f'=f^K\circ v$ and $f^K=f'\circ u$. Therefore, $f^K=f^K\circ v\circ u$, and so $\tilde{f}^K=f^K\circ\varepsilon_{1,F_2}=f^K\circ v\circ u\circ\varepsilon_{1,F_2}$. Notice that $u\circ \varepsilon_{1,F_2}=0$ since $\myhom{\mathcal{X}}{\mathcal{T}_1,\mathcal{F}_1}=0$. Thus, $f$ has the zero morphism as its kernel in $\mathcal{H}$, i.e. $f$ is a monomorphism.
+\end{proof}
+
+
+
+
+
+
+\begin{prop}\label{prop:1.3}
+  Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a compatible torsion pair in $\mathcal{X}$ and
+  $f:H_1\to H_2$ be a morphism in $\mathcal{H}$. Then
+  \begin{enumerate}[label=(\alph*)]
+    \item\label{prop:1.3:a} if $f^C:H_2\to T_1$ is the pseudocokernel of $f$, given by \ref{ax:ct3}
+    and $\lambda_{2,T_1}:T_1\to f_2(T_1)$, then
+    \begin{equation*}
+      \Coker(H_1\nto{f}H_2) = (H_2\nto{\tilde{f}^C}f_1(T_1))
+    \end{equation*}
+    in $\mathcal{H}$, where $\tilde{f}^C:=\lambda_{2,T_1}\circ f^C$;
+    \item\label{prop:1.3:b} if $f^K:F_2\to H_1$ is the pseudokernel of $f$, given by \ref{ax:ct3op}%$^\ast$
+    and $\varepsilon_{1,F_2}:t_1(F_2)\to F_2$, then
+    \begin{equation*}
+      \Ker(H_1\nto{f} H_2) = (t_1(F_2)\nto{\tilde{f}^K}H_1)
+    \end{equation*}
+    in $\mathcal{H}$, where $\tilde{f}^K=f^K\circ \varepsilon_{1,F_2}$.
+  \end{enumerate}
+\end{prop}
+
+%\begin{proof}
+%  \begin{enumerate}[label=(\alph*)]
+%    \item Let $g:H_2\to H$ in $\mathcal{H}$ such that $gf=0$. And consider the solid part of
+%    the following diagram
+%    \begin{equation*}
+%      \begin{tikzcd}
+%        H_1\arrow{r}{f}
+%          & H_2\arrow{r}{f^C}\arrow{d}{g}
+%            & T_1\arrow[dashed]{dl}[description]{f'}\arrow{r}{\lambda_{2,T_1}}
+%              & f_2(T_1)\arrow[dashed]{dll}[description]{f''}\\
+%          & H
+%            & &
+%      \end{tikzcd}
+%    \end{equation*}
+%    with $T_1\in\mathcal{T}_1$ and $f_2(T_1)\in\mathcal{H}$ (by \cref{lem:1.2}).
+%    Since $H\in\mathcal{H}\subseteq \mathcal{F}_2$, by \ref{ax:ct3} there is a
+%    unique $f':T_1\to H$ such that $f'f^C=g$. By \cref{rmk:1.1}\ref{rmk:1.1a},
+%    there is a $f'':f_2(T_1)\to H$ making the diagram commute. Hence, $g=f''\circ \tilde{f}^C$.
+%
+%    As for unicity, let $r:f_2(T_1)\to H$, such that $g=r\circ \tilde{f}^C$. Then,
+%    $(f''\circ\lambda_{2,T_1})\circ f^C = (r\circ \lambda_{2,T_1})\circ f^C$,
+%    so $f''\circ \lambda_{2,T_1}=r\circ \lambda_{2,T_1}$ by $\ref{ax:ct3}$, and $f''=r$ by \cref{rmk:1.1}\ref{rmk:1.1a}
+%    \item Dual.
+%  \end{enumerate}
+%\end{proof}

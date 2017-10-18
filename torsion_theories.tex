@@ -14,11 +14,13 @@
 \usepackage{verbatim}
 \pagestyle{headings}
 \usepackage[utf8]{inputenc}
+\usepackage[all,cmtip]{xy}
 
 \usepackage{indentfirst}
 \usepackage{microtype}
 \usepackage{amsthm}
 \usepackage{cleveref}
+
 
 \usepackage{tikz}
 \newcommand{\sepline}{
@@ -28,7 +30,7 @@
 }
 \usepackage{mathbbol}
 
-\title{Torsion theories in \emph{good} categories}
+\title{Heart construction for twin torsion pairs\\ in additive categories}
 \author{Marco Tarantino}
 \date{\today}
 
@@ -49,13 +51,13 @@
 
 % Theorems
 \theoremstyle{plain}
-\newtheorem{thm}{Theorem}
+\newtheorem{thm}{Theorem}[section]
 \newtheorem{prop}[thm]{Proposition}
 \newtheorem{lemma}[thm]{Lemma}
 \newtheorem{corollary}[thm]{Corollary}
 
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}
+\newtheorem{definition}[thm]{Definition}
 
 \theoremstyle{remark}
 \newtheorem{rmk}{Remark}
@@ -91,6 +93,15 @@
 \newcommand{\PCok}{\ensuremath{\mathrm{\textup{PCok\,}}}}
 \newcommand{\PKer}{\ensuremath{\mathrm{\textup{PKer\,}}}}
 
+\def\H{\mathcal H}
+\def\X{\mathcal X}
+\def\F{\mathcal F}
+\def\T{\mathcal T}
+\def\Func{\mathrm{Func}}
+\def\Ab{\mathrm{Ab}}
+\def\t{\mathbb{t}}
+\def\id{\mathrm{id}}
+
 
 \newcommand{\nto}[1]{\xrightarrow{#1}}
 \newcommand{\into}{\hookrightarrow}
@@ -108,9 +119,9 @@
 \providecommand{\varitem}{} % to keep LaTeX quiet
 \makeatletter
 \newenvironment{statements}[1]
- {\renewcommand\varitem[1]{\item[(#1\arabic{enumi})\rlap{$##1$}]%
-    \edef\@currentlabel{\unexpanded{\textbf}{(#1\arabic{enumi}){$##1$}}}}%
-  \enumerate[label=(#1\arabic*), ref=\textbf{(#1\arabic*)}]}
+{\renewcommand\varitem[1]{\item[(#1.\arabic{enumi}{$##1$})]%
+\edef\@currentlabel{\unexpanded{\textbf}{(#1.\arabic{enumi}{$##1$})}}}%
+\enumerate[label=(#1.\arabic*), ref=\textbf{(#1.\arabic*)}]}
  {\endenumerate}
 \makeatother
 
@@ -118,6 +129,10 @@
 \newenvironment{relatedtorsion}{\statements{RST}}{\endstatements}
 
 \begin{document}
+
+\maketitle
+
+\tableofcontents
 
 \input{nakaoka_setting.tex}
 
