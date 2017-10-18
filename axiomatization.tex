@@ -185,15 +185,24 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
   is an abelian category (BBD theorem).
 \end{example}
 
-\begin{example}
+\begin{example}\label{example_tria}
   Let $\mathcal{D}$ be a triangulated category with two $t$-structures
   $(\mathcal{U}_1,\mathcal{U}_1^\perp)$ and $(\mathcal{U}_2,\mathcal{U}_2^\perp)$ such that
-  $\mathcal{U}_1[1]\subseteq\mathcal{U}_2\subseteq\mathcal{U}_1$. Then, these satisfy
+  $\mathcal{U}_1[1]\subseteq\mathcal{U}_2\subseteq\mathcal{U}_1$. Observe that for any
+  morphism $f$ in $\mathcal{D}$, the cone $\mathrm{Cone}(f)$ of $f$ in $\mathcal{D}$ is
+  always a pseudocokernel $f$, and similarly the shifted cone $\mathrm{Cone}(f)[-1]$ is always
+  a pseudokernel of $f$.
+
+  If, moreover, $\mathrm{Cone}(f)\in\mathcal{U}_1$ for any morphism
+  $f$ in $\mathcal{U}_1$ and $\mathrm{Cone}(f)[-1]\in\mathcal{U}_2^\perp$, then
+  $\mathbb{t}=((\mathcal{U}_1,\mathcal{U}_1^\perp),(\mathcal{U}_2,\mathcal{U}_2^\perp))$ satisfy
   axioms \ref{ax:ct1}-\ref{ax:ct3},\ref{ax:ct3op}, hence $\mathcal{H}=\mathcal{U}_1\cap\mathcal{U}_2^\perp$ has
-  kernels and cokernels. Moreover, TFAE:
+  kernels and cokernels.
+
+  In this case, moreover, the following are equivalent:
   \begin{enumerate}
     \item[1.a] \ref{ax:ct4} holds.
-    \item[1.b] If $V_1\to H_1\nto{f} H_2\nto{+}$ is a distinguished triangle such
+    \item[1.b]\label{ax:eqb} If $V_1\to H_1\nto{f} H_2\nto{+}$ is a distinguished triangle such
     that $H_1, H_2\in\mathcal{H}$ and $V_1\in\mathcal{U}_1^\perp$, then $V_1\in\mathcal{U}_2^\perp[-1]$.
   \end{enumerate}
   And, dually, there is an equivalence of the following:
@@ -205,7 +214,7 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
 \end{example}
 
 \begin{proof}[Proof of the equivalences in example 2]
-  Let's $\mathcal{D}$ be a triangulated category with two t-structures as in example 3. The pseudocokernel
+  Let $\mathcal{D}$ be a triangulated category with two t-structures as in example 3. The pseudocokernel
   of a morphism in $\mathcal{U}_1$ can be computed by taking the cone in $\mathcal{D}$, i.e. given a morphism
   $f:U_1\to U_1'$ in $\mathcal{U}_1$ we can compute a pseudocokernel in $\mathcal{U}_1$ by completing $f$
   to a triangle
@@ -340,7 +349,34 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
   Since $\mathrm{Cone}(f)[-1]\in \mathcal{U}_1^\perp$, so does $H_1'$. Similarly,
   $H_1'\in\mathcal{U}_1$ because $H_1\in\mathcal{U}_1$. Hence, $H_1'=0$ and $\alpha:H_1\to V_2$ is an iso.
   The same follows for $\lambda$. Therefore, $\mathrm{Cone}(f)\in\mathcal{U}_2^\perp$ which
-  proves \textbf{1.b}.
+  proves \triangb.
+\end{proof}
+
+\begin{lemma}\label{lemma_tria}
+  In the case of \cref{example_tria}, assume that \ref{ax:ct4} and \ref{ax:ct4op} hold, then:
+  \begin{enumerate}
+    \item\label{lemma_tria_a} For any $H,H'\in\H_\mathbb{t}$, $(H,H'[-1])=0$,
+    \item\label{lemma_tria_b} $A\to B\to C$ is a short exact sequence in $\mathcal{H}_\mathbb{t}$ iff $A\to B\to C\nto{+}$ is
+    a triangle in $\X$.
+  \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+  \ref{lemma_tria_a} follows observing that
+  $\H[-1]=\mathcal{U}_1[-1]\cap\mathcal{U}_2^\perp[-1]\subseteq \mathcal{U}_2^\perp[-1]\subseteq(\mathcal{U}_1^\perp[1])[-1]=\mathcal{U}_1^\perp$.
+
+  To prove \ref{lemma_tria_b} first consider a short exact sequence $A\nto{f} B\to C$ in $\mathcal{H}$, we want to
+  prove that it is a triangle. Consider the triangle
+  \begin{equation*}
+    \mathrm{Cone}(f)[-1]\to A\nto{f} B \to \mathrm{Cone}(f),
+  \end{equation*}
+  since $f$ is mono, its pseudocokernel $\mathrm{Cone}(f)[-1]$ belongs to $\mathcal{U}_1^\perp$, so
+  $\mathrm{Cone}(f)\in\mathcal{U}_2^\perp[-1]$ by \triangb, hence $\mathrm{Cone}(f)\in\mathcal{U}_2^\perp$.
+  This implies that $\mathrm{Cone}(f)$ is the cokernel of $f$ and so $A\nto{f} B\to C\nto{+}$ is a triangle.
+
+  Conversely, assume that $A\nto{f} B\nto{g} C\nto{+}$ is a triangle. Then, $\mathrm{Cone}(f)\cong C\in\H=\mathcal{U}_1\cap\mathcal{U}_2^\perp$ and
+  so $\mathrm{Cone}(f)[-1]\in\mathcal{U}_2^\perp[-1]\subseteq \mathcal{U}_1^\perp$. Hence, $f$ is mono. A dual argument
+  shows that $g$ is epi. Therefore, $A\nto{f} B\nto{g} C$ is a short exact sequence in $\mathcal{H}$.
 \end{proof}
 
 \begin{example}
