@@ -59,7 +59,7 @@ satisfy $TC1-3,3^*$.
   right adjoint to $i$.\todo{functoriality should follow immediately}
 \end{proof}
 
-\begin{lemma}\label{ab:lem:5}
+\begin{lemma}
   Let $\widehat{T}_1\in\mathcal{T}_1\ast\mathcal{W}$, i.e. there is an exact sequence
   \begin{equation*}
     0\to t_1(\widehat{T}_1)\to \widehat{T}_1\to W_1\to 0.
@@ -91,7 +91,7 @@ satisfy $TC1-3,3^*$.
   hence $N\in\mathcal{T}_1\ast\mathcal{W}$.
 \end{proof}
 
-\begin{lemma}\label{ab:lem:6}
+\begin{lemma}
   In the same notation as the previous lemma, if $\varphi:N\to P$ is any map s.t. $\underline{\varphi}\circ \underline{q} = \underline{0}$ in
   $\underline{\mathcal{A}}$, then $\varphi$ factors through $\mathcal{W}$.
 \end{lemma}
@@ -121,68 +121,6 @@ satisfy $TC1-3,3^*$.
   Hence $\varphi$ factors through $\mathcal{W}$.
 \end{proof}
 
-\begin{lemma}\label{ab:lem:7}
-  Let $H_1\nto{f}H_2$ be a morphism in
-  $\mathcal{H}:=\underline{\mathcal{T}_1\ast\mathcal{W}}\cap
-  \underline{\mathcal{W}\ast\mathcal{F}_2}$. The following assertions hold:
-  \begin{enumerate}
-    \item $f$ is an epi in $\mathcal{H}$ iff the pushout diagram in $\mathcal{A}$
-    \begin{equation*}
-      \begin{tikzcd}
-        H_1\arrow{r}{p}\arrow{d}{f}
-          & W\arrow{d}{f'}\\
-        H_2\arrow{r}{q}
-          & T_2
-      \end{tikzcd}
-    \end{equation*}
-    has the property that $T_2\in\mathcal{T}_2$, where $p:H_1\to f_1(H_1)=W_1$ is the canonical
-    map associated to the torsion pair $(\mathcal{T}_1,\mathcal{F}_1)$
-    \item $f$ is a monomorphism in $\mathcal{H}$ iff the pullback diagram in $\mathcal{A}$
-    \begin{equation*}
-      \begin{tikzcd}
-        F_1\arrow{r}\arrow{d}
-          & H_1\arrow{d}\\
-        W_2=t_2(H_2)\arrow{r}{u}
-          & H_2
-      \end{tikzcd}
-    \end{equation*}
-    has the property that $F_1\in\mathcal{F}_1$, where $W_2=t_2(H_2)\nto{u}H_2$ is the
-    canonical map associated to the torsion pair $(\mathcal{T}_2,\mathcal{F}_2)$.
-  \end{enumerate}
-\end{lemma}
-
-\begin{lemma}
-  If $X\nto{f}Y$ is a morphism in $\mathcal{A}$ such that $\underline{f}$ is a section
-  (resp. retraction) in $\underline{\mathcal{A}}$, then $\underline{X}$ is isomorphic
-  to a direct summand of $\underline{Y}$ (resp. $\underline{Y}$ is isomorphic to a direct summand
-  of $\underline{X}$ in $\underline{\mathcal{A}}$).
-\end{lemma}
-
-\begin{rmk}
-  In the course of the proof of \cref{ab:lem:7} we proved that in the pushout
-  \begin{equation*}
-    \begin{tikzcd}
-      H_1\arrow{r}{p}\arrow{d}{f}
-        & W_1\arrow{d}{f'}\\
-      H_2\arrow{r}{q}
-        & N
-    \end{tikzcd}
-  \end{equation*}
-  $\underline{q}$ is an epimorphism in $\underline{\mathcal{A}}$. In fact, the proof is valid
-  also if $f:\widehat{T}_1\to \widehat{T}_1'$ is any morphism in $\underline{\mathcal{T}_1\ast\mathcal{W}}$.
-  Since we know that $N\in\underline{\mathcal{T}_1\ast\mathcal{W}}$ (by \cref{ab:lem:5})
-  we conclude that any morphism $\underline{f}$ in $\underline{\mathcal{T}_1\ast\mathcal{W}}$
-  has actually a cokernel in $\underline{\mathcal{T}_1\ast\mathcal{W}}$, which is also
-  a cokernel in $\underline{\mathcal{A}}$. This follows directly from \cref{ab:lem:7}.
-\end{rmk}
-
-\begin{lemma}\label{ab:lem:10}
-  If $f:H_1\to H_2$ is any moprhism with $H_1,H_2\in(\mathcal{T}_1\ast\mathcal{W})\cap(\mathcal{W}\ast\mathcal{F}_2)$
-  and $\underline{f}$ is an epimorphism in $\mathcal{H}:=(\underline{\mathcal{T}_1\ast\mathcal{W}})\cap(\underline{\mathcal{W}\ast\mathcal{F}_2})$,
-  then $\underline{f}$ is isomorphic \todo{?} to a morphism $\underline{g}$, such that
-  $g:H_1'\to H_2'$ is a morphism in $(\mathcal{T}_1\ast\mathcal{W})\cap(\mathcal{W}\ast\mathcal{F}_2)$ and
-  $\Coker_\mathcal{A} g \in\mathcal{T}_2$ and $\Ker_\mathcal{A} g\in\mathcal{W}\ast\mathcal{F}_2$.
-\end{lemma}
 
 \begin{lemma}
   If $\mathcal{H}$ is balanced (i.e. mono and epi implies iso), then whenever $f:H_1\to H_2$
