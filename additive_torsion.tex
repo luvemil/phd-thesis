@@ -8,7 +8,7 @@ Let $\mathcal{X}$ be a pointed category. Recall that, given a map $\phi\colon X\
 {\bf Convention.} We fix  trough this section an additive category $\mathcal{X}$ where  idempotents split, and in which any morphism has at least a pseudokernel and a pseudocokernel.
 
 \medskip
-In this section, after some generalities about torsion pairs, we introduce the notion of a ``Nakaoka context" in $\mathcal X$ and we associate to it a full subcategory $\mathcal H$ of $\mathcal X$, called the heart. We then give conditions on a given Nakaoka context for the heart to be pre-Abelian, integral (?) and Abelian. 
+In this section, after some generalities about torsion pairs, we introduce the notion of a ``Nakaoka context" in $\mathcal X$ and we associate to it a full subcategory $\mathcal H$ of $\mathcal X$, called the heart. We then give conditions on a given Nakaoka context for the heart to be pre-Abelian, integral and Abelian. 
 
 \subsection{Generalities on torsion pairs}
 
@@ -200,97 +200,86 @@ where $F_2\in \F_2$ is a pseudo-kernel of $f$ in $\F_2$ and, by Lemma \ref{lemma
 (a)$\Rightarrow$(b). Since $f$ is a monomorphism in $\H$, its kernel is trivial, that is, $t_1F_2=0$, which is equivalent to say that $F_2\in \F_1$.
 
 \smallskip\noindent
-(b)$\Rightarrow$(a). If  $f^K\colon K\to H$ is a pseudokernel of $f$ in $\F_2$ such that $K\in \F_1$, then the kernel $0=t_1K\to H$ of $f$
- in $\H$ is trivial, that is, $f$ is a monomorphism.
- %Conversely, let $f':F_1\to H$ be a pseudokernel of $f$ in $\mathcal{F}_2$, with $F_1\in\mathcal{F}_1$. Consider the solid part of the diagram
-%\begin{equation*}
-%\begin{tikzcd}
-%t_1(F_2)\arrow{d}{\varepsilon_{1,F_2}}\arrow{dr}{\tilde{f}^K} & &\\
-%F_2\arrow[dashed,shift right]{d}[']{u}\arrow{r}{f^K} & H\arrow{r}{f} & H'\\
-%F_1\arrow[dashed,shift right]{u}[']{v}\arrow{ur}{f'} & &.
-%\end{tikzcd}
-%\end{equation*}
-%Since $f^K$ and $f'$ are pseudokernel of $f$ in $\mathcal{F}_2$, there exist $u$ and $v$ such that $f'=f^K\circ v$ and $f^K=f'\circ u$. Therefore, $f^K=f^K\circ v\circ u$, and so $\tilde{f}^K=f^K\circ\varepsilon_{1,F_2}=f^K\circ v\circ u\circ\varepsilon_{1,F_2}$. Notice that $u\circ \varepsilon_{1,F_2}=0$ since ${\mathcal{X}}(\mathcal{T}_1,\mathcal{F}_1)=0$. Thus, $f$ has the zero morphism as its kernel in $\mathcal{H}$, i.e. $f$ is a monomorphism.
+(b)$\Rightarrow$(a). If  $f^K\colon K\to H$ is a pseudokernel of $f$ in $\F_2$ such that $K\in \F_1$, then the kernel $0=t_1K\to H$ of $f$ in $\H$ is trivial, that is, $f$ is a monomorphism.
 \end{proof}
 
 
+\subsection{Integral Nakaoka contexts}
 
+\begin{definition}
+A pre-Abelian Nakaoka context $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ is said to be {\em integral} provided the following axioms hold:
+\begin{enumerate}
+\item[(CT.4.1)] Given two morphisms $f\colon H\to H'$ and $g\colon K\to H'$ in $\mathcal{H}$ such that $f$ has a pseudo-cokernel $f^C\colon H'\to C$ with $C\in \T_2$, we can construct a commutative diagram
+\[
+\xymatrix{
+X\ar@{.>}[d]_{x_H}\ar@{.>}[r]^{x_K}&K\ar[r]^{x_K^C}\ar[d]|{g}&C'\\
+H\ar[r]_f&H'\ar[r]_{f^C}&C
+}
+\]
+where $x_K^C\colon K\to C$ is a pseudo-cokernel of $x_K$, $X\in \H$ and $C'\in \T_2$.
+\item[(CT.4.1$^*$)]  Dual to (CT.4.1).
+\end{enumerate}
+\end{definition}
 
+\begin{thm}
+TFAE for a pre-Abelian Nakaoka context $\t=(\t_1,\t_2)$:
+\begin{enumerate}[label=(\alph*)]
+\item $\t$ is integral;
+\item the heart $\H=\H_\t$ is an integral pre-Abelian category.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+(a)$\Rightarrow$(b). Consider a pullback diagram in $\H$:
+\[
+\xymatrix{
+A\ar@{}[dr]|{PB}\ar[r]^{f'}\ar[d]_{g'}&B\ar[d]^g\\
+C\ar[r]_{f}&D
+}
+\]
+and suppose that $f$ is an epi in $\H$. By (the dual of) Proposition \ref{prop:1.4}, we can find a pseudo-cokernel $f^C\colon D\to T_2$ of $f$, with $T_2\in \T_2$. By the axiom (CT.4.1), we obtain a commutative diagram as follows 
+\[
+\xymatrix{
+X\ar@{.>}[d]_{x_C}\ar@{.>}[r]^{x_B}&B\ar[r]^{f''}\ar[d]|{g}&T'_2\\
+C\ar[r]_f&D\ar[r]_{f^C}&T_2
+}
+\]
+where $f''\colon B\to T_2$ is a pseudo-cokernel of $x_B$, and $X\in \H$. Since the square we started with is a pullback, there is a unique morphism $\alpha\colon X\to A$, making the following diagram commute:
+\[
+\xymatrix{
+X\ar@/_15pt/[ddr]_{x_C}\ar@/_-15pt/[rrd]^{x_B}\ar@{.>}[dr]|\alpha\\
+&A\ar@{}[dr]|{PB}\ar[r]^{f'}\ar[d]_{g'}&B\ar[d]^g\\
+&C\ar[r]_{f}&D
+}
+\]
+Now, since $x_B$ is a morphism in $\H$ that admits a pseudo-cokernel (in $\T_1$) which belongs to $\T_2$, $x_B$ is an epimorphism in $\H$ by Proposition \ref{prop:1.4}. Furthermore, since $x_B=f'\circ\alpha$, also $f'$ is an epi. One can prove dually that pushouts of monomorphisms are mono, so $\H$ is integral. 
 
-
-%\begin{prop}\label{prop:1.3}
-%  Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a compatible torsion pair in $\mathcal{X}$ and
-%  $f:H_1\to H_2$ be a morphism in $\mathcal{H}$. Then
-%  \begin{enumerate}[label=(\alph*)]
-%    \item\label{prop:1.3:a} if $f^C:H_2\to T_1$ is the pseudocokernel of $f$, given by \ref{ax:ct3}
-%    and $\lambda_{2,T_1}:T_1\to f_2(T_1)$, then
-%    \begin{equation*}
-%      \Coker(H_1\nto{f}H_2) = (H_2\nto{\tilde{f}^C}f_1(T_1))
-%    \end{equation*}
-%    in $\mathcal{H}$, where $\tilde{f}^C:=\lambda_{2,T_1}\circ f^C$;
-%    \item\label{prop:1.3:b} if $f^K:F_2\to H_1$ is the pseudokernel of $f$, given by \ref{ax:ct3op}%$^\ast$
-%    and $\varepsilon_{1,F_2}:t_1(F_2)\to F_2$, then
-%    \begin{equation*}
-%      \Ker(H_1\nto{f} H_2) = (t_1(F_2)\nto{\tilde{f}^K}H_1)
-%    \end{equation*}
-%    in $\mathcal{H}$, where $\tilde{f}^K=f^K\circ \varepsilon_{1,F_2}$.
-%  \end{enumerate}
-%\end{prop}
-
-%\begin{proof}
-%  \begin{enumerate}[label=(\alph*)]
-%    \item Let $g:H_2\to H$ in $\mathcal{H}$ such that $gf=0$. And consider the solid part of
-%    the following diagram
-%    \begin{equation*}
-%      \begin{tikzcd}
-%        H_1\arrow{r}{f}
-%          & H_2\arrow{r}{f^C}\arrow{d}{g}
-%            & T_1\arrow[dashed]{dl}[description]{f'}\arrow{r}{\lambda_{2,T_1}}
-%              & f_2(T_1)\arrow[dashed]{dll}[description]{f''}\\
-%          & H
-%            & &
-%      \end{tikzcd}
-%    \end{equation*}
-%    with $T_1\in\mathcal{T}_1$ and $f_2(T_1)\in\mathcal{H}$ (by \cref{lem:1.2}).
-%    Since $H\in\mathcal{H}\subseteq \mathcal{F}_2$, by \ref{ax:ct3} there is a
-%    unique $f':T_1\to H$ such that $f'f^C=g$. By \cref{rmk:1.1}\ref{rmk:1.1a},
-%    there is a $f'':f_2(T_1)\to H$ making the diagram commute. Hence, $g=f''\circ \tilde{f}^C$.
-%
-%    As for unicity, let $r:f_2(T_1)\to H$, such that $g=r\circ \tilde{f}^C$. Then,
-%    $(f''\circ\lambda_{2,T_1})\circ f^C = (r\circ \lambda_{2,T_1})\circ f^C$,
-%    so $f''\circ \lambda_{2,T_1}=r\circ \lambda_{2,T_1}$ by $\ref{ax:ct3}$, and $f''=r$ by \cref{rmk:1.1}\ref{rmk:1.1a}
-%    \item Dual.
-%  \end{enumerate}
-%\end{proof}
-
-
-
+\smallskip\noindent
+(b)$\Rightarrow$(a). Suppose that $\H$ is an integral category and let us show how this implies the axiom (CT.4.1), one can verify (CT.4.1$^*$) dually. Given two morphisms $f\colon H\to H'$ and $g\colon K\to H'$ in $\mathcal{H}$ such that $f$ has a pseudo-cokernel $f^C\colon H'\to C$ with $C\in \T_2$, we can take the following pullback diagram in $\H$
+\[
+\xymatrix{
+X\ar[d]_{x_H}\ar[r]^{x_K}\ar@{}[dr]|{PB}&K\ar[d]^{g}\\
+H\ar[r]_f&H'
+}
+\]
+Now, by the integrality of $\H$, $x_K$ is an epimorphism in $\H$ and so, by Proposition \ref{prop:1.4}, it admits a pseudo-cockernel $K\to C'$ (in $\T_1$) such that $C'\in \T_1$.
+\end{proof}
 
 
 \subsection{Abelian Nakaoka contexts}
 
 
 \begin{definition}
-  A compatible torsion pair $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ in $\mathcal{X}$
-  is strong if the following axioms hold:
-  \begin{torsionaxioms}
-    \setcounter{enumi}{3}
-    \item\label{ax:ct4} Let $f:H_1\to H_2$ in $\mathcal{H}$ be such that there is a pseudokernel
-    $\PKer_{\mathcal{F}_2}(f)\in\mathcal{F}_1$. Then, for the commutative diagram
-    \begin{equation*}
-      \begin{tikzcd}
-        & H_1\arrow{d}{a}\arrow{r}{f}
-          & H_2\arrow[equal]{d}\arrow{r}{f^C}
-            & T_1:=\PCok_\mathcal{X}(f)\arrow{d}{\lambda_{2,T_1}}\\
-        t_1(F_2)\arrow{r}{\varepsilon_{1,F_2}}
-        & F_2:=\PKer_\mathcal{X}(g)\arrow{r}{g^K}
-          & H_2\arrow{r}{g}
-            & f_2(T_1)
-      \end{tikzcd}
-    \end{equation*}
-    there exists a morphism $b:t_1(F_2)\to H_1$ such that $ab=\varepsilon_{1,F_2}$.
-    \varitem{^\ast}\label{ax:ct4op} Dual to \ref{ax:ct4}.
-  \end{torsionaxioms}
+An integral Nakaoka context $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ in $\mathcal{X}$ is said to be {\em Abelian} provided the following axioms hold:
+\begin{enumerate}
+\item[(CT.4.2)] A morphism $f\colon H\to H'$ in $\mathcal{H}$ is an isomorphism if and only if it fits in a sequence:
+\[
+\xymatrix{
+K\ar[r]^{f^K}&H\ar[r]^f&H'\ar[r]^{f^C}&C
+}
+\]
+where $f^K$ is a pseudo-kernel of $f$ in $\F_2$, $f^C$ is a pseudo-cokernel of $f$ in $\T_1$, $K\in \F_1$ and $C\in \T_2$.
+\item[(CT.4.2$^*$)] Dual to (CT.4.2).
+\end{enumerate}
 \end{definition}
 
 With these axioms we can prove that the heart has kernels and cokernels.
@@ -298,13 +287,40 @@ With these axioms we can prove that the heart has kernels and cokernels.
 \begin{thm}
 TFAE for a pre-Abelian Nakaoka context $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$:
 \begin{enumerate}[label=(\alph*)]
-\item $\mathbb{t}$ is Abelian;
-\item the heart $\mathcal{H}=\H_\t$ is an Abelian category.
+\item the heart $\mathcal{H}=\H_\t$ is an Abelian category;
+\item $\mathbb{t}$ is Abelian (that is, it satisfies (CT.4.1), (CT.4.2) and their duals);
+\item $\mathbb{t}$ satisfies the following axioms:
+\begin{enumerate}
+\item[(CT.4)] Let $f:H_1\to H_2$ in $\mathcal{H}$ be such that there is a pseudokernel $\PKer_{\mathcal{F}_2}(f)\in\mathcal{F}_1$. Then, for the commutative diagram
+\begin{equation*}
+\begin{tikzcd}
+ & H_1\arrow{d}{a}\arrow{r}{f} & H_2\arrow[equal]{d}\arrow{r}{f^C} & T_1:=\PCok_\mathcal{X}(f)\arrow{d}{\lambda_{2,T_1}}\\
+t_1(F_2)\arrow{r}{\varepsilon_{1,F_2}} & F_2:=\PKer_\mathcal{X}(g)\arrow{r}{g^K} & H_2\arrow{r}{g} & f_2(T_1)
+\end{tikzcd}
+\end{equation*}
+there exists a morphism $b:t_1(F_2)\to H_1$ such that $ab=\varepsilon_{1,F_2}$.
+\item[(CT.4$^*$)] Dual to (CT.4).
+\end{enumerate}
 \end{enumerate}
 \end{thm}
-
 \begin{proof}
-(a)$\Rightarrow$(b). By Theorem \ref{pre_abelian_theorem}, $\mathcal{H}$ is pre-Abelian. To prove that $\mathcal{H}$ is Abelian, we just need to show that any monomorphism (resp. epimorphism) is a kernel (resp. cokernel).
+(a)$\Rightarrow$(c). Let $\mathcal{H}$ be an abelian category. We only check \ref{ax:ct4} \todo{Fix reference} since the proof of \ref{ax:ct4op} is analogous.
+
+Consider the solid part of the commutative diagram
+\begin{equation*}
+\begin{tikzcd}
+ & H_1\arrow{r}{f}\arrow{d}{a}\arrow[dashed]{dl}[']{\beta} & H_2\arrow{r}{f^C}\arrow[equal]{d} & T_1=\PCok_\mathcal{X}(f)\arrow{d}{\lambda_{2,T_1}}\\
+t_1(F^2)\arrow{r}{\varepsilon_{1,F_2}} & F_2=\PKer_\mathcal{X}(g)\arrow{r}{g^K} & H_2\arrow{r}{g} &f_2(T_1)
+\end{tikzcd}
+\end{equation*}
+where $f:H_1\to H_2$ is a morphism in $\mathcal{H}$ such that $\PKer_{\mathcal{F}_2}(f)\in\mathcal{F}_1$. Since $f$ is a monomorphism in $\mathcal{H}$ by \ref{prop:1.4}$(a)$ \todo{Fix reference} and $\mathcal{H}$ is abelian, we have that $f=\Ker \Coker (f)$. On the other hand, by \ref{rmk:1.1} $(a)$ there is $\beta:H_1\to t_1(F_2)$ such that $\varepsilon_{1,F_2}\beta = a$ completing the diagram above. Since $f=\Ker \Coker(f)$, it follows that $\beta$ is an isomorphism. Therefore, \ref{ax:ct4} follows by setting $b:=\beta^{-1}$.
+
+
+
+
+
+\smallskip\noindent
+(c)$\Rightarrow$(a). By Theorem \ref{pre_abelian_theorem}, $\mathcal{H}$ is pre-Abelian. To prove that $\mathcal{H}$ is Abelian, we just need to show that any monomorphism (resp. epimorphism) is a kernel (resp. cokernel).
 Hence, let $f\colon H_1\to H_2$ be a monomorphism in $\mathcal{H}$ and consider the cokernel $f^C\colon H_2\to C$ in $\H$. We want to prove that $f$ is the kernel of $f^C$. Since we already know that $f$ is mono, it is the kernel of any morphism for which it is a pseudokernel, hence we have just to prove that $f$ is a pseudokernel of $f^C$. Let $a\colon A\to H_2$ be a morphism such that $f^C\circ a=0$. 
 
 %, that is, we need to prove that the following sequence of functors is exact:
@@ -335,17 +351,11 @@ t_1(F_2)\arrow{ur}{b}\arrow{r}{\varepsilon_{1,F_2}} & F_2=\PKer_\mathcal{X}(g)\a
 \end{equation*}
 By setting $\alpha''' := b\alpha'':H\to H_1$, we get $f\alpha''' = g^K ab\alpha'' = g^K\varepsilon_{1,F_2}\alpha''=g^K\alpha' = \alpha$. Thus, any morphism $\alpha:H \to H_2$ such that $g\alpha =0$ factors through $f$. To conclude that $f$ is a kernel of $g$, it suffice to observe that $f$ is a monomorphism, so $\alpha'''$ must be unique.
 
-\bigskip\bigskip\bigskip\bigskip\noindent
-(b)$\Rightarrow$(a). Let $\mathcal{H}$ be an abelian category. We only check \ref{ax:ct4} \todo{Fix reference} since the proof of \ref{ax:ct4op} is analogous.
+\smallskip\noindent
+(a)$\Rightarrow$(b).
 
-Consider the solid part of the commutative diagram
-\begin{equation*}
-\begin{tikzcd}
- & H_1\arrow{r}{f}\arrow{d}{a}\arrow[dashed]{dl}[']{\beta} & H_2\arrow{r}{f^C}\arrow[equal]{d} & T_1=\PCok_\mathcal{X}(f)\arrow{d}{\lambda_{2,T_1}}\\
-t_1(F^2)\arrow{r}{\varepsilon_{1,F_2}} & F_2=\PKer_\mathcal{X}(g)\arrow{r}{g^K} & H_2\arrow{r}{g} &f_2(T_1)
-\end{tikzcd}
-\end{equation*}
-where $f:H_1\to H_2$ is a morphism in $\mathcal{H}$ such that $\PKer_{\mathcal{F}_2}(f)\in\mathcal{F}_1$. Since $f$ is a monomorphism in $\mathcal{H}$ by \ref{prop:1.4}$(a)$ \todo{Fix reference} and $\mathcal{H}$ is abelian, we have that $f=\Ker \Coker (f)$. On the other hand, by \ref{rmk:1.1} $(a)$ there is $\beta:H_1\to t_1(F_2)$ such that $\varepsilon_{1,F_2}\beta = a$ completing the diagram above. Since $f=\Ker \Coker(f)$, it follows that $\beta$ is an isomorphism. Therefore, \ref{ax:ct4} follows by setting $b:=\beta^{-1}$.
+\smallskip\noindent
+(b)$\Rightarrow$(a).
 \end{proof}
 
 
