@@ -13,18 +13,16 @@
 
 
 
-\section{Particular cases (t\'itulo provisional)}
-\subsection{The case of an abelian category}
+\section{Nakaoka contexts in special categories}
+\subsection{Nakaoka contexts in Abelian categories}
 
 Let's consider the case $\mathcal{X}=\mathcal{A}$ of an Abelian category with
 two torsion pairs $\mathbb{t}_i=(\mathcal{T}_i,\mathcal{F}_i)$ for $i=1,2$.
 Consider $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$.
 
-\begin{rmk}\label{rmk:2.2}
-  In the case of an Abelian category $\mathcal{X}=\mathcal{A}$, we have that
-  $\mathbb{t}$ is compatible if and only if $\mathcal{T}_2\subseteq\mathcal{T}_1$.
-\end{rmk}
-
+\begin{lemma}\label{rmk:2.2}
+For an Abelian category $\A$, any Nakaoka context is integral. 
+\end{lemma}
 \begin{proof}
   Let $\mathcal{T}_2\subseteq\mathcal{T}_1$, we need to show that \cref{ax:ct1},
   \cref{ax:ct3} and \cref{ax:ct3op} hold.
@@ -41,6 +39,23 @@ Consider $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$.
     that we made somewhere before when we talk about $\PCok_\mathcal{A}$?}
     \varitem{^\ast} Anologous to the previous.
   \end{torsionaxioms}
+
+\bigskip\bigskip
+Let us now verify the axiom (CT.4.1). Indeed, consider two morphisms $f\colon H\to H'$ and $g\colon K\to H'$ in $\mathcal{H}$ such that $f$ has a pseudo-cokernel $f^C\colon H'\to C$ with $C\in \T_2$ and consider the following pullback diagram in $\A$
+\[
+\xymatrix{
+X\ar@{}[dr]|{P.B.}\ar@{.>}[d]_{x_H}\ar@{.>}[r]^{x_K}&K\ar[r]^{x_K^C}\ar[d]|{g}&C\ar@{=}[d]\\
+H\ar[r]_f&H'\ar[r]_{f^C}&C
+}
+\]
+where $x_K^C\colon K\to C$ is a pseudo-cokernel of $x_K$. Clearly $X\leq H\oplus K$, so that $X\in \F_2$. 
+\[
+\xymatrix{
+t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
+&X\ar@{}[dr]|{P.B.}\ar@{.>}[d]_{x_H}\ar@{.>}[r]^{x_K}&K\ar[r]^{x_K^C}\ar[d]|{g}&C\ar@{=}[d]\\
+&H\ar[r]_f&H'\ar[r]_{f^C}&C
+}
+\]
 \end{proof}
 
 \begin{corollary}\label{cor:2.3}
@@ -121,7 +136,7 @@ Consider $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$.
   \end{enumerate}
 \end{thm}
 
-\subsection{Twin torsion pairs in triangulated categories}
+\subsection{Nakaoka contexts in triangulated categories}
 
 Let $\mathcal{X}=\mathcal{T}$ be a triangulated category on which idempotents split.
 We start by recalling the definition of a t-structure in $\mathcal{T}$.
