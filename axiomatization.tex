@@ -117,7 +117,7 @@ t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
   \ref{cor:2.3:d} Similar to the previous proof.
 \end{proof}
 
-\begin{thm}
+\begin{thm}\label{thm_2_4}
   Let $\mathbb{t}_i=(\mathcal{T}_i,\mathcal{F}_i)$ be a torsion pair in an abelian category
   $\mathcal{A}$, for $i=1,2$, such that $\mathcal{T}_2\subseteq \mathcal{T}_1$. Then, for
   $\mathcal{H}:=\mathcal{T}_1\cap\mathcal{F}_2$ the following statements are equivalent:
@@ -135,6 +135,61 @@ t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
     \item $\mathcal{H}$ is closed under kernels and cokernels in $\mathcal{A}$.
   \end{enumerate}
 \end{thm}
+
+\begin{proof}
+  ($(a)\Rightarrow (b1),(b2)$) Assume that $\H$ is an abelian category. By \cref{cor:2.3}\ref{cor:2.3:d}, $(b1)$ holds if and only if any monomorphism in $\H$ is a monomorphism in $\A$.
+  
+  Observe that for any $f:H\to H'$, we have that $\Ker_\H(f)\nto{\tilde{f}^H}H$ is a monomorphism in $\A$. Indeed, by \cref{cor:2.3}\ref{cor:2.3:b}, we know that $\tilde{f}^H$ is the composition of
+  \begin{equation*}
+    \begin{tikzcd}
+      t_1(\Ker(f))\arrow{r}{\varepsilon_{1,\Ker(f)}}
+        & \Ker(f)\arrow{r}{k_f}
+          & H;
+    \end{tikzcd}
+  \end{equation*}
+  and, since $\varepsilon_{1,\Ker(f)}$ and $k_f$ are monomorphism in $\A$, so is $\tilde{f}^H$.
+
+  Furthermore, if $f:H\to H'$ is a monomorphism in $\H$, then $f=\Ker_\H(\Coker_\H(f))$ since $\H$ is abelian. Thus, $f$ is a monomorphism in $\A$.
+  
+  A dual argument can be used to prove $(b2)$.
+
+  ($(a)\Rightarrow (b3)$) Let $f:H\to H'$ in $\H$ be a monomorphism in $\A$. We want to prove that $\Coker(f)\in\H$.
+  
+  Observe that the diagram
+  \begin{equation}\label{thm_2_4_eq_1}
+    \begin{tikzcd}
+      0\arrow{r}
+      & H\arrow{r}{f}\arrow{d}{\alpha}
+        & H'\arrow{r}{c_f}\arrow[equal]{d}
+          & \Coker(f)\arrow{d}{\lambda_2}\arrow{r}
+            & 0\\
+      0 \arrow{r}
+      & \Ker(g)\arrow{r}{k_g}
+        & H' \arrow{r}{g\colon=\lambda_2c_f}
+          & f_2(\Coker(f)) \arrow{r}
+            & 0
+    \end{tikzcd}
+  \end{equation}
+  is commutative and has exact rows. Then, by Snake's lemma we get that $\Ker(\alpha)=0$ and $\Coker(\alpha)\cong\Ker(\lambda_2)=t_2(\Coker(f))\in\T_2$.
+  
+  Since $\H$ is abelian, we know that $f=\Ker_\H(\Coker_\H(f))$. Therefore, by $\cref{cor:2.3}$ and \eqref{thm_2_4_eq_1}, we get that the dashed morphism
+  in the following commutative diagram exists
+  \begin{equation*}
+    \begin{tikzcd}
+      & H\arrow{r}{f}\arrow[dashed]{dl}[']{\exists\varphi}
+        & H'\arrow[equal]{d}\\
+      t_1(\Ker(g))\arrow{r}{\varepsilon_{1,\Ker(g)}}
+      & \Ker(g)\arrow{r}{k_g}
+        & H'
+    \end{tikzcd}
+  \end{equation*}
+  and it is an isomorphism. But, $k_g\varepsilon_{1,\Ker(g)}\varphi = f= k_g\alpha$ and $k_g$ is mono, hence $\varepsilon_{1,\Ker(g)}\varphi = \alpha$. Therefore,
+  \begin{equation*}
+    \Coker(\alpha)\cong \Coker(\varepsilon_{1,\Ker(g)})=\frac{\Ker(g)}{t_1(\Ker(g))}= f_1(\Ker(g))\in\F_1.
+  \end{equation*}
+  
+  Thus, $\Coker(\alpha)\in\T_2\cap\F_1=0$ and so $\alpha$ is an isomorphism. By \eqref{thm_2_4_eq_1} is follows that $\Coker(f)\cong f_2(\Coker(f))\in\F_2$ and, using the fact that $T_1$ is closed under quotients, we conclude that $\Coker(f)\in\T_1\cap\F_2=\H$. A dual argument shows that $\H$ is closed under kernels of epimorphism in $\A$.
+\end{proof}
 
 \subsection{Nakaoka contexts in triangulated categories}
 
