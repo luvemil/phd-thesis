@@ -21,7 +21,7 @@ two torsion pairs $\mathbb{t}_i=(\mathcal{T}_i,\mathcal{F}_i)$ for $i=1,2$.
 Consider $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$.
 
 \begin{lemma}\label{rmk:2.2}
-For an Abelian category $\A$, any Nakaoka context is integral. 
+For an Abelian category $\A$, any Nakaoka context is integral.
 \end{lemma}
 \begin{proof}
   Let $\mathcal{T}_2\subseteq\mathcal{T}_1$, we need to show that \cref{ax:ct1},
@@ -48,7 +48,7 @@ X\ar@{}[dr]|{P.B.}\ar@{.>}[d]_{x_H}\ar@{.>}[r]^{x_K}&K\ar[r]^{x_K^C}\ar[d]|{g}&C
 H\ar[r]_f&H'\ar[r]_{f^C}&C
 }
 \]
-where $x_K^C\colon K\to C$ is a pseudo-cokernel of $x_K$. Clearly $X\leq H\oplus K$, so that $X\in \F_2$. 
+where $x_K^C\colon K\to C$ is a pseudo-cokernel of $x_K$. Clearly $X\leq H\oplus K$, so that $X\in \F_2$.
 \[
 \xymatrix{
 t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
@@ -138,7 +138,7 @@ t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
 
 \begin{proof}
   ($(a)\Rightarrow (b1),(b2)$) Assume that $\H$ is an abelian category. By \cref{cor:2.3}\ref{cor:2.3:d}, $(b1)$ holds if and only if any monomorphism in $\H$ is a monomorphism in $\A$.
-  
+
   Observe that for any $f:H\to H'$, we have that $\Ker_\H(f)\nto{\tilde{f}^H}H$ is a monomorphism in $\A$. Indeed, by \cref{cor:2.3}\ref{cor:2.3:b}, we know that $\tilde{f}^H$ is the composition of
   \begin{equation*}
     \begin{tikzcd}
@@ -150,11 +150,11 @@ t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
   and, since $\varepsilon_{1,\Ker(f)}$ and $k_f$ are monomorphism in $\A$, so is $\tilde{f}^H$.
 
   Furthermore, if $f:H\to H'$ is a monomorphism in $\H$, then $f=\Ker_\H(\Coker_\H(f))$ since $\H$ is abelian. Thus, $f$ is a monomorphism in $\A$.
-  
+
   A dual argument can be used to prove $(b2)$.
 
   ($(a)\Rightarrow (b3)$) Let $f:H\to H'$ in $\H$ be a monomorphism in $\A$. We want to prove that $\Coker(f)\in\H$.
-  
+
   Observe that the diagram
   \begin{equation}\label{thm_2_4_eq_1}
     \begin{tikzcd}
@@ -171,7 +171,7 @@ t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
     \end{tikzcd}
   \end{equation}
   is commutative and has exact rows. Then, by Snake's lemma we get that $\Ker(\alpha)=0$ and $\Coker(\alpha)\cong\Ker(\lambda_2)=t_2(\Coker(f))\in\T_2$.
-  
+
   Since $\H$ is abelian, we know that $f=\Ker_\H(\Coker_\H(f))$. Therefore, by $\cref{cor:2.3}$ and \eqref{thm_2_4_eq_1}, we get that the dashed morphism
   in the following commutative diagram exists
   \begin{equation*}
@@ -187,8 +187,25 @@ t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
   \begin{equation*}
     \Coker(\alpha)\cong \Coker(\varepsilon_{1,\Ker(g)})=\frac{\Ker(g)}{t_1(\Ker(g))}= f_1(\Ker(g))\in\F_1.
   \end{equation*}
-  
+
   Thus, $\Coker(\alpha)\in\T_2\cap\F_1=0$ and so $\alpha$ is an isomorphism. By \eqref{thm_2_4_eq_1} is follows that $\Coker(f)\cong f_2(\Coker(f))\in\F_2$ and, using the fact that $T_1$ is closed under quotients, we conclude that $\Coker(f)\in\T_1\cap\F_2=\H$. A dual argument shows that $\H$ is closed under kernels of epimorphism in $\A$.
+
+  ($(b)\Rightarrow (a)$) We already know that $\H$ is preabelian. On order to prove that $\H$ is abelian we need to show that any monomorphism (resp. epimorphism) in $\H$ is a kernel (resp. cokernel).
+
+  Let $f:H\to H'$ be a monomorphism in $\H$. By \cref{cor:2.3} and $(b1)$, it follows that $f$ is a monomorphism in $\A$. Thus, we have a short exact sequence in $\A$
+  \begin{equation*}
+    \begin{tikzcd}
+      0 \arrow{r}
+      & H\arrow{r}{f}
+        & H'\arrow{r}{c_f}
+          & \Coker(f) \arrow{r}
+            & 0.
+    \end{tikzcd}
+  \end{equation*}
+
+  Furthermore, from $(b3)$ we know that $\Coker(f)\in\H$. Then, $\Coker(f)=\Coker_\H(f)$ and $\Ker(c_f)=\Ker_\H(c_f)$. Therefore, $f=\Ker(\Coker(f))=\Ker_\H(\Coker_\H(f))$.
+
+  ($(a),(b)\Rightarrow (c)$) Let $f:H\to H'$ be a morphism in $\H$. We want to show that $\Ker(f)\in\H$
 \end{proof}
 
 \subsection{Nakaoka contexts in triangulated categories}
