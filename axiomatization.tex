@@ -205,7 +205,39 @@ t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
 
   Furthermore, from $(b3)$ we know that $\Coker(f)\in\H$. Then, $\Coker(f)=\Coker_\H(f)$ and $\Ker(c_f)=\Ker_\H(c_f)$. Therefore, $f=\Ker(\Coker(f))=\Ker_\H(\Coker_\H(f))$.
 
-  ($(a),(b)\Rightarrow (c)$) Let $f:H\to H'$ be a morphism in $\H$. We want to show that $\Ker(f)\in\H$
+  ($(a),(b)\Rightarrow (c)$) Let $f:H\to H'$ be a morphism in $\H$. We want to show that $\Ker(f)\in\H$. Consider the exact sequence
+  \begin{equation*}
+    \begin{tikzcd}
+      0 \arrow{r}
+      & \Ker(f)\arrow{r}
+        & H\arrow{r}
+          & \Img(f) \arrow{r}
+            & 0,
+    \end{tikzcd}
+  \end{equation*}
+  by $(b3)$ it is enough to show that $\Img(f)\in\H$. Since $\H$ is abelian, we have the canonical factorization of $f$ in $\H$
+  \begin{equation*}
+    \begin{tikzcd}
+      H\arrow{rr}{f}\arrow[two heads]{rd}[']{f'}
+      & & H'\\
+      & \Img_\H(f)\arrow[hook]{ur}[']{f''}
+        &
+    \end{tikzcd}
+  \end{equation*}
+  where $f'$ is an epi and $f''$ is a mono (in $\H$). Then, by $(b1)$ and $(b2)$ we have that $f'$ and $f''$ are respectively an epi and a mono in $\A$. Therefore, $\Img(f)\cong \Img_\H(f)\in\H$, and by the exact sequence
+  \begin{equation*}
+    \begin{tikzcd}
+      0 \arrow{r}
+      & \Img(f)\arrow{r}
+        & H'\arrow{r}
+          & \Coker(f) \arrow{r}
+            & 0,
+    \end{tikzcd}
+  \end{equation*}
+  and $(b3)$ we conclude that $\Coker(f)\in\H$.
+
+  $(c)\Rightarrow (a)$ is clear.
+
 \end{proof}
 
 \subsection{Nakaoka contexts in triangulated categories}
