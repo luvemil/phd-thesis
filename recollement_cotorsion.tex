@@ -327,7 +327,7 @@ Imposing some mild conditions on a Grothendieck category $\G$ (which are always 
 
  %
 
-For a hereditary complete cotorsion pair $(\A, \B)$ the term $\dfrac{\Ch(\B)}{ex\B }$ is equivalent to the derived category $\D(\G)$ of the Grothendieck category, essentially because $\Ch(\B)$ contains the dg-injective complexes. Analogously, if $\G$ has enough projectives, $\dfrac{\Ch(\A)}{ex\A}$ is equivalent to the derived category $\D(\G)$ of the Grothendieck category, since $\Ch(\A)$ contains the dg-projective complexes.
+For a complete hereditary cotorsion pair $(\A, \B)$ the term $\dfrac{\Ch(\B)}{ex\B }$ is equivalent to the derived category $\D(\G)$ of the Grothendieck category, essentially because $\Ch(\B)$ contains the dg-injective complexes. Analogously, if $\G$ has enough projectives, $\dfrac{\Ch(\A)}{ex\A}$ is equivalent to the derived category $\D(\G)$ of the Grothendieck category, since $\Ch(\A)$ contains the dg-projective complexes.
 
 By Neeman~\cite{Nee90} the derived category of an idempotent complete exact category $\C$ is defined as the quotient $\dfrac{\Ch(\C)}{\widetilde{\C}}$, where $\widetilde{\C}$ denotes the class of unbounded complexes acyclic in $\C$, meaning that the differentials factor through short exact sequences in $\C$.
 Thus it would be important to get recollements analogous to the above ones, but with right term $\dfrac{\Ch(\B)}{\widetilde{\B}}$ or $\dfrac{\Ch(\A)}{\widetilde{\A}}$, that is the derived categories of the exact categories $\B$ or $\A$. Of course, if $\widetilde{\B}=ex\B$ or $\widetilde{\A}=ex{\A}$, the recollements above degenerate into
@@ -487,7 +487,7 @@ We recall some results which will be used throughout. Their proof can be found i
   \begin{enumerate}
   \item A complex $Y$ belongs to $\tilde\B$ \iff $\Ext^1_{\Ch(\C)}(S^n(A), Y)=0$ for every $n\in \bbZ$ and every $A\in \A$.
   \item A complex $X$ belongs to $\tilde\A$ \iff $\Ext^1_{\Ch(\C)}(X, S^n(B))=0$ for every $n\in \bbZ$ and every $B\in \B$.
-  \item If $\C$ is a Grothendieck category and $(\A, \B)$ is a complete hereditary cotorsion pair, then $(\tilde\A, dg\B)$ and $(dg \A, \tilde \B)$ are hereditary complete cotorsion pairs in $\Ch(\C)$.
+  \item If $\C$ is a Grothendieck category and $(\A, \B)$ is a complete hereditary cotorsion pair, then $(\tilde\A, dg\B)$ and $(dg \A, \tilde \B)$ are complete hereditary cotorsion pairs in $\Ch(\C)$.
 
   %
     \item $(dg\A, \E, dg\B)$ is a model structure on $\Ch(\C)$ with the acyclic complexes $\E$ as trivial objects. In particular, $dg\A\cap\E=\tilde \A$ and $dg\B\cap\E=\tilde \B$.
@@ -553,10 +553,10 @@ We recall some results which will be used throughout. Their proof can be found i
 %
 %
 
-\begin{rem} If $(\A, \B)$ is a hereditary complete cotorsion pair in an abelian category, then the complete cotorsion pairs defined in the above proposition are hereditary, too.
+\begin{rem} If $(\A, \B)$ is a complete hereditary cotorsion pair in an abelian category, then the complete cotorsion pairs defined in the above proposition are hereditary, too.
 \end{rem}
 
-\begin{lem}\label{L:ex-tilde} Let $(\A, \B)$ be a hereditary complete cotorsion pairs in a Grothendieck category $\G$. Then $ex\B=\tilde \B$ if and only if $dw\B=dg\B$.
+\begin{lem}\label{L:ex-tilde} Let $(\A, \B)$ be a complete hereditary cotorsion pairs in a Grothendieck category $\G$. Then $ex\B=\tilde \B$ if and only if $dw\B=dg\B$.
 Dually $ex\A= \tilde \A$ if and only if $dw\A=dg\A$
  \end{lem}
  %
@@ -581,7 +581,7 @@ The dual statement is proved in similar ways.
 \section{Cotorsion pairs $(\A, \B)$ satisfying $ex\B=\tilde{\B}$}\label{S:2}
 We are interested in describing cotorsion pairs $(\A, \B)$ such that $ex\B=\tilde \B$ or $ex\A=\tilde \A$, since in these cases we have the following important consequences on the corresponding model structures.
 %
-\begin{cor}\label{C:cofibrant-fibrant}  Let $(\A, \B)$ be a hereditary complete cotorsion pairs in a Grothendieck category $\G$. The following hold true:
+\begin{cor}\label{C:cofibrant-fibrant}  Let $(\A, \B)$ be a complete hereditary cotorsion pairs in a Grothendieck category $\G$. The following hold true:
 \begin{enumerate}
 \item  If $ex\B=\tilde \B$, then $(dg\A, \E, dw\B)$ is a model structure in $\Ch(\G)$ for which the fibrant objects are exactly the complexes with components in $\B$.
 \item If $ex\A=\tilde \A$, then $(dw\A, \E, dg\B)$ is a model structure in $\Ch(\G)$ for which the cofibrant objects are exactly the complexes with components in $\A$.
@@ -849,7 +849,7 @@ Thus, an injective cotorsion pair $(\A, \B)$ corresponds to the model structure 
 An injective complete cotorsion pair $(\A, \B)$ in $\C$ is called a \emph{localizing cotorsion pair}. If $(\A, \B)$ and $(\B, \D)$ are injective cotorsion pairs in $\C$, then $(\A, \B, \D)$ is called a \emph{localizing cotorsion triple} in $\C$.
 \end{defn}
 
-\begin{rem}\label{R:inj-proj-model} By \cite[Proposition 4.2]{G7}, a hereditary complete cotorsion pair  in a WIC Frobenius category is an injective cotorsion pair if and only if it is a projective cotorsion pair if and only if $\A$ is thick if and only if $\B$ is thick.
+\begin{rem}\label{R:inj-proj-model} By \cite[Proposition 4.2]{G7}, a complete hereditary cotorsion pair  in a WIC Frobenius category is an injective cotorsion pair if and only if it is a projective cotorsion pair if and only if $\A$ is thick if and only if $\B$ is thick.
 
 %
 %
@@ -878,10 +878,10 @@ Moreover, it is obvious that they are idempotent complete.
  It is well known that a Grothendieck category has enough injectives.
 When needed we will assume that $\G$ has enough projectives and enough flat objects.
 
-We will denote by $\Inj$ and $\Proj$ the classes of injective and projective objects, respectively; by $\Flat$ the class of flat objects and by $\Cot$ the class of cotorsion objects.  We have the hereditary complete cotorsion pairs $(\Proj, \G)$, $(\G, \Inj)$ and $(\Flat, \Cot)$, hence the four classes defined above are exact subcategories of $\G$.
+We will denote by $\Inj$ and $\Proj$ the classes of injective and projective objects, respectively; by $\Flat$ the class of flat objects and by $\Cot$ the class of cotorsion objects.  We have the complete hereditary cotorsion pairs $(\Proj, \G)$, $(\G, \Inj)$ and $(\Flat, \Cot)$, hence the four classes defined above are exact subcategories of $\G$.
 
 We first collect some well known facts.
-\begin{fact}\label{F:proj-inj} Let $(\A, \B)$ be a hereditary complete cotorsion pair in $\G$. The following hold true:
+\begin{fact}\label{F:proj-inj} Let $(\A, \B)$ be a complete hereditary cotorsion pair in $\G$. The following hold true:
 \begin{enumerate}
 \item $\A$ has enough injectives and projectives: the projectives are the same as in $\G$ and the injectives are the objects in $\A\cap\B$.
 \item $\B$ has enough injectives and projectives: the injectives are the same as in $\G$ and the projectives are the objects in $\A\cap\B$.
@@ -895,7 +895,7 @@ We first collect some well known facts.
 %
 %
 
-\begin{rem}\label{R:induced} If $(\A, \B)$ is a complete hereditary cotorsion pair in a Grothendieck category $\G$, Proposition~\ref{P:inducing} tells us that $(\B, \Inj)$ and $(\A\cap \B, \B)$  are hereditary complete cotorsion pairs in the exact category $\B$; $(\Proj, \A)$ and $(\A, \A\cap \B)$ are hereditary complete cotorsion pairs  in the exact category $\A$.
+\begin{rem}\label{R:induced} If $(\A, \B)$ is a complete hereditary cotorsion pair in a Grothendieck category $\G$, Proposition~\ref{P:inducing} tells us that $(\B, \Inj)$ and $(\A\cap \B, \B)$  are complete hereditary cotorsion pairs in the exact category $\B$; $(\Proj, \A)$ and $(\A, \A\cap \B)$ are complete hereditary cotorsion pairs  in the exact category $\A$.
 \end{rem}
 
 
@@ -942,14 +942,14 @@ We start by choosing projective cotorsion pairs in $\Ch(\G)$ satisfying the assu
 When needed we assume some extra conditions on the Grothendieck category $\G$, like in example (3) below.
 
 
-\begin{expl}\label{E:examples-proj} Let $(\A, \B)$ be a hereditary complete cotorsion pair in a  Grothendieck category $\G$.
+\begin{expl}\label{E:examples-proj} Let $(\A, \B)$ be a complete hereditary cotorsion pair in a  Grothendieck category $\G$.
  \begin{enumerate}
 %
 %
-\item The hereditary complete cotorsion pair $(dg \A, \widetilde{\B})$ in $\Ch(\G)$ satisfies the conditions in  Proposition~\ref{P:prop7.3-dual}, hence we have the projective cotorsion pair:
+\item The complete hereditary cotorsion pair $(dg \A, \widetilde{\B})$ in $\Ch(\G)$ satisfies the conditions in  Proposition~\ref{P:prop7.3-dual}, hence we have the projective cotorsion pair:
 %
  \[\M_1=\Big(dg{\A}\cap dw \B, \widetilde{\B}\Big)\] in $\Ch(\B)$ and the localizing cotorsion pair $\Big([dg{\A}\cap dw \B]_K,  \widetilde{\B}\Big)$ in $\Ch(\B)_{dw}.$
-\item The hereditary complete cotorsion pair $(\widetilde{\A}, dg \B)$ in $\Ch(\G)$ satisfies the conditions in  Proposition~\ref{P:prop7.3-dual}, hence we have the projective cotorsion pair:
+\item The complete hereditary cotorsion pair $(\widetilde{\A}, dg \B)$ in $\Ch(\G)$ satisfies the conditions in  Proposition~\ref{P:prop7.3-dual}, hence we have the projective cotorsion pair:
 %
  \[\M_2=\Big(\widetilde{\A}\cap dw \B, dg \B\Big)\] in $\Ch(\B)$ and the localizing cotorsion pair $\Big([\widetilde{\A}\cap dw \B]_K, dg (\B)\Big)$ in $\Ch(\B)_{dw}.$
 
@@ -957,7 +957,7 @@ When needed we assume some extra conditions on the Grothendieck category $\G$, l
 %
 %
 
-\item If $\A$ contains a generator of finite projective dimension, then by Proposition~\ref{P:complete?}~(3), $({}^\perp{} ex\B, ex\B)$ is a hereditary complete cotorsion pair in $\Ch(\G)$ and it satisfies the conditions in  Proposition~\ref{P:prop7.3-dual}, hence  we have the projective cotorsion pair:
+\item If $\A$ contains a generator of finite projective dimension, then by Proposition~\ref{P:complete?}~(3), $({}^\perp{} ex\B, ex\B)$ is a complete hereditary cotorsion pair in $\Ch(\G)$ and it satisfies the conditions in  Proposition~\ref{P:prop7.3-dual}, hence  we have the projective cotorsion pair:
  \[\M_3=({}^\perp{} ex\B\cap dw \B, ex\B)\] in $\Ch(\B)$ and the localizing cotorsion pair $\Big([{}^\perp{} ex\B\cap dw \B]_K, ex\B\Big)$ in $\Ch(\B)_{dw}.$
 
  \end{enumerate}
@@ -966,7 +966,7 @@ When needed we assume some extra conditions on the Grothendieck category $\G$, l
  \end{rem}
  %
 
-\begin{thm}\label{T:recollement-proj} Let $(\A, \B)$ be a hereditary complete cotorsion pair in a  Grothendieck category $\G$ such that $\A$ contains a generator of finite projective dimension.
+\begin{thm}\label{T:recollement-proj} Let $(\A, \B)$ be a complete hereditary cotorsion pair in a  Grothendieck category $\G$ such that $\A$ contains a generator of finite projective dimension.
 
 The three projective cotorsion pairs in Example~\ref{E:examples-proj} satisfy the conditions of \cite[Theorem 3.5]{G7}, so that we get the recollement:
 
@@ -1034,7 +1034,7 @@ in a Grothendieck category $\G$. The two hereditary cotorsion pairs
  We look now for injective cotorsion pairs in $\Ch(\B)$ in order to get localizing cotorsion triples in $\Ch(\B)_{dw}$.
 
 First we state the dual of \cite[Proposition 7.2]{G7}.
-\begin{prop}\label{P:prop7.2} Let $\G$ be a Grothendieck category and let $(\W, \I)$ be an injective cotorsion pair in $\Ch(\G)$ with $\I\subseteq dw \Inj$ and let $(\A, \B)$ be a hereditary complete cotorsion pair in $\G$. Then \[\Big(\W\cap dw \B, \I\Big)\] is an injective cotorsion pair in $\Ch(\B)$ and \[\Big(\W\cap dw \B, [\I]_K\Big)\] is a localizing cotorsion pair in the Frobenius category $\Ch(\B)_{dw}$, where a complex $X\in \Ch(\B)$ belongs to $[\I]_K$ if and only if it is chain homotopy equivalent to a complex in $\I$.
+\begin{prop}\label{P:prop7.2} Let $\G$ be a Grothendieck category and let $(\W, \I)$ be an injective cotorsion pair in $\Ch(\G)$ with $\I\subseteq dw \Inj$ and let $(\A, \B)$ be a complete hereditary cotorsion pair in $\G$. Then \[\Big(\W\cap dw \B, \I\Big)\] is an injective cotorsion pair in $\Ch(\B)$ and \[\Big(\W\cap dw \B, [\I]_K\Big)\] is a localizing cotorsion pair in the Frobenius category $\Ch(\B)_{dw}$, where a complex $X\in \Ch(\B)$ belongs to $[\I]_K$ if and only if it is chain homotopy equivalent to a complex in $\I$.
 \end{prop}
 
 %
@@ -1107,7 +1107,7 @@ where $\sim$ denotes the homotopy relation associated to the corresponding model
 %
 %
 Combining some of the previous examples we can state the following:
-\begin{thm}\label{T:triple-B}  Let $(\A, \B)$ be a hereditary complete cotorsion pair in a  Grothendieck category $\G$ such that $\A$ contains a generator of finite projective dimension.
+\begin{thm}\label{T:triple-B}  Let $(\A, \B)$ be a complete hereditary cotorsion pair in a  Grothendieck category $\G$ such that $\A$ contains a generator of finite projective dimension.
 The triple $\Big([{}^\perp{} ex\B\cap dw \B]_K, ex\B, [dg \Inj]_K\Big)$ is a localizing cotorsion triple in $\Ch(\B)_{dw}$. If  $\X=[{}^\perp{} ex\B\cap dw \B]_K$, $\Y=ex\B$, $\Z=[dg \Inj]_K$ then there are equivalences of triangulated categories:
 \[\frac{[{}^\perp{} ex\B\cap dw \B]_K}{\sim} \cong \frac{\Ch(\B)}{ex\B} \cong  \frac{[dg \Inj]_K}{\sim}\]
 where $\sim$ is the chain homotopy equivalence
@@ -1231,7 +1231,7 @@ In particular, the derived category $\D(\B)$ of $\B$ is equivalent to the usual 
 
 In view of Lemma~\ref{L:Cot-inj} we have the following characterization.
 
-\begin{prop}\label{P:no-tilde} Let $(\A, \B)$ be a hereditary complete cotorsion pair in $\Modr R$ with $\B\supseteq  \B_{\infty}$.
+\begin{prop}\label{P:no-tilde} Let $(\A, \B)$ be a complete hereditary cotorsion pair in $\Modr R$ with $\B\supseteq  \B_{\infty}$.
 
 Then in $\Ch(\B)$ there exists an injective cotorsion pair $(\widetilde{\B}, \R)$ with $
 \R\subseteq dw\Inj$ \iff $ex\B=\tilde\B$.\end{prop}
@@ -1255,7 +1255,7 @@ For instance, if the little finitistic dimension of $R$  is finite (e.g. $R$ is 
 A positive answer to the question in the title of this section is provided by \sto\  in \cite{Stopurity} for  the cotorsion pair $(\A, \FpInj)$ generated by the class of finitely presented modules over a coherent ring $R$.
 In view of Example~\ref{E:examples-proj}~(1) and Example~\ref{E:examples-inj}~(1), we restate \Sto's theorem in our notations.
  %
- \begin{prop}\label{P:fp-inj}(\cite[Proposition 6.11, Theorem 6.12]{Stopurity})  Let $R$ be a coherent ring and let $(\A, \FpInj)$ be the hereditary complete cotorsion pair generated by the class of finitely presented modules. Then:
+ \begin{prop}\label{P:fp-inj}(\cite[Proposition 6.11, Theorem 6.12]{Stopurity})  Let $R$ be a coherent ring and let $(\A, \FpInj)$ be the complete hereditary cotorsion pair generated by the class of finitely presented modules. Then:
  \[{}^\perp{} dw\Inj\cap dw \FpInj=\widetilde{\FpInj}\]
   hence $\Big([dg\A\cap dw\FpInj]_K, \widetilde{\FpInj}, [dw \Inj]_K\Big)$ is a localizing cotorsion triple in $\Ch(\FpInj)_{dw}$. There are equivalences:
  %
@@ -1292,7 +1292,7 @@ We exhibit now another case of cotorsion pairs giving rise to a result analogous
 %
 %
 
-\begin{prop}\label{P:B-inj-n} Let $R$ be a coherent ring and let $(\A, \B)$ be a hereditary complete cotorsion pair in $\Modr R$. Assume that $\B\subseteq \FpInj$ and that $\B\subseteq \I_n$ (the class of modules of injective dimension at most $n$).
+\begin{prop}\label{P:B-inj-n} Let $R$ be a coherent ring and let $(\A, \B)$ be a complete hereditary cotorsion pair in $\Modr R$. Assume that $\B\subseteq \FpInj$ and that $\B\subseteq \I_n$ (the class of modules of injective dimension at most $n$).
 
  Then, every Fp-injective  $\B$-periodic module belongs to $\B$. Thus
  $\widetilde{\FpInj}\cap dw \B=\tilde{\B}$, $ ^\perp dw\Inj \cap dw\B=\tilde{\B}$ and we have a recollement:
@@ -1337,14 +1337,14 @@ Starting with a complete hereditary cotorsion pair $(\A, \B)$ in a Grothendieck 
 
  \begin{expl}\label{E:exam-A-inj}
  \begin{enumerate}
-\item The hereditary complete cotorsion pair $( \widetilde{\A}, dg\B)$ in $\Ch(\G)$ satisfies the conditions in  Proposition~\ref{P:prop7.3}, hence we have the injective cotorsion pair:
+\item The complete hereditary cotorsion pair $( \widetilde{\A}, dg\B)$ in $\Ch(\G)$ satisfies the conditions in  Proposition~\ref{P:prop7.3}, hence we have the injective cotorsion pair:
 %
 \[\Delta_1=\Big(\tilde\A, dg{\B}\cap dw\A\Big)\] in $\Ch(\A)$ and the localizing cotorsion pair $\Big(\tilde\A,  [dg{\B}\cap dw\A]_K\Big)$ in $\Ch(\A)_{dw}.$
 
-\item Also the hereditary complete cotorsion pair $(dg\A, \widetilde{\B})$ in $\Ch(\G)$ satisfies the conditions in  Proposition~\ref{P:prop7.3},  hence we have the injective cotorsion pair:
+\item Also the complete hereditary cotorsion pair $(dg\A, \widetilde{\B})$ in $\Ch(\G)$ satisfies the conditions in  Proposition~\ref{P:prop7.3},  hence we have the injective cotorsion pair:
  \[\Delta_2=\Big(dg\A, \tilde\B\cap dw\A\Big)\] in $\Ch(\A)$ and the localizing cotorsion pair $\Big(dg\A,  [\tilde\B\cap dw\A]_K\Big)$ in $\Ch(\A)_{dw}.$
 
-\item If $\A$ is deconstructible, then by Proposition~\ref{P:complete?}~(6) $(ex\A, ex\A{}^\perp{})$ is a hereditary complete cotorsion pair in $\Ch(\G)$ and it satisfies the conditions in Proposition~\ref{P:prop7.3}, hence we have the injective cotorsion pair
+\item If $\A$ is deconstructible, then by Proposition~\ref{P:complete?}~(6) $(ex\A, ex\A{}^\perp{})$ is a complete hereditary cotorsion pair in $\Ch(\G)$ and it satisfies the conditions in Proposition~\ref{P:prop7.3}, hence we have the injective cotorsion pair
  \[\Delta_3=\Big(ex\A, ex\A{}^\perp{}\cap dw\A\Big)\] in $\Ch(\A)$ and the localizing cotorsion pair $\Big(ex\A,  [ex{}^\perp{}\A\cap dw\B]_K\Big)$ in $\Ch(\A)_{dw}.$
 
  \end{enumerate}
@@ -1353,7 +1353,7 @@ Starting with a complete hereditary cotorsion pair $(\A, \B)$ in a Grothendieck 
  %
 The three injective cotorsion pairs $\Delta_1, \Delta_2, \Delta_3$ of Example~\ref{E:exam-A-inj} satisfy the conditions of \cite[Theorem 3.4]{G7}, hence we have:
 %
-\begin{thm}\label{T:recollement-inj-A} Let $(\A, \B)$ be a hereditary complete cotorsion pair in a  Grothendieck category $\G$ such that $\A$ is deconstructible. Then, there is a recollement:
+\begin{thm}\label{T:recollement-inj-A} Let $(\A, \B)$ be a complete hereditary cotorsion pair in a  Grothendieck category $\G$ such that $\A$ is deconstructible. Then, there is a recollement:
 
 %
 %
@@ -1432,7 +1432,7 @@ Starting with a complete hereditary cotorsion pair $(\A, \B)$ in a Grothendieck 
 
  The above three examples $\Gamma_1, \Gamma_2, \Gamma_3$ of projective cotorsion pairs  in $\Ch(\A)$ satisfy the assumptions of \cite[Theorem 3.5]{G7}. Hence we obtain:
   %
-  \begin{thm}\label{T:recollement-proj-A} If $\G$ is a Grothendieck category with enough projective objects and $(\A, \B)$ is a hereditary complete cotorsion pair in $\G$, there is a recollement %
+  \begin{thm}\label{T:recollement-proj-A} If $\G$ is a Grothendieck category with enough projective objects and $(\A, \B)$ is a complete hereditary cotorsion pair in $\G$, there is a recollement %
 %
 
 
@@ -1501,7 +1501,7 @@ The most famous example of this situation is provided by the cotorsion pair $(\F
 \vskip0.7cm
 
 Another case of cotorsion pairs giving rise to a result analogous to the previous one is provided by the following:
-\begin{prop}\label{P:A-flat} Let $(\A, \B)$ be a hereditary complete cotorsion pair in $\Modr R$. Assume that $\A\subseteq \Flat$ and that $\A\subseteq \clP_n$, where $\clP_n$ is the class of modules of projective dimension at most $n$.
+\begin{prop}\label{P:A-flat} Let $(\A, \B)$ be a complete hereditary cotorsion pair in $\Modr R$. Assume that $\A\subseteq \Flat$ and that $\A\subseteq \clP_n$, where $\clP_n$ is the class of modules of projective dimension at most $n$.
  Then, every flat $\A$-periodic module belongs to $\A$. Thus $\widetilde{\Flat}\cap dw \A=\tilde{\A}$, $ (dw\Proj)^\perp\cap dw\A=\tilde{\A}$ and there is a recollement:
  \vskip0.7cm
 \[
@@ -1531,7 +1531,7 @@ The arguments used above to obtain the recollement $(a)$ for the cotorsion pair 
 
 Another situation is provided by Proposition~\ref{P:finite-proj-dim}.
 \begin{prop}\label{P:new-triple-A}
-Let $\G$ be a Grothendieck category with enough projective objects. Let $(\A, \B)$ be a hereditary complete cotorsion pair in $\G$ with $\B\subseteq \I$ ($\I$ the class of objects with finite injective dimension). Then $ex\A=\tilde\A$, hence $(dg\Proj, \tilde{\A})$ is a projective cotorsion pair in $\Ch(\A)$ and there is a recollement as in Theorem~\ref{T:triple-A} with $ex \A$ replaced by $\tilde\A$.
+Let $\G$ be a Grothendieck category with enough projective objects. Let $(\A, \B)$ be a complete hereditary cotorsion pair in $\G$ with $\B\subseteq \I$ ($\I$ the class of objects with finite injective dimension). Then $ex\A=\tilde\A$, hence $(dg\Proj, \tilde{\A})$ is a projective cotorsion pair in $\Ch(\A)$ and there is a recollement as in Theorem~\ref{T:triple-A} with $ex \A$ replaced by $\tilde\A$.
  In particular, the derived category $\D(\A)$ of $\A$ is equivalent to the usual derived category of $\G$.
  \end{prop}
  %
