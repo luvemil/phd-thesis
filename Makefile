@@ -1,7 +1,7 @@
 all: recollement_cotorsion.pdf
 
 %.pdf: %.tex
-	pdflatex $@
-	bibtex $@
-	pdflatex $@
-	pdflatex $@
+	pdflatex $^
+	bibtex $(basename $^)
+	pdflatex $^
+	pdflatex $^
