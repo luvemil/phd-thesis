@@ -86,8 +86,8 @@
   language=auto,%
   %style=numeric-comp,%
   %style=authoryear-brackets, % Author 1999, 2010
-  bibstyle=authoryear-comp,
-  citestyle=authoryear-brackets,
+  bibstyle=numeric-comp,
+  citestyle=numeric,
   sorting=nyt, % name, year, title
   maxbibnames=10, % default: 3, et al.
   maxcitenames=1, % default: 3, et al.
@@ -97,6 +97,10 @@
   natbib=false % natbib compatibility mode (\citep and \citet still work)
 }{biblatex}
     \usepackage{biblatex}
+
+% Put mathbbol here to avoid conflict with AMS packages
+\usepackage{bbm}
+%\usepackage{mathbbol}
 
 \PassOptionsToPackage{fleqn}{amsmath}       % math environments and more by the AMS
   \usepackage{amsmath}
@@ -295,3 +299,8 @@
 % ****************************************************************************************************
 % 9. My stuff
 % ****************************************************************************************************
+
+\usepackage{mathrsfs}
+\usepackage{todonotes}
+
+\input{macros.tex}
