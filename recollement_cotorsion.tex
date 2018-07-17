@@ -401,7 +401,7 @@ We will mostly deal with  hereditary cotorsion pairs and
 in order to characterize them we recall the following definition.
 \begin{defn}\label{D:thick} Let $\C'$ be  a full subcategory of a WIC exact category $\C$.
 \begin{enumerate}
-\item $\C'$ is \emph{thick} if it is closed under direct summands and has the 2 out of 3 property.
+\item $\C'$ is \emph{thick} if it is closed under direct summands and has the 2 out of 3 property on short exact sequences.
 \item $\C'$ is \emph{resolving} in $\C$ if $A\in \C'$ for every exact sequence $0\to A\to B\to C\to 0$ in $\C$ with $B, C\in \C'$.
 \item $\C'$ is \emph{coresolving} in $\C$ if $C\in \C'$ for every exact sequence $0\to A\to B\to C\to 0$ in $\C$ with $A, B\in \C'$.
 \end{enumerate}
@@ -431,10 +431,10 @@ In \cite{G5} Gillespie extended the notion of model structures on exact categori
 \end{defn}
 %
 \begin{thm}\label{T:correspondence} (\cite{Hov07}, \cite{G5}) Let $\C$ be a WIC exact category with an exact model structure. Let $\clQ$ be the class of cofibrant objects, $\R$ the class of fibrant objects and $\W$ the class of trivial objects. Then $\W$ is a thick subcategory of $\C$, and $(\clQ, \R\cap \W)$ and $(\clQ\cap\W, \R)$ are complete cotorsion pairs in $\C$.
-Moreover, given three classes $\W, \clQ, \R$ such that $\W$ is thick in $\C$, $(\clQ, \R\cap \W)$ and $(\clQ\cap\W, \R)$ are complete cotorsion pairs in $\C$, then there is an exact model structure on $\C$ where $\clQ$ are the cofibrant objects, $\R$ are the fibrant objects and $\W$ the trivial objects.
+Conversely, given three classes $\W, \clQ, \R$ such that $\W$ is thick in $\C$, $(\clQ, \R\cap \W)$ and $(\clQ\cap\W, \R)$ are complete cotorsion pairs in $\C$, then there is an exact model structure on $\C$ where $\clQ$ are the cofibrant objects, $\R$ are the fibrant objects and $\W$ the trivial objects.
 \end{thm}
 
-We denote by $\Ch(\C)$ the category of cochain complexes $X$ with component $X^n\in \C$ in degree $n$ and with differential $d^n_X\colon X^n\to ^{n+1}$ for every $n\in \bbZ$. The morphisms in $\Ch(\C)$ are the usual cochain maps. The suspension is denoted by $[-]$.
+We denote by $\Ch(\C)$ the category of cochain complexes $X$ with component $X^n\in \C$ in degree $n$ and with differential $d^n_X\colon X^n\to X^{n+1}$ for every $n\in \bbZ$. The morphisms in $\Ch(\C)$ are the usual cochain maps. The suspension is denoted by $[-]$.
  If $\C$ is an exact category, then $\Ch(C)$ is equipped with the exact structure where the short exact sequences are the sequences which are exact in each degree. We can also consider the exact structure on $\Ch(\C)$ where the short exact sequences are degreewise splitting. $\Ext_{dw}(X, Y)$ denotes the Yoneda group of these degreewise splitting sequences.
 
  For every object $C\in \C$, $S^n(C)$ denotes the complex with entries $0$ for every $i\neq n$ and with $C$ in degree $n$; $D^n(C)$ denotes the complex with $C$ in degrees $n$ and $n+1$ and $0$ elsewhere and with differential $d^n$ being the identity on $C$. The homotopy category $\K(\C)$ has the the same objects as $\Ch(\C)$ and the equivalence classes of cochain maps under the homotopy relation as morphisms.
@@ -457,7 +457,7 @@ We recall the useful and important formula
        \item
       $ex\A$ is the class of all acyclic complexes in $dw\A$.
        \item
-      $\tilde{\A}$ is the class class of all complexes $X$ in $
+      $\tilde{\A}$ is the class of all complexes $X$ in $
       ex\A$ with the cycles $Z^n(X)$ in $\A$ for all $n\in \bbZ$.
    $\Ch_{ac}(\A)$ will denote the full subcategory of  $\Ch(\C)$ with objects in $\tilde\A$.
 
@@ -930,7 +930,7 @@ Moreover,  \[\Big([\hat\A\cap dw \B]_K, \hat\B\Big)\] is a localizing cotorsion 
 \end{prop}
 %
 \begin{proof}
-The fact that $\Big(\hat\A\cap dw \B, \hat\B\Big)$ is a complete cotorsion pair follows by Proposition~\ref{P:inducing} and it is a projective cotorsion pair by definition and by the assumptions on  $\hat\B$.  Moreover, $\hat\A\subseteq dw\A$. In fact, for every $n\in \bbZ$ and every  $B\in \B$  the contractible complex $D^n(B)$ is in $\hat\B$, hence $\Ext^1_{\Ch}(A, D^n(B))=0$, for every $A\in\hat\A$ and then $A^n$ belongs to $\A$, by \cite[Lemma 3.1]{G1}. Hence, a short exact sequence $0\to Y\to Z\to X\to 0$ in $\Ch(\B)$ with $Y\in \hat\B$ and $X\in \hat\A\cap dw \B$ is degreewise splitting.
+  Dual of \ref{P:prop7.3}.
 Note that Theorem 6.3 and Proposition 6.4 in \cite{G7} have  obvious dual statements for projective cotorsion pairs from which the second statement of our proposition follows.\end{proof}
 
 
@@ -1021,7 +1021,7 @@ By \cite{Nee90}, the derived category of $\Ch(\B)$ is the quotient of $\Ch(\B)$ 
 in a Grothendieck category $\G$. The two complete hereditary cotorsion pairs
  $({}^\perp{} dw\B, dw\B)$ and $(dg\A, \tilde\B)$ in $\Ch(\G)$  give rise to a cofibrantly generated model structure $\M=\Big(dg\A, \V, dw\B\Big)$ in $\Ch(\G )$ satisfying $\V\cap dw\B=\tilde\B$ and $\V\cap dg\A={}^\perp{} dw\B$ whose restriction in $\Ch(\B)$ is the exact model structure $\M_1=\Big(dg{\A}\cap dw \B, \widetilde{\B}, dw\B\Big)$ of Theorem~\ref{T:derived-B}.
 
- Moreover, if $(\A, \B)$ is generated by a set of finitely presented objects then the model structure $\M=\Big(dg\A, \V, dw\B\Big)$ in $\Ch(R)$ is finitely generated hence its homotopy category is compactly generated.
+ Moreover, if $(\A, \B)$ is generated by a set of finitely presented objects then the model structure $\M=\Big(dg\A, \V, dw\B\Big)$ in $\Ch(\G)$ is finitely generated hence its homotopy category is compactly generated.
 
 \end{thm}
 
@@ -1336,7 +1336,7 @@ The existence of a recollement as in the statement follows by the same arguments
  In this section we state results dual to the ones in Section~\ref{S:B}. Their proofs are obtained  by dual arguments.
 
 %
-Starting with a complete hereditary cotorsion pair $(\A, \B)$ in a Grothendieck  category $\G$, we exhibit three examples of injective cotorsion pairs in $\Ch(\G)$ satisfying the assumptions of Proposition~\ref{P:prop7.3}. Note that the examples below satisfy Proposition~\ref{P:prop7.3-dual} since $\tilde{\A}$, $dg\A$ and $ex\A$  are thick in $\Ch(\A)$ by Lemma~\ref{L:HOM} and they clearly contain the contractible complexes with terms in $\A$.
+Starting with a complete hereditary cotorsion pair $(\A, \B)$ in a Grothendieck  category $\G$, we exhibit three examples of injective cotorsion pairs in $\Ch(\G)$ satisfying the assumptions of Proposition~\ref{P:prop7.3}. Note that the examples below satisfy Proposition~\ref{P:prop7.3} since $\tilde{\A}$, $dg\A$ and $ex\A$  are thick in $\Ch(\A)$ by Lemma~\ref{L:HOM} and they clearly contain the contractible complexes with terms in $\A$.
 
 
 
