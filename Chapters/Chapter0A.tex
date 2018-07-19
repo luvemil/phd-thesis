@@ -3,9 +3,34 @@
 %*******************************************************
 % If problems with the headers: get headings in appendix etc. right
 %\markboth{\spacedlowsmallcaps{Appendix}}{\spacedlowsmallcaps{Appendix}}
-\chapter{Nakaoka contexts}
+\chapter{Folklore}
 
-Appendix chap
+In this chapter there will be mostly technical results that come from the general theory of homological algebra. When there is no bibliographical reference it means that the author could not, to the best of his efforts, find one. However, no result in this chapter should be considered original.
+
+\section{Cotorsion Pairs}
+
+\begin{lemma}
+  Let $(\A,\B)$ be a cotorsion pair in a Grothendieck category $\mathscr{C}$, then both $\A$ and $\B$ are closed by direct summands.\todo{Is ok to just ask Exact? Check Buhler}
+\end{lemma}
+
+\begin{proof}
+  It is enough to give a proof for $\B$. Let $X$ be an object in $\mathscr{C}$ such that $X\oplus Y\in\B$ for some $Y\in \mathscr{C}$. Let $A$ be any object in $\A$ and for any short exact sequence $0\to X\to Z\to A\to 0$ consider the pushout diagram:
+  \begin{equation*}
+    \begin{tikzcd}
+      X\arrow[tail]{r}\arrow{r}{i}\arrow[tail]{d}[']{k}
+      & Z\arrow[two heads]{r}\arrow[tail]{d}{j}
+        & A\arrow[equal]{d}\\
+      X\oplus Y\arrow[tail]{r}[']{l}\arrow[two heads]{d}\arrow[dashed,bend right]{u}[']{p}
+      & P\arrow[two heads]{r}\arrow[two heads]{d}\arrow[dashed, bend right]{l}[']{q}
+        & A\\
+      Y\arrow[equal]{r}
+      & Y
+        &
+    \end{tikzcd}
+  \end{equation*}
+  Since $X\oplus Y\in\B$, the second row splits and $P\cong X\oplus Y\oplus A$. Hence, $i$ is a section. In fact, $p\circ q\circ j\circ i = p\circ q\circ l\circ k =  1_X$. Therefore, $\Ext^1_{\G}(A,X)=0$ for any $A\in\A$, that is $X$ belongs to $\B$.
+\end{proof}
+
 
 %Ei solet nemore consectetuer nam. Ad eam porro impetus, te choro omnes
 %evertitur mel. Molestie conclusionemque vel at, no qui omittam

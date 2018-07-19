@@ -303,5 +303,24 @@
 
 \usepackage{mathrsfs}
 \usepackage{todonotes}
+\usepackage{amsthm}
+\usepackage{tikz-cd}
+
+% Begin - theorem styles
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{corollary}[thm]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{remark}
+\newtheorem*{rmk}{Remark}
+\newtheorem*{notation}{Notation}
+\newtheorem{example}{Example}
+\newtheorem*{examples}{Examples}
+% End - theorem styles
 
 \input{macros.tex}
