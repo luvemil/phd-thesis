@@ -1026,7 +1026,7 @@ By \cite{Nee90}, the derived category of $\Ch(\B)$ is the quotient of $\Ch(\B)$ 
 
  Moreover, we have the following triangle equivalences between the derived category of $\Ch(\B)$ and the homotopy category of the model structure $\M_1$:
  \[\D(\B)=\Ho(\M_1)\cong \dfrac{dg{\A}\cap dw \B}{\widetilde{\A}\cap\widetilde{\B}}\]
- and a recollement:
+ and in the assumptions of Theorem~\ref{T:recollement-proj} there is also a recollement:
 \vskip0.7cm
 \[
 \xymatrix{\dfrac{ex\B}{\sim} \ar[rr]^{inc} &&{\D(\B)} \ar@/^2pc/[ll]\ar@/_2pc/[ll] \ar[rr]^{Q}
@@ -1355,11 +1355,20 @@ where $\sim$ denotes the homotopy relation associated to the corresponding model
  In particular, we can define the derived category $\D(\A)$ as the quotient  $\Ch(\A)/\widetilde{\A}$.
 
  Moreover, we have the following triangle equivalences between the derived category of $\D(\A)$ and the homotopy category of the model structure $\Delta_1$:
- \[\D(\A)\cong\ho(\Delta_1)\cong \dfrac{dg{\B}\cap dw \A}{\widetilde{\A}\cap\widetilde{\B}}.\]
+ \[\D(\A)=\Ho(\Delta_1)\cong \dfrac{dg{\B}\cap dw \A}{\widetilde{\A}\cap\widetilde{\B}}\]
+ and in the assumptions of Theorem~\ref{T:recollement-inj-A} there is also a recollement:
+\vskip0.7cm
+\[
+\xymatrix{\dfrac{ex\A}{\sim} \ar[rr]^{inc} &&{\D(\A)} \ar@/^2pc/[ll]\ar@/_2pc/[ll] \ar[rr]^{Q}
+                                           &&{\D(\G)}\ar@/^2pc/ [ll] \ar@/_2pc/ [ll] }
+\]
+\vskip0.7cm
+where $ex\A/\sim$ is the full subcategory of $\D(\A)$ consisting of exact complexes (in $\Ch(\G)$).
+
+
  \end{thm}
  %
- \begin{proof} By Example~\ref{E:exam-A-inj}~(1) in $\Ch(\A)$ we have the injective cotorsion pair $\Big(dg{\A}\cap dw \B, \widetilde{\B}\Big)$, hence the exact model structure
- $\Big(dg{\A}\cap dw \B, \widetilde{\B}, dw \B\Big)$.
+ \begin{proof} Dual of Theorem~\ref{T:derived-B}.
  \end{proof}
  %
  %
