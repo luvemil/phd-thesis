@@ -1322,7 +1322,7 @@ Starting with a complete hereditary cotorsion pair $(\A, \B)$ in a Grothendieck 
 \item Also the complete hereditary cotorsion pair $(dg\A, \widetilde{\B})$ in $\Ch(\G)$ satisfies the conditions in  Proposition~\ref{P:prop7.3},  hence we have the injective cotorsion pair:
  \[\Delta_2=\Big(dg\A, \tilde\B\cap dw\A\Big)\] in $\Ch(\A)$ and the localizing cotorsion pair $\Big(dg\A,  [\tilde\B\cap dw\A]_K\Big)$ in $\Ch(\A)_{dw}.$
 
-\item If $\A$ is deconstructible, then by Proposition~\ref{P:complete?}~(6) $(ex\A, ex\A{}^\perp{})$ is a complete hereditary cotorsion pair in $\Ch(\G)$ and it satisfies the conditions in Proposition~\ref{P:prop7.3}, hence we have the injective cotorsion pair
+\item If $\A$ is deconstructible, then by Proposition~\ref{P:complete?}~(5) $(ex\A, ex\A{}^\perp{})$ is a complete hereditary cotorsion pair in $\Ch(\G)$ and it satisfies the conditions in Proposition~\ref{P:prop7.3}, hence we have the injective cotorsion pair
  \[\Delta_3=\Big(ex\A, ex\A{}^\perp{}\cap dw\A\Big)\] in $\Ch(\A)$ and the localizing cotorsion pair $\Big(ex\A,  [ex{}^\perp{}\A\cap dw\B]_K\Big)$ in $\Ch(\A)_{dw}.$
 
  \end{enumerate}
@@ -1404,54 +1404,15 @@ where $ex\A/\sim$ is the full subcategory of $\D(\A)$ consisting of exact comple
  %
 \begin{expl}\label{E:exam-A-proj}
 
-Starting with a complete hereditary cotorsion pair $(\A, \B)$ in a Grothendieck  category $\G$ with enough projective objects, we exhibit three examples of projective cotorsion pairs in $\Ch(\G)$ satisfying the assumptions of Proposition~\ref{P:7.2-Groth}.
+If $(\A, \B)$ is a complete hereditary cotorsion pair in a Grothendieck  category $\G$ with enough projective objects,
+$(dg\Proj, \E )$ is a projective cotorsion pair in $\Ch(\G)$ satisfying the assumptions of Proposition~\ref{P:7.2-Groth}. Hence, we have the projective cotorsion pair:
+  \[\Big(dg\Proj, ex\A\Big)\]  in $\Ch(\A)$ and the localizing cotorsion pair $\Big([dg\Proj]_K, ex\A\Big)$ in $\Ch(\A)_{dw}.$
 
-%
- \begin{enumerate}
-\item  By Proposition~\ref{P:complete?}~(3), $(dw\Proj, dw \Proj{}^\perp{})$ is a complete cotorsion pair  in $\Ch(\G)$, and it is a projective cotorsion pair. By Proposition~\ref{P:7.2-Groth},  we have the projective cotorsion pair:
- \[\Gamma_1=\Big(dw\Proj, dw \Proj{}^\perp{}\cap dw\A\Big)\] in $\Ch(\A)$ and the localizing cotorsion pair $\Big([dw\Proj]_K, dw \Proj{}^\perp{}\cap\A\Big)$ in $\Ch(\A)_{dw}.$
- \item By Proposition~\ref{P:complete?}~(6), $(ex\Proj, ex\Proj{}^\perp{})$ is a projective cotorsion pair in $\Ch(\G)$ and by Proposition~\ref{P:7.2-Groth} we have the projective cotorsion pair:
-  \[\Gamma_2=\Big(ex\Proj, ex \Proj{}^\perp{}\cap dw\A\Big)\] in $\Ch(\A)$ and the localizing cotorsion pair $\Big([ex\Proj]_K, ex \Proj{}^\perp{}\cap\A\Big)$ in $\Ch(\A)_{dw}.$
-  \item Since $(dg\Proj, \E )$ is a projective cotorsion pair in $\Ch(\G)$, by Proposition~\ref{P:7.2-Groth} we have the projective cotorsion pair:
-  \[\Gamma_3=\Big(dg\Proj, ex\A\Big)\]  in $\Ch(\A)$ and the localizing cotorsion pair $\Big([dg\Proj]_K, ex\A\Big)$ in $\Ch(\A)_{dw}.$
-\end{enumerate}
 \end{expl}
 
- The above three examples $\Gamma_1, \Gamma_2, \Gamma_3$ of projective cotorsion pairs  in $\Ch(\A)$ satisfy the assumptions of \cite[Theorem 3.5]{G7}. Hence we obtain:
-  %
-  \begin{thm}\label{T:recollement-proj-A} If $\G$ is a Grothendieck category with enough projective objects and $(\A, \B)$ is a complete hereditary cotorsion pair in $\G$, there is a recollement %
-%
 
 
-
-%
-%
-%
-%
-%
-%
-\vskip 0.7cm
-\[
-\xymatrix{\dfrac{ex \Proj}{\sim} \ar[rr]^{inc} &&\dfrac{dw\Proj}{\sim} \ar@/^2pc/
-[ll]\ar@/_2pc/[ll] \ar[rr]^{Q}
-&&{\Ch(\A)/ex\A}\ar@/^2pc/ [ll] \ar@/_2pc/ [ll] }
-\]
-\vskip 0.7cm
-
-where $\sim$ denotes the homotopy relation associated to the corresponding model structure and coincides also with the chain homotopy relation; moreover, $inc$ is the inclusion, $Q$ is the quotient functor.  In particular, the central term is the chain homotopy category $K(\Proj)$ of the complexes with projective components and the right hand term is equivalent to the derived category of $\G$.
-%
-%
-\end{thm}
-%
-%
-%
-%
- %
-%
-Moreover, we have:
-%
-
-\begin{thm}\label{T:triple-A} In the assumptions of Theorem~\ref{T:recollement-proj-A}, the triple
+\begin{thm}\label{T:triple-A} If $\G$ is a Grothendieck category with enough projective objects and $(\A, \B)$ is a complete hereditary cotorsion pair in $\G$ such that $\A$ is deconstructible, the triple
 \[\Big([dg\Proj]_K, ex\A, [ex\A{}^\perp{}\cap dw\A]_K\Big)\] is a localizing cotorsion triple in $\Ch(\A)_{dw}$ and there are equivalences of triangulated categories:
 \[\frac{[dg\Proj]_K}{\sim} \cong \frac{\Ch(\A)}{ex\A} \cong  \frac{[ex\A{}^\perp{}\cap dw\A]_K}{\sim}\]
 where $\sim$ is the chain homotopy equivalence
@@ -1459,7 +1420,7 @@ and a recollement:
 \vskip0.7cm
 \[
 \xymatrix{\dfrac{ex\A}{\sim} \ar[rr]^{inc} &&{K(\A)} \ar@/^2pc/[ll]\ar@/_2pc/[ll] \ar[rr]^{Q}
-&&{\dfrac{\Ch(\A)}{ex\A }}\ar@/^2pc/ [ll] \ar@/_2pc/ [ll] }
+                                           &&{\dfrac{\Ch(\A)}{ex\A }=\D(\A)}\ar@/^2pc/ [ll] \ar@/_2pc/ [ll] }
 .\]
 \vskip0.7cm
 \end{thm}
@@ -1496,10 +1457,12 @@ Another case of cotorsion pairs giving rise to a result analogous to the previou
 &&{\dfrac{\Ch(\A)}{\widetilde{\A} }}\ar@/^2pc/ [ll] \ar@/_2pc/ [ll] }
 .\]
 \vskip0.7cm
+\end{prop}
 
- In particular, if $R$ is commutative, then the above statements apply
- to the class $\A$ of very flat modules. \end{prop}
- %
+ \begin{rem}
+   The above proposition applies, for example, to the case of the cotorsion pair $(\A,\B)$ over a commutative ring $R$ generated by the set $\{R[s^-1]~|~s\in R\}$. The class $\A$ is called the class of very flat modules, and $\A\subseteq \Flat\cap \clP_1$.
+ \end{rem}
+  %
  \begin{proof} Let $0\to F\to A\to F\to 0$ be an exact sequence with $F$ flat and $A\in \A$. Let $0\to F_1\to P\to F\to 0$ be an exact sequence with $P$ projective; then $F_1$ is flat. As in \cite{Sto16}, an application of the horseshoe lemma gives the following commutative diagram:
  \[\xymatrix{
 &0 \ar[d]  & 0 \ar[d] & 0 \ar[d] \\
@@ -1516,7 +1479,7 @@ $\widetilde{\Flat}\cap dw \A=\tilde{\A}$ by Fact~\ref{F:periodic}~(2).  Now the 
 The arguments used above to obtain the recollement $(a)$ for the cotorsion pair $(\Flat, \Cot)$ can be repeated for the case of the cotorsion pair $(\A, \B)$ in our assumption to obtain the stated recollement.\end{proof}
 %
 
-Another situation is provided by Proposition~\ref{P:finite-proj-dim}.
+Another situation is provided by Proposition~\ref{P:finite-proj-dim}:
 \begin{prop}\label{P:new-triple-A}
 Let $\G$ be a Grothendieck category with enough projective objects. Let $(\A, \B)$ be a complete hereditary cotorsion pair in $\G$ with $\B\subseteq \I$ ($\I$ the class of objects with finite injective dimension). Then $ex\A=\tilde\A$, hence $(dg\Proj, \tilde{\A})$ is a projective cotorsion pair in $\Ch(\A)$ and there is a recollement as in Theorem~\ref{T:triple-A} with $ex \A$ replaced by $\tilde\A$.
  In particular, the derived category $\D(\A)$ of $\A$ is equivalent to the usual derived category of $\G$.
