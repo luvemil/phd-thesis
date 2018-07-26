@@ -28,7 +28,7 @@ Let $\mathscr{C}$ be an additive category and $\A\subseteq \mathscr{C}$ a class 
 
 Given a map $\varphi:X\to Y$, recall that a \emph{pseudocokernel} of $\varphi$ is a map $\psi:Y\to Z$ such that $\psi\varphi=0$ and any other $\psi':Y\to Z$ satisfying $\psi'\varphi=0$ factors (not necessarily uniquely) through $\psi$. There an obvious dual notion of \emph{pseudokernel}
 
-\begin{definition}
+\begin{definition}\label{5:def:torsion_pair}
   A pair $\mathbbm{t}=(\T,\F)$ of classes of objects of $\mathscr{C}$ is a \emph{torsion pair} if:
   \begin{enumerate}
     \item $\F=\T\rhperp$ and $\T = \lhperp{\F}$,
@@ -40,6 +40,40 @@ Given a map $\varphi:X\to Y$, recall that a \emph{pseudocokernel} of $\varphi$ i
   \end{enumerate}
   Moreover, a torsion pair $\mathbbm{t}=(\T,\F)$ is called \emph{left} (resp. \emph{right}) \emph{functorial} if $\T$ (resp. $\F$) is a coreflective (resp. reflective) subcategory of $\mathscr{C}$. If $\mathbbm{t}$ is both left and right functorial it is called just \emph{functorial}.
 \end{definition}
+
+\begin{rmk}
+  Our definition of a torsion pair in additive categories requires the existence of a pseudokernel-pseudocokernel sequence, while the usual definition of a torsion pair in abelian categories requires a short exact sequence instead. However, as we'll show in the following lemma, the two definitions actually coincide.
+\end{rmk}
+
+\begin{lemma}
+  Let $\mathscr{C}$ be an abelian category and $(\T,\F)$ be a torsion pair according to \ref{5:def:torsion_pair}. Then, for any $X\in\mathscr{C}$ there is a short exact sequence
+  \begin{equation*}
+    \begin{tikzcd}
+      0\arrow{r}&T_X\arrow{r}&X\arrow{r}&F^X\arrow{r}&0
+    \end{tikzcd}
+  \end{equation*}
+  with $T_X\in\T$ and $F^X\in\F$.
+\end{lemma}
+
+\begin{proof}
+  Consider a pseudokernel-pseudocokernel sequence $T_X\nto{\varepsilon_X} X\nto{\lambda^X} F^X$ with $T_X\in \T$ and $F^X\in\F$, and let $K=\Ker(\lambda^X)$. Then, we have the following diagram:
+  \begin{equation*}
+    \begin{tikzcd}[column sep=large,row sep=large]
+      & K\arrow[tail]{d}{k}\arrow[dashed,shift left]{dl}{u}
+        &\\
+      T_X\arrow{r}{\varepsilon_X}\arrow[dashed,shift left]{ur}{v}
+      & X\arrow{r}{\lambda^X}
+        & F^X
+    \end{tikzcd}
+  \end{equation*}
+  where $u$ and $v$ are given by the (pseudo)kernel properties of $K$ and $T_X$ respectively, i.e. $k\circ u=\varepsilon_X$ and $\varepsilon_X\circ v = k$. Combining the two we get that $k\circ u\circ v = \varepsilon_X\circ v = k$, so $u\circ v=1_K$ (since $k$ is mono). Hence, $u$ is a section and $K {< \atop \oplus} T_X$.
+  % NOTE: can also use $\underset{\oplus}{<}$
+
+  This implies that $\Hom_\mathscr{C}(K,F)=0$ for all $F\in\F$, i.e. $K\in\T$. Moreover, $\lambda^X$ is a pseudocokernel of $k$. Thus, for any $X\in\mathscr{C}$ there is a short exact sequence $0\to K\nto{k} X\nto{\lambda^X} F^X$ with $K\in\T$ and $F^X\in\F$ such that $\lambda^X$ is a pseudocokernel of $k$.
+
+  To conclude the proof, consider the cokernel of $k$ and use a dual argument to get the desired short exact sequence.
+\end{proof}
+
 
 It is a classical result that torsion pairs in Abelian categories are automatically functorial. Similarly, $t$-structures in triangulated categories are examples of functorial torsion pairs.
 
