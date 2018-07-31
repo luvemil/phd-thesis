@@ -38,7 +38,9 @@ Given a map $\varphi:X\to Y$, recall that a \emph{pseudocokernel} of $\varphi$ i
       \end{equation*}
       where $T_X\in\T$ and $F^X\in\F$.
   \end{enumerate}
-  Moreover, a torsion pair $\mathbbm{t}=(\T,\F)$ is called \emph{left} (resp. \emph{right}) \emph{functorial} if $\T$ (resp. $\F$) is a coreflective (resp. reflective) subcategory of $\mathscr{C}$. If $\mathbbm{t}$ is both left and right functorial it is called just \emph{functorial}.
+  Moreover, a torsion pair $\mathbbm{t}=(\T,\F)$ is called \emph{left} (resp. \emph{right}) \emph{functorial} if $\T$ (resp. $\F$) is a coreflective
+  \footnote{A full subcategory $\T$ of $\mathscr{C}$ is called coreflective if the inclusion functor $i:\T\to \mathscr{C}$ has a right adjoint $t$.}
+  (resp. reflective) subcategory of $\mathscr{C}$. If $\mathbbm{t}$ is both left and right functorial it is called just \emph{functorial}.
 \end{definition}
 
 \begin{rmk}
@@ -77,7 +79,16 @@ Given a map $\varphi:X\to Y$, recall that a \emph{pseudocokernel} of $\varphi$ i
 
 It is a classical result that torsion pairs in Abelian categories are automatically functorial. Similarly, $t$-structures in triangulated categories are examples of functorial torsion pairs.
 
-Test
+The following lemma gives basic properties of left functorial torsion pairs. The proof is omitted, since it is a straightforward application of the definitions. The dual obiously hold for right functorial torsion pairs.
+
+\begin{lemma}\label{5:lem:1}
+  Let $\mathbbm{t}=(\T,\F)$ be a left functorial torsion pair in $\mathscr{C}$. Then
+\begin{enumerate}[label=(\alph*)]
+\item\label{5:lem:1a} for any $M\in\mathscr{C}$, $T'\in\T$ and $\alpha\in\Hom_\mathscr{C}(T',M)$ there is a unique $\alpha'\in\Hom_\mathscr{C}(T',t(M))$ such that $\varepsilon_M\circ\alpha'=\alpha$;
+
+\item\label{5:lem:1b} for a morphis $g:T_1\to T_2$ in $\T$, any pseudocokernel $g^C:T_2\to C$ in $\T$ is also a pseudocokernel of $g$ in $\mathscr{C}$.
+\end{enumerate}
+\end{lemma}
 
 %*****************************************
 %*****************************************
