@@ -9,10 +9,10 @@ A different result but in the same spirit arises for a cluster tilting subcatego
 In both cases the construction of the abelian structure, i.e. of the kernels and cokernels, relies heavily on the triangulated structure of $\mathscr{C}$. In \cite{Nakaokaa}, Nakaoka proved that starting from any torsion pair $(\U,\V)$ in a triangulated category $\mathscr{C}$ it is possible to construct an abelian heart $\underline{\clH}$ in the quotient category $\underline{\mathscr{C}}=\mathscr{C}/\W$, where $\W=\U\cap\V[1]$. \todo{Check that $(\U\cap\V)$ is the exact one, since here I am referring to torsion pairs and Nakaoka uses cotorsion pairs in his article}
 This result recovers both cases above giving a unified way of constructing kernels and cokernels in the heart.
 
-Keeping this setting in mind, we will provide a set of axioms for a pair of torsion pairs $\mathbbm{t}_1=(\T_1,\F_1)$ and $\mathbbm{t}_2=(\T_2,\F_2)$ in a (sufficiently nice) \todo{Give a better specification of what this means}
+Keeping this setting in mind, we will provide a set of axioms for a pair of torsion pairs $\t_1=(\T_1,\F_1)$ and $\t_2=(\T_2,\F_2)$ in a (sufficiently nice) \todo{Give a better specification of what this means}
 additive category in such a way that $\clH = \T_1\cap\F_2$ becomes an abelian category. In a sense, our objective is to axiomatize $\underline{\mathscr{C}}$ and the pairs which are referred to as $(\underline{\C}^-,\underline{\V})$ and $(\underline{\U},\underline{\C}^+)$ in \cite{Nakaokaa}.
 
-Since we don't have a triangulated structure to rely on, the axioms will impose some requirements on $\mathbbm{t}_1$ and $\mathbbm{t}_2$ to compensate. Moreover, we will require that idempotents split in $\mathscr{C}$.\todo{check this hypothesis}
+Since we don't have a triangulated structure to rely on, the axioms will impose some requirements on $\t_1$ and $\t_2$ to compensate. Moreover, we will require that idempotents split in $\mathscr{C}$.\todo{check this hypothesis}
 
 The results in this chapter are part of a work in preparation by the author in conjunction with Manuel Saor\'in and Simone Virili.
 
@@ -29,7 +29,7 @@ Let $\mathscr{C}$ be an additive category and $\A\subseteq \mathscr{C}$ a class 
 Given a map $\varphi:X\to Y$, recall that a \emph{pseudocokernel} of $\varphi$ is a map $\psi:Y\to Z$ such that $\psi\varphi=0$ and any other $\psi':Y\to Z$ satisfying $\psi'\varphi=0$ factors (not necessarily uniquely) through $\psi$. There an obvious dual notion of \emph{pseudokernel}
 
 \begin{definition}\label{5:def:torsion_pair}
-  A pair $\mathbbm{t}=(\T,\F)$ of classes of objects of $\mathscr{C}$ is a \emph{torsion pair} if:
+  A pair $\t=(\T,\F)$ of classes of objects of $\mathscr{C}$ is a \emph{torsion pair} if:
   \begin{enumerate}
     \item $\F=\T\rhperp$ and $\T = \lhperp{\F}$,
     \item given $X\in \mathscr{C}$ there is a pseudokernel-pseudocokernel sequence
@@ -38,9 +38,9 @@ Given a map $\varphi:X\to Y$, recall that a \emph{pseudocokernel} of $\varphi$ i
       \end{equation*}
       where $T_X\in\T$ and $F^X\in\F$.
   \end{enumerate}
-  Moreover, a torsion pair $\mathbbm{t}=(\T,\F)$ is called \emph{left} (resp. \emph{right}) \emph{functorial} if $\T$ (resp. $\F$) is a coreflective
-  \footnote{A full subcategory $\T$ of $\mathscr{C}$ is called coreflective if the inclusion functor $i:\T\to \mathscr{C}$ has a right adjoint $t$.}
-  (resp. reflective) subcategory of $\mathscr{C}$. If $\mathbbm{t}$ is both left and right functorial it is called just \emph{functorial}.
+  Moreover, a torsion pair $\t=(\T,\F)$ is called \emph{left} (resp. \emph{right}) \emph{functorial} if $\T$ (resp. $\F$) is a coreflective
+  \footnote{Recall that a full subcategory $\T$ of $\mathscr{C}$ is called coreflective if the inclusion functor $i\colon\T\to \mathscr{C}$ has a right adjoint $t$.}
+  (resp. reflective) subcategory of $\mathscr{C}$. If $\t$ is both left and right functorial it is called just \emph{functorial}.
 \end{definition}
 
 \begin{rmk}
@@ -82,13 +82,142 @@ It is a classical result that torsion pairs in Abelian categories are automatica
 The following lemma gives basic properties of left functorial torsion pairs. The proof is omitted, since it is a straightforward application of the definitions. The dual obiously hold for right functorial torsion pairs.
 
 \begin{lemma}\label{5:lem:1}
-  Let $\mathbbm{t}=(\T,\F)$ be a left functorial torsion pair in $\mathscr{C}$. Then
+  Let $\t=(\T,\F)$ be a left functorial torsion pair in $\mathscr{C}$. Then
 \begin{enumerate}[label=(\alph*)]
 \item\label{5:lem:1a} for any $M\in\mathscr{C}$, $T'\in\T$ and $\alpha\in\Hom_\mathscr{C}(T',M)$ there is a unique $\alpha'\in\Hom_\mathscr{C}(T',t(M))$ such that $\varepsilon_M\circ\alpha'=\alpha$;
 
 \item\label{5:lem:1b} for a morphis $g:T_1\to T_2$ in $\T$, any pseudocokernel $g^C:T_2\to C$ in $\T$ is also a pseudocokernel of $g$ in $\mathscr{C}$.
 \end{enumerate}
 \end{lemma}
+
+\section{Nakaoka contexts}
+
+\begin{definition}
+  A \emph{Nakaoka context} is a pair $\t=(\t_1,\t_2)$ of torsion pairs in $\mathscr{C}$, satisfying the following axioms:
+  \begin{torsionaxioms}
+    \item\label{ax:ct1} $\t_1=(\T_1,\F_1)$ and $\t_2=(\T_2,\F_2)$ are respectively a left functorial and a right functorial torsion pair;
+    \item\label{ax:ct2} $\T_2\subseteq \T_1$ (equiv. $\F_1\subseteq\F_2$).
+  \end{torsionaxioms}
+\end {definition}
+
+\begin{notation}
+  If $\t=(\t_1,\t_2)$ is a Nakaoka context, we will always use the notation $\t_i = (\T_i,\F_i)$ for $i=1,2$ and the coreflection and reflection will be indicated as:
+
+\begin{equation*}
+\begin{tikzcd}
+(i_1,t_1)\colon\T_1\arrow[hook, shift left]{r}{i_1}
+& \mathscr{C}\arrow[shift left]{l}{t_1}
+& \mathrm{and}
+& (f_2,j_2)\colon\F_2\arrow[hook, shift right]{r}[']{j_2}
+& \mathscr{C}\arrow[shift right]{l}[']{f_2}.
+\end{tikzcd}
+\end{equation*}
+
+The counit of the adjunction $(i_1,t_1)$ will be denoted by $\varepsilon_1\colon t_1i_1\to \id_{\T_1}$, while the unit of $(f_2,j_2)$ will be denoted by $\lambda_2\colon \id_{\F_2}\to f_2j_2$.
+\end{notation}
+
+\begin{definition}
+  The \emph{heart} of a Nakaoka context $\t=(\t_1,\t_2)$ is $\clH=\clH_\t:=\T_1\cap\F_2$.
+\end{definition}
+
+In the following lemma we explicitly state two general observations about Nakaoka contexts.
+
+\begin{lemma}\label{5:lem:2}
+Let $\t=(\t_1,\t_2)$ be a Nakaoka context. Then, the followings hold true:
+\begin{enumerate}[label=(\alph*)]
+\item $\F_1\cap\T_2=0$;
+\item $f_2(\T_1)\subseteq\clH$ and $t_1(\F_2)\subseteq\clH$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+(a) Since $\T_2\subseteq\T_1$, we have $\F_1\cap\T_2\subseteq \F_1\cap\T_1=0$.
+
+\smallskip\noindent
+(b) Let $T_2\in\T_2$ and $F_2\in\F_2$. Then, $\Hom_\mathscr{C}(T_2,t_1(F_2))\cong \Hom_\mathscr{C}(T_2,F_2)=0$.
+Hence, $t_1(F_2)\in\T_2^\perp = \F_2$. An analogous proof shows that $f_2(\T_1)\subseteq\T_1$.
+\end{proof}
+
+In the following lemma we introduce a technical condition under which we can easily construct kernels of morphisms in the heart of a given Nakaoka context.
+
+\begin{lemma}\label{5:lem:3}
+Let $\t=(\t_1,\t_2)$ be a Nakaoka context and let $f\colon H\to H'$ be a morphism in the heart $\clH=\clH_\t$. If there is a morphism $f^K\colon K\to H$, with $K\in \F_2$, such that the following sequence is exact in $\Func(\T_1, \Ab)$
+
+\begin{equation*}
+(*)\qquad 0\to (-,K)\restriction_{\T_1}\to (-,H)\restriction_{\T_1}\to (-,H')\restriction_{\T_1},
+\end{equation*}
+then the composition $f^K\circ \varepsilon_{1,K}\colon t_1K\to K\to H$ is a kernel for $f$ in $\clH$.
+\end{lemma}
+\begin{proof}
+Consider the exact sequence in $(*)$ and notice that it gives, by restriction of the functors, an exact sequence of the form:
+\begin{equation*}
+0\to (-,K)\restriction_{\clH}\to (-,H)\restriction_{\clH}\to (-,H')\restriction_{\clH}.
+\end{equation*}
+The map $\varepsilon_{1,K}\colon t_1K\to K$, induces a natural isomorphism $(-,t_1K)\restriction_\clH \to (-,K)\restriction_\clH$, so we get an exact sequence
+\begin{equation*}
+\begin{tikzcd}
+  0\arrow{r}
+  & (-,t_1K)\restriction_{\clH}\arrow{r}{k\circ \varepsilon_{1,K}\circ -}
+  & (-,H)\restriction_{\clH}\arrow{r}
+  & (-,H')\restriction_{\clH}.
+\end{tikzcd}
+\end{equation*}
+To conclude one notices that, since $t_1K\in\clH$ by Lemma \ref{5:lem:2}, the above exact sequence means exactly that $f^K\circ \varepsilon_{1,K}$ is a kernel of $f$.
+\end{proof}
+
+
+\section{Pre-abelian Nakaoka contexts}
+Recall that an additive category is  \emph{pre-Abelian} if any morphism has a kernel and a cokernel. In view of Lemma~\ref{5:lem:3}, it is natural to introduce the following definition:
+
+\begin{definition}
+A Nakaoka context is said to be \emph{pre-Abelian} if it satisfies the following axioms:
+\begin{torsionaxioms}\setcounter{enumi}{2}
+\item\label{ax:ct3} any  $g\colon H\to H'$ in $\clH(\subseteq \T_1)$ admits a pseudocokernel $g^C\colon H'\to C$ in $\T_1$, such that
+\begin{equation*}
+\begin{tikzcd}
+0\arrow{r} &(C,-)_{|\F_2}\arrow{r}{(g^C,-)} & (H',-)_{|\F_2}\arrow{r}{(g,-)}& (H,-)_{|\F_2}
+\end{tikzcd}
+\end{equation*}
+is an exact sequence in $\Func(\F_2,\Ab)$.
+\varitem{^\ast}\label{ax:ct3op} Dual of \ref{ax:ct3}.
+\end{torsionaxioms}
+\end{definition}
+
+\begin{thm}\label{5:thm:preabelian}
+For a pre-Abelian Nakaoka context $\t=(\t_1,\t_2)$, the heart $\clH=\clH_\t$ is a pre-Abelian category.
+\end{thm}
+\begin{proof}
+This is a consequence of the axioms, Lemma \ref{5:lem:3} and its dual.
+\end{proof}
+
+In the following proposition we give a characterization of those morphisms that are monomorphisms in the heart. For this, remember that, in a pre-Abelian category, a morphism is mono if and only if its kernel is trivial.
+
+\begin{prop}\label{prop:1.4}
+  The following are equivalent for a morphism $f\colon H\to H'$ in the heart $\clH=\clH_\t$ of a pre-Abelian Nakaoka context $\t=(\t_1,\t_2)$:
+  \begin{enumerate}[label=(\alph*)]
+    \item $f$ is a monomorphism (in $\clH$);
+    \item there is a pseudokernel $f^K\colon K\to H$ of $f$ in $\F_2$ such that $K\in \F_1$.
+  \end{enumerate}
+\end{prop}
+\begin{proof}
+  For any morphism $f\colon H\to H'$ in $\clH$, by the axiom (CT.$3^*$), we can consider a diagram as follows
+  \begin{equation*}
+    \begin{tikzcd}
+      F_2\arrow{r}{f^K} & H\arrow{r}{f} & H'\\
+      t_1{F_2}\arrow{u}{\varepsilon_{1,F_2}}\arrow{ur}[']{\tilde{f}^K}
+    \end{tikzcd}
+  \end{equation*}
+  where $F_2\in \F_2$ is a pseudo-kernel of $f$ in $\F_2$ and, by Lemma \ref{5:lem:3}, $t_1F_2\to H$ is the kernel of $f$ in $\clH$.
+
+  \smallskip\noindent
+  (a)$\Rightarrow$(b). Since $f$ is a monomorphism in $\clH$, its kernel is trivial, that is, $t_1F_2=0$, which is equivalent to say that $F_2\in \F_1$.
+
+  \smallskip\noindent
+  (b)$\Rightarrow$(a). If  $f^K\colon K\to H$ is a pseudokernel of $f$ in $\F_2$ such that $K\in \F_1$, then the kernel $0=t_1K\to H$ of $f$ in $\clH$ is trivial, that is, $f$ is a monomorphism.
+\end{proof}
+
+
+
+
 
 %*****************************************
 %*****************************************
