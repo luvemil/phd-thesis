@@ -215,6 +215,65 @@ In the following proposition we give a characterization of those morphisms that 
   (b)$\Rightarrow$(a). If  $f^K\colon K\to H$ is a pseudokernel of $f$ in $\F_2$ such that $K\in \F_1$, then the kernel $0=t_1K\to H$ of $f$ in $\clH$ is trivial, that is, $f$ is a monomorphism.
 \end{proof}
 
+\section{Integral Nakaoka contexts}
+
+\begin{definition}
+A pre-Abelian Nakaoka context $\t=(\t_1,\t_2)$ is said to be \emph{integral} provided the following axioms hold:
+\begin{enumerate}
+\item[(CT.4.1)] Given two morphisms $f\colon H\to H'$ and $g\colon K\to H'$ in $\clH$ such that $f$ has a pseudo-cokernel $f^C\colon H'\to C$ with $C\in \T_2$, we can construct a commutative diagram
+\[
+\xymatrix{
+X\ar@{.>}[d]_{x_H}\ar@{.>}[r]^{x_K}&K\ar[r]^{x_K^C}\ar[d]^{g}&C'\\
+H\ar[r]_f&H'\ar[r]_{f^C}&C
+}
+\]
+where $x_K^C\colon K\to C$ is a pseudo-cokernel of $x_K$, $X\in \clH$ and $C'\in \T_2$.
+\item[(CT.4.1$^*$)]  Dual to (CT.4.1).
+\end{enumerate}
+\end{definition}
+
+\begin{thm}
+The following are equivalent for a pre-Abelian Nakaoka context $\t=(\t_1,\t_2)$:
+\begin{enumerate}[label=(\alph*)]
+\item $\t$ is integral;
+\item the heart $\clH=\clH_\t$ is an integral pre-Abelian category.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+(a)$\Rightarrow$(b). Consider a pullback diagram in $\clH$:
+\[
+\xymatrix{
+A\ar@{}[dr]|{PB}\ar[r]^{f'}\ar[d]_{g'}&B\ar[d]^g\\
+C\ar[r]_{f}&D
+}
+\]
+and suppose that $f$ is an epi in $\clH$. By (the dual of) Proposition \ref{prop:1.4}, we can find a pseudo-cokernel $f^C\colon D\to T_2$ of $f$, with $T_2\in \T_2$. By the axiom (CT.4.1), we obtain a commutative diagram as follows
+\[
+\xymatrix{
+X\ar@{.>}[d]_{x_C}\ar@{.>}[r]^{x_B}&B\ar[r]^{f''}\ar[d]^{g}&T'_2\\
+C\ar[r]_f&D\ar[r]_{f^C}&T_2
+}
+\]
+where $f''\colon B\to T_2$ is a pseudo-cokernel of $x_B$, and $X\in \clH$. Since the square we started with is a pullback, there is a unique morphism $\alpha\colon X\to A$, making the following diagram commute:
+\[
+\xymatrix{
+X\ar@/_15pt/[ddr]_{x_C}\ar@/_-15pt/[rrd]^{x_B}\ar@{.>}[dr]|\alpha\\
+&A\ar@{}[dr]|{PB}\ar[r]^{f'}\ar[d]_{g'}&B\ar[d]^g\\
+&C\ar[r]_{f}&D
+}
+\]
+Now, since $x_B$ is a morphism in $\clH$ that admits a pseudo-cokernel (in $\T_1$) which belongs to $\T_2$, $x_B$ is an epimorphism in $\clH$ by Proposition \ref{prop:1.4}. Furthermore, since $x_B=f'\circ\alpha$, also $f'$ is an epi. One can prove dually that pushouts of monomorphisms are mono, so $\clH$ is integral.
+
+\smallskip\noindent
+(b)$\Rightarrow$(a). Suppose that $\clH$ is an integral category and let us show how this implies the axiom (CT.4.1), one can verify (CT.4.1$^*$) dually. Given two morphisms $f\colon H\to H'$ and $g\colon K\to H'$ in $\clH$ such that $f$ has a pseudo-cokernel $f^C\colon H'\to C$ with $C\in \T_2$, we can take the following pullback diagram in $\clH$
+\[
+\xymatrix{
+X\ar[d]_{x_H}\ar[r]^{x_K}\ar@{}[dr]|{PB}&K\ar[d]^{g}\\
+H\ar[r]_f&H'
+}
+\]
+Now, by the integrality of $\clH$, $x_K$ is an epimorphism in $\clH$ and so, by Proposition \ref{prop:1.4}, it admits a pseudo-cockernel $K\to C'$ (in $\T_1$) such that $C'\in \T_1$.
+\end{proof}
 
 
 
