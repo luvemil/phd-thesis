@@ -275,6 +275,83 @@ H\ar[r]_f&H'
 Now, by the integrality of $\clH$, $x_K$ is an epimorphism in $\clH$ and so, by Proposition \ref{prop:1.4}, it admits a pseudo-cockernel $K\to C'$ (in $\T_1$) such that $C'\in \T_1$.
 \end{proof}
 
+\subsection{Abelian Nakaoka contexts}
+
+
+\begin{definition}
+An integral Nakaoka context $\t=(\t_1,\t_2)$ in $\mathscr{C}$ is said to be \emph{Abelian} provided the following axioms hold:
+\begin{enumerate}
+\item[(CT.4.2)] A morphism $f\colon H\to H'$ in $\clH$ is an isomorphism if and only if it fits in a sequence:
+\[
+\xymatrix{
+K\ar[r]^{f^K}&H\ar[r]^f&H'\ar[r]^{f^C}&C
+}
+\]
+where $f^K$ is a pseudo-kernel of $f$ in $\F_2$, $f^C$ is a pseudo-cokernel of $f$ in $\T_1$, $K\in \F_1$ and $C\in \T_2$;
+\item[(CT.4.2$^*$)] dual to (CT.4.2).
+\end{enumerate}
+\end{definition}
+
+
+\begin{thm}
+The following are equivalent for a pre-Abelian Nakaoka context $\t=(\t_1,\t_2)$:
+\begin{enumerate}[label=(\alph*)]
+\item the heart $\clH=\clH_\t$ is an Abelian category;
+\item $\t$ is Abelian (that is, it satisfies (CT.4.1), (CT.4.2) and their duals);
+\item $\t$ satisfies the following axioms:
+\begin{itemize}
+\item[(CT.4)] given a morphism $f\colon H\to H'$ in $\clH$ that admits a pseudo-kernel $f^K\colon H''\to H$ in $\F_2$, such that $H''\in \F_1$, and the commutative diagram
+\begin{equation*}
+\xymatrix{
+ & H\ar[d]^{a}\ar[r]^{f} & H'\ar@{=}[d]\ar[r]^{f^C} & T_1\ar[d]^{\lambda_{2,T_1}}\\
+t_1F_2\ar@{.>}[ur]^{b}\ar[r]^{\varepsilon_{1,F_2}} & F_2\ar[r]^{g^K} & H'\ar[r]^{g} & f_2T_1
+}
+\end{equation*}
+where $f^C$  is a pseudo-cokernel of $f$ in $\T_1$ and $g^K$ is a pseudo-kernel of $g$ in $\F_2$, there exists a morphism $b\colon t_1F_2\to H_1$ such that $ab=\varepsilon_{1,F_2}$;
+\item[(CT.4$^*$)] dual to (CT.4).
+\end{itemize}
+\end{enumerate}
+\end{thm}
+\begin{proof}
+  (a)$\Leftrightarrow$(b). This is almost tautological since, by Theorem \ref{5:thm:integral}, (CT.4.1) is equivalent to say that $\clH$ is integral while, by Proposition \ref{prop:1.4}, (CT.4.2) is equivalent to say that, in $\clH$, morphisms that are both epi and mono are isomorphisms; to conclude it is enough to notice that Abelian categories are exactly those pre-Abelian categories which are integral and where morphisms that are both epi and mono are isomorphisms.
+
+
+\smallskip\noindent
+(a)$\Rightarrow$(c).
+Let $f\colon H\to H'$ be a morphism in $\clH$ that admits a pseudo-kernel $f^K\colon K\to H$ in $\F_2$, such that $K\in \F_1$, and the commutative diagram
+\begin{equation*}
+\xymatrix{
+ & H\ar@{.>}[dl]_{\beta}\ar[d]^{a}\ar[r]^{f} & H'\ar@{=}[d]\ar[r]^{f^C} & T_1\ar[d]^{\lambda_{2,T_1}}\\
+t_1F_2\ar[r]^{\varepsilon_{1,F_2}} & F_2\ar[r]^{g^K} & H'\ar[r]^{g} & f_2T_1
+}
+\end{equation*}
+where $f^C$  is a pseudo-cokernel of $f$ in $\T_1$ and $g^K$ is a pseudo-kernel of $g$ in $\F_2$. Since $f$ is a monomorphism in $\clH$ by Proposition \ref{prop:1.4} (a), and $\clH$ is Abelian, we have that $f=\Ker_\clH \Coker_\clH (f)$. On the other hand, by Lemma \ref{rmk:1.1} (a), there is $\beta\colon H_1\to t_1F_2$ such that $\varepsilon_{1,F_2}\beta = a$ completing the diagram above. Since $f=\Ker \Coker(f)$, it follows that $\beta$ is an isomorphism and (CT.4) follows by setting $b:=\beta^{-1}$. (CT.4$^*$) can be verified by a dual argument.
+
+
+
+\smallskip\noindent
+(c)$\Rightarrow$(a). By Theorem \ref{pre_abelian_theorem}, $\clH$ is pre-Abelian. To prove that $\clH$ is Abelian, we just need to show that any monomorphism (resp. epimorphism) is a kernel (resp. cokernel).
+Hence, let $f\colon H\to H'$ be a monomorphism in $\clH$; by Proposition~\ref{prop:1.4}\todo{Check this reference, the original refers to a lemma}
+we know that $f$ admits a pseudo-kernel in $\F_2$ that belongs in $\F_1$ and thus, by (CT.4), we get a commutative diagram as follows
+\begin{equation*}
+\begin{tikzcd}
+ & H\arrow{r}{f}\arrow{d}{a} & H'\arrow{r}{f^C}\arrow[equal]{d} & T_1\arrow{d}{\lambda_{2,T_1}}\\
+t_1F_2\arrow{ur}{b}\arrow{r}{\varepsilon_{1,F_2}} & F_2\arrow{r}{g^K} & H'\arrow{r}{g} & f_2T_1
+\end{tikzcd}
+\end{equation*}
+where $f^C$  is a pseudo-cokernel of $f$ in $\T_1$ and $g^K$ is a pseudo-kernel of $g$ in $\F_2$. Let $\alpha\colon H\to H'$ be a morphism such that $g\alpha =0$. Since $F_2$ is a pseudo-kernel of $g$, there is a morphism $\alpha'\colon H\to F_2$ such that $g^K\alpha'=\alpha$. By Lemma \ref{rmk:1.1}, $\alpha'$ factors through  $\varepsilon_{1,F_2}$, as in the following diagram:
+\begin{equation*}
+\begin{tikzcd}
+& H_1\arrow{r}{f}\arrow{d}{a} & H_2\arrow{r}{f^C}\arrow[equal]{d}& T_1\arrow{d}{\lambda_{2,T_1}}\\
+t_1F_2\arrow{ur}{b}\arrow{r}{\varepsilon_{1,F_2}} & F_2\arrow{r}{g^K} & H_2\arrow{r}{g} & f_2T_1\\
+& H.\arrow{ur}{\alpha}\arrow[dotted]{u}[description]{\alpha'}\arrow[dotted]{ul}[description]{\alpha''} & &
+\end{tikzcd}
+\end{equation*}
+By setting $\alpha''' := b\alpha''\colon H\to H$, we get $f\alpha''' = g^K ab\alpha'' = g^K\varepsilon_{1,F_2}\alpha''=g^K\alpha' = \alpha$. Thus, any morphism $\alpha\colon H \to H'$ such that $g\alpha =0$ factors through $f$.
+\end{proof}
+
+
+
 
 
 
