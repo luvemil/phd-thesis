@@ -81,12 +81,12 @@ It is a classical result that torsion pairs in Abelian categories are automatica
 
 The following lemma gives basic properties of left functorial torsion pairs. The proof is omitted, since it is a straightforward application of the definitions. The dual obiously hold for right functorial torsion pairs.
 
-\begin{lemma}\label{5:lem:1}
+\begin{lemma}\label{rmk:1.1}
   Let $\t=(\T,\F)$ be a left functorial torsion pair in $\mathscr{C}$. Then
 \begin{enumerate}[label=(\alph*)]
-\item\label{5:lem:1a} for any $M\in\mathscr{C}$, $T'\in\T$ and $\alpha\in\Hom_\mathscr{C}(T',M)$ there is a unique $\alpha'\in\Hom_\mathscr{C}(T',t(M))$ such that $\varepsilon_M\circ\alpha'=\alpha$;
+\item\label{rmk:1.1a} for any $M\in\mathscr{C}$, $T'\in\T$ and $\alpha\in\Hom_\mathscr{C}(T',M)$ there is a unique $\alpha'\in\Hom_\mathscr{C}(T',t(M))$ such that $\varepsilon_M\circ\alpha'=\alpha$;
 
-\item\label{5:lem:1b} for a morphis $g:T_1\to T_2$ in $\T$, any pseudocokernel $g^C:T_2\to C$ in $\T$ is also a pseudocokernel of $g$ in $\mathscr{C}$.
+\item\label{rmk:1.1b} for a morphis $g:T_1\to T_2$ in $\T$, any pseudocokernel $g^C:T_2\to C$ in $\T$ is also a pseudocokernel of $g$ in $\mathscr{C}$.
 \end{enumerate}
 \end{lemma}
 
@@ -182,7 +182,7 @@ is an exact sequence in $\Func(\F_2,\Ab)$.
 \end{torsionaxioms}
 \end{definition}
 
-\begin{thm}\label{5:thm:preabelian}
+\begin{thm}\label{pre_abelian_theorem}
 For a pre-Abelian Nakaoka context $\t=(\t_1,\t_2)$, the heart $\clH=\clH_\t$ is a pre-Abelian category.
 \end{thm}
 \begin{proof}
@@ -232,7 +232,7 @@ where $x_K^C\colon K\to C$ is a pseudo-cokernel of $x_K$, $X\in \clH$ and $C'\in
 \end{enumerate}
 \end{definition}
 
-\begin{thm}
+\begin{thm}\label{5:thm:integral}
 The following are equivalent for a pre-Abelian Nakaoka context $\t=(\t_1,\t_2)$:
 \begin{enumerate}[label=(\alph*)]
 \item $\t$ is integral;
