@@ -1,0 +1,297 @@
+\clearpage
+
+\section{Second approach to axiomatization}
+
+We give another set of axioms:
+
+\begin{enumerate}
+  \item[TC1] $(\mathcal{T}_1, \mathcal{F}_1)$ and $(\mathcal{T}_2,\mathcal{F}_2)$ are two respectively
+  left functorial and right functorial torsion pairs in $\mathcal{X}$.
+  \item[TC2] $\mathcal{T}_2\subseteq\mathcal{T}_1$ (equivalently $\mathcal{F}_1\subseteq\mathcal{F}_2$).
+  \item[TC3] For any morphism $g:T_1 \to T_1'$ in $\mathcal{T}_1$ has a pseudocokernel in $\mathcal{T}_1$ which
+  completes diagrams in a unique way wrt $\mathcal{F}_2$.
+  \item[TC3$^*$] Dual of \textbf{TC3}.
+  \item[TC4]\todo{explain this axiom}
+  \begin{equation*}
+    \begin{tikzcd}
+      F_1\arrow{r}{f^K}
+        & H_1\arrow{r}{^\forall f}\arrow[dashed]{d}
+          & H_2 \arrow{r}{f^C}\arrow[equal]{d}
+            & T_1 \arrow{d}\\
+      i_1t_1(F_2)\arrow[dashed]{ur}\arrow{r}{\varepsilon}
+        & F\arrow{r}
+          & H_2\arrow{r}
+            & j_2f_2(T_1)
+    \end{tikzcd}
+  \end{equation*}
+  \item[TC4$^*$] Dual of \textbf{TC4}.
+\end{enumerate}
+
+\textbf{EXAMPLES}
+
+\begin{enumerate}
+  \item[2] If $(\mathcal{U},\mathcal{V})$ is a cotorsion pair in a triangulated
+  category (as in Nakaoka's work \todo{Add reference}) produces an example.
+  \item[3] Let $\mathcal{D}$ be a triangulated category with two $t$-structures
+  $(\mathcal{U}_1,\mathcal{U}_1^\perp)$ and $(\mathcal{U}_2,\mathcal{U}_2^\perp)$ such that
+  $\mathcal{U}_1[1]\subseteq\mathcal{U}_2\subseteq\mathcal{U}_1$. Then, these satisfy
+  axioms \textbf{TC1}-\textbf{TC3},\textbf{TC3$^*$}, hence $\mathcal{H}=\mathcal{U}_1\cap\mathcal{U}_2^\perp$ has
+  kernels and cokernels. Moreover, TFAE:
+  \begin{enumerate}
+    \item[1.a] \textbf{TC4} holds.
+    \item[1.b] If $V_1\to H_1\nto{f}\to H_2\nto{+}$ is a distinguished triangle such
+    that $H_1, H_2\in\mathcal{H}$ and $V_1\in\mathcal{U}_1^\perp$, then $V_1\in\mathcal{U}_2^\perp[-1]$.
+  \end{enumerate}
+  And, dually, there is an equivalence of the following:
+  \begin{enumerate}
+    \item[2.a] \textbf{TC4$^*$} holds.
+    \item[2.b]\label{ax:eqa} If $H_1\nto{f}H_2\to U_2\nto{+}$ is a distinguished triangle such
+    that $H_1,H_2\in\mathcal{H}$ and $U_2\in\mathcal{U}_2$, then $U_2\in\mathcal{U}_1[1]$.
+  \end{enumerate}
+\end{enumerate}
+
+\begin{proof}[Proof of the equivalences in example 3]
+  Let's $\mathcal{D}$ be a triangulated category with two t-structures as in example 3. The pseudocokernel
+  of a morphism in $\mathcal{U}_1$ can be computed by taking the cone in $\mathcal{D}$, i.e. given a morphism
+  $f:U_1\to U_1'$ in $\mathcal{U}_1$ we can compute a pseudocokernel in $\mathcal{U}_1$ by completing $f$
+  to a triangle
+  \begin{equation*}
+    U_1\nto{f}U_1'\to \mathrm{Cone}(f)\nto{+}.
+  \end{equation*}
+  Moreover, this pseudocokernel satisfies \textbf{TC3}.
+
+  Now, assume that \textbf{TC1}-\textbf{TC3},\textbf{TC3*} are satisfied together with axiom
+  \textbf{1.b}, and consider the solid part of the diagram as in \textbf{TC4}:
+  \begin{equation*}
+    \begin{tikzcd}
+      \mathrm{Cone}(f)[-1]\arrow{r}{f^K}
+        & H_1\arrow{r}{f}\arrow{d}{\alpha}
+          & H_1\arrow{r}{f^C}\arrow[equal]{d}
+            & \mathrm{Cone}(f)\arrow{d}{\lambda}\\
+      \tau_{\mathcal{U}_1}(V_2)\arrow{r}{\varepsilon}\arrow[dotted]{ur}{\beta}
+        & V_2\arrow{r}
+          & H_2\arrow{r}
+            & \tau^{\mathcal{U}_2^\perp}\mathrm{Cone}(f)
+    \end{tikzcd}
+  \end{equation*}
+  with $\mathrm{Cone}(f)[-1]\in\mathcal{U}_1^\perp$ and where the upper row is a
+  distinguished triangle. By \textbf{1.b} then it belongs
+  to $\mathcal{U}_2^\perp[-1]$, i.e. $\mathrm{Cone}(f)\in\mathcal{U}_2^\perp$, so
+  $\lambda$ is an iso, conseguently $\alpha$ is an iso and so is $\varepsilon$, so
+  there exist a map $\beta=\alpha^{-1}\circ\varepsilon$ making the diagram commute, that
+  is \textbf{TC4} holds.
+
+  Conversely, assume that \textbf{TC1}-\textbf{TC3},\textbf{TC3*} are satisfied together with
+  \textbf{TC4}. Consider again the solid part of the diagram
+  \begin{equation*}
+    \begin{tikzcd}
+      \mathrm{Cone}(f)[-1]\arrow{r}{f^K}\arrow{d}{\lambda[-1]}
+        & H_1\arrow{r}{f}\arrow{d}{\alpha}
+          & H_1\arrow{r}{f^C}\arrow[equal]{d}
+            & \mathrm{Cone}(f)\arrow{d}{\lambda}\\
+      \tau_{\mathcal{U}_2^\perp}(\mathrm{Cone}(f))[-1]\arrow{r}
+        & V_2\arrow{r}
+          & H_2\arrow{r}
+            & \tau^{\mathcal{U}_2^\perp}\mathrm{Cone}(f)\\
+        & \tau_{\mathcal{U}_1}(V_2)\arrow{u}{\varepsilon}\arrow[dotted, crossing over, bend left=70]{uu}[near end,']{\beta}
+        & &
+    \end{tikzcd}
+  \end{equation*}
+  with $\mathrm{Cone}(f)[-1]\in\mathcal{U}_1^\perp$. Neeman \todo{Add reference} guarantees
+  that $\alpha$ can be taken so that the square on the left is a pullback. Axiom \textbf{TC4}
+  gives the existence of $\beta:\tau_{\mathcal{U}_1}(V_2)\to H_1$ such that $\alpha\circ\beta=\varepsilon$.
+
+  Since $\tau_{\mathcal{U}_1}$ is a functor, there is also a morphism
+  $\tau_{\mathcal{U}_1}(\alpha):\tau_{\mathcal{U}_1}(H_1)=H_1\to \tau_{\mathcal{U}_1}(V_2)$ such that
+  $\varepsilon\circ\tau_{\mathcal{U}_1}(\alpha)=\alpha$, hence
+  $\varepsilon\circ\tau_{\mathcal{U}_1}(\alpha)\circ\beta = \varepsilon$. By the functoriality of
+  the torsion pair $(\mathcal{U}_1,\mathcal{U}_1^\perp)$, this means that
+  $\tau_{\mathcal{U}_1}(\alpha)\circ\beta=1_{\tau_{\mathcal{U}_1}(V_2)}$. Then, $\mathcal{\beta}$ is a section.
+
+  Hence, we can write $\tau_{\mathcal{U}_1}(\alpha):H_1\to \tau_{\mathcal{U}_1}(V_2)$
+  as
+  \begin{equation*}
+    \begin{tikzcd}
+      \tau_{\mathcal{U}_1}(\alpha):\tau_{\mathcal{U}_1}(V_2)\oplus H_1'
+      \arrow{r}{
+          \begin{psmallmatrix}
+            \ast \amsamp 0
+          \end{psmallmatrix}
+          }
+        & \tau_{\mathcal{U}_1}(V_2)
+    \end{tikzcd}
+  \end{equation*}
+  for some $H_1'\underset{\oplus}{<} H_1$ such that
+  $\alpha$ vanishes on $H_1'$. If we consider the solid part of the diagram
+  \begin{equation*}
+    \begin{tikzcd}
+      & H_1'\arrow[dashed]{dl}
+      \arrow{d}{
+        \begin{psmallmatrix}
+          1 \\ 0
+        \end{psmallmatrix}
+      }\arrow{dr}{0}
+        & & &\\
+      \mathrm{Cone}(\tau_{\mathcal{U}_1}(\alpha))[-1]\arrow{r}
+        & H_1\arrow{r}{\tau_{\mathcal{U}_1}(\alpha)}
+          & \tau_{\mathcal{U}_1}(V_2)\arrow[dashed]{r}{+}
+            & {}
+    \end{tikzcd}
+  \end{equation*}
+  we can construct the dashed arrow, and the fact that the triangle commutes means
+  that $H_1'\underset{\oplus}{<}\mathrm{Cone}(\tau_{\mathcal{U}_1}(\alpha))[-1]$.
+
+  Observe that $\mathrm{Cone}(\alpha)=\mathrm{Cone}(\lambda)[-1]$, since
+  the square
+  \begin{equation*}
+    \begin{tikzcd}
+      \mathrm{Cone}(f)[-1]\arrow{r}{f^K}\arrow{d}{\lambda[-1]}
+        & H_1\arrow{d}{\alpha} \\
+      \tau_{\mathcal{U}_2^\perp}(\mathrm{Cone}(f))[-1]\arrow{r}
+        & V_2
+    \end{tikzcd}
+  \end{equation*}
+  is a pullback. Moreover, $\mathrm{Cone}(\lambda)[-1] = (\tau_{\mathcal{U}_2}(\mathrm{Cone}(f))[1])[-1]
+  =\tau_{\mathcal{U}_2}(\mathrm{Cone}(f))$. Hence, $\mathrm{Cone}(\alpha)\in \mathcal{U}_2$ and
+  $\tau^{\mathcal{U}_1^\perp}(\mathrm{Cone}(\alpha))=0$, that is,
+  $\mathrm{Cone}(\alpha)\in\mathcal{U}_1$, and since there is a distinguished triangle
+  \begin{equation*}
+    H_1\nto{\alpha} V_2\to \mathrm{Cone}(\alpha)\nto{+}
+  \end{equation*}
+  with $H_1,\mathrm{Cone}(\alpha)\in\mathcal{U}_1$ it follows that
+  $V_2\in\mathcal{U}_1$. Hence, $\tau_{\mathcal{U}_1}(V_2)\cong V_2$.
+
+  We can then write $V_2\underset{\oplus}{<}H_1$ and consider the commutative diagram
+  \begin{equation*}
+    \begin{tikzcd}
+      H_1 \cong H_1'\oplus V_2\arrow{r}{
+        \begin{psmallmatrix}
+          f' \amsamp \tilde{f}
+        \end{psmallmatrix}
+      }\arrow{d}{
+        \begin{psmallmatrix}
+          0 \amsamp 1
+        \end{psmallmatrix}
+      }
+        & H_2\arrow[equal]{d}\\
+      V_2\arrow{r}
+        & H_2
+    \end{tikzcd}
+  \end{equation*}
+  so $f'=0$. Hence, the inclusion $
+  \begin{psmallmatrix}
+    1 \\ 0
+  \end{psmallmatrix}:H_1'\to H_1'\oplus V_2$ can be lifted to
+  $\mathrm{Cone}(f)[-1]$ and $H_1'\underset{\oplus}{<}\mathrm{Cone}(f)[-1]$.
+  Since $\mathrm{Cone}(f)[-1]\in \mathcal{U}_1^\perp$, so does $H_1'$. Similarly,
+  $H_1'\in\mathcal{U}_1$ because $H_1\in\mathcal{U}_1$. Hence, $H_1'=0$ and $\alpha:H_1\to V_2$ is an iso.
+  The same follows for $\lambda$. Therefore, $\mathrm{Cone}(f)\in\mathcal{U}_2^\perp$ which
+  proves \textbf{1.b}.
+\end{proof}
+
+We can see a special case of example 3 in the case of the derived category of a ring.
+Let $R$ be a commutative ring, consider the t-structure $(\mathcal{U}_1,\mathcal{U}_1^\perp)=(\mathcal{D}^{\leq 0}(R), \mathcal{D}^{>0}(R))$
+in $\mathcal{D}(R)$. Given an idempotent ideal $I=I^2\lhd R$, it defines three classes of modules
+\begin{align*}
+  \mathcal{C}_I &= \{ C\in\Mod R | IC=C\}\\
+  \mathcal{T}_I &= \{ T\in\Mod R | IT=0\} \cong \Mod\frac{R}{I}\\
+  \mathcal{F}_I &= \{ F\in\Mod R | Ix \neq 0 \forall x\in F\setminus \{0\} \}
+\end{align*}
+such that $(\mathcal{C}_I, \mathcal{T}_I)$ and $(\mathcal{T}_I,\mathcal{F}_I)$ make two torsion pairs.
+We call the triple $(\mathcal{C}_I,\mathcal{T}_I,\mathcal{F}_I)$ a TTP triple.
+
+We define the t-structure $(\mathcal{U}_2,\mathcal{U}_2^\perp)$ as the Happel-Reiten-Smalo t-structure
+associated to the torsion pair $(\mathcal{C}_I,\mathcal{T}_I)$ in $\Mod R$:
+\begin{align*}
+  \mathcal{U}_2 &= \{ U_2\in\mathcal{D}^{\leq 0}(R) | H^0(U_2)\in\mathcal{C}_I \} \\
+  \mathcal{U}_2^\perp &= \{ V_2\in\mathcal{D}^{\geq 0}(R) | H^0(V_2)\in\mathcal{T}_I \}.
+\end{align*}
+
+In this case we can check that condition \textbf{1.b} holds. In fact, let $\mathcal{H}$ be the heart
+\begin{align*}
+  \mathcal{U}_1\cap\mathcal{U}_2^\perp &= \mathcal{D}^{\leq 0}(R)\cap \mathcal{U}_2^\perp \\
+  &= \{ T[0] | T\in\mathcal{T}_I \} \cong \Mod\frac{R}{I}.
+\end{align*}
+Hence, $\mathcal{H}$ is abelian.
+
+Now, consider $V_1\in\mathcal{U}_1^\perp$ such that there is an exact triangle
+\begin{equation*}
+  V_1\to T_1[0]\nto{f[0]}T_2[0]\nto{+}
+\end{equation*}
+with $T_1,T_2\in\mathcal{H}$. Of course, $V_1 = \mathrm{Cone}(f)[-1]$, i.e.
+\begin{equation*}
+  V_1 = \cdots \to0\to\,\oset[2ex]{\small 0}{T_1}\,\nto{f}\,\oset[2ex]{\small 1}{T_2}\,\to 0\to \cdots
+\end{equation*}
+where the numbers over $T_1$ and $T_2$ represent their cohomological degree.
+
+The fact that $V_1\in\mathcal{U}_1^\perp = \mathcal{D}^{> 0}(R)$ implies that $H^0(V_1)=0$, i.e. $f$ is mono.
+To prove that $V_1\in\mathcal{U}_2^\perp[-1]$ we would need to show that $\mathrm{Coker}(f)=H^1(V_1)$ belongs to $\mathcal{T}_I$,
+but this follows from the fact that $f$ is a mono in $\mathcal{T}_I$ which is a torsion class.
+
+\subsection{Polishchuk correspondence}
+
+Given a t-structure $(\mathcal{U}_1,\mathcal{U}_1^\perp)$ in a triangulated category $\mathcal{D}$ there is
+a correspondence between t-structures $(\mathcal{U}_2,\mathcal{U}_2^\perp)$ satisfying $\mathcal{U}_1[1]\subseteq \mathcal{U}_2\subseteq\mathcal{U}_1$
+in $\mathcal{D}$ and torsion pairs in $\mathcal{H}_1=\mathcal{U}_1\cap\mathcal{U}^\perp[1]$, namely
+\begin{equation*}
+  \begin{tikzcd}
+    \left\{
+    \begin{array}{c}
+      \text{torsion pairs in} \\
+      \mathcal{H}_1=\mathcal{U}_1\cap \mathcal{U}_1^\perp[1]
+    \end{array}
+    \right\}
+    \arrow{r}
+      &
+      \left\{
+        \begin{array}{c}
+          \text{t-structures }
+          (\mathcal{U}_2,\mathcal{U}_2^\perp) \\
+          \text{ in } \mathcal{D}
+          \text{ satisfying } \\ \mathcal{U}_1[1]\subseteq \mathcal{U}_2\subseteq\mathcal{U}_1
+        \end{array}
+      \right\}\\
+    (\mathcal{X},\mathcal{Y})\arrow{r}
+      &
+      \left\{
+        \begin{array}{l}
+          \mathcal{U}_2 = \{X\in\mathcal{U}_1\,|\,H^0(X)\in\mathcal{X}\}\\
+          \mathcal{U}_2^\perp = \{Y\in\mathcal{U}_1^\perp\,|\,H^0(Y)\in\mathcal{Y}\}
+        \end{array}
+      \right. \\
+    (\mathcal{U}_2\cap\mathcal{H}_1,\mathcal{U}_2^\perp\cap\mathcal{H}_1)
+      & (\mathcal{U}_2,\mathcal{U}_2^\perp)\arrow{l}
+  \end{tikzcd}
+\end{equation*}
+
+Observe that $(\mathcal{U}_2\cap\mathcal{H}_1,\mathcal{U}_2^\perp\cap\mathcal{H}_1)$
+is actually $(\mathcal{U}_1^\perp\cap\mathcal{U}_2, \mathcal{U}_1\cap\mathcal{U}_2^\perp)$, where
+the right hand side $\mathcal{U}_1\cap\mathcal{U}_2^\perp$ is exactly our heart $\mathcal{H}$.
+
+Hence, under this correspondence, given a t-structure $(\mathcal{U}_1,\mathcal{U}_1^\perp)$
+in a triangulated, the t-structures $(\mathcal{U}_2,\mathcal{U}_2^\perp)$ satisfying
+$\mathcal{U}_1[1]\subseteq \mathcal{U}_2\subseteq\mathcal{U}_1$ and such that the
+heart $\mathcal{H}=\mathcal{U}_1\cap\mathcal{U}_2^\perp$ is abelian and in bijection
+with the abelian torsion free classes of $\mathcal{H}_1=\mathcal{U}_1\cap\mathcal{U}_1^\perp[1]$.
+
+The following lemma clarifies which properties characterize an abelian torsion free class
+in an abelian category.
+
+\begin{lemma}
+  Let $\mathcal{A}$ be an abelian category and let $(\mathcal{T},\mathcal{F})$ be a torsion pair in $\mathcal{A}$.
+  The following assertions hold:
+  \begin{enumerate}
+    \item If $f:F\to F'$ is a morphism in $F$, then the composition
+    \begin{equation*}
+      F'\nto{f^C}\Coker_\mathcal{A}(f)\to\frac{\Coker_\mathcal{A}(f)}{t(\Coker_\mathcal{A}(f))}
+    \end{equation*}
+    is the cokernel map of $f$ in $\mathcal{F}$.
+    \item $f:F\to F'$ as above is an epimorphism in $\mathcal{F}$ if and only if
+    $\Coker_\mathcal{A}(f)\in\mathcal{T}$.
+    \item Epimorphisms and cokernel maps coincide in $\mathcal{F}$ if and only if
+    each morphism $f$ in $\mathcal{F}$ with $\Coker_\mathcal{A}(f)\in\mathcal{T}$ is
+    an epimorphism in $\mathcal{A}$.
+    \item $\mathcal{F}$ is an abelian category if and only if $\mathcal{F}$ is closed
+    under quotients in $\mathcal{A}$.m
+  \end{enumerate}
+\end{lemma}

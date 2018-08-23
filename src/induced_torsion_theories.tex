@@ -1,0 +1,134 @@
+\clearpage
+
+\section{Induced torsion theories}
+
+In this section and the following we study the case of a torsion pair $(\mathcal{T},\mathcal{F})$
+in a (nice) category $\mathcal{A}$, such that there is a subcategory $\mathcal{W}\subseteq\mathcal{F}$
+of $\mathcal{A}$ for which it makes sense to consider $\underline{\mathcal{A}}=\mathcal{A}/\mathcal{W}$. The goal is to
+describe the cases where $(\mathcal{T},\mathcal{F})$ induces a torsion pair in $\underline{\mathcal{A}}$.
+\todo{add a better description of the setting}
+
+\subsection{Torsion pairs in the stable category}
+
+\begin{lemma}
+  Let $\mathcal{A}$ be a (nice) category and $\mathcal{W}\subseteq\mathcal{A}$ a subcategory
+  such that $\mathrm{add}(\mathcal{W})=\mathcal{W}$. If $(^\perp\mathcal{F},\mathcal{F})$ is a torsion pair
+  such that $\mathcal{W}\subseteq \mathcal{F}$, then $(^\perp(\underline{\mathcal{F}}),\underline{\mathcal{F}})$
+  is an orthogonal pair in $\underline{\mathcal{A}}=\dfrac{\mathcal{A}}{\mathcal{W}}$.
+\end{lemma}
+
+\begin{lemma}\label{lem:notes:3}
+  Let $\mathcal{A}$ and $\mathcal{W}\subseteq\mathcal{A}$ be defined as above and let
+  $(^\perp\mathcal{F},\mathcal{F})$ be a torsion pair in $\mathcal{A}$ such that $\mathcal{W}\subseteq\mathcal{F}$.
+  Call $p:\mathcal{A}\to \underline{\mathcal{A}}$ the quotient functor.
+  The following assertions hold:
+  \begin{enumerate}
+    \item $p^{-1}(^\perp(\underline{\mathcal{F}}))=\mathrm{add}(^\perp\mathcal{F}\ast\mathcal{W})$.
+    \item If $\mathcal{W}$ is precovering in $\mathcal{F}$, then $(^\perp\underline{\mathcal{F}},\underline{\mathcal{F}})$
+    is a torsion pair in $\underline{\mathcal{A}}$.
+  \end{enumerate}
+\end{lemma}
+
+\begin{lemma}
+  Let $\mathcal{A}$ be a (nice) category with a torsion pair $(^\perp\mathcal{F}, \mathcal{F})$ and a precovering class
+  $\mathcal{W}\subseteq \mathcal{F}$ such that for any $F\in\mathcal{F}$ there is an admissible
+  sequence
+  \begin{equation*}
+    F'\to W\to F
+  \end{equation*}
+  such that $F'\in\mathcal{F}$.
+
+  Then the torsion pair $(^\perp(\underline{\mathcal{F}}),\underline{\mathcal{F}})$ is left functorial.
+\end{lemma}
+
+Recall that the truncation $t:\underline{\mathcal{A}}\to {^\perp(\underline{\mathcal{F}})}$ is given by the following construction.
+
+Let $M\in\mathcal{A}$ be any object, take an admissible sequence
+\begin{equation*}
+  T_M\to M\to F^M
+\end{equation*}
+with $T_M\in{^\perp\mathcal{F}}$ and $F^M\in\mathcal{F}$. Moreover, consider $W_F\to F^M$ with $W_M\in\mathcal{W}$
+as before, and take the admissible pullback:
+\begin{equation*}
+  \begin{tikzcd}
+    t(M)\arrow{d}\arrow{r}&W_F\arrow{d}\\
+    M\arrow{r}&F
+  \end{tikzcd}
+\end{equation*}
+
+Then, $t$ restricts to a functor $\underline{t}:\underline{\mathcal{A}}\to {^\perp\underline{\mathcal{F}}}$.
+
+In order to prove that $(^\perp(\underline{\mathcal{F}}),\underline{\mathcal{F}})$ is left functorial we
+need to show that $\underline{t}$ admits a right adjoint.
+
+\begin{proof}
+  Let $M\in\mathcal{A}$ and consider $M\to F^M$ and $W_F\to F^M$ as above.
+  For any $T\in{^\perp\mathcal{F}\ast \mathcal{W}}$ consider any morphism
+  $f:T\to M$. Since $T\to M\to F^M$ is 0 in $\underline{\mathcal{A}}$ we that the solid part of the
+  following diagram commutes.
+  \begin{equation*}
+    \begin{tikzcd}
+      T\arrow[bend right]{ddr}[']{f}\arrow{rrr}\arrow[dotted]{dr}{\psi}
+        & & & W\arrow[dashed]{ld}[']{\phi}\arrow[bend left]{ddl}
+              \\
+        & t(M)\arrow{r}\arrow{d}
+          & W_F\arrow{d}
+            & \\
+        & M\arrow{r}
+          & F^M
+            &
+    \end{tikzcd}
+  \end{equation*}
+\end{proof}
+
+Since $W_F\to F^M$ is a precover there is a morphism $\phi:W\to W_F$ making the diagram commute, and
+since the square is an admissible pullback there is a morphism $\psi:T\to t(M)$ making the diagram commutative.
+
+Hence, $\mathcal{A}(T,t(M))\to \mathcal{A}(T,M)$ is surjective. To conclude the proof we need to show
+that when restricted to $\underline{\mathcal{A}}$ it becomes an iso. Assume that there are two morphisms
+$\underline{\psi}$ and $\underline{\psi}'$ in $\underline{\mathcal{A}}$ such that the following commutes:
+\begin{equation*}
+  \begin{tikzcd}
+    & t(M)\arrow{d}\\
+    T\arrow[shift left=-1]{ur}[near end,']{\underline{\psi}'}
+    \arrow[shift left=1]{ur}[near end]{\underline{\psi}}
+    \arrow{r}[']{\underline{f}}
+      & M
+  \end{tikzcd}
+\end{equation*}
+
+So, if we call $h=\psi-\psi'$ in $\mathcal{A}$, we have that $T\nto{h} t(M) \to M$ factors through $W$
+so that we have that the solid part of the following diagram commutes:
+\begin{equation*}
+  \begin{tikzcd}
+    W\arrow[bend right]{dddrr}\arrow[bend left,dashed]{rrrdd}{\eta}
+      \arrow[bend left,dotted]{ddrr}{\gamma}
+      & & &\\
+      & T\arrow{ul}[near start,']{p}\arrow{ddr}[']{g}\arrow{dr}[near start]{h}
+        & & \\
+      & & t(M)\arrow{d}\arrow{r}
+          & W_F\arrow{d}\\
+      & & M\arrow{r}
+          & F^M
+  \end{tikzcd}
+\end{equation*}
+where $\eta:W\to W_F$ comes from the fact that $W_F\to F^M$ is a precover, and $\gamma$ from the fact that
+the square is an admissible pullback, and they make the complete diagram commute.
+
+Let's call $h'=\gamma\circ p$, then composing both $h$ and $h'$ with $\rho:t(M)\to M$ gives the same morphism $g$.
+Hence, $\rho\circ(h-h')=0$. But since $F'\nto{i} t(M) \to M$ is an admissible sequence we have the following exact
+sequence of abelian groups:
+\begin{equation*}
+  \begin{tikzcd}
+    \mathcal{A}(T,F)\arrow{r}
+      & \mathcal{A}(T,t(M))\arrow{r}
+        & \mathcal{A}(T,M)\\
+      & h-h'\arrow[mapsto]{r}
+        & 0
+  \end{tikzcd}
+\end{equation*}
+So there is a map $k:T\to F'$ such that $i\circ k = h-h'$, but $\underline{k}=0$ so
+$\underline{h}=\underline{h'}=0$, hence $\underline{\psi} - \underline{\psi}' =0$ which proves that
+$\underline{\mathcal{A}}(T,t(M))\cong \underline{\mathcal{A}}(T,M)$.
+
+The naturality of the isomorphism in $T$ and $M$ is clear.

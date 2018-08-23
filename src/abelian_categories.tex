@@ -1,0 +1,346 @@
+\subsection{Abelian categories}
+
+Now we work in an abelian category with two torsion pairs $(\mathcal{T}_1,\mathcal{F}_1)$
+and $(\mathcal{T}_2,\mathcal{F}_2)$ such that $t_2(\mathcal{F}_1)\subseteq \mathcal{F}_1$ and
+$f_1(\mathcal{T}_2)\subseteq \mathcal{T}_2$ and let $\mathcal{W}=\mathcal{T}_2\cap\mathcal{F}_1$.
+
+Recall that $(\underline{\mathcal{T}_1\ast\mathcal{W}},\underline{\mathcal{F}_1})$
+(resp. $(\underline{\mathcal{T}_2},\underline{\mathcal{W}\ast\mathcal{F}_2})$) is a left (resp. right)
+functorial torsion pair in $\underline{\mathcal{A}} = \dfrac{\mathcal{A}}{\mathcal{W}}$. Moreover, they
+satisfy $TC1-3,3^*$.
+
+\begin{lemma}
+  The inclusion $i:\mathcal{T}_1\ast \mathcal{W}\hookrightarrow \mathcal{A}$ admits a right adjoint
+  $\widehat{t}$.
+\end{lemma}
+
+\begin{proof}
+  For $M\in\mathcal{A}$ consider the exact sequence
+  \begin{equation*}
+    0\rightarrow T_1\rightarrow M\rightarrow f_1(M) \rightarrow 0
+  \end{equation*}
+  with $T_1\in\mathcal{T}_1$ and $f_1(M)\in\mathcal{F}$. Take $t_2f_1(M)\hookrightarrow f_1(M)$ and observe
+  that $t_2f_1(M)\in \mathcal{W}$. Call it $W_M$ and take the pullback diagram
+  \begin{equation*}
+    \begin{tikzcd}
+      \widehat{t}(M)\arrow{r}\arrow{d}
+        & W_M\arrow[tail]{d}\\
+      M \arrow[two heads]{r}
+        & f_1(M)
+    \end{tikzcd}
+  \end{equation*}
+  then $\widehat{t}(M)\in\mathcal{T}_1\ast\mathcal{W}$.
+
+  Now for any morphism $\widehat{T}\to M$ with $\widehat{T}\in\widehat{\mathcal{T}}$ the solid part
+  of the following diagram commutes
+  \todo{$\widehat{T}\to M$ is mono by Buhler prop. 2.14: pullback of monic along epic is monic}
+  \begin{equation*}
+    \begin{tikzcd}
+      T\arrow[tail]{r}\arrow[equal]{d}
+        & \widehat{t}(M)\arrow[two heads]{r}\arrow{d}\arrow[from=dd,bend left=50,dotted]
+          \arrow[phantom,"\ulcorner",very near start]{dr}
+          & W\arrow[tail]{d}\\
+      T \arrow[tail,crossing over]{r}
+        & M\arrow[two heads]{r}
+          & f_1(M)\\
+      T_1\arrow[tail]{r}
+        & \widehat{T}\arrow[two heads]{r}\arrow{u}
+          & W_1\arrow[dashed]{u}\arrow[bend right=50,dashed]{uu}
+    \end{tikzcd}
+  \end{equation*}
+  Since the composition $T_1\to \widehat{T}\to M\to f_1(M)$ is zero, there exists the dashed
+  morphism $W_1\to f_1(M)$, which lifts to the morphism $W_1\to W$ (since $W\to f_1(M)$ is a $\mathcal{W}$-precover).
+  Hence, there is a morphism $\widehat{T}\to \widehat{t}(M)$ making the diagram commutative. This means that
+  \begin{equation*}
+    \mathcal{A}(\widehat{T},\widehat{t}(M))\nto{\mathcal{A}(\widehat{T},\widehat{t}(M)\to M)}
+      \mathcal{A}(\widehat{T},M)
+  \end{equation*}
+  is surjective. But it is also injective, since $\Ker (\widehat{t}(M)\to M)=0$. Hence, it is an iso and $\widehat{t}$ is
+  right adjoint to $i$.\todo{functoriality should follow immediately}
+\end{proof}
+
+\begin{lemma}\label{ab:lem:5}
+  Let $\widehat{T}_1\in\mathcal{T}_1\ast\mathcal{W}$, i.e. there is an exact sequence
+  \begin{equation*}
+    0\to t_1(\widehat{T}_1)\to \widehat{T}_1\to W_1\to 0.
+  \end{equation*}
+  If
+  \begin{equation*}
+    \begin{tikzcd}
+      \widehat{T}_1\arrow[two heads]{r}{p}\arrow{d}{g}
+        & W_1\arrow{d}{g'} \\
+      \widehat{T}'_1\arrow{r}{q}&N
+    \end{tikzcd}
+  \end{equation*}
+  is a pushout diagram, then $N\in\mathcal{T}_1\ast\mathcal{W}$.
+\end{lemma}
+
+\begin{proof}
+  Since it is a pushout, $\widehat{T}'_1 \to N$ is epi, then consider $\widehat{t}(N)$
+  and the following commutative diagram
+  \begin{equation*}
+    \begin{tikzcd}
+      \widehat{T}'_1\arrow[two heads]{rr}{q} \arrow[dashed]{dr}{\rho}
+        & & N\\
+        & \widehat{t}(N)\arrow[tail]{ur}{\varepsilon}
+          &
+    \end{tikzcd}
+  \end{equation*}
+  where the map $\widehat{T}'_1\to \widehat{t}(N)$ is given by the adjunction $(i,\widehat{t})$.
+  Since $q=\varepsilon\circ\rho$ is epi, then $\varepsilon$ is epi. But it is mono, so it is an isomorphism,
+  hence $N\in\mathcal{T}_1\ast\mathcal{W}$.
+\end{proof}
+
+\begin{lemma}\label{ab:lem:6}
+  In the same notation as the previous lemma, if $\varphi:N\to P$ is any map s.t. $\underline{\varphi}\circ \underline{q} = \underline{0}$ in
+  $\underline{\mathcal{A}}$, then $\varphi$ factors through $\mathcal{W}$.
+\end{lemma}
+
+\begin{proof}
+  Since $\underline{\varphi}\circ\underline{q}=\underline{0}$ it means that $\varphi\circ q$ factors through $\mathcal{W}$, hence we
+  have that the solid part of the following diagram is commutative.
+  \begin{equation*}
+    \begin{tikzcd}
+      0\arrow{r}
+        & t_1(T'_1)\arrow{r}\arrow{d}
+          & \widehat{T}_1\arrow{r}\arrow{d}
+            & W_1\arrow{r}\arrow{d}\arrow[bend left, dashed]{dd}
+              & 0\\
+      0\arrow{r}
+        & X\arrow{r}
+          & \widehat{T}'_1\arrow{r}\arrow[equal]{d}
+            & N\arrow[crossing over]{dr}{\varphi}\arrow[dotted]{d}
+              &\\
+        & & \widehat{T}'_1\arrow{r}
+            & W\arrow{r}
+              & P
+    \end{tikzcd}
+  \end{equation*}
+  Since $t_1(T'_1)\to \widehat{T}_1\to \widehat{T}'_1\to W$ is zero, there is the dashed morphism $W_1\to W$ making the
+  diagram commute. Since the square on the right is a pushout there is a map $N\to W$, and again the diagram commutes.
+  Hence $\varphi$ factors through $\mathcal{W}$.
+\end{proof}
+
+\begin{lemma}\label{ab:lem:7}
+  Let $H_1\nto{f}H_2$ be a morphism in
+  $\mathcal{H}:=\underline{\mathcal{T}_1\ast\mathcal{W}}\cap
+  \underline{\mathcal{W}\ast\mathcal{F}_2}$. The following assertions hold:
+  \begin{enumerate}
+    \item $f$ is an epi in $\mathcal{H}$ iff the pushout diagram in $\mathcal{A}$
+    \begin{equation*}
+      \begin{tikzcd}
+        H_1\arrow{r}{p}\arrow{d}{f}
+          & W\arrow{d}{f'}\\
+        H_2\arrow{r}{q}
+          & T_2
+      \end{tikzcd}
+    \end{equation*}
+    has the property that $T_2\in\mathcal{T}_2$, where $p:H_1\to f_1(H_1)=W_1$ is the canonical
+    map associated to the torsion pair $(\mathcal{T}_1,\mathcal{F}_1)$
+    \item $f$ is a monomorphism in $\mathcal{H}$ iff the pullback diagram in $\mathcal{A}$
+    \begin{equation*}
+      \begin{tikzcd}
+        F_1\arrow{r}\arrow{d}
+          & H_1\arrow{d}\\
+        W_2=t_2(H_2)\arrow{r}{u}
+          & H_2
+      \end{tikzcd}
+    \end{equation*}
+    has the property that $F_1\in\mathcal{F}_1$, where $W_2=t_2(H_2)\nto{u}H_2$ is the
+    canonical map associated to the torsion pair $(\mathcal{T}_2,\mathcal{F}_2)$.
+  \end{enumerate}
+\end{lemma}
+
+\begin{lemma}
+  If $X\nto{f}Y$ is a morphism in $\mathcal{A}$ such that $\underline{f}$ is a section
+  (resp. retraction) in $\underline{\mathcal{A}}$, then $\underline{X}$ is isomorphic
+  to a direct summand of $\underline{Y}$ (resp. $\underline{Y}$ is isomorphic to a direct summand
+  of $\underline{X}$ in $\underline{\mathcal{A}}$).
+\end{lemma}
+
+\begin{rmk}
+  In the course of the proof of \cref{ab:lem:7} we proved that in the pushout
+  \begin{equation*}
+    \begin{tikzcd}
+      H_1\arrow{r}{p}\arrow{d}{f}
+        & W_1\arrow{d}{f'}\\
+      H_2\arrow{r}{q}
+        & N
+    \end{tikzcd}
+  \end{equation*}
+  $\underline{q}$ is an epimorphism in $\underline{\mathcal{A}}$. In fact, the proof is valid
+  also if $f:\widehat{T}_1\to \widehat{T}_1'$ is any morphism in $\underline{\mathcal{T}_1\ast\mathcal{W}}$.
+  Since we know that $N\in\underline{\mathcal{T}_1\ast\mathcal{W}}$ (by \cref{ab:lem:5})
+  we conclude that any morphism $\underline{f}$ in $\underline{\mathcal{T}_1\ast\mathcal{W}}$
+  has actually a cokernel in $\underline{\mathcal{T}_1\ast\mathcal{W}}$, which is also
+  a cokernel in $\underline{\mathcal{A}}$. This follows directly from \cref{ab:lem:7}.
+\end{rmk}
+
+\begin{lemma}\label{ab:lem:10}
+  If $f:H_1\to H_2$ is any moprhism with $H_1,H_2\in(\mathcal{T}_1\ast\mathcal{W})\cap(\mathcal{W}\ast\mathcal{F}_2)$
+  and $\underline{f}$ is an epimorphism in $\mathcal{H}:=(\underline{\mathcal{T}_1\ast\mathcal{W}})\cap(\underline{\mathcal{W}\ast\mathcal{F}_2})$,
+  then $\underline{f}$ is isomorphic \todo{?} to a morphism $\underline{g}$, such that
+  $g:H_1'\to H_2'$ is a morphism in $(\mathcal{T}_1\ast\mathcal{W})\cap(\mathcal{W}\ast\mathcal{F}_2)$ and
+  $\Coker_\mathcal{A} g \in\mathcal{T}_2$ and $\Ker_\mathcal{A} g\in\mathcal{W}\ast\mathcal{F}_2$.
+\end{lemma}
+
+\begin{lemma}
+  If $\mathcal{H}$ is balanced (i.e. mono and epi implies iso), then whenever $f:H_1\to H_2$
+  is mono and epi in $\mathcal{H}$, there are bicartesian squares in $\mathcal{A}$
+  \begin{equation*}
+    \begin{tikzcd}
+      F_1\arrow{r}\arrow{d}\arrow[phantom,"\ulcorner",very near start]{dr}
+        \arrow[phantom,"\lrcorner",very near end]{dr}
+        & H_1\arrow{r}\arrow{d}{f}\arrow[phantom,"\ulcorner",very near start]{dr}
+          \arrow[phantom,"\lrcorner",very near end]{dr}
+          & W_1\arrow{d}\\
+      W_2\arrow{r}
+        & H_2\arrow{r}
+          & T_2
+    \end{tikzcd}
+  \end{equation*}
+  where $W_1=f_1(H_1)$ and $W_2=t_2(H_2)$. In particular there is an exact sequence
+  \begin{equation*}
+    0\to F_1\to W_1\oplus W_2 \to T_2\to 0.
+  \end{equation*}
+\end{lemma}
+
+\begin{proof}
+  We can build the pullback on the left and the pushout on the right as usual
+  \begin{equation}\label{lem12:eq1}
+    \begin{tikzcd}
+      F_1\arrow{r}{f^K}\arrow{d}{u}\arrow[phantom,"\ulcorner",very near start]{dr}
+        & H_1\arrow{r}{r}\arrow{d}{f}\arrow[phantom,"\lrcorner",very near end]{dr}
+          & W_1\arrow{d}{s}\\
+      W_2\arrow{r}{v}
+        & H_2\arrow{r}{f^C}
+          & T_2
+    \end{tikzcd}
+  \end{equation}
+
+  We will only prove that the square on the right hand side is a pullback, since the proof
+  that the left square is a pushout is dual. The statetment that the square on the right is
+  a pushout is equivalent to saying that there is an exact sequence
+  \begin{equation}\label{lem12:eq2}
+    \begin{tikzcd}
+      H_1\arrow{r}{
+        \begin{psmallmatrix}
+          f \\ r
+        \end{psmallmatrix}
+      }
+        & H_2\oplus W_1 \arrow{r}{
+          \begin{psmallmatrix}
+            f^C \amsamp s
+          \end{psmallmatrix}
+        }
+          & T_2\arrow{r}
+            & 0
+    \end{tikzcd}
+  \end{equation}
+  \todo{$H_1\oplus T_2\cong H_2\cong W_1$
+  $\Rightarrow$ $T_2\in\mathcal{W}\ast\mathcal{F}$
+  $W'\into T_2\overset{0}{\onto} F'$, with
+  $W'\in\mathcal{W},T_2\in\mathcal{T}_2, F'\in\mathcal{F}_2$, hence $T_2\in\mathcal{W}$.}
+
+  Since $f$ is both a mono and an epi in $\mathcal{H}$, then it is an iso and hence
+  both a section and a retraction. Consider $g:H_2\to H_1$ such that
+  $\underline{g}\circ\underline{f} = \underline{1_{H_1}}$, that is there are maps $\alpha:H_1\to W$ and
+  $\beta:W\to H_1$ such that
+  \begin{equation*}
+    \begin{tikzcd}
+      H_1\arrow{r}{
+        \begin{psmallmatrix}
+          f\\ \alpha
+        \end{psmallmatrix}
+      }\arrow[bend right]{rr}[']{1_{H_1}}
+      & H_2\oplus W \arrow{r}{
+        \begin{psmallmatrix}
+          g\amsamp \beta
+        \end{psmallmatrix}
+        }
+        & H_1
+    \end{tikzcd}
+  \end{equation*}
+  is commutative in $\mathcal{A}$, and hence $H_1$ is a direct summand of $H_2\oplus W$. We can actually choose $W=W_1$,
+  in fact consider the commutative diagram
+  \begin{equation*}
+    \begin{tikzcd}
+      H_1\arrow[equal]{d}\arrow{r}{
+        \begin{psmallmatrix}
+          f \\ r
+        \end{psmallmatrix}
+      }
+        & H_2\oplus W_1 \arrow{r}{
+          \begin{psmallmatrix}
+            f^C \amsamp -s
+          \end{psmallmatrix}
+        }\arrow{d}{
+          \begin{psmallmatrix}
+            1 \amsamp 0\\
+            0 \amsamp \rho
+          \end{psmallmatrix}
+        }
+          & T_2
+      \\
+      H_1\arrow{r}{
+        \begin{psmallmatrix}
+          f\\ \alpha
+        \end{psmallmatrix}
+      }\arrow[bend right]{rr}[']{1_{H_1}}
+      & H_2\oplus W \arrow{r}{
+        \begin{psmallmatrix}
+          g\amsamp \beta
+        \end{psmallmatrix}
+        }
+        & H_1
+    \end{tikzcd}
+  \end{equation*}
+  where $\rho:W_1\to W$ comes from the fact that $H_1\to W_1$ is a $\mathcal{W}$-preenvelope. Hence,
+  $
+    \begin{psmallmatrix}
+      g\amsamp \beta
+    \end{psmallmatrix}
+    \circ
+    \begin{psmallmatrix}
+      1 \amsamp 0\\
+      0 \amsamp \rho
+    \end{psmallmatrix}
+    \circ
+    \begin{psmallmatrix}
+      f \\ r
+    \end{psmallmatrix}
+    = 1_{H_1}
+  $, that is $H_1$ is a direct summand of $H_2\oplus W_1$. Moreover, it means that
+  $
+    \begin{psmallmatrix}
+      f \\ r
+    \end{psmallmatrix}
+  $ is a section, that is the sequence in \eqref{lem12:eq2} is also exact on the left and
+  the corresponding square in \eqref{lem12:eq1} is a pullback diagram.
+
+  Since both squares in \eqref{lem12:eq1} are bicartesian, it follows that the square
+  \begin{equation*}
+    \begin{tikzcd}
+      F_1\arrow{r}\arrow{d}
+        \arrow[phantom,"\ulcorner",very near start]{dr}
+        \arrow[phantom,"\lrcorner",very near end]{dr}
+        & W_1\arrow{d}\\
+      W_2\arrow{r}& T_2
+    \end{tikzcd}
+  \end{equation*}
+  is bicartesian as well.
+\end{proof}
+
+\begin{prop}
+  Let $\A$ be abelian and let $(\T_1,\F_1)$, $(\T_2,\F_2)$ be torsion pairs in $\A$
+  such that $t_2(\F_1)\subseteq \F_1$ and $f_1(\T_2)\subseteq \T_2$. If $\W:= \T_2\cap\F_1$, then:
+  \begin{enumerate}
+    \item $(\underline{\T_1\ast\W},\underline{\F_1})$ is a left functorial torsion pair in $\underline{\A}:=\dfrac{\A}{\W}$,
+    \item $(\underline{\T_2},\underline{\W\ast\F_2})$ is a right functorial torsion pair in $\underline{\A}$,
+    \item $(\underline{\T_1\ast\W},\underline{\F_1})$ and $(\underline{\T_2},\underline{\W\ast\F_2})$ are torsion pairs satisfying \ref{ax:ct1}-\ref{ax:ct3},\ref{ax:ct3op}.
+  \end{enumerate}
+\end{prop}
+
+\begin{corollary}
+  $\H=(\underline{\T_1\ast\W})\cap(\underline{\W\ast\F_2})$ is pre-abelian.
+\end{corollary}

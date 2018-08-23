@@ -1,0 +1,766 @@
+\clearpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Nakaoka contexts in special categories}
+\subsection{Nakaoka contexts in Abelian categories}
+
+Let's consider the case $\mathcal{X}=\mathcal{A}$ of an Abelian category with
+two torsion pairs $\mathbb{t}_i=(\mathcal{T}_i,\mathcal{F}_i)$ for $i=1,2$.
+Consider $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$.
+
+\begin{lemma}\label{rmk:2.2}
+For an Abelian category $\A$, any Nakaoka context is integral.
+\end{lemma}
+\begin{proof}
+  Let $\mathcal{T}_2\subseteq\mathcal{T}_1$, we need to show that \cref{ax:ct1},
+  \cref{ax:ct3} and \cref{ax:ct3op} hold.
+  \begin{torsionaxioms}
+    \item It is well known that any torsion pair in an abelian category is functorial.
+    \setcounter{enumi}{2}
+    \item Let $g:T_1\to T_1'$ be a morphism in $\mathcal{T}_1$. Consider the cokernel morphism
+    of $g$ in $\mathcal{A}$
+    \begin{equation*}
+      \Coker_\mathcal{A}(T_1\nto{g}T_1')=(T_1'\nto{c_g}\Coker(g)).
+    \end{equation*}
+    Since $\mathcal{T}_1$ is closed under quotient objects, we get that $\Coker(g)\in\mathcal{T}_1$.
+    Therefore, we can choose $c_g:T_1'\to\Coker(g)$ as $g^C:T_1'\to\PCok_\mathcal{A}(g)$.\todo{Is there an explicit choice
+    that we made somewhere before when we talk about $\PCok_\mathcal{A}$?}
+    \varitem{^\ast} Anologous to the previous.
+  \end{torsionaxioms}
+
+\bigskip\bigskip
+Let us now verify the axiom (CT.4.1). Indeed, consider two morphisms $f\colon H\to H'$ and $g\colon K\to H'$ in $\mathcal{H}$ such that $f$ has a pseudo-cokernel $f^C\colon H'\to C$ with $C\in \T_2$ and consider the following pullback diagram in $\A$
+\[
+\xymatrix{
+X\ar@{}[dr]|{P.B.}\ar@{.>}[d]_{x_H}\ar@{.>}[r]^{x_K}&K\ar[r]^{x_K^C}\ar[d]|{g}&C\ar@{=}[d]\\
+H\ar[r]_f&H'\ar[r]_{f^C}&C
+}
+\]
+where $x_K^C\colon K\to C$ is a pseudo-cokernel of $x_K$. Clearly $X\leq H\oplus K$, so that $X\in \F_2$.
+\[
+\xymatrix{
+t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
+&X\ar@{}[dr]|{P.B.}\ar@{.>}[d]_{x_H}\ar@{.>}[r]^{x_K}&K\ar[r]^{x_K^C}\ar[d]|{g}&C\ar@{=}[d]\\
+&H\ar[r]_f&H'\ar[r]_{f^C}&C
+}
+\]
+\end{proof}
+
+\begin{corollary}\label{cor:2.3}
+  Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a torsion pair in $\mathcal{A}$ with $\mathcal{T}_2\subseteq\mathcal{T}_1$.
+  Then, for $f:H_1\to H_2$ in $\mathcal{H}$, the following statements hold:
+  \begin{enumerate}[label=(\alph*),ref=(\alph*)]
+    \item\label{cor:2.3:a} the cokernel of $f$ in $\mathcal{H}$ is the composition of the morphisms
+      \begin{equation*}
+        \begin{tikzcd}
+          H_2\arrow{r}{c_f}&\Coker(f)\arrow{r}{\lambda_{2,\Coker(f)}}&f_2(\Coker(f));
+        \end{tikzcd}
+      \end{equation*}
+    \item\label{cor:2.3:b} the kernel of $f$ in $\mathcal{H}$ is the composition of the morphisms
+      \begin{equation*}
+        \begin{tikzcd}
+          t_1(\Ker(f))\arrow{r}{\varepsilon_{1,\Ker(f)}}&\Ker(f)\arrow{r}{k_f}&H_1;
+        \end{tikzcd}
+      \end{equation*}
+    \item\label{cor:2.3:c} $f$ is an epimorphism in $\mathcal{H}$ if and only if $\Coker(f)\in\mathcal{T}_2$;
+    \item\label{cor:2.3:d} $f$ is a monomorphism in $\mathcal{H}$ if and only if $\Ker(f)\in\mathcal{F}_1$.
+  \end{enumerate}
+\end{corollary}
+
+\begin{proof}
+  \ref{cor:2.3:a} and \ref{cor:2.3:b} follow from the proof of \cref{rmk:2.2}\todo{this should be a remark, fix it}
+  and \cref{prop:1.3}.
+
+  \ref{cor:2.3:c}
+  \begin{enumerate}
+    \item[$\Leftarrow$] is trivial.
+    \item[$\Rightarrow$] By \cref{prop:1.4} \ref{prop:1.4:b} there exists $f^C:H_2\to T_2$, where
+      $T_2=\Coker_{T_1}(f)\in\mathcal{T}_2$. Then, we have
+
+      \begin{minipage}[b]{0.45\linewidth}
+        \begin{equation*}
+          \begin{tikzcd}[column sep=tiny]
+            H_2\arrow{rr}{f^C}\arrow{dr}[']{c_f}
+              & & T_2 \arrow[dashed, shift right]{ld}[']{u}\\
+              & \Coker(f)\arrow[dashed, shift right]{ur}[']{v}
+          \end{tikzcd}
+        \end{equation*}
+      \end{minipage}
+      \begin{minipage}[b]{0.45\linewidth}
+        \begin{equation*}
+          \text{such that }
+          \left\{
+          \begin{array}{c}
+            uf^C = c_f,\\
+            vc_f = f^C.
+          \end{array}
+          \right.
+        \end{equation*}
+      \end{minipage}
+
+      Hence, $uvc_f=c_f$, but $c_f$ is epi, therefore $uv=1$. Hence, $\Coker(f)$ is a direct
+      summand of $T_2\in\mathcal{T}_2$ so $\Coker(f)\in\mathcal{T}_2$.
+  \end{enumerate}
+
+  \ref{cor:2.3:d} Similar to the previous proof.
+\end{proof}
+
+\begin{thm}\label{thm_2_4}
+  Let $\mathbb{t}_i=(\mathcal{T}_i,\mathcal{F}_i)$ be a torsion pair in an abelian category
+  $\mathcal{A}$, for $i=1,2$, such that $\mathcal{T}_2\subseteq \mathcal{T}_1$. Then, for
+  $\mathcal{H}:=\mathcal{T}_1\cap\mathcal{F}_2$ the following statements are equivalent:
+  \begin{enumerate}[label=(\alph*)]
+    \item $\mathcal{H}$ is an abelian category.
+    \item The following conditions hold:
+      \begin{enumerate}[label=(\alph{enumi}\arabic*)]
+        \item For any $f:H\to H'$ in $\mathcal{H}$, with $\Ker(f)\in\mathcal{F}_1$,
+        we have that $\Ker(f)=0$.
+        \item For any $f:H\to H'$ in $\mathcal{H}$, with $\Coker(f)\in\mathcal{T}_2$,
+        we have that $\Coker(f)=0$.
+        \item $\mathcal{H}$ is closed under kernels (resp. cokernels) of epimorphisms
+        (resp. monomorphisms) in $\mathcal{A}$.
+      \end{enumerate}
+    \item $\mathcal{H}$ is closed under kernels and cokernels in $\mathcal{A}$.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  ($(a)\Rightarrow (b1),(b2)$) Assume that $\H$ is an abelian category. By \cref{cor:2.3}\ref{cor:2.3:d}, $(b1)$ holds if and only if any monomorphism in $\H$ is a monomorphism in $\A$.
+
+  Observe that for any $f:H\to H'$, we have that $\Ker_\H(f)\nto{\tilde{f}^H}H$ is a monomorphism in $\A$. Indeed, by \cref{cor:2.3}\ref{cor:2.3:b}, we know that $\tilde{f}^H$ is the composition of
+  \begin{equation*}
+    \begin{tikzcd}
+      t_1(\Ker(f))\arrow{r}{\varepsilon_{1,\Ker(f)}}
+        & \Ker(f)\arrow{r}{k_f}
+          & H;
+    \end{tikzcd}
+  \end{equation*}
+  and, since $\varepsilon_{1,\Ker(f)}$ and $k_f$ are monomorphism in $\A$, so is $\tilde{f}^H$.
+
+  Furthermore, if $f:H\to H'$ is a monomorphism in $\H$, then $f=\Ker_\H(\Coker_\H(f))$ since $\H$ is abelian. Thus, $f$ is a monomorphism in $\A$.
+
+  A dual argument can be used to prove $(b2)$.
+
+  ($(a)\Rightarrow (b3)$) Let $f:H\to H'$ in $\H$ be a monomorphism in $\A$. We want to prove that $\Coker(f)\in\H$.
+
+  Observe that the diagram
+  \begin{equation}\label{thm_2_4_eq_1}
+    \begin{tikzcd}
+      0\arrow{r}
+      & H\arrow{r}{f}\arrow{d}{\alpha}
+        & H'\arrow{r}{c_f}\arrow[equal]{d}
+          & \Coker(f)\arrow{d}{\lambda_2}\arrow{r}
+            & 0\\
+      0 \arrow{r}
+      & \Ker(g)\arrow{r}{k_g}
+        & H' \arrow{r}{g\colon=\lambda_2c_f}
+          & f_2(\Coker(f)) \arrow{r}
+            & 0
+    \end{tikzcd}
+  \end{equation}
+  is commutative and has exact rows. Then, by Snake's lemma we get that $\Ker(\alpha)=0$ and $\Coker(\alpha)\cong\Ker(\lambda_2)=t_2(\Coker(f))\in\T_2$.
+
+  Since $\H$ is abelian, we know that $f=\Ker_\H(\Coker_\H(f))$. Therefore, by $\cref{cor:2.3}$ and \eqref{thm_2_4_eq_1}, we get that the dashed morphism
+  in the following commutative diagram exists
+  \begin{equation*}
+    \begin{tikzcd}
+      & H\arrow{r}{f}\arrow[dashed]{dl}[']{\exists\varphi}
+        & H'\arrow[equal]{d}\\
+      t_1(\Ker(g))\arrow{r}{\varepsilon_{1,\Ker(g)}}
+      & \Ker(g)\arrow{r}{k_g}
+        & H'
+    \end{tikzcd}
+  \end{equation*}
+  and it is an isomorphism. But, $k_g\varepsilon_{1,\Ker(g)}\varphi = f= k_g\alpha$ and $k_g$ is mono, hence $\varepsilon_{1,\Ker(g)}\varphi = \alpha$. Therefore,
+  \begin{equation*}
+    \Coker(\alpha)\cong \Coker(\varepsilon_{1,\Ker(g)})=\frac{\Ker(g)}{t_1(\Ker(g))}= f_1(\Ker(g))\in\F_1.
+  \end{equation*}
+
+  Thus, $\Coker(\alpha)\in\T_2\cap\F_1=0$ and so $\alpha$ is an isomorphism. By \eqref{thm_2_4_eq_1} is follows that $\Coker(f)\cong f_2(\Coker(f))\in\F_2$ and, using the fact that $T_1$ is closed under quotients, we conclude that $\Coker(f)\in\T_1\cap\F_2=\H$. A dual argument shows that $\H$ is closed under kernels of epimorphism in $\A$.
+
+  ($(b)\Rightarrow (a)$) We already know that $\H$ is preabelian. On order to prove that $\H$ is abelian we need to show that any monomorphism (resp. epimorphism) in $\H$ is a kernel (resp. cokernel).
+
+  Let $f:H\to H'$ be a monomorphism in $\H$. By \cref{cor:2.3} and $(b1)$, it follows that $f$ is a monomorphism in $\A$. Thus, we have a short exact sequence in $\A$
+  \begin{equation*}
+    \begin{tikzcd}
+      0 \arrow{r}
+      & H\arrow{r}{f}
+        & H'\arrow{r}{c_f}
+          & \Coker(f) \arrow{r}
+            & 0.
+    \end{tikzcd}
+  \end{equation*}
+
+  Furthermore, from $(b3)$ we know that $\Coker(f)\in\H$. Then, $\Coker(f)=\Coker_\H(f)$ and $\Ker(c_f)=\Ker_\H(c_f)$. Therefore, $f=\Ker(\Coker(f))=\Ker_\H(\Coker_\H(f))$.
+
+  ($(a),(b)\Rightarrow (c)$) Let $f:H\to H'$ be a morphism in $\H$. We want to show that $\Ker(f)\in\H$. Consider the exact sequence
+  \begin{equation*}
+    \begin{tikzcd}
+      0 \arrow{r}
+      & \Ker(f)\arrow{r}
+        & H\arrow{r}
+          & \Img(f) \arrow{r}
+            & 0,
+    \end{tikzcd}
+  \end{equation*}
+  by $(b3)$ it is enough to show that $\Img(f)\in\H$. Since $\H$ is abelian, we have the canonical factorization of $f$ in $\H$
+  \begin{equation*}
+    \begin{tikzcd}
+      H\arrow{rr}{f}\arrow[two heads]{rd}[']{f'}
+      & & H'\\
+      & \Img_\H(f)\arrow[hook]{ur}[']{f''}
+        &
+    \end{tikzcd}
+  \end{equation*}
+  where $f'$ is an epi and $f''$ is a mono (in $\H$). Then, by $(b1)$ and $(b2)$ we have that $f'$ and $f''$ are respectively an epi and a mono in $\A$. Therefore, $\Img(f)\cong \Img_\H(f)\in\H$, and by the exact sequence
+  \begin{equation*}
+    \begin{tikzcd}
+      0 \arrow{r}
+      & \Img(f)\arrow{r}
+        & H'\arrow{r}
+          & \Coker(f) \arrow{r}
+            & 0,
+    \end{tikzcd}
+  \end{equation*}
+  and $(b3)$ we conclude that $\Coker(f)\in\H$.
+
+  $(c)\Rightarrow (a)$ is clear.
+
+\end{proof}
+
+\subsection{Nakaoka contexts in triangulated categories}
+
+Let $\mathcal{X}=\mathcal{T}$ be a triangulated category on which idempotents split.
+We start by recalling the definition of a t-structure in $\mathcal{T}$.
+
+\begin{definition}
+  A pair $(\mathcal{A},\mathcal{B})$ of full subcategories of $\mathcal{T}$ is a t-structure
+  in $\mathcal{T}$ if
+  \begin{enumerate}[label=(\alph*)]
+    \item $\mathbb{t}=(\mathcal{A},\mathcal{B}[-1])$ is a torsion pair in $\mathcal{T}$, and
+    \item $\mathcal{A}[1]\subseteq \mathcal{A}$.
+  \end{enumerate}
+\end{definition}
+
+\begin{rmk}
+  It is well known that any t-structure $(\mathcal{A},\mathcal{B})$ in $\mathcal{T}$
+  gives a functional torsion pair $\mathbb{t}=(\mathcal{A},\mathcal[-1])$ and
+  $\mathbb{B}[-1]\subseteq\mathcal{B}$. Furthermore, $\mathcal{A}$ and
+  $\mathcal{B}$ are closed under extensions and direct summands. Note that the t-structure
+  $(\mathcal{A},\mathcal{B})$ depends only on $\mathcal{A}$, since $\mathcal{B}=\mathcal{A}^\perp[1]$.
+\end{rmk}
+
+\begin{definition}
+  A \emph{related} torsion pair $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ in triangulated category
+  $\mathcal{T}$ consists of the torsion pairs $\mathbb{t}_1=(\mathcal{T}_1,\mathcal{F}_1)$
+  and $\mathbb{t}=(\mathcal{T}_2,\mathcal{F}_2)$ in $\mathcal{T}$ such that
+  $\mathcal{T}_1[1]\subseteq \mathcal{T}_2\subseteq\mathcal{T}_1$.
+\end{definition}
+
+\begin{prop}
+  Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a related torsion pair in $\mathcal{T}$. Then
+  \begin{enumerate}[label=(\alph*)]
+    \item $(\mathcal{T}_1,\mathcal{F}_1[1])$ and $(\mathcal{T}_2,\mathcal{F}_2[1])$
+    are t-structures in $\mathcal{T}$;
+    \item $\mathbb{t}$ is a compatible torsion pair in $\mathcal{T}$;
+    \item the heart $\mathcal{H}_\mathbb{t} := \mathcal{T}_1\cap\mathcal{F}_2[1]$ is a preabelian category.
+  \end{enumerate}
+\end{prop}
+
+\begin{definition}
+  A related torsion pair $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ in the triangulated category
+  $\mathcal{T}$ is \emph{strong} if for any morphism $f:H_1\to H_2$, in $\mathcal{H}:=\mathcal{T}_1\cap\mathcal{F}_2$,
+  and a distinguished triangle $Z\to H_1\nto{f}H_2\to Z[1]$, the following conditions
+  hold true
+  \begin{relatedtorsion}
+    \item $Z\in\mathcal{F}_1$ if and only if $Z\in\mathcal{F}_2[-1]$;
+    \item $Z[1]\in\mathcal{T}_2$ if and only if $Z\in\mathcal{T}_1$.
+  \end{relatedtorsion}
+\end{definition}
+
+\begin{thm}\label{thm:2.6}
+  Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a strongly related torsion pair in
+  the triangulated category $\mathcal{T}$. Then, the heart $\mathcal{H}=\mathcal{H}_\mathbb{t}$
+  is an abelian category.
+\end{thm}
+
+\begin{example}
+  Let $(\mathcal{A},\mathcal{B})$ be a t-structure in $\mathcal{T}$. Consider
+  $\mathbb{t}_1:=(\mathcal{A},\mathcal{B}[-1])$ and $\mathbb{t}_2 :=(\mathcal{A}[1],\mathcal{B})$.
+  It is not hard to see that $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ is a strongly related
+  torsion pair in $\mathcal{T}$. In this case, by \cref{thm:2.6}, we get that $\mathcal{H}=\mathcal{A}\cap\mathcal{B}$
+  is an abelian category (BBD theorem).
+\end{example}
+
+\begin{example}\label{example_tria}
+  Let $\mathcal{D}$ be a triangulated category with two $t$-structures
+  $(\mathcal{U}_1,\mathcal{U}_1^\perp)$ and $(\mathcal{U}_2,\mathcal{U}_2^\perp)$ such that
+  $\mathcal{U}_1[1]\subseteq\mathcal{U}_2\subseteq\mathcal{U}_1$. Observe that for any
+  morphism $f$ in $\mathcal{D}$, the cone $\mathrm{Cone}(f)$ of $f$ in $\mathcal{D}$ is
+  always a pseudocokernel $f$, and similarly the shifted cone $\mathrm{Cone}(f)[-1]$ is always
+  a pseudokernel of $f$.
+
+  If, moreover, $\mathrm{Cone}(f)\in\mathcal{U}_1$ for any morphism
+  $f$ in $\mathcal{U}_1$ and $\mathrm{Cone}(f)[-1]\in\mathcal{U}_2^\perp$, then
+  $\mathbb{t}=((\mathcal{U}_1,\mathcal{U}_1^\perp),(\mathcal{U}_2,\mathcal{U}_2^\perp))$ satisfy
+  axioms \ref{ax:ct1}-\ref{ax:ct3},\ref{ax:ct3op}, hence $\mathcal{H}=\mathcal{U}_1\cap\mathcal{U}_2^\perp$ has
+  kernels and cokernels.
+
+  In this case, moreover, the following are equivalent:
+  \begin{enumerate}
+    \item[1.a] \ref{ax:ct4} holds.
+    \item[1.b]\label{ax:eqb} If $V_1\to H_1\nto{f} H_2\nto{+}$ is a distinguished triangle such
+    that $H_1, H_2\in\mathcal{H}$ and $V_1\in\mathcal{U}_1^\perp$, then $V_1\in\mathcal{U}_2^\perp[-1]$.
+  \end{enumerate}
+  And, dually, there is an equivalence of the following:
+  \begin{enumerate}
+    \item[2.a] \ref{ax:ct4op} holds.
+    \item[2.b]\label{ax:eqa} If $H_1\nto{f}H_2\to U_2\nto{+}$ is a distinguished triangle such
+    that $H_1,H_2\in\mathcal{H}$ and $U_2\in\mathcal{U}_2$, then $U_2\in\mathcal{U}_1[1]$.
+  \end{enumerate}
+\end{example}
+
+\begin{proof}[Proof of the equivalences in example 2]
+  Let $\mathcal{D}$ be a triangulated category with two t-structures as in example 3. The pseudocokernel
+  of a morphism in $\mathcal{U}_1$ can be computed by taking the cone in $\mathcal{D}$, i.e. given a morphism
+  $f:U_1\to U_1'$ in $\mathcal{U}_1$ we can compute a pseudocokernel in $\mathcal{U}_1$ by completing $f$
+  to a triangle
+  \begin{equation*}
+    U_1\nto{f}U_1'\to \mathrm{Cone}(f)\nto{+}.
+  \end{equation*}
+  Moreover, this pseudocokernel satisfies \ref{ax:ct3}.
+
+  Now, assume that \ref{ax:ct1}-\ref{ax:ct3},\ref{ax:ct3op} are satisfied together with axiom
+  \textbf{1.b}, and consider the solid part of the diagram as in \ref{ax:ct4}:
+  \begin{equation*}
+    \begin{tikzcd}
+      \mathrm{Cone}(f)[-1]\arrow{r}{f^K}
+        & H_1\arrow{r}{f}\arrow{d}{\alpha}
+          & H_1\arrow{r}{f^C}\arrow[equal]{d}
+            & \mathrm{Cone}(f)\arrow{d}{\lambda}\\
+      \tau_{\mathcal{U}_1}(V_2)\arrow{r}{\varepsilon}\arrow[dotted]{ur}{\beta}
+        & V_2\arrow{r}
+          & H_2\arrow{r}
+            & \tau^{\mathcal{U}_2^\perp}\mathrm{Cone}(f)
+    \end{tikzcd}
+  \end{equation*}
+  with $\mathrm{Cone}(f)[-1]\in\mathcal{U}_1^\perp$ and where the upper row is a
+  distinguished triangle. By \textbf{1.b} then it belongs
+  to $\mathcal{U}_2^\perp[-1]$, i.e. $\mathrm{Cone}(f)\in\mathcal{U}_2^\perp$, so
+  $\lambda$ is an iso, conseguently $\alpha$ is an iso and so is $\varepsilon$, so
+  there exist a map $\beta=\alpha^{-1}\circ\varepsilon$ making the diagram commute, that
+  is \ref{ax:ct4} holds.
+
+  Conversely, assume that \ref{ax:ct1}-\ref{ax:ct3},\ref{ax:ct3op} are satisfied together with
+  \ref{ax:ct4}. Consider again the solid part of the diagram
+  \begin{equation*}
+    \begin{tikzcd}
+      \mathrm{Cone}(f)[-1]\arrow{r}{f^K}\arrow{d}{\lambda[-1]}
+        & H_1\arrow{r}{f}\arrow{d}{\alpha}
+          & H_1\arrow{r}{f^C}\arrow[equal]{d}
+            & \mathrm{Cone}(f)\arrow{d}{\lambda}\\
+      \tau_{\mathcal{U}_2^\perp}(\mathrm{Cone}(f))[-1]\arrow{r}
+        & V_2\arrow{r}
+          & H_2\arrow{r}
+            & \tau^{\mathcal{U}_2^\perp}\mathrm{Cone}(f)\\
+        & \tau_{\mathcal{U}_1}(V_2)\arrow{u}{\varepsilon}\arrow[dotted, crossing over, bend left=70]{uu}[near end,']{\beta}
+        & &
+    \end{tikzcd}
+  \end{equation*}
+  with $\mathrm{Cone}(f)[-1]\in\mathcal{U}_1^\perp$. Neeman \todo{Add reference} guarantees
+  that $\alpha$ can be taken so that the square on the left is a pullback. Axiom \ref{ax:ct4}
+  gives the existence of $\beta:\tau_{\mathcal{U}_1}(V_2)\to H_1$ such that $\alpha\circ\beta=\varepsilon$.
+
+  Since $\tau_{\mathcal{U}_1}$ is a functor, there is also a morphism
+  $\tau_{\mathcal{U}_1}(\alpha):\tau_{\mathcal{U}_1}(H_1)=H_1\to \tau_{\mathcal{U}_1}(V_2)$ such that
+  $\varepsilon\circ\tau_{\mathcal{U}_1}(\alpha)=\alpha$, hence
+  $\varepsilon\circ\tau_{\mathcal{U}_1}(\alpha)\circ\beta = \varepsilon$. By the functoriality of
+  the torsion pair $(\mathcal{U}_1,\mathcal{U}_1^\perp)$, this means that
+  $\tau_{\mathcal{U}_1}(\alpha)\circ\beta=1_{\tau_{\mathcal{U}_1}(V_2)}$. Then, $\mathcal{\beta}$ is a section.
+
+  Hence, we can write $\tau_{\mathcal{U}_1}(\alpha):H_1\to \tau_{\mathcal{U}_1}(V_2)$
+  as
+  \begin{equation*}
+    \begin{tikzcd}
+      \tau_{\mathcal{U}_1}(\alpha):\tau_{\mathcal{U}_1}(V_2)\oplus H_1'
+      \arrow{r}{
+          \begin{psmallmatrix}
+            \ast \amsamp 0
+          \end{psmallmatrix}
+          }
+        & \tau_{\mathcal{U}_1}(V_2)
+    \end{tikzcd}
+  \end{equation*}
+  for some $H_1'\underset{\oplus}{<} H_1$ such that
+  $\alpha$ vanishes on $H_1'$. If we consider the solid part of the diagram
+  \begin{equation*}
+    \begin{tikzcd}
+      & H_1'\arrow[dashed]{dl}
+      \arrow{d}{
+        \begin{psmallmatrix}
+          1 \\ 0
+        \end{psmallmatrix}
+      }\arrow{dr}{0}
+        & & &\\
+      \mathrm{Cone}(\tau_{\mathcal{U}_1}(\alpha))[-1]\arrow{r}
+        & H_1\arrow{r}{\tau_{\mathcal{U}_1}(\alpha)}
+          & \tau_{\mathcal{U}_1}(V_2)\arrow[dashed]{r}{+}
+            & {}
+    \end{tikzcd}
+  \end{equation*}
+  we can construct the dashed arrow, and the fact that the triangle commutes means
+  that $H_1'\underset{\oplus}{<}\mathrm{Cone}(\tau_{\mathcal{U}_1}(\alpha))[-1]$.
+
+  Observe that $\mathrm{Cone}(\alpha)=\mathrm{Cone}(\lambda)[-1]$, since
+  the square
+  \begin{equation*}
+    \begin{tikzcd}
+      \mathrm{Cone}(f)[-1]\arrow{r}{f^K}\arrow{d}{\lambda[-1]}
+        & H_1\arrow{d}{\alpha} \\
+      \tau_{\mathcal{U}_2^\perp}(\mathrm{Cone}(f))[-1]\arrow{r}
+        & V_2
+    \end{tikzcd}
+  \end{equation*}
+  is a pullback. Moreover, $\mathrm{Cone}(\lambda)[-1] = (\tau_{\mathcal{U}_2}(\mathrm{Cone}(f))[1])[-1]
+  =\tau_{\mathcal{U}_2}(\mathrm{Cone}(f))$. Hence, $\mathrm{Cone}(\alpha)\in \mathcal{U}_2$ and
+  $\tau^{\mathcal{U}_1^\perp}(\mathrm{Cone}(\alpha))=0$, that is,
+  $\mathrm{Cone}(\alpha)\in\mathcal{U}_1$, and since there is a distinguished triangle
+  \begin{equation*}
+    H_1\nto{\alpha} V_2\to \mathrm{Cone}(\alpha)\nto{+}
+  \end{equation*}
+  with $H_1,\mathrm{Cone}(\alpha)\in\mathcal{U}_1$ it follows that
+  $V_2\in\mathcal{U}_1$. Hence, $\tau_{\mathcal{U}_1}(V_2)\cong V_2$.
+
+  We can then write $V_2\underset{\oplus}{<}H_1$ and consider the commutative diagram
+  \begin{equation*}
+    \begin{tikzcd}
+      H_1 \cong H_1'\oplus V_2\arrow{r}{
+        \begin{psmallmatrix}
+          f' \amsamp \tilde{f}
+        \end{psmallmatrix}
+      }\arrow{d}{
+        \begin{psmallmatrix}
+          0 \amsamp 1
+        \end{psmallmatrix}
+      }
+        & H_2\arrow[equal]{d}\\
+      V_2\arrow{r}
+        & H_2
+    \end{tikzcd}
+  \end{equation*}
+  so $f'=0$. Hence, the inclusion $
+  \begin{psmallmatrix}
+    1 \\ 0
+  \end{psmallmatrix}:H_1'\to H_1'\oplus V_2$ can be lifted to
+  $\mathrm{Cone}(f)[-1]$ and $H_1'\underset{\oplus}{<}\mathrm{Cone}(f)[-1]$.
+  Since $\mathrm{Cone}(f)[-1]\in \mathcal{U}_1^\perp$, so does $H_1'$. Similarly,
+  $H_1'\in\mathcal{U}_1$ because $H_1\in\mathcal{U}_1$. Hence, $H_1'=0$ and $\alpha:H_1\to V_2$ is an iso.
+  The same follows for $\lambda$. Therefore, $\mathrm{Cone}(f)\in\mathcal{U}_2^\perp$ which
+  proves \triangb.
+\end{proof}
+
+\begin{lemma}\label{lemma_tria}
+\textcolor{blue}{  In the case of \cref{example_tria}, assume that \ref{ax:ct4} and \ref{ax:ct4op} hold, then:
+  \begin{enumerate}
+    \item\label{lemma_tria_a} For any $H,H'\in\H_\mathbb{t}$, $(H,H'[-1])=0$,
+    \item\label{lemma_tria_b} $A\to B\to C$ is a short exact sequence in $\mathcal{H}_\mathbb{t}$ iff $A\to B\to C\nto{+}$ is
+    a triangle in $\X$.
+  \end{enumerate}}
+\end{lemma}
+
+\begin{proof}
+  \ref{lemma_tria_a} follows observing that
+  $\H[-1]=\mathcal{U}_1[-1]\cap\mathcal{U}_2^\perp[-1]\subseteq \mathcal{U}_2^\perp[-1]\subseteq(\mathcal{U}_1^\perp[1])[-1]=\mathcal{U}_1^\perp$.
+
+  To prove \ref{lemma_tria_b} first consider a short exact sequence $A\nto{f} B\to C$ in $\mathcal{H}$, we want to
+  prove that it is a triangle. Consider the triangle
+  \begin{equation*}
+    \mathrm{Cone}(f)[-1]\to A\nto{f} B \to \mathrm{Cone}(f),
+  \end{equation*}
+  since $f$ is mono, its pseudocokernel $\mathrm{Cone}(f)[-1]$ belongs to $\mathcal{U}_1^\perp$, so
+  $\mathrm{Cone}(f)\in\mathcal{U}_2^\perp[-1]$ by \triangb, hence $\mathrm{Cone}(f)\in\mathcal{U}_2^\perp$.
+  This implies that $\mathrm{Cone}(f)$ is the cokernel of $f$ and so $A\nto{f} B\to C\nto{+}$ is a triangle.
+
+  Conversely, assume that $A\nto{f} B\nto{g} C\nto{+}$ is a triangle. Then, $\mathrm{Cone}(f)\cong C\in\H=\mathcal{U}_1\cap\mathcal{U}_2^\perp$ and
+  so $\mathrm{Cone}(f)[-1]\in\mathcal{U}_2^\perp[-1]\subseteq \mathcal{U}_1^\perp$. Hence, $f$ is mono. A dual argument
+  shows that $g$ is epi. Therefore, $A\nto{f} B\nto{g} C$ is a short exact sequence in $\mathcal{H}$.
+\end{proof}
+
+\begin{example}
+  Let $R$ be any (associative with 1) ring. Consider the triangulated category $\mathcal{T}:=\mathcal{D}(R)$.
+  The derived category $\mathcal{D}(R)$ has the so called natural t-structure
+  $(\mathcal{D}^{\leq 0}(R),\mathcal{D}^{\geq}(R))$ where
+  \begin{align*}
+    \mathcal{D}^{\leq 0}(R) &:= \{ X\in\mathcal{D}(R) \,|\,H^i(X)=0\text{ for } i>0\},\\
+    \mathcal{D}^{\geq 0}(R) &:= \{ X\in\mathcal{D}(R) \,|\,H^i(x)=0\text{ for } i<0\}.
+  \end{align*}
+
+  For any ideal $I\trianglelefteq R$, we have the TTF-triple $(\mathcal{C}_I,\mathcal{T}_I,\mathcal{F}_I)$
+  associated to $I$, where
+  \begin{align*}
+    \mathcal{C}_I &:= \{M\in\Mod{R}\,|\,IM=M\},\\
+    \mathcal{T}_I &:= \{M\in\Mod{R}\,|\,IM=0\}\cong \Mod{\frac{R}{I}},\\
+    \mathcal{F}_I &:= \{M\in\Mod{R}\,|\,Ix=0\text{ and }x\in M\Rightarrow x=0\}.
+  \end{align*}
+
+  Consider the t-structure (Happel-Reiten-Smalo) $(\mathcal{D}^{\leq 0}_{t_I}(R), \mathcal{D}^{\geq 0}_{t_I}(R))$
+  associated to the torsion pair $t_I=(\mathcal{C}_I,\mathcal{T}_I)$, where
+  \begin{align*}
+    \mathcal{D}^{\leq 0}_{t_I}(R) &:= \{ X\in\mathcal{D}^{\leq 0}(R)\,|\, H^0(X)\in\mathcal{C}_I \},\\
+    \mathcal{D}^{\geq 0}_{t_I}(R) &:= \{ X\in\mathcal{D}^{\geq 0}(R)\,|\, H^0(X)\in\mathcal{T}_I \}.
+  \end{align*}
+
+  It can be seen that $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ where
+  $\mathbb{t}_1:=(\mathcal{D}^{\leq 0}(R),\mathcal{D}^{\geq 1}(R))$ and
+  $\mathbb{T}_2:=(\mathcal{D}^{\leq 0}_{t_I}(R),\mathcal{D}^{\geq 1}_{t_I}(R))$, is a strongly
+  related torsion pair in $\mathcal{T}=\mathcal{D}(R)$.
+\end{example}
+
+\subsection{Polishchuk correspondence}
+
+We recall the following bijection given by A. Polishchuk, and in order to do that,
+for a t-structure $(\mathcal{U}_1,\mathcal{U}_1^\perp[1])$ in $\mathcal{T}$, we have the cohomological
+functor $H^0_1:\mathcal{T}\to \mathcal{H}_1:=\mathcal{U}_1\cap\mathcal{U}_1^\perp[1]$
+($\mathcal{H}_1$ is an abelian category).
+
+\begin{prop}[Polishchuk]\label{prop:2.7}
+  Let $(\mathcal{U}_1,\mathcal{U}_1^\perp[1])$ be a t-structure in a triangulated category.
+  Then we have a bijection (Polishchuk's bijection)
+  \begin{equation*}
+    \begin{tikzcd}
+      \left\{
+      \begin{array}{c}
+        \text{torsion pairs in} \\
+        \mathcal{H}_1=\mathcal{U}_1\cap \mathcal{U}_1^\perp[1]
+      \end{array}
+      \right\}
+      \arrow[leftrightarrow]{r}{\mathrm{Pol}_{\mathcal{H}_1}}
+        &
+        \left\{
+          \begin{array}{c}
+            \text{t-structures }
+            (\mathcal{U}_2,\mathcal{U}_2^\perp) \\
+            \text{ in } \mathcal{D}
+            \text{ satisfying } \\ \mathcal{U}_1[1]\subseteq \mathcal{U}_2\subseteq\mathcal{U}_1
+          \end{array}
+        \right\}\\
+      (\mathcal{X},\mathcal{Y})\arrow[mapsto]{r}
+        & (\mathcal{U}_2,\mathcal{U}_2^\perp[1])\\
+      (\mathcal{U}_2\cap\mathcal{H}_1,\mathcal{U}_2^\perp\cap\mathcal{H}_1)\arrow[mapsfrom]{r}
+        & (\mathcal{U}_2,\mathcal{U}_2^\perp[1])
+    \end{tikzcd}
+  \end{equation*}
+  where
+  \begin{align*}
+    \mathcal{U}_2 = \{X\in\mathcal{U}_1\,|\,H^0_1(X)\in\mathcal{X}\}\\
+    \mathcal{U}_2^\perp = \{Y\in\mathcal{U}_1^\perp\,|\,H^0_1(Y)\in\mathcal{Y}\}.
+  \end{align*}
+\end{prop}
+
+\begin{rmk}\label{rmk:2.8}
+  \begin{enumerate}[label=(\arabic*)]
+    \item\label{rmk:2.8:1} Note that $\mathrm{Pol}^{-1}_{\mathcal{H}_1}(\mathcal{U}_2,\mathcal{U}^\perp_2[1])=
+      (\mathcal{U}_2\cap\mathcal{U}_1^\perp[1],\mathcal{H})$, where
+      $\mathcal{H}:=\mathcal{U}_1\cap\mathcal{U}_2^\perp$.
+
+    \item By \ref{rmk:2.8:1}, it follows that $\mathcal{H}$ is a torsion free class in the abelian category
+      $\mathcal{H}_1:=\mathcal{U}_1\cap\mathcal{U}_1^\perp[1]$.
+  \end{enumerate}
+\end{rmk}
+
+\begin{thm}\label{thm:2.9}
+  Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a related torsion pair in a triangulated
+  category $\mathcal{T}$. Then, the following statements are equivalent.
+  \begin{enumerate}[label=(\alph*)]
+    \item For any distinguished triangle $V\to H_1\nto{f}H_2\nto{+}$, with
+      $f$ a morphism in $\mathcal{H}=\mathcal{H}_\mathbb{t}:=\mathcal{T}_1\cap\mathcal{F}_2$,
+      we have that
+      \begin{equation*}
+        V\in\mathcal{F}_1 \Rightarrow V[1]\in\mathcal{F}_2.
+      \end{equation*}
+    \item For any monomorphism $\alpha:H_1\into H_2$, in the abelian category
+      $\mathcal{H}_1:=\mathcal{T}_1\cap\mathcal{F}_1[1]$, with $H_1,H_2\in\mathcal{H}$,
+      we have that $\Coker_{\mathcal{H}_1}(\alpha)\in\mathcal{H}$.
+    \item $\mathcal{H}$ is closed under kernels and cokernels in the abelian category
+      $\mathcal{H}_1$
+    \item $\mathcal{H}$ is an abelian category.
+    \item For any epimorphism $H\onto X$ in $\mathcal{H}_1$, with $H\in\mathcal{H}$,
+      we have that $X\in\mathcal{H}$ (i.e. $\mathcal{H}$ is closed under quotients in $\mathcal{H}_1$).
+  \end{enumerate}
+\end{thm}
+
+Let $t=(\mathcal{A},\mathcal{B})$ be a pair of full subcategories of the triangulated
+category $\mathcal{T}$. We will use the following notation:
+\begin{align*}
+  t[1] &:= (\mathcal{A}[1],\mathcal{B}[1]),\\
+  \overline{t} &:= (\mathcal{A},\mathcal{B}[1]).
+\end{align*}
+
+Note that $\overline{t}$ is a t-structure in $\mathcal{T}$ if and only if $t$ is a torsion
+pair $\mathcal{T}$ such that $\mathcal{A}[1]\subseteq\mathcal{A}$.
+
+\begin{rmk}
+  Consider $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$, where $\mathbb{t}_i:=(\mathcal{U}_i,\mathcal{U}_i^\perp)$ for
+  $i=1,2$. We have
+  \begin{enumerate}
+    \item $\mathcal{H}_\mathbb{t}:=\mathcal{U}_1\cap\mathcal{U}_2^\perp$,
+      $\mathcal{H}_i:=\mathcal{U}_i\cap\mathcal{U}_i^\perp[1]$,
+    \item $\mathbb{t}' :=(\mathbb{t}_2,\mathbb{t}_1[1])$
+  \end{enumerate}
+
+  Note that
+  \begin{enumerate}
+    \setcounter{enumi}{2}
+    \item $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ is a related torsion pair in $\mathcal{T}$
+      \begin{align*}
+        &\Leftrightarrow \mathcal{U}_1[1]\subseteq\mathcal{U}_2\subseteq\mathcal{U}_1\\
+        &\Leftrightarrow \mathcal{U}_2[1]\subseteq\mathcal{U}_1[1]\subseteq\mathcal{U}_2\\
+        &\Leftrightarrow \mathbb{t}'=(\mathbb{t}_2,\mathbb{t}_1[1]) \text{ is a related torsion pair in }\mathcal{T}.
+      \end{align*}
+    \item Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ is a related torsion pair in $\mathcal{T}$. In
+      this case, we have
+      \begin{align*}
+        &\mathcal{H}_\mathbb{t} = \mathcal{U}_1\cap\mathcal{U}_2^\perp,~
+        \mathcal{H}_{\mathbb{t}'}=\mathcal{U}_2\cap \mathcal{U}_1^\perp[1],\\
+        & \mathrm{Pol}_{\mathcal{H}_1}^{-1}(\overline{\mathbb{t}}_2)=
+        \mathrm{Pol}_{\mathcal{H}_1}^{-1}(\mathcal{U}_2,\mathcal{U}_2^\perp[1])=
+        (\mathcal{H}_{\mathbb{t}'},\mathcal{H}_{\mathbb{t}}),\\
+        &\mathrm{Pol}_{\mathcal{H}_2}^{-1}(\overline{\mathbb{t}}_1[1])=
+        \mathrm{Pol}_{\mathcal{H}_1}^{-1}(\mathcal{U}_1[1],\mathcal{U}_1^\perp[2])=
+        (\mathcal{H}_{\mathbb{t}}[1],\mathcal{H}_{\mathbb{t}'}).
+      \end{align*}
+
+      Thus, $(\mathcal{H}_{\mathbb{t}'},\mathcal{H}_\mathbb{t})$ is a torsion pair in the abelian
+      category $\mathcal{H}_1$,
+      $(\mathcal{H}_\mathbb{t}[1],\mathcal{H}_{\mathbb{t}'})$ is a torsion pair in the abelian category
+      $\mathcal{H}_2$.
+  \end{enumerate}
+\end{rmk}
+
+\begin{corollary}
+  Let $\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)$ be a related torsion pair in a triangulated category
+  $\mathcal{T}$. Then, the following statements are equivalent:
+  \begin{enumerate}[label=(\alph*)]
+    \item For any distinguished triangle $V\to H_1\nto{f}H_2\nto{+}$, with
+    $f$ a morphism in $\mathcal{H}_{\mathbb{t}'}=\mathcal{T}_2\cap\mathcal{F}_1[1]$,
+    we have that $V\in\mathcal{F}_2$ implies $V\in\mathcal{F}_1$.
+    \item For any monomorphism $\alpha:H_1\into H_2$, in the abelian category
+    $\mathcal{H}_2:=\mathcal{T}_2\cap\mathcal{F}_2[1]$, with $H_1,H_2\in\mathcal{H}_{\mathbb{t}'}$,
+    we have that $\Coker_{\mathcal{H}_2}(\alpha)\in\mathcal{H}_{\mathbb{t}'}$.
+    \item $\mathcal{H}_{\mathbb{t}'}$ is closed under kernels and cokernels in
+    the abelian category $\mathcal{H}_2$.
+    \item $\mathcal{H}_{\mathbb{t}'}$ is an abelian category.
+    \item $\mathcal{H}_{\mathbb{t}'}$ is closed under quotients in $\mathcal{H}_2$.
+  \end{enumerate}
+\end{corollary}
+
+We recall that a torsion pair $(\mathcal{T},\mathcal{F})$ in an abelian category
+$\mathcal{A}$ is cohereditary if the class $\mathcal{F}$ is closed under quotients
+in $\mathcal{A}$.
+
+\begin{definition}
+  For a triangulated category $\mathcal{T}$, we consider the following classes:
+  \begin{enumerate}
+    \item $RtAb(\mathcal{T}):=\{\text{related torsion pairs }\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)
+      \text{ in }\mathcal{T}\text{ s.t. }\mathcal{H}_\mathbb{t}\text{ is abelian}\}$;
+    \item
+      \begin{align*}
+        \mathrm{t-}stCoh(\mathcal{T}) &:=
+        \left\{
+        \begin{array}{c}
+          \text{pairs }(\overline{\mathbb{t}}_1,\tau)\text{ s.t. }
+          \overline{\mathbb{t}}_1\text{ is a t-structure in }\mathcal{T}\text{ and }
+          \tau\text{ is a}\\
+          \text{ cohereditary torsion pair in the abelian category } \\
+          \mathcal{H}_1:=\mathcal{U}_1\cap\mathcal{U}_1^\perp[1]
+        \end{array}
+        \right\};
+      \end{align*}
+    \item[1\rlap{$^\prime$}.] $RtAb^\prime(\mathcal{T}):=\{\text{related torsion pairs }\mathbb{t}=(\mathbb{t}_1,\mathbb{t}_2)
+      \text{ in }\mathcal{T}\text{ s.t. }\mathcal{H}_{\mathbb{t}'}\text{ is abelian}\}$;
+    \item[2\rlap{$^\prime$}.]
+      \begin{align*}
+        \mathrm{t-}stCoh^\prime(\mathcal{T}) &:=
+        \left\{
+        \begin{array}{c}
+          \text{pairs }(\overline{\mathbb{t}}_2,\tau)\text{ s.t. }
+          \overline{\mathbb{t}}_2\text{ is a t-structure in }\mathcal{T}\text{ and }
+          \tau\text{ is a}\\
+          \text{ cohereditary torsion pair in the abelian category } \\
+          \mathcal{H}_2:=\mathcal{U}_2\cap\mathcal{U}_2^\perp[1]
+        \end{array}
+        \right\}.
+      \end{align*}
+  \end{enumerate}
+\end{definition}
+
+\begin{thm}\label{thm:2.11}
+  For a triangulated category $\mathcal{T}$, the following statements hold true.
+  \begin{enumerate}[label=(\alph*)]
+    \item There is a bijective correspondence
+      \begin{equation*}
+        \begin{tikzcd}[row sep=tiny]
+          RtAb(\mathcal{T})\arrow[leftrightarrow]{r}{\alpha}
+            & \mathrm{t}-stCoh(\mathcal{T})\\
+          \mathbb{t}\arrow[mapsto]{r}
+            & (\overline{\mathbb{t}}_1,\mathrm{Pol}^{-1}_{\mathcal{H}_1}(\overline{\mathbb{t}}_2))\\
+          (\mathbb{t}_1,\mathbb{t}_2)\arrow[mapsfrom]{r}
+            & (\overline{\mathbb{t}}_1,\tau)
+        \end{tikzcd}
+      \end{equation*}
+      where $\overline{\mathbb{t}}_2=\mathrm{Pol}_{\mathcal{H}_1}(\tau)$.
+    \item There is a bijective correspondence
+      \begin{equation*}
+        \begin{tikzcd}
+          RtAb^\prime(\mathcal{T})\arrow[leftrightarrow]{r}{\alpha'}
+            & \mathrm{t}-stCoh^\prime(\mathcal{T})\\
+          \mathbb{t}\arrow[mapsto]{r}
+            & (\overline{\mathbb{t}}_2,\mathrm{Pol}^{-1}_{\mathcal{H}_2}(\overline{\mathbb{t}}_1[1]))\\
+          (\mathbb{t}_1,\mathbb{t}_2)\arrow[mapsfrom]{r}
+            & (\overline{\mathbb{t}}_2,\tau)
+        \end{tikzcd}
+      \end{equation*}
+      where $\overline{\mathbb{t}}_1=\mathrm{Pol}_{\mathcal{H}_2}(\tau)[-1]$.
+  \end{enumerate}
+\end{thm}
+
+% \begin{lemma}\label{sec2:lem6}
+%   The heart $\mathcal{H}=\mathcal{T}_1\cap\mathcal{F}_2$ has kernels and cokernels.
+% \end{lemma}
+%
+% \begin{rmk}
+%   If $\mathcal{X}$ is abelian, then:
+%   \begin{enumerate}
+%     \item $f:H\to H'$ is mono in $\mathcal{H}$ iff $\Ker_\mathcal{X}(f)\in\mathcal{F}_1$
+%     \item $f:H\to H'$ is epi in $\mathcal{H}$ iff $\Coker_\mathcal{X}(f)\in\mathcal{T}_2$
+%   \end{enumerate}
+% \end{rmk}
+%
+% \begin{prop}\label{sec2:prop1}
+%   Let $(\mathcal{T}_1,\mathcal{F}_1)$ and $(\mathcal{T}_2,\mathcal{F}_2)$ be two torsion pairs
+%   in the abelian category $\mathcal{A}$. TFAE:
+%   \begin{enumerate}
+%     \item $\mathcal{H}$ is abelian.
+%     \item We have:
+%     \begin{enumerate}
+%       \item If $f:H\to H'$ is a morphism in $\mathcal{H}$ such that
+%       $\Ker_\mathcal{A}(f)\in\mathcal{F}_1$, then $\Ker_\mathcal{A}(f)=0$.
+%       \item If $f:H\to H'$ is a morphism in $\mathcal{H}$ such that
+%       $\Coker_\mathcal{A}(f)\in\mathcal{T}_2$, then $\Coker_\mathcal{A}(f)=0$.
+%       \item $\mathcal{H}$ is closed by kernels of epics and cokernels of monics.
+%     \end{enumerate}
+%     \item $\mathcal{H}$ is an exact abelian subcategory of $\mathcal{A}$.\todo{?}
+%   \end{enumerate}
+% \end{prop}
