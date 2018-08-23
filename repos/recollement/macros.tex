@@ -1,0 +1,214 @@
+% --- "Debugging macros" for drafts
+%\newcommand{\todo}[1]{
+%  \marginpar{\small \begin{tabular}{|p{2.7cm}|}\hline\texttt{TODO: #1}\\\hline\end{tabular}}
+%}
+%\newcommand{\note}[1]{
+%  \marginpar{\small \begin{tabular}{|p{2.7cm}|}\hline\texttt{NOTE: #1}\\\hline\end{tabular}}
+%}
+
+% --- Abbreviations - general
+\renewcommand{\iff}{if and only if }
+\newcommand{\fg}{finitely generated}
+\newcommand{\st}{such that }
+\newcommand{\wrt}{with respect to }
+\newcommand{\sto}{ {\v{S}}{\v{t}}ov{\'{\i}}{\v{c}}ek}
+
+\newcommand{\la}{\longrightarrow}
+\newcommand{\mapr}[1]{\overset{#1}\longrightarrow}
+\newcommand{\mapl}[1]{\overset{#1}\longleftarrow}
+\newcommand{\dd}{\colon}
+
+\newcommand{\ep}{\varepsilon}
+\newcommand{\ph}{\varphi}
+\newcommand{\tht}{\vartheta}
+\newcommand{\dif}{\partial}
+
+% --- Abbreviations - specific to the paper
+\newcommand{\wfs}{weak factorization system }
+\newcommand{\wfss}{weak factorization systems }
+\newcommand{\Sto}{\v{S}\v{t}ov\'{\i}\v{c}ek}
+
+% --- Operations and relations
+\newcommand{\inv}{^{-1}}
+\newcommand{\dual}{^{\ast}}
+\newcommand{\lifts}{\,\square\,}
+%\newcommand{\unit}{\mathds{1}}
+
+% --- (Semi)rings
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbQ}{\mathbb{Q}}
+
+% --- Prime ideals
+\newcommand{\ifr}{\mathfrak{i}}
+\newcommand{\jfr}{\mathfrak{j}}
+\newcommand{\m}{\mathfrak{m}}
+\newcommand{\n}{\mathfrak{n}}
+\newcommand{\p}{\mathfrak{p}}
+\newcommand{\q}{\mathfrak{q}}
+
+% --- Sheaves and schemes
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\Max}{\operatorname{Max}}    % Zariski spectrum
+\newcommand{\iSpec}{\operatorname{iSpec}}  % idempotent spectrum of a valuation domain (paper specific)
+\newcommand{\Inter}{\operatorname{Inter}}  % admissible intervals in the specture (paper specific)
+\newcommand{\res}{\operatorname{res}}      % restrictions inside presheaves
+\newcommand{\OO}{\mathcal{O}}              % structure sheaf
+\newcommand{\PP}[2]{\mathbb{P}^{#1}_{#2}}  % projective space
+
+% --- Functors and operators
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\ho}{\operatorname{H}}
+\newcommand{\HOM}{\mathcal{H}\mathnormal{om}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\END}{\mathcal{E}\mathnormal{nd}}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\Tor}{\operatorname{Tor}}
+\newcommand{\Cogen}{\operatorname{Cogen}}
+\newcommand{\Gen}{\operatorname{Gen}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\gen}{\operatorname{gen}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Img}{\operatorname{Im}}
+\newcommand{\Coker}{\operatorname{Coker}}
+\newcommand{\Syz}[2]{\Omega^{#1}(#2)}
+\newcommand{\Cosyz}[2]{\mho_{#1}(#2)}
+\newcommand{\gldim}{\operatorname{gl.dim}}
+\newcommand{\wgldim}{\operatorname{w.gl.dim}}
+\newcommand{\cone}{\operatorname{cone}}
+\newcommand{\li}{\varinjlim}
+\newcommand{\card}[1]{\lvert #1 \rvert}
+\newcommand{\spanned}[1]{\langle #1 \rangle}
+\newcommand{\unit}{\mathds{1}}
+
+% --- Classes
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\clH}{\mathcal{H}}
+\newcommand{\I}{\mathcal{I}}
+\newcommand{\J}{\mathcal{J}}
+\newcommand{\K}{\mathcal{K}}
+\newcommand{\clL}{\mathcal{L}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\clP}{\mathcal{P}}
+\newcommand{\clQ}{\mathcal{Q}}
+\newcommand{\R}{\mathcal{R}}
+\newcommand{\clS}{\mathcal{S}}
+\newcommand{\clKP}{\mathcal{KP}}
+\newcommand{\clKB}{\mathcal{KB}}
+\newcommand{\clKA}{\mathcal{KA}}
+\newcommand{\clKI}{\mathcal{KI}}
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\newcommand{\W}{\mathcal{W}}
+\newcommand{\Z}{\mathcal{Z}}
+%\newcommand{\Ch}{\mathcal{C}h}
+ \newcommand{\Ch}{\mathrm{Ch}}
+
+% --- Classes - constructions
+\newcommand{\Subobj}[1]{\operatorname{Subobj}({#1})}
+\newcommand{\Pow}[1]{\mathcal{P}({#1})}
+
+% --- Categories
+\newcommand{\Modr}[1]{\mathrm{Mod}\textrm{-}{#1}}
+\newcommand{\Modl}[1]{{#1}\textrm{-}\mathrm{Mod}}
+\newcommand{\modr}[1]{\mathrm{mod}\textrm{-}{#1}}
+\newcommand{\modl}[1]{{#1}\textrm{-}\mathrm{mod}}
+\newcommand{\Flat}{\mathrm{Flat}}
+\newcommand{\Cot}{\mathrm{Cot}}
+\newcommand{\Inj}{\mathrm{Inj}}
+\newcommand{\FpInj}{\mathrm{FpInj}}
+\newcommand{\Proj}{\mathrm{Proj}}
+\newcommand{\ModR}{\mathrm{Mod}\textrm{-}R}
+\newcommand{\RMod}{R\textrm{-}\mathrm{Mod}}
+\newcommand{\modR}{\mathrm{mod}\textrm{-}R}
+\newcommand{\Rmod}{R\textrm{-}\mathrm{mod}}
+\newcommand{\ProjR}{\mathrm{Proj}\textrm{-}R}
+\newcommand{\RProj}{R\textrm{-}\mathrm{Proj}}
+\newcommand{\Rproj}{R\textrm{-}\mathrm{proj}}
+\newcommand{\InjR}{\mathrm{Inj}\textrm{-}R}
+\newcommand{\RInj}{R\textrm{-}\mathrm{Inj}}
+%\newcommand{\FlatR}{\mathrm{\Flat}\textrm{-}R}
+%\newcommand{\R\Flat}{R\textrm{-}\mathrm{\Flat}}
+%\newcommand{\CotR}{\mathrm{\Cot}\textrm{-}R}
+%\newcommand{\R\Cot}{R\textrm{-}\mathrm{\Cot}}
+\newcommand{\Qco}[1]{\operatorname{Qcoh}({#1})}
+\newcommand{\QcoR}{\operatorname{Qcoh}(R)}
+\newcommand{\VectR}{\mathrm{Vect}\textrm{-}R}
+\newcommand{\projR}{\mathrm{proj}\textrm{-}R}
+\newcommand{\Dga}[1]{\mathrm{Dga}({#1})}
+\newcommand{\Ab}{\mathrm{Ab}}
+\newcommand{\Icell}{\I\textrm{-}\mathrm{cell}}
+\newcommand{\Filt}[1]{\operatorname{Filt}{#1}}
+
+% --- Categories - constructions
+\newcommand{\op}{^\textrm{op}}
+\newcommand{\Mor}{\mathrm{Mor}}
+\newcommand{\add}{\mathrm{add}}
+\newcommand{\Add}{\mathrm{Add}}
+\newcommand{\Ann}{\mathrm{Ann}}
+\newcommand{\Prod}{\mathrm{Prod}}
+\newcommand{\Der}[1]{\mathbf{D}({#1})}
+\newcommand{\Db}[1]{\mathbf{D}^\mathrm{b}({#1})}
+\newcommand{\Htp}[1]{\mathbf{K}({#1})}
+\newcommand{\Cpx}[1]{\mathbf{C}({#1})}
+\newcommand{\Cac}[1]{\mathbf{C}_\mathrm{ac}({#1})}
+\newcommand{\Loc}{\mathrm{Loc}\,}
+\newcommand{\thick}{\mathrm{thick}\,}
+\newcommand{\tria}{\mathrm{tria}\,}
+\newcommand{\Tria}{\mathrm{Tria}\,}
+
+
+
+% --- Model categories
+\newcommand{\cof}{\mathrm{Cof}}
+\newcommand{\Cof}{\mathcal{C}}
+\newcommand{\tcof}{\mathrm{TCof}}
+\newcommand{\TCof}{\mathcal{TC}}
+\newcommand{\we}{\mathrm{W}}
+\newcommand{\We}{\mathcal{W}}
+\newcommand{\tfib}{\mathrm{TFib}}
+\newcommand{\TFib}{\mathcal{TF}}
+\newcommand{\fib}{\mathrm{Fib}}
+\newcommand{\Fib}{\mathcal{F}}
+\newcommand{\lhtp}{\sim_\ell}
+\newcommand{\rhtp}{\sim_r}
+\newcommand{\Ho}{\operatorname{Ho}}
+\newcommand{\Lder}[1]{\mathbf{L}{#1}}
+\newcommand{\Rder}[1]{\mathbf{R}{#1}}
+\newcommand{\Lotimes}{\otimes^{\mathbf{L}}}
+\newcommand{\RHom}{\Rder\Hom}
+
+
+% ------------------------------------------------------------------------------
+% Theorems and similar
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{ques}[thm]{Question}
+\newtheorem{fact}[thm]{Fact}
+\newtheorem{recoll}[thm]{Recollement}
+\newtheorem{conj}[thm]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{cond}[thm]{Conditions}
+\newtheorem{set}[thm]{Setting}
+\newtheorem{nota}[thm]{Notation}
+\newtheorem{expl}[thm]{Example}
+
+
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{rems}[thm]{Remarks}
+\newtheorem{warn}[thm]{Warning}
