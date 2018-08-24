@@ -1,264 +1,3 @@
-%
-\documentclass[11pt,a4paper,reqno]{amsart}
-\usepackage[czech,english]{babel}
-\usepackage{amscd,amssymb}
-\usepackage{dsfont}
-\usepackage{url}
-\usepackage[all]{xy}
-\usepackage{hyperref}
-%\usepackage{showlabels}
-%
-%
-
-%
-\title{Recollements from cotorsion pairs}
-\subjclass[2010]{18E15, 18E30, 18E35, 18G55,16D90}
-\keywords{Cotorsion pairs, model categories, homotopy categories, recollements}
-
-\thanks{Research supported by grant BIRD163492 ``Categorical homological methods in the study of algebraic structure''  and grant DOR1690814``Rings and categories of modules"}
-
-\author[S. Bazzoni]{Silvana Bazzoni}
-\address[Silvana Bazzoni]
-{%
-Dipartimento di Matematica Tullio Levi-Civita\\
-Universit\`a di Padova \\
-    Via Trieste 63, 35121 Padova (Italy)}
-\email{bazzoni@math.unipd.it}
-%
-\author[M.Tarantino]{Marco Tarantino}
-\address[Marco Tarantino]
-{%
-Dipartimento di Matematica Tullio Levi-Civita\\
-Universit\`a di Padova \\
-    Via Trieste 63, 35121 Padova (Italy)}
-\email{marco.tarantino@math.unipd.it}
-
-
-
-
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-
-%
-\renewcommand{\iff}{if and only if }
-\newcommand{\fg}{finitely generated}
-\newcommand{\st}{such that }
-\newcommand{\wrt}{with respect to }
-\newcommand{\sto}{ {\v{S}}{\v{t}}ov{\'{\i}}{\v{c}}ek}
-
-\newcommand{\la}{\longrightarrow}
-\newcommand{\mapr}[1]{\overset{#1}\longrightarrow}
-\newcommand{\mapl}[1]{\overset{#1}\longleftarrow}
-\newcommand{\dd}{\colon}
-
-\newcommand{\ep}{\varepsilon}
-\newcommand{\ph}{\varphi}
-\newcommand{\tht}{\vartheta}
-\newcommand{\dif}{\partial}
-
-%
-\newcommand{\wfs}{weak factorization system }
-\newcommand{\wfss}{weak factorization systems }
-\newcommand{\Sto}{\v{S}\v{t}ov\'{\i}\v{c}ek}
-
-%
-\newcommand{\inv}{^{-1}}
-\newcommand{\dual}{^{\ast}}
-\newcommand{\lifts}{\,\square\,}
-%
-
-%
-\newcommand{\bbN}{\mathbb{N}}
-\newcommand{\bbZ}{\mathbb{Z}}
-\newcommand{\bbQ}{\mathbb{Q}}
-
-%
-\newcommand{\ifr}{\mathfrak{i}}
-\newcommand{\jfr}{\mathfrak{j}}
-\newcommand{\m}{\mathfrak{m}}
-\newcommand{\n}{\mathfrak{n}}
-\newcommand{\p}{\mathfrak{p}}
-\newcommand{\q}{\mathfrak{q}}
-
-%
-\newcommand{\Spec}{\operatorname{Spec}}
-\newcommand{\Max}{\operatorname{Max}}    %
-\newcommand{\iSpec}{\operatorname{iSpec}}  %
-\newcommand{\Inter}{\operatorname{Inter}}  %
-\newcommand{\res}{\operatorname{res}}      %
-\newcommand{\OO}{\mathcal{O}}              %
-\newcommand{\PP}[2]{\mathbb{P}^{#1}_{#2}}  %
-
-%
-\newcommand{\Hom}{\operatorname{Hom}}
-\newcommand{\ho}{\operatorname{H}}
-\newcommand{\HOM}{\mathcal{H}\mathnormal{om}}
-\newcommand{\End}{\operatorname{End}}
-\newcommand{\END}{\mathcal{E}\mathnormal{nd}}
-\newcommand{\Ext}{\operatorname{Ext}}
-\newcommand{\Tor}{\operatorname{Tor}}
-\newcommand{\Cogen}{\operatorname{Cogen}}
-\newcommand{\Gen}{\operatorname{Gen}}
-\newcommand{\Ker}{\operatorname{Ker}}
-\newcommand{\gen}{\operatorname{gen}}
-\newcommand{\tr}{\operatorname{tr}}
-\newcommand{\Img}{\operatorname{Im}}
-\newcommand{\Coker}{\operatorname{Coker}}
-\newcommand{\Syz}[2]{\Omega^{#1}(#2)}
-\newcommand{\Cosyz}[2]{\mho_{#1}(#2)}
-\newcommand{\gldim}{\operatorname{gl.dim}}
-\newcommand{\wgldim}{\operatorname{w.gl.dim}}
-\newcommand{\cone}{\operatorname{cone}}
-\newcommand{\li}{\varinjlim}
-\newcommand{\card}[1]{\lvert #1 \rvert}
-\newcommand{\spanned}[1]{\langle #1 \rangle}
-\newcommand{\unit}{\mathds{1}}
-
-%
-\newcommand{\A}{\mathcal{A}}
-\newcommand{\B}{\mathcal{B}}
-\newcommand{\C}{\mathcal{C}}
-\newcommand{\D}{\mathcal{D}}
-\newcommand{\E}{\mathcal{E}}
-\newcommand{\F}{\mathcal{F}}
-\newcommand{\G}{\mathcal{G}}
-\newcommand{\clH}{\mathcal{H}}
-\newcommand{\I}{\mathcal{I}}
-\newcommand{\J}{\mathcal{J}}
-\newcommand{\K}{\mathcal{K}}
-\newcommand{\clL}{\mathcal{L}}
-\newcommand{\M}{\mathcal{M}}
-\newcommand{\N}{\mathcal{N}}
-\newcommand{\clP}{\mathcal{P}}
-\newcommand{\clQ}{\mathcal{Q}}
-\newcommand{\R}{\mathcal{R}}
-\newcommand{\clS}{\mathcal{S}}
-\newcommand{\clKP}{\mathcal{KP}}
-\newcommand{\clKB}{\mathcal{KB}}
-\newcommand{\clKA}{\mathcal{KA}}
-\newcommand{\clKI}{\mathcal{KI}}
-\newcommand{\T}{\mathcal{T}}
-\newcommand{\U}{\mathcal{U}}
-\newcommand{\V}{\mathcal{V}}
-\newcommand{\X}{\mathcal{X}}
-\newcommand{\Y}{\mathcal{Y}}
-\newcommand{\W}{\mathcal{W}}
-\newcommand{\Z}{\mathcal{Z}}
-%
- \newcommand{\Ch}{\mathrm{Ch}}
-
-%
-\newcommand{\Subobj}[1]{\operatorname{Subobj}({#1})}
-\newcommand{\Pow}[1]{\mathcal{P}({#1})}
-
-%
-\newcommand{\Modr}[1]{\mathrm{Mod}\textrm{-}{#1}}
-\newcommand{\Modl}[1]{{#1}\textrm{-}\mathrm{Mod}}
-\newcommand{\modr}[1]{\mathrm{mod}\textrm{-}{#1}}
-\newcommand{\modl}[1]{{#1}\textrm{-}\mathrm{mod}}
-\newcommand{\Flat}{\mathrm{Flat}}
-\newcommand{\Cot}{\mathrm{Cot}}
-\newcommand{\Inj}{\mathrm{Inj}}
-\newcommand{\FpInj}{\mathrm{FpInj}}
-\newcommand{\Proj}{\mathrm{Proj}}
-\newcommand{\ModR}{\mathrm{Mod}\textrm{-}R}
-\newcommand{\RMod}{R\textrm{-}\mathrm{Mod}}
-\newcommand{\modR}{\mathrm{mod}\textrm{-}R}
-\newcommand{\Rmod}{R\textrm{-}\mathrm{mod}}
-\newcommand{\ProjR}{\mathrm{Proj}\textrm{-}R}
-\newcommand{\RProj}{R\textrm{-}\mathrm{Proj}}
-\newcommand{\Rproj}{R\textrm{-}\mathrm{proj}}
-\newcommand{\InjR}{\mathrm{Inj}\textrm{-}R}
-\newcommand{\RInj}{R\textrm{-}\mathrm{Inj}}
-%
-%
-%
-%
-\newcommand{\Qco}[1]{\operatorname{Qcoh}({#1})}
-\newcommand{\QcoR}{\operatorname{Qcoh}(R)}
-\newcommand{\VectR}{\mathrm{Vect}\textrm{-}R}
-\newcommand{\projR}{\mathrm{proj}\textrm{-}R}
-\newcommand{\Dga}[1]{\mathrm{Dga}({#1})}
-\newcommand{\Ab}{\mathrm{Ab}}
-\newcommand{\Icell}{\I\textrm{-}\mathrm{cell}}
-\newcommand{\Filt}[1]{\operatorname{Filt}{#1}}
-
-%
-\newcommand{\op}{^\textrm{op}}
-\newcommand{\Mor}{\mathrm{Mor}}
-\newcommand{\add}{\mathrm{add}}
-\newcommand{\Add}{\mathrm{Add}}
-\newcommand{\Ann}{\mathrm{Ann}}
-\newcommand{\Prod}{\mathrm{Prod}}
-\newcommand{\Der}[1]{\mathbf{D}({#1})}
-\newcommand{\Db}[1]{\mathbf{D}^\mathrm{b}({#1})}
-\newcommand{\Htp}[1]{\mathbf{K}({#1})}
-\newcommand{\Cpx}[1]{\mathbf{C}({#1})}
-\newcommand{\Cac}[1]{\mathbf{C}_\mathrm{ac}({#1})}
-\newcommand{\Loc}{\mathrm{Loc}\,}
-\newcommand{\thick}{\mathrm{thick}\,}
-\newcommand{\tria}{\mathrm{tria}\,}
-\newcommand{\Tria}{\mathrm{Tria}\,}
-
-
-
-%
-\newcommand{\cof}{\mathrm{Cof}}
-\newcommand{\Cof}{\mathcal{C}}
-\newcommand{\tcof}{\mathrm{TCof}}
-\newcommand{\TCof}{\mathcal{TC}}
-\newcommand{\we}{\mathrm{W}}
-\newcommand{\We}{\mathcal{W}}
-\newcommand{\tfib}{\mathrm{TFib}}
-\newcommand{\TFib}{\mathcal{TF}}
-\newcommand{\fib}{\mathrm{Fib}}
-\newcommand{\Fib}{\mathcal{F}}
-\newcommand{\lhtp}{\sim_\ell}
-\newcommand{\rhtp}{\sim_r}
-\newcommand{\Ho}{\operatorname{Ho}}
-\newcommand{\Lder}[1]{\mathbf{L}{#1}}
-\newcommand{\Rder}[1]{\mathbf{R}{#1}}
-\newcommand{\Lotimes}{\otimes^{\mathbf{L}}}
-\newcommand{\RHom}{\Rder\Hom}
-
-
-%
-%
-\theoremstyle{plain}
-\newtheorem{thm}{Theorem}[section]
-\newtheorem{lem}[thm]{Lemma}
-\newtheorem{prop}[thm]{Proposition}
-\newtheorem{cor}[thm]{Corollary}
-\newtheorem{ques}[thm]{Question}
-\newtheorem{fact}[thm]{Fact}
-\newtheorem{recoll}[thm]{Recollement}
-\newtheorem{conj}[thm]{Conjecture}
-\theoremstyle{definition}
-\newtheorem{defn}[thm]{Definition}
-\newtheorem{cond}[thm]{Conditions}
-\newtheorem{set}[thm]{Setting}
-\newtheorem{nota}[thm]{Notation}
-\newtheorem{expl}[thm]{Example}
-
-
-\theoremstyle{remark}
-\newtheorem{rem}[thm]{Remark}
-\newtheorem{rems}[thm]{Remarks}
-\newtheorem{warn}[thm]{Warning}
-
-
-%
-
-\begin{document}
-
 \begin{abstract} We consider a complete hereditary cotorsion pair $(\mathcal{A},\mathcal{B})$ in a Grothendieck category $\mathcal{G}$ such that $\A$ contains a generator of finite projective dimension. The derived category $\D(\B)$ of the exact category $\B$ is defined as the quotient of the category $\Ch(\B)$, of unbounded complexes with terms in $\B$, modulo the subcategory $\widetilde{\B}$ consisting of the acyclic complexes with terms in $\B$ and cycles in $\B$.
 %
 
@@ -290,13 +29,13 @@ Symmetrically, we prove analogous results for the exact category $\A$.
 
 \end{abstract}
 
-\maketitle
+%\maketitle
 
 
 %
 %
-\setcounter{tocdepth}{1}
-\tableofcontents
+%\setcounter{tocdepth}{1}
+%\tableofcontents
 
 
 %
@@ -612,7 +351,8 @@ Conversely, assume that $dw\B=dg\B$ and let $Y\in ex\B$. Then $Y\in dw\B\cap\E=d
 The dual statement is proved in similar ways.
 \end{proof}
 
-\section{Cotorsion pairs $(\A, \B)$ satisfying $ex\B=\tilde{\B}$}\label{S:2}
+%\section{Cotorsion pairs $(\A, \B)$ satisfying $ex\B=\tilde{\B}$}\label{S:2}
+\section{Cotorsion pairs NMDC}\label{S:2}
 We are interested in describing cotorsion pairs $(\A, \B)$ such that $ex\B=\tilde \B$ or $ex\A=\tilde \A$, since in these cases we have the following important consequences on the corresponding model structures.
 %
 \begin{cor}\label{C:cofibrant-fibrant}  Let $(\A, \B)$ be a complete hereditary cotorsion pairs in a Grothendieck category $\G$. The following hold true:
@@ -966,7 +706,8 @@ Note that Theorem 6.3 and Proposition 6.4 in \cite{G7} have  obvious dual statem
 %
 %
 
-\section{Projective cotorsion pairs in the exact category $\Ch(\B)$}\label{S:B}
+%\section{Projective cotorsion pairs in the exact category $\Ch(\B)$}\label{S:B}
+\section{Projective cotorsion NMDC}\label{S:B}
 
 
 
@@ -1072,7 +813,8 @@ in a Grothendieck category $\G$. The two complete hereditary cotorsion pairs
  %
 \begin{proof} Only the second statement needs a comment. If $R$ is a coherent ring, then the complete cotorsion pair $(\A, \FpInj)$ is hereditary. \end{proof}
 
- \section{Injective cotorsion pairs in the exact category $\Ch(\B)$}\label{S:B-2}
+ %\section{Injective cotorsion pairs in the exact category $\Ch(\B)$}\label{S:B-2}
+ \section{Injective cotorsion pairs NMDC}\label{S:B-2}
 
  In this section we want to investigate models for $\K(\B)$ and recollements linking it to $\D(\G)$, in particular we look for localizing cotorsion triple in $\Ch(\B)_{dw}$ whose middle term is $ex \B$.
 
@@ -1123,7 +865,8 @@ Then, the conclusion follows by  \cite[Corollary 4.5]{G7} .
 \begin{rem}\label{R:derived-of-R} From the equivalence $\dfrac{\Ch(\B)}{ex\B} \cong \dfrac{ [dg \Inj]_K}{\sim}$ we see that  $\dfrac{\Ch(\B)}{ex\B}$  is equivalent to the usual derived category $\D(\G)$.
 \end{rem}
 
-\section{When is $\tilde{\B}$ the central term of a localizing cotorsion triple in $\Ch(\B)_{dw}$?}\label{S:tildeB}
+%\section{When is $\tilde{\B}$ the central term of a localizing cotorsion triple in $\Ch(\B)_{dw}$?}\label{S:tildeB}
+\section{When is NMDC?}\label{S:tildeB}
 
 
 %
@@ -1313,7 +1056,8 @@ The existence of a recollement as in the statement follows by the same arguments
 
 
 
- \section{Injective cotorsion pairs in the exact category $\Ch(\A)$}
+ %\section{Injective cotorsion pairs in the exact category $\Ch(\A)$}
+ \section{Injective cotorsion pairs NMDC}
 
  In this section we state results dual to the ones in Section~\ref{S:B}. Their proofs are obtained  by dual arguments.
 
@@ -1399,7 +1143,8 @@ where $ex\A/\sim$ is the full subcategory of $\D(\A)$ consisting of exact comple
 %
  %
 %
-  \section{Projective cotorsion pairs in the exact category $\Ch(\A)$}
+  %\section{Projective cotorsion pairs in the exact category $\Ch(\A)$}
+  \section{Projective cotorsion pairs in NMDC}
    In this section we state results dual to the ones in Section~\ref{S:B-2}.
  %
  First we state the analogous of \cite[Proposition 7.2 ]{G7}.
@@ -1438,7 +1183,8 @@ and a recollement:
 \end{proof}
 
 
-\section{When is $\tilde{\A}$ the central term of a localizing cotorsion triple in $\Ch(\A)_{dw}$?}
+%\section{When is $\tilde{\A}$ the central term of a localizing cotorsion triple in $\Ch(\A)_{dw}$?}
+\section{When is NMDC?}
 %
 %
 
@@ -1506,6 +1252,3 @@ Let $\G$ be a Grothendieck category with enough projective objects. Let $(\A, \B
 \end{cor}
 \begin{proof} By Proposition~\ref{P:tilt-cotil}, $ex\C=\widetilde{\C}$, hence the conclusion follows by Proposition~\ref{P:new-triple-A}.
 \end{proof}
-\bibliographystyle{alpha}
-\bibliography{references}
-\end{document}
