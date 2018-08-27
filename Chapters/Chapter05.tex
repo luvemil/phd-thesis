@@ -196,7 +196,7 @@ In the following proposition we give a characterization of those morphisms that 
   The following are equivalent for a morphism $f\colon H\to H'$ in the heart $\clH=\clH_\t$ of a pre-Abelian Nakaoka context $\t=(\t_1,\t_2)$:
   \begin{enumerate}[label=(\alph*)]
     \item $f$ is a monomorphism (in $\clH$);
-    \item there is a pseudokernel $f^K\colon K\to H$ of $f$ in $\F_2$ such that $K\in \F_1$.
+    \item\label{prop:1.4:b} there is a pseudokernel $f^K\colon K\to H$ of $f$ in $\F_2$ such that $K\in \F_1$.
   \end{enumerate}
 \end{prop}
 \begin{proof}
@@ -300,8 +300,8 @@ The following are equivalent for a pre-Abelian Nakaoka context $\t=(\t_1,\t_2)$:
 \item the heart $\clH=\clH_\t$ is an Abelian category;
 \item $\t$ is Abelian (that is, it satisfies (CT.4.1), (CT.4.2) and their duals);
 \item $\t$ satisfies the following axioms:
-\begin{itemize}
-\item[(CT.4)] given a morphism $f\colon H\to H'$ in $\clH$ that admits a pseudo-kernel $f^K\colon H''\to H$ in $\F_2$, such that $H''\in \F_1$, and the commutative diagram
+  \begin{torsionaxioms}\setcounter{enumii}{3}
+  \item\label{ax:ct4} given a morphism $f\colon H\to H'$ in $\clH$ that admits a pseudo-kernel $f^K\colon H''\to H$ in $\F_2$, such that $H''\in \F_1$, and the commutative diagram
 \begin{equation*}
 \xymatrix{
  & H\ar[d]^{a}\ar[r]^{f} & H'\ar@{=}[d]\ar[r]^{f^C} & T_1\ar[d]^{\lambda_{2,T_1}}\\
@@ -309,8 +309,9 @@ t_1F_2\ar@{.>}[ur]^{b}\ar[r]^{\varepsilon_{1,F_2}} & F_2\ar[r]^{g^K} & H'\ar[r]^
 }
 \end{equation*}
 where $f^C$  is a pseudo-cokernel of $f$ in $\T_1$ and $g^K$ is a pseudo-kernel of $g$ in $\F_2$, there exists a morphism $b\colon t_1F_2\to H_1$ such that $ab=\varepsilon_{1,F_2}$;
-\item[(CT.4$^*$)] dual to (CT.4).
-\end{itemize}
+\setcounter{enumi}{4}
+\varitem{\ast}\label{ax:ct4op} dual to (CT.4).
+\end{torsionaxioms}
 \end{enumerate}
 \end{thm}
 \begin{proof}
