@@ -20,7 +20,7 @@ two torsion pairs $\mathbbm{t}_i=(\mathcal{T}_i,\mathcal{F}_i)$ for $i=1,2$.
 Consider $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$.
 
 \begin{lemma}\label{rmk:2.2}
-For an Abelian category $\A$, any Nakaoka context is integral.
+For an Abelian category $\mathscr{A}$, any Nakaoka context is integral.
 \end{lemma}
 \begin{proof}
   Let $\mathcal{T}_2\subseteq\mathcal{T}_1$, we need to show that \ref{ax:ct1},
@@ -36,14 +36,14 @@ For an Abelian category $\A$, any Nakaoka context is integral.
     Since $\mathcal{T}_1$ is closed under quotient objects, we get that $\Coker(g)\in\mathcal{T}_1$.
     Therefore, we can choose $c_g:T_1'\to\Coker(g)$ as $g^C:T_1'\to\PCok_\mathscr{A}(g)$.\todo{Is there an explicit choice
     that we made somewhere before when we talk about $\PCok_\mathscr{A}$?}
-    \varitem{^\ast} Anologous to the previous.
+    \varitem{^\ast} Anolagous to the previous.
   \end{torsionaxioms}
 
 \bigskip\bigskip
-Let us now verify the axiom (CT.4.1). Indeed, consider two morphisms $f\colon H\to H'$ and $g\colon K\to H'$ in $\mathcal{H}$ such that $f$ has a pseudo-cokernel $f^C\colon H'\to C$ with $C\in \T_2$ and consider the following pullback diagram in $\A$
+Let us now verify the axiom (CT.4.1). Indeed, consider two morphisms $f\colon H\to H'$ and $g\colon K\to H'$ in $\mathcal{H}$ such that $f$ has a pseudo-cokernel $f^C\colon H'\to C$ with $C\in \T_2$ and consider the following pullback diagram in $\mathscr{A}$
 \[
 \xymatrix{
-X\ar@{}[dr]|{P.B.}\ar@{.>}[d]_{x_H}\ar@{.>}[r]^{x_K}&K\ar[r]^{x_K^C}\ar[d]|{g}&C\ar@{=}[d]\\
+X\ar@{}[dr]|{P.B.}\ar@{.>}[d]_{x_H}\ar@{.>}[r]^{x_K}&K\ar[r]^{x_K^C}\ar[d]^{g}&C\ar@{=}[d]\\
 H\ar[r]_f&H'\ar[r]_{f^C}&C
 }
 \]
@@ -51,7 +51,7 @@ where $x_K^C\colon K\to C$ is a pseudo-cokernel of $x_K$. Clearly $X\leq H\oplus
 \[
 \xymatrix{
 t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
-&X\ar@{}[dr]|{P.B.}\ar@{.>}[d]_{x_H}\ar@{.>}[r]^{x_K}&K\ar[r]^{x_K^C}\ar[d]|{g}&C\ar@{=}[d]\\
+&X\ar@{}[dr]|{P.B.}\ar@{.>}[d]_{x_H}\ar@{.>}[r]^{x_K}&K\ar[r]^{x_K^C}\ar[d]^{g}&C\ar@{=}[d]\\
 &H\ar[r]_f&H'\ar[r]_{f^C}&C
 }
 \]
@@ -136,9 +136,9 @@ t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
 \end{thm}
 
 \begin{proof}
-  ($(a)\Rightarrow (b1),(b2)$) Assume that $\clH$ is an abelian category. By \ref{cor:2.3}\ref{cor:2.3:d}, $(b1)$ holds if and only if any monomorphism in $\clH$ is a monomorphism in $\A$.
+  ($(a)\Rightarrow (b1),(b2)$) Assume that $\clH$ is an abelian category. By \ref{cor:2.3}\ref{cor:2.3:d}, $(b1)$ holds if and only if any monomorphism in $\clH$ is a monomorphism in $\mathscr{A}$.
 
-  Observe that for any $f:H\to H'$, we have that $\Ker_\clH(f)\nto{\tilde{f}^H}H$ is a monomorphism in $\A$. Indeed, by \ref{cor:2.3}\ref{cor:2.3:b}, we know that $\tilde{f}^H$ is the composition of
+  Observe that for any $f:H\to H'$, we have that $\Ker_\clH(f)\nto{\tilde{f}^H}H$ is a monomorphism in $\mathscr{A}$. Indeed, by \ref{cor:2.3}\ref{cor:2.3:b}, we know that $\tilde{f}^H$ is the composition of
   \begin{equation*}
     \begin{tikzcd}
       t_1(\Ker(f))\arrow{r}{\varepsilon_{1,\Ker(f)}}
@@ -146,13 +146,13 @@ t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
           & H;
     \end{tikzcd}
   \end{equation*}
-  and, since $\varepsilon_{1,\Ker(f)}$ and $k_f$ are monomorphism in $\A$, so is $\tilde{f}^H$.
+  and, since $\varepsilon_{1,\Ker(f)}$ and $k_f$ are monomorphism in $\mathscr{A}$, so is $\tilde{f}^H$.
 
-  Furthermore, if $f:H\to H'$ is a monomorphism in $\clH$, then $f=\Ker_\clH(\Coker_\clH(f))$ since $\clH$ is abelian. Thus, $f$ is a monomorphism in $\A$.
+  Furthermore, if $f:H\to H'$ is a monomorphism in $\clH$, then $f=\Ker_\clH(\Coker_\clH(f))$ since $\clH$ is abelian. Thus, $f$ is a monomorphism in $\mathscr{A}$.
 
   A dual argument can be used to prove $(b2)$.
 
-  ($(a)\Rightarrow (b3)$) Let $f:H\to H'$ in $\clH$ be a monomorphism in $\A$. We want to prove that $\Coker(f)\in\clH$.
+  ($(a)\Rightarrow (b3)$) Let $f:H\to H'$ in $\clH$ be a monomorphism in $\mathscr{A}$. We want to prove that $\Coker(f)\in\clH$.
 
   Observe that the diagram
   \begin{equation}\label{thm_2_4_eq_1}
@@ -187,11 +187,11 @@ t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
     \Coker(\alpha)\cong \Coker(\varepsilon_{1,\Ker(g)})=\frac{\Ker(g)}{t_1(\Ker(g))}= f_1(\Ker(g))\in\F_1.
   \end{equation*}
 
-  Thus, $\Coker(\alpha)\in\T_2\cap\F_1=0$ and so $\alpha$ is an isomorphism. By \eqref{thm_2_4_eq_1} is follows that $\Coker(f)\cong f_2(\Coker(f))\in\F_2$ and, using the fact that $T_1$ is closed under quotients, we conclude that $\Coker(f)\in\T_1\cap\F_2=\clH$. A dual argument shows that $\clH$ is closed under kernels of epimorphism in $\A$.
+  Thus, $\Coker(\alpha)\in\T_2\cap\F_1=0$ and so $\alpha$ is an isomorphism. By \eqref{thm_2_4_eq_1} is follows that $\Coker(f)\cong f_2(\Coker(f))\in\F_2$ and, using the fact that $T_1$ is closed under quotients, we conclude that $\Coker(f)\in\T_1\cap\F_2=\clH$. A dual argument shows that $\clH$ is closed under kernels of epimorphism in $\mathscr{A}$.
 
   ($(b)\Rightarrow (a)$) We already know that $\clH$ is preabelian. On order to prove that $\clH$ is abelian we need to show that any monomorphism (resp. epimorphism) in $\clH$ is a kernel (resp. cokernel).
 
-  Let $f:H\to H'$ be a monomorphism in $\clH$. By \ref{cor:2.3} and $(b1)$, it follows that $f$ is a monomorphism in $\A$. Thus, we have a short exact sequence in $\A$
+  Let $f:H\to H'$ be a monomorphism in $\clH$. By \ref{cor:2.3} and $(b1)$, it follows that $f$ is a monomorphism in $\mathscr{A}$. Thus, we have a short exact sequence in $\mathscr{A}$
   \begin{equation*}
     \begin{tikzcd}
       0 \arrow{r}
@@ -223,7 +223,7 @@ t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
         &
     \end{tikzcd}
   \end{equation*}
-  where $f'$ is an epi and $f''$ is a mono (in $\clH$). Then, by $(b1)$ and $(b2)$ we have that $f'$ and $f''$ are respectively an epi and a mono in $\A$. Therefore, $\Img(f)\cong \Img_\clH(f)\in\clH$, and by the exact sequence
+  where $f'$ is an epi and $f''$ is a mono (in $\clH$). Then, by $(b1)$ and $(b2)$ we have that $f'$ and $f''$ are respectively an epi and a mono in $\mathscr{A}$. Therefore, $\Img(f)\cong \Img_\clH(f)\in\clH$, and by the exact sequence
   \begin{equation*}
     \begin{tikzcd}
       0 \arrow{r}
@@ -245,20 +245,20 @@ Let $\mathscr{C}=\mathcal{T}$ be a triangulated category on which idempotents sp
 We start by recalling the definition of a t-structure in $\mathcal{T}$.
 
 \begin{definition}
-  A pair $(\mathscr{A},\mathcal{B})$ of full subcategories of $\mathcal{T}$ is a t-structure
+  A pair $(\mathcal{A},\mathcal{B})$ of full subcategories of $\mathcal{T}$ is a t-structure
   in $\mathcal{T}$ if
   \begin{enumerate}[label=(\alph*)]
-    \item $\mathbbm{t}=(\mathscr{A},\mathcal{B}[-1])$ is a torsion pair in $\mathcal{T}$, and
-    \item $\mathscr{A}[1]\subseteq \mathscr{A}$.
+    \item $\mathbbm{t}=(\mathcal{A},\mathcal{B}[-1])$ is a torsion pair in $\mathcal{T}$, and
+    \item $\mathcal{A}[1]\subseteq \mathcal{A}$.
   \end{enumerate}
 \end{definition}
 
 \begin{rmk}
-  It is well known that any t-structure $(\mathscr{A},\mathcal{B})$ in $\mathcal{T}$
-  gives a functional torsion pair $\mathbbm{t}=(\mathscr{A},\mathcal[-1])$ and
-  $\mathbb{B}[-1]\subseteq\mathcal{B}$. Furthermore, $\mathscr{A}$ and
+  It is well known that any t-structure $(\mathcal{A},\mathcal{B})$ in $\mathcal{T}$
+  gives a functional torsion pair $\mathbbm{t}=(\mathcal{A},\mathcal[-1])$ and
+  $\mathbb{B}[-1]\subseteq\mathcal{B}$. Furthermore, $\mathcal{A}$ and
   $\mathcal{B}$ are closed under extensions and direct summands. Note that the t-structure
-  $(\mathscr{A},\mathcal{B})$ depends only on $\mathscr{A}$, since $\mathcal{B}=\mathscr{A}^\perp[1]$.
+  $(\mathcal{A},\mathcal{B})$ depends only on $\mathcal{A}$, since $\mathcal{B}=\mathcal{A}^\perp[1]$.
 \end{rmk}
 
 \begin{definition}
@@ -296,10 +296,10 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
 \end{thm}
 
 \begin{example}
-  Let $(\mathscr{A},\mathcal{B})$ be a t-structure in $\mathcal{T}$. Consider
-  $\mathbbm{t}_1:=(\mathscr{A},\mathcal{B}[-1])$ and $\mathbbm{t}_2 :=(\mathscr{A}[1],\mathcal{B})$.
+  Let $(\mathcal{A},\mathcal{B})$ be a t-structure in $\mathcal{T}$. Consider
+  $\mathbbm{t}_1:=(\mathcal{A},\mathcal{B}[-1])$ and $\mathbbm{t}_2 :=(\mathcal{A}[1],\mathcal{B})$.
   It is not hard to see that $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ is a strongly related
-  torsion pair in $\mathcal{T}$. In this case, by \ref{thm:2.6}, we get that $\mathcal{H}=\mathscr{A}\cap\mathcal{B}$
+  torsion pair in $\mathcal{T}$. In this case, by \ref{thm:2.6}, we get that $\mathcal{H}=\mathcal{A}\cap\mathcal{B}$
   is an abelian category (BBD theorem).
 \end{example}
 
@@ -387,7 +387,7 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
   $\varepsilon\circ\tau_{\mathcal{U}_1}(\alpha)=\alpha$, hence
   $\varepsilon\circ\tau_{\mathcal{U}_1}(\alpha)\circ\beta = \varepsilon$. By the functoriality of
   the torsion pair $(\mathcal{U}_1,\mathcal{U}_1^\perp)$, this means that
-  $\tau_{\mathcal{U}_1}(\alpha)\circ\beta=1_{\tau_{\mathcal{U}_1}(V_2)}$. Then, $\mathcal{\beta}$ is a section.
+  $\tau_{\mathcal{U}_1}(\alpha)\circ\beta=1_{\tau_{\mathcal{U}_1}(V_2)}$. Then, $\beta$ is a section.
 
   Hence, we can write $\tau_{\mathcal{U}_1}(\alpha):H_1\to \tau_{\mathcal{U}_1}(V_2)$
   as
@@ -600,15 +600,15 @@ functor $H^0_1:\mathcal{T}\to \mathcal{H}_1:=\mathcal{U}_1\cap\mathcal{U}_1^\per
   \end{enumerate}
 \end{thm}
 
-Let $t=(\mathscr{A},\mathcal{B})$ be a pair of full subcategories of the triangulated
+Let $t=(\mathcal{A},\mathcal{B})$ be a pair of full subcategories of the triangulated
 category $\mathcal{T}$. We will use the following notation:
 \begin{align*}
-  t[1] &:= (\mathscr{A}[1],\mathcal{B}[1]),\\
-  \overline{t} &:= (\mathscr{A},\mathcal{B}[1]).
+  t[1] &:= (\mathcal{A}[1],\mathcal{B}[1]),\\
+  \overline{t} &:= (\mathcal{A},\mathcal{B}[1]).
 \end{align*}
 
 Note that $\overline{t}$ is a t-structure in $\mathcal{T}$ if and only if $t$ is a torsion
-pair $\mathcal{T}$ such that $\mathscr{A}[1]\subseteq\mathscr{A}$.
+pair $\mathcal{T}$ such that $\mathcal{A}[1]\subseteq\mathcal{A}$.
 
 \begin{rmk}
   Consider $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$, where $\mathbbm{t}_i:=(\mathcal{U}_i,\mathcal{U}_i^\perp)$ for
@@ -666,8 +666,8 @@ pair $\mathcal{T}$ such that $\mathscr{A}[1]\subseteq\mathscr{A}$.
 \end{corollary}
 
 We recall that a torsion pair $(\mathcal{T},\mathcal{F})$ in an abelian category
-$\mathscr{A}$ is cohereditary if the class $\mathcal{F}$ is closed under quotients
-in $\mathscr{A}$.
+$\mathcal{A}$ is cohereditary if the class $\mathcal{F}$ is closed under quotients
+in $\mathcal{A}$.
 
 \begin{definition}
   For a triangulated category $\mathcal{T}$, we consider the following classes:

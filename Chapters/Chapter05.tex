@@ -14,7 +14,7 @@ additive category in such a way that $\clH = \T_1\cap\F_2$ becomes an abelian ca
 
 Since we don't have a triangulated structure to rely on, the axioms will impose some requirements on $\t_1$ and $\t_2$ to compensate. Moreover, we will require that idempotents split in $\mathscr{C}$.\todo{check this hypothesis}
 
-The results in this chapter are part of a work in preparation by the author in conjunction with Manuel Saor\'in and Simone Virili.
+The results in this chapter are part of a work in preparation by the author in conjunction with Manuel Saor\'in, Simone Virili and Octavio Mendoza.
 
 %*****************************************
 \section{Torsion pairs}
@@ -26,7 +26,7 @@ Let $\mathscr{C}$ be an additive category and $\A\subseteq \mathscr{C}$ a class 
   \item $\lhperp{\A}=\{ X\in \mathscr{C}| \Hom_{\mathscr{C}}(X,\A)=0\}$.
 \end{itemize}
 
-Given a map $\varphi:X\to Y$, recall that a \emph{pseudocokernel} of $\varphi$ is a map $\psi:Y\to Z$ such that $\psi\varphi=0$ and any other $\psi':Y\to Z$ satisfying $\psi'\varphi=0$ factors (not necessarily uniquely) through $\psi$. There an obvious dual notion of \emph{pseudokernel}
+Given a map $\varphi:X\to Y$, recall that a \emph{pseudocokernel} of $\varphi$ is a map $\psi:Y\to Z$ such that $\psi\varphi=0$ and any other $\psi':Y\to Z$ satisfying $\psi'\varphi=0$ factors (not necessarily uniquely) through $\psi$. There an obvious dual notion of \emph{pseudokernel}.
 
 \begin{definition}\label{5:def:torsion_pair}
   A pair $\t=(\T,\F)$ of classes of objects of $\mathscr{C}$ is a \emph{torsion pair} if:
@@ -44,11 +44,11 @@ Given a map $\varphi:X\to Y$, recall that a \emph{pseudocokernel} of $\varphi$ i
 \end{definition}
 
 \begin{rmk}
-  Our definition of a torsion pair in additive categories requires the existence of a pseudokernel-pseudocokernel sequence, while the usual definition of a torsion pair in abelian categories requires a short exact sequence instead. However, as we'll show in the following lemma, the two definitions actually coincide.
+  Our definition of a torsion pair in additive categories requires the existence of a pseudokernel-pseudocokernel sequence, while the usual definition of a torsion pair in abelian categories requires a short exact sequence instead. However, as we'll show in the following lemma, the two definitions actually coincide in abelian categories.
 \end{rmk}
 
 \begin{lemma}
-  Let $\mathscr{C}$ be an abelian category and $(\T,\F)$ be a torsion pair according to \ref{5:def:torsion_pair}. Then, for any $X\in\mathscr{C}$ there is a short exact sequence
+  Let $\mathscr{C}$ be an abelian category and $(\T,\F)$ be a torsion pair according to Definition \ref{5:def:torsion_pair}. Then, for any $X\in\mathscr{C}$ there is a short exact sequence
   \begin{equation*}
     \begin{tikzcd}
       0\arrow{r}&T_X\arrow{r}&X\arrow{r}&F^X\arrow{r}&0
@@ -77,7 +77,7 @@ Given a map $\varphi:X\to Y$, recall that a \emph{pseudocokernel} of $\varphi$ i
 \end{proof}
 
 
-It is a classical result that torsion pairs in Abelian categories are automatically functorial. Similarly, $t$-structures in triangulated categories are examples of functorial torsion pairs.
+It is a classical result that torsion pairs in Abelian categories are automatically functorial. Similarly, if $(\T^{\leq 0},\T^{\geq 0})$ is a $t$-structure in a triangulated category, $(\T^{\leq 0}[1],\T^{\geq 0})$ is an example of functorial torsion pair.
 
 The following lemma gives basic properties of left functorial torsion pairs. The proof is omitted, since it is a straightforward application of the definitions. The dual obiously hold for right functorial torsion pairs.
 
@@ -217,6 +217,14 @@ In the following proposition we give a characterization of those morphisms that 
 \end{proof}
 
 \subsection{Integral Nakaoka contexts}
+
+Our final objective is to find conditions that make $\clH_\t$ into an Abelian category. For a pre-Abelian category, being Abelian amounts to saying that every mono is a kernel and every epi is a cokernel. However, we can consider a middle step before abelianity, namely \emph{integra categories}.
+
+\begin{definition}
+  A pre-Abelian category is called \emph{integral} if pullbacks of epis are epi and pushout of monos are mono.
+\end{definition}
+
+An integral category is Abelian if any morphism that is both epi and mono is an isomorphism. In this section and the next we will introduce axioms that guarantee the integrality and abelianity, respectively, of $\clH$.
 
 \begin{definition}
 A pre-Abelian Nakaoka context $\t=(\t_1,\t_2)$ is said to be \emph{integral} provided the following axioms hold:
