@@ -13,6 +13,7 @@
 
 
 \section{Nakaoka contexts in special categories}
+\todo{Add intro}
 \subsection{Nakaoka contexts in Abelian categories}
 
 Let's consider the case $\mathscr{C}=\mathscr{A}$ of an Abelian category with
@@ -85,7 +86,7 @@ t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
   \ref{cor:2.3:c}
   \begin{enumerate}
     \item[$\Leftarrow$] is trivial.
-    \item[$\Rightarrow$] By \ref{prop:1.4}\ref{prop:1.4:b} \todo{fix this reference} there exists $f^C:H_2\to T_2$, where
+    \item[$\Rightarrow$] By \ref{prop:1.4}\ref{prop:1.4:b} there exists $f^C:H_2\to T_2$, where
       $T_2=\Coker_{T_1}(f)\in\mathcal{T}_2$. Then, we have
 
       \begin{minipage}[b]{0.45\linewidth}
@@ -117,6 +118,7 @@ t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
 \end{proof}
 
 \begin{thm}\label{thm_2_4}
+  \todo{Change $(\T_i,\F_i)$ with something like $\t_1,\t_2$}
   Let $\mathbbm{t}_i=(\mathcal{T}_i,\mathcal{F}_i)$ be a torsion pair in an abelian category
   $\mathscr{A}$, for $i=1,2$, such that $\mathcal{T}_2\subseteq \mathcal{T}_1$. Then, for
   $\mathcal{H}:=\mathcal{T}_1\cap\mathcal{F}_2$ the following statements are equivalent:
@@ -239,6 +241,8 @@ t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
 
 \end{proof}
 
+\todo{Add some conclusion}
+
 \subsection{Nakaoka contexts in triangulated categories}
 
 Let $\mathscr{C}=\mathcal{T}$ be a triangulated category on which idempotents split.
@@ -256,7 +260,7 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
 \begin{rmk}
   It is well known that any t-structure $(\mathcal{A},\mathcal{B})$ in $\mathcal{T}$
   gives a functional torsion pair $\mathbbm{t}=(\mathcal{A},\mathcal[-1])$ and
-  $\mathbb{B}[-1]\subseteq\mathcal{B}$. Furthermore, $\mathcal{A}$ and
+  $\mathcal{B}[-1]\subseteq\mathcal{B}$. Furthermore, $\mathcal{A}$ and
   $\mathcal{B}$ are closed under extensions and direct summands. Note that the t-structure
   $(\mathcal{A},\mathcal{B})$ depends only on $\mathcal{A}$, since $\mathcal{B}=\mathcal{A}^\perp[1]$.
 \end{rmk}
@@ -268,12 +272,14 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
   $\mathcal{T}_1[1]\subseteq \mathcal{T}_2\subseteq\mathcal{T}_1$.
 \end{definition}
 
+\todo{Remove reference to compatible torsion pairs. Use related torsion pairs and Nakaoka contexts}
+
 \begin{prop}
   Let $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ be a related torsion pair in $\mathcal{T}$. Then
   \begin{enumerate}[label=(\alph*)]
     \item $(\mathcal{T}_1,\mathcal{F}_1[1])$ and $(\mathcal{T}_2,\mathcal{F}_2[1])$
     are t-structures in $\mathcal{T}$;
-    \item $\mathbbm{t}$ is a compatible torsion pair in $\mathcal{T}$;
+  \item $\mathbbm{t}$ is a compatible torsion pair in $\mathcal{T}$; \todo{Compatible mean satisfying (CT1)-(CT3),(CT3)$^\ast$}
     \item the heart $\mathcal{H}_\mathbbm{t} := \mathcal{T}_1\cap\mathcal{F}_2[1]$ is a preabelian category.
   \end{enumerate}
 \end{prop}
@@ -295,6 +301,8 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
   is an abelian category.
 \end{thm}
 
+In the next example we use the previous result to recover the classical result, that is the heart of any t-structure in a triangulated category is abelian.
+
 \begin{example}
   Let $(\mathcal{A},\mathcal{B})$ be a t-structure in $\mathcal{T}$. Consider
   $\mathbbm{t}_1:=(\mathcal{A},\mathcal{B}[-1])$ and $\mathbbm{t}_2 :=(\mathcal{A}[1],\mathcal{B})$.
@@ -311,7 +319,7 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
   always a pseudocokernel $f$, and similarly the shifted cone $\mathrm{Cone}(f)[-1]$ is always
   a pseudokernel of $f$.
 
-  If, moreover, $\mathrm{Cone}(f)\in\mathcal{U}_1$ for any morphism
+  If, moreover, $\mathrm{Cone}(f)\in\mathcal{U}_1$\todo{This is actually always true} for any morphism
   $f$ in $\mathcal{U}_1$ and $\mathrm{Cone}(f)[-1]\in\mathcal{U}_2^\perp$, then
   $\mathbbm{t}=((\mathcal{U}_1,\mathcal{U}_1^\perp),(\mathcal{U}_2,\mathcal{U}_2^\perp))$ satisfy
   axioms \ref{ax:ct1}-\ref{ax:ct3},\ref{ax:ct3op}, hence $\mathcal{H}=\mathcal{U}_1\cap\mathcal{U}_2^\perp$ has
@@ -378,7 +386,7 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
         & &
     \end{tikzcd}
   \end{equation*}
-  with $\mathrm{Cone}(f)[-1]\in\mathcal{U}_1^\perp$. Neeman \todo{Add reference} guarantees
+  with $\mathrm{Cone}(f)[-1]\in\mathcal{U}_1^\perp$. Neeman \cite[Lemma~1.4.3]{Nee01} guarantees
   that $\alpha$ can be taken so that the square on the left is a pullback. Axiom \ref{ax:ct4}
   gives the existence of $\beta:\tau_{\mathcal{U}_1}(V_2)\to H_1$ such that $\alpha\circ\beta=\varepsilon$.
 
@@ -523,7 +531,7 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
 
   It can be seen that $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ where
   $\mathbbm{t}_1:=(\mathcal{D}^{\leq 0}(R),\mathcal{D}^{\geq 1}(R))$ and
-  $\mathbb{T}_2:=(\mathcal{D}^{\leq 0}_{t_I}(R),\mathcal{D}^{\geq 1}_{t_I}(R))$, is a strongly
+  $\mathbbm{t}_2:=(\mathcal{D}^{\leq 0}_{t_I}(R),\mathcal{D}^{\geq 1}_{t_I}(R))$, is a strongly
   related torsion pair in $\mathcal{T}=\mathcal{D}(R)$.
 \end{example}
 
