@@ -324,14 +324,28 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
 \end{thm}
 
 \begin{proof}
-  By Proposition~\ref{prop:2.5} $\t$ is a pre-Abelian Nakaoka context. Therefore, by Theorem~\ref{thm:2.5} it is enough to check that \ref{ax:ct4} and \ref{ax:ct4op} hold.
+  By Proposition~\ref{prop:2.5} $\t$ is a pre-Abelian Nakaoka context. Therefore, by Proposition~\ref{prop:2.5} it is enough to check that \ref{ax:ct4} and \ref{ax:ct4op} hold.
 
   \begin{itemize}
-    \item[\ref{ax:ct4}]
+    \item[\ref{ax:ct4}] Consider a map $f\colon H\to H'$ in $\clH$ that admits a pseudo-kernel $f^K\colon H''\to H$ in $\F_2$ such that $H''\in\F_1$ as in the statement of \ref{ax:ct4} and consider the commutative diagram \todo{maybe use $T_1$ instead of $H''[1]$ and explain why they can be used interchangeably}
+      \begin{equation*}
+        \begin{tikzcd}
+          H''\arrow{r}\arrow{d}{\lambda_2[-1]}
+          & H\arrow{r}{f}\arrow{d}{a}
+          & H'\arrow{r}{f^C}\arrow[equal]{d}
+          & H''[1]\arrow{d}{\lambda_2}\\
+          f_2(H''[1])[-1]\arrow{r}
+          & F_2\arrow{r}
+          & H'\arrow{r}
+          & f_2(H''[1])
+        \end{tikzcd}
+      \end{equation*}
+      whose rows are distinguished triangles. By construction $H''$ belongs to $\F_1$, hence it belongs to $\F_2[-1]$ by (RST1) and so $H''[1]$ belongs to $\F_2$. Thus, $\lambda_2$ is an iso and as a consequence so is $a$. By setting $b\colon= a^{-1}\varepsilon_1\colon t_1(F_2)\to H$, we see that $\t$ satisfies \ref{ax:ct4}.
+    \item[\ref{ax:ct4op}] Dual to the previous.
   \end{itemize}
 \end{proof}
 
-In the next example we use the previous result to recover the classical result, that is the heart of any t-structure in a triangulated category is abelian.
+In the next example we use the previous theorem to recover the classical result, that is the heart of any t-structure in a triangulated category is abelian.
 
 \begin{example}
   Let $(\mathcal{A},\mathcal{B})$ be a t-structure in $\mathcal{T}$. Consider
