@@ -59,7 +59,7 @@ t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
 \end{proof}
 
 \begin{corollary}\label{cor:2.3}
-  Let $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ be a torsion pair in $\mathscr{A}$ with $\mathcal{T}_2\subseteq\mathcal{T}_1$.
+  Let $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ Nakaoka context in $\mathscr{A}$.
   Then, for $f:H_1\to H_2$ in $\mathcal{H}$, the following statements hold:
   \begin{enumerate}[label=(\alph*),ref=(\alph*)]
     \item\label{cor:2.3:a} the cokernel of $f$ in $\mathcal{H}$ is the composition of the morphisms
@@ -118,9 +118,8 @@ t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
 \end{proof}
 
 \begin{thm}\label{thm_2_4}
-  \todo{Change $(\T_i,\F_i)$ with something like $\t_1,\t_2$}
-  Let $\mathbbm{t}_i=(\mathcal{T}_i,\mathcal{F}_i)$ be a torsion pair in an abelian category
-  $\mathscr{A}$, for $i=1,2$, such that $\mathcal{T}_2\subseteq \mathcal{T}_1$. Then, for
+  Let $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ Nakaoka context in an abelian category
+  $\mathscr{A}$. Then, for
   $\mathcal{H}:=\mathcal{T}_1\cap\mathcal{F}_2$ the following statements are equivalent:
   \begin{enumerate}[label=(\alph*)]
     \item $\mathcal{H}$ is an abelian category.
@@ -272,17 +271,40 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
   $\mathcal{T}_1[1]\subseteq \mathcal{T}_2\subseteq\mathcal{T}_1$.
 \end{definition}
 
-\todo{Remove reference to compatible torsion pairs. Use related torsion pairs and Nakaoka contexts}
-
-\begin{prop}
+\begin{prop}\label{prop:2.5}
   Let $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ be a related torsion pair in $\mathcal{T}$. Then
   \begin{enumerate}[label=(\alph*)]
     \item $(\mathcal{T}_1,\mathcal{F}_1[1])$ and $(\mathcal{T}_2,\mathcal{F}_2[1])$
     are t-structures in $\mathcal{T}$;
-  \item $\mathbbm{t}$ is a compatible torsion pair in $\mathcal{T}$; \todo{Compatible mean satisfying (CT1)-(CT3),(CT3)$^\ast$}
+  \item $\mathbbm{t}$ is a pre-Abelian Nakaoka context in $\mathcal{T}$;
     \item the heart $\mathcal{H}_\mathbbm{t} := \mathcal{T}_1\cap\mathcal{F}_2[1]$ is a preabelian category.
   \end{enumerate}
 \end{prop}
+
+\begin{proof}
+  (a) follows by the inclusions $\T_1[1]\subseteq \T_2\subseteq \T_2$ and, assuming (b), (c) is a consequence of Theorem~\ref{pre_abelian_theorem}. It remains to prove (b), i.e. to show that axioms \ref{ax:ct1}, \ref{ax:ct2}, \ref{ax:ct3}, and \ref{ax:ct3op}.
+
+  \begin{itemize}
+    \item[\ref{ax:ct1}] Follows from (a).
+    \item[\ref{ax:ct2}] Is in the hypothesis.
+    \item[\ref{ax:ct3}] Let $g:H\to H'$ in $\clH$ and complete it to a triangle:
+      \begin{equation*}
+        \begin{tikzcd}
+          H\arrow{r}{g}&H'\arrow{r}{g^C}&C\arrow{r}&H[1].
+        \end{tikzcd}
+      \end{equation*}
+      Since $\clH\subseteq \T_1$, we have that $H[1]\in\T_1[1]\subseteq \T_1$. Moreover, since $\T_1$ is closed under extensions, $C$ belongs to $\T_1$. Hence, $g^C:H'\to C$ is a pseusocokernel of $g$ in $\T_1$.\todo{It is a pseudocokernel because axioms of triangulated categories}
+
+      Take $F\in\F_2$. Applying the functor $(-,F)\colon=\Hom(-,F)$ to the triangle above yields an exact sequence of abelian groups
+      \begin{equation*}
+        \begin{tikzcd}
+          (H[1],F)\arrow{r}&(C,F)\arrow{r}&(H',F)\arrow{r}&(H,F).
+        \end{tikzcd}
+      \end{equation*}
+      Observe that $\F_2=\T_2\rhperp \subseteq \T_1\rhperp[1]$, i.e. $\Hom(H[1],F)=0$. This concludes the proof.
+    \item[\ref{ax:ct3op}] Dual to the previous.
+  \end{itemize}
+\end{proof}
 
 \begin{definition}
   A related torsion pair $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ in the triangulated category
@@ -300,6 +322,14 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
   the triangulated category $\mathcal{T}$. Then, the heart $\mathcal{H}=\mathcal{H}_\mathbbm{t}$
   is an abelian category.
 \end{thm}
+
+\begin{proof}
+  By Proposition~\ref{prop:2.5} $\t$ is a pre-Abelian Nakaoka context. Therefore, by Theorem~\ref{thm:2.5} it is enough to check that \ref{ax:ct4} and \ref{ax:ct4op} hold.
+
+  \begin{itemize}
+    \item[\ref{ax:ct4}]
+  \end{itemize}
+\end{proof}
 
 In the next example we use the previous result to recover the classical result, that is the heart of any t-structure in a triangulated category is abelian.
 
