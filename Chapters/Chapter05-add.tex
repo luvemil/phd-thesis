@@ -165,7 +165,7 @@ t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
             & 0\\
       0 \arrow{r}
       & \Ker(g)\arrow{r}{k_g}
-        & H' \arrow{r}{g\colon=\lambda_2c_f}
+        & H' \arrow{r}{g:=\lambda_2c_f}
           & f_2(\Coker(f)) \arrow{r}
             & 0
     \end{tikzcd}
@@ -276,7 +276,7 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
   \begin{enumerate}[label=(\alph*)]
     \item $(\mathcal{T}_1,\mathcal{F}_1[1])$ and $(\mathcal{T}_2,\mathcal{F}_2[1])$
     are t-structures in $\mathcal{T}$;
-  \item $\mathbbm{t}$ is a pre-Abelian Nakaoka context in $\mathcal{T}$;
+  \item\label{prop:2.5:b} $\mathbbm{t}$ is a pre-Abelian Nakaoka context in $\mathcal{T}$;
     \item the heart $\mathcal{H}_\mathbbm{t} := \mathcal{T}_1\cap\mathcal{F}_2[1]$ is a preabelian category.
   \end{enumerate}
 \end{prop}
@@ -295,7 +295,7 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
       \end{equation*}
       Since $\clH\subseteq \T_1$, we have that $H[1]\in\T_1[1]\subseteq \T_1$. Moreover, since $\T_1$ is closed under extensions, $C$ belongs to $\T_1$. Hence, $g^C:H'\to C$ is a pseusocokernel of $g$ in $\T_1$.\todo{It is a pseudocokernel because axioms of triangulated categories}
 
-      Take $F\in\F_2$. Applying the functor $(-,F)\colon=\Hom(-,F)$ to the triangle above yields an exact sequence of abelian groups
+      Take $F\in\F_2$. Applying the functor $(-,F):=\Hom(-,F)$ to the triangle above yields an exact sequence of abelian groups
       \begin{equation*}
         \begin{tikzcd}
           (H[1],F)\arrow{r}&(C,F)\arrow{r}&(H',F)\arrow{r}&(H,F).
@@ -340,7 +340,7 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
           & f_2(H''[1])
         \end{tikzcd}
       \end{equation*}
-      whose rows are distinguished triangles. By construction $H''$ belongs to $\F_1$, hence it belongs to $\F_2[-1]$ by (RST1) and so $H''[1]$ belongs to $\F_2$. Thus, $\lambda_2$ is an iso and as a consequence so is $a$. By setting $b\colon= a^{-1}\varepsilon_1\colon t_1(F_2)\to H$, we see that $\t$ satisfies \ref{ax:ct4}.
+      whose rows are distinguished triangles. By construction $H''$ belongs to $\F_1$, hence it belongs to $\F_2[-1]$ by (RST1) and so $H''[1]$ belongs to $\F_2$. Thus, $\lambda_2$ is an iso and as a consequence so is $a$. By setting $b:= a^{-1}\varepsilon_1\colon t_1(F_2)\to H$, we see that $\t$ satisfies \ref{ax:ct4}.
     \item[\ref{ax:ct4op}] Dual to the previous.
   \end{itemize}
 \end{proof}
@@ -651,6 +651,26 @@ functor $H^0_1:\mathcal{T}\to \mathcal{H}_1:=\mathcal{U}_1\cap\mathcal{U}_1^\per
       we have that $X\in\mathcal{H}$ (i.e. $\mathcal{H}$ is closed under quotients in $\mathcal{H}_1$).
   \end{enumerate}
 \end{thm}
+
+\begin{proof}
+  Let $V\nto{f^K}H_1\nto{f}H_2\nto{f^C}V[1]$ be a distinguished triangle in $\T$, with $H_1,H_2\clH$. We recall that $\clH$ is a preabelian category, by Proposition \ref{prop:2.5}\ref{prop:2.5:b}. Furthermore $\clH_1:=\T_1\cap\F_1[1]$ is an abelian category (BBD Theorem).
+
+  Consider the kernels $\Ker_{\clH_1}(f)\to H_1$ and $\Ker_{\clH}(f)\to H_1$ of $f$ in $\clH_1$ and $\clH$ respectively and draw the diagram (in $\T$)
+  \begin{equation*}
+    \begin{tikzcd}
+      t_1(V)=\Ker_\clH(f)\arrow{d}
+      & \Ker_{\clH_1}(f)\arrow{d}\arrow[dashed]{dl}{\exists !}\arrow[dashed]{l}{\exists !}
+        & &\\
+      V\arrow{r}
+      & H_1\arrow{r}{f}
+      & H_2\arrow{r}
+      & V[1]
+    \end{tikzcd}
+  \end{equation*}
+  whose solid part is commutative and where the row is a distinguished triangle. The arrow $\Ker_{\clH_1}(f)\to V$ exists and is unique by \ref{ax:ct3op} and $\Ker_{\clH_1}\to \Ker_\clH$ exists and is unique by the functoriality of the t-structure $(\T_1,\F_1[1])$. Moreover, $\Ker_{\clH_1}(f) \to H_1$ is obviously a mono in $\clH_1$, so $\Ker_{\clH_1}\to \Ker_\clH$ is a mono in $\clH_1$. Since $\clH$ is a torsion free class in $\clH_1$, this means that $\Ker_{\clH_1}\in\clH$. In particular, $\Ker_{\clH_1}\to H_1$ is the kernel of $f$ in $\clH$.
+
+  With this observation, we can procede with the proof.
+\end{proof}
 
 Let $t=(\mathcal{A},\mathcal{B})$ be a pair of full subcategories of the triangulated
 category $\mathcal{T}$. We will use the following notation:
