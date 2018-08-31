@@ -667,9 +667,56 @@ functor $H^0_1:\mathcal{T}\to \mathcal{H}_1:=\mathcal{U}_1\cap\mathcal{U}_1^\per
       & V[1]
     \end{tikzcd}
   \end{equation*}
-  whose solid part is commutative and where the row is a distinguished triangle. The arrow $\Ker_{\clH_1}(f)\to V$ exists and is unique by \ref{ax:ct3op} and $\Ker_{\clH_1}\to \Ker_\clH$ exists and is unique by the functoriality of the t-structure $(\T_1,\F_1[1])$. Moreover, $\Ker_{\clH_1}(f) \to H_1$ is obviously a mono in $\clH_1$, so $\Ker_{\clH_1}\to \Ker_\clH$ is a mono in $\clH_1$. Since $\clH$ is a torsion free class in $\clH_1$, this means that $\Ker_{\clH_1}\in\clH$. In particular, $\Ker_{\clH_1}\to H_1$ is the kernel of $f$ in $\clH$.
+  whose solid part is commutative and where the row is a distinguished triangle. The arrow $\Ker_{\clH_1}(f)\to V$ exists and is unique by \ref{ax:ct3op} and $\Ker_{\clH_1}\to \Ker_\clH$ exists and is unique by the functoriality of the t-structure $(\T_1,\F_1[1])$. Moreover, $\Ker_{\clH_1}(f) \to H_1$ is obviously a mono in $\clH_1$, so $\Ker_{\clH_1}\to \Ker_\clH$ is a mono in $\clH_1$. Since $\clH$ is a torsion free class in $\clH_1$, this means that $\Ker_{\clH_1}\in\clH$. In particular, $\Ker_{\clH_1}\to H_1$ is the kernel of $f$ in $\clH$. This also proves that monomorphisms in $\clH$ are mono in $\clH_1$ too.
 
   With this observation, we can procede with the proof.
+
+  \smallskip\noindent
+  (a)$\Rightarrow$(b). Let $f$ be a monomorphism in $\clH_1$. Then $0=\Ker_{\clH_1}(f)=\Ker_\clH$, so $V\in\F_1$ (by \ref{prop:1.4}). By (a), it follows that $V[1]\in\F_2$. In the following diagram the solid part is commutative:
+  \begin{equation*}
+    \begin{tikzcd}
+      & & \Coker_{\clH_1}(f)\arrow[bend left=50,dashed]{dd}{\exists s}\\
+      H_1\arrow{r}{f}
+      & H_2\arrow{ur}{\pi}\arrow{r}{f^C}\arrow{dr}{t}
+        & V[1]\arrow[dashed]{u}{\exists r}\arrow{d}{\lambda_2}\\
+      & & f_2(V[1]).
+    \end{tikzcd}
+  \end{equation*}
+  By (the dual of) Proposition \ref{prop:1.4} $\Coker_\clH(f)=\lambda_2\circ f^C$. Since $V[1]\in\F_2$, $\lambda_2$ is an isomorphism. There is a map $r$ making the triangle $rf^C=\pi$ is commutative, since $\pi f =0$ and $V[1]$ is pseudocokernel of $f$. Similarly, the map $s$ exists by the cokernel property of $\Coker_{\clH_1}(f)$ in $\clH_1$.
+
+  Define $\overline{s}:=r\lambda_2^{-1}$. We have $\overline{s}s\pi=\overline{s}t=\pi$. Since $\pi$ is an epimorphism in $\clH_1$, we have that $\overline{s}s=1$, hence
+  \begin{equation*}
+    \begin{tikzcd}
+      \Coker_{\clH_1}(f)\arrow[hook]{r}{s}
+      & f_2(V[1])\in\clH.
+    \end{tikzcd}
+  \end{equation*}
+  So $\Coker_{\clH_1}(f)\in\clH$, since $\clH$ is a torsion free class in $\clH_1$.
+
+  \smallskip\noindent
+  (b)$\Rightarrow$(c). It is enough to show that $\clH$ is closed under cokernels in $\clH_1$. Let $H_1\nto{f}H_2$ in $\clH$. Then, $\Img_{\clH_1}(f)\into H_2$ and so $\Img_{\clH_1}(f)\in\clH$, since $\clH$ is torsion free in $\clH_1$. Therefore, $\Coker_{\clH_1}(f)\in\clH$.
+
+  \smallskip\noindent
+  (c)$\Rightarrow$(d). Trivial.
+
+  \smallskip\noindent
+  (d)$\Rightarrow$(a). Let $V\nto{f^K}H_1\nto{f}H_2\nto{f^C}V[1]$ be a distinguished triangle with $V\in\F_1$. To prove that $V[1]\in\F_2$ it is enought to show that the arrow $\lambda_2$ in the approximation triangle
+  \todo{Is the name approximation triangle correct in this case? Check the definitions for t-structures}
+  \begin{equation*}
+    \begin{tikzcd}
+      t_2(V[1])\arrow{r}{\varepsilon_2}
+      & V[1]\arrow{r}{\lambda_2}
+        & f_2(V[1])\arrow{r}{\mu_2}
+          & t_2(V[1])[1]
+    \end{tikzcd}
+  \end{equation*}
+  is an isomorphism. To see that, apply the octaedral axiom to $H_2\nto{f^C}V[1]\nto{f_2}(V[1])$ to get
+
+  \begin{equation*}
+    \begin{tikz}
+    \end{tikz}
+  \end{equation*}
+
 \end{proof}
 
 Let $t=(\mathcal{A},\mathcal{B})$ be a pair of full subcategories of the triangulated
