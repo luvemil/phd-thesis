@@ -1,0 +1,32 @@
+% Source: https://tex.stackexchange.com/questions/358450/how-to-latex-the-octahedral-axiom-diagram/358466
+\documentclass[crop,tikz]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+\usetikzlibrary{calc,intersections}% tikz package already loaded by 'tikz' option
+\usepackage{amsmath,amssymb}
+\begin{document}
+\begin{tikzpicture}[scale=3]
+  \def\openingangle{35}
+  \node (Z') at (0, 0) {Z'};
+  \node (Y) at ($(Z') +(270-\openingangle:1)$) {Y};
+  \node (Y') at ($(Z') +(270+\openingangle:1)$) {Y'};
+  \node (X) at ($(Y) +(270-\openingangle:1)$) {X};
+  \node (X') at ($(Y') +(270+\openingangle:1)$) {X'};
+  \draw[white, name path=L1] (X) -- (Y');
+  \draw[white, name path=L2] (X') -- (Y);
+  \path[name intersections={of=L1 and L2, by=pZ}];
+  \node (Z) at (pZ) {Z};
+
+  \draw[-latex] (X) -- node[above left] {$u$} (Y);
+  \draw[-latex] (X) -- node[below right] {$v \circ u$} (Z);
+  \draw[-latex] (Y) -- node[above left] {$j$} (Z');
+  \draw[-latex] (Y) -- node[above right] {$v$} (Z);
+  \draw[-latex] (Z) -- (Y');
+  \draw[-latex] (Z) -- (X');
+
+  \draw[-latex] (X') -- ($(X')!-2!(Y')$);
+  \draw[-latex] (X') -- node[above right] {$i$} ($(X')!-0.5!(Z)$);
+  \draw[-latex] (Y') -- node[above right] {$g$} (X');
+  \draw[-latex] (Y') -- ($(Y')!-1!(Z)$);
+  \draw[-latex] (Z') -- node[above right] {$f$} (Y');
+  \draw[-latex] (Z') -- ($(Z')!-1!(Y)$);
+\end{tikzpicture}
+\end{document}
