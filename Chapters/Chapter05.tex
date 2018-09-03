@@ -10,7 +10,7 @@ In both cases the construction of the abelian structure, i.e. of the kernels and
 This result recovers both cases above giving a unified way of constructing kernels and cokernels in the heart.
 
 Keeping this setting in mind, we will provide a set of axioms for a pair of torsion pairs $\t_1=(\T_1,\F_1)$ and $\t_2=(\T_2,\F_2)$ in a (sufficiently nice) \todo{Give a better specification of what this means}
-additive category in such a way that $\clH = \T_1\cap\F_2$ becomes an abelian category. In a sense, our objective is to axiomatize $\underline{\mathscr{C}}$ and the pairs which are referred to as $(\underline{\C}^-,\underline{\V})$ and $(\underline{\U},\underline{\C}^+)$ in \cite{Nakaokaa}.
+additive category in such a way that $\clH = \T_1\cap\F_2$ becomes an abelian category. In a sense, our objective is to axiomatize $\underline{\mathscr{C}}$ and the pairs which are referred to as $(\underline{\C}^-,\underline{\V})$ and $(\underline{\U},\underline{\C}^+)$ in \cite{Nakaokaa}. \todo{Add example of remove}
 
 Since we don't have a triangulated structure to rely on, the axioms will impose some requirements on $\t_1$ and $\t_2$ to compensate. Moreover, we will require that idempotents split in $\mathscr{C}$.\todo{check this hypothesis}
 
@@ -28,6 +28,7 @@ Let $\mathscr{C}$ be an additive category and $\A\subseteq \mathscr{C}$ a class 
 
 Given a map $\varphi:X\to Y$, recall that a \emph{pseudocokernel} of $\varphi$ is a map $\psi:Y\to Z$ such that $\psi\varphi=0$ and any other $\psi':Y\to Z$ satisfying $\psi'\varphi=0$ factors (not necessarily uniquely) through $\psi$. There an obvious dual notion of \emph{pseudokernel}.
 
+Recall that a full subcategory $\T$ of $\mathscr{C}$ is \emph{coreflective} (resp. \emph{reflective}) if the inclusion functor $i:\T\to\mathscr{C}$ has a right (resp. left) adjoint $t$.
 \begin{definition}\label{5:def:torsion_pair}
   A pair $\t=(\T,\F)$ of classes of objects of $\mathscr{C}$ is a \emph{torsion pair} if:
   \begin{enumerate}

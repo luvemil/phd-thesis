@@ -258,7 +258,7 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
 
 \begin{rmk}
   It is well known that any t-structure $(\mathcal{A},\mathcal{B})$ in $\mathcal{T}$
-  gives a functional torsion pair $\mathbbm{t}=(\mathcal{A},\mathcal[-1])$ and
+  gives a functorial torsion pair $\mathbbm{t}=(\mathcal{A},\mathcal[-1])$ and
   $\mathcal{B}[-1]\subseteq\mathcal{B}$. Furthermore, $\mathcal{A}$ and
   $\mathcal{B}$ are closed under extensions and direct summands. Note that the t-structure
   $(\mathcal{A},\mathcal{B})$ depends only on $\mathcal{A}$, since $\mathcal{B}=\mathcal{A}^\perp[1]$.
@@ -713,6 +713,39 @@ functor $H^0_1:\mathcal{T}\to \mathcal{H}_1:=\mathcal{U}_1\cap\mathcal{U}_1^\per
   is an isomorphism. To see that, apply the octaedral axiom to $H_2\nto{f^C}V[1]\nto{f_2}(V[1])$ to get
 
   \includestandalone{gfx/octaedral_by_hand_thm_2_9}
+
+  From this diagram, by setting $a:= -\alpha[-1]$, $b:=-\beta[-1]$ and $c=-\gamma[-1]$ we get the following commutative diagram:
+  \begin{equation*}
+    \begin{tikzcd}
+      H_2[-1]\arrow{r}{-f^C[-1]}\arrow[equal]{d}
+      & V\arrow{r}{f^K}\arrow{d}{-\lambda_2[-1]}
+        & H_1\arrow{r}{f}\arrow{d}{a}
+          & H_2\arrow[equal]{d}\\
+      H_2[-1]\arrow{r}
+      & f_2(V[1])[-1]\arrow{r}
+        & T[-1]\arrow{r}{b}\arrow{d}{c}
+          & H_2\arrow{d}{f^C}\\
+      & & t_2(V[1])\arrow{r}{\varepsilon_2}\arrow{d}
+          & V[1]\arrow{d}{f^K[1]}\\
+      & & H_1[1]\arrow[equal]{r}
+          & H_1[1]
+    \end{tikzcd}
+  \end{equation*}
+  where $T[-1]\in\clH$ since $\clH$ is closed under extensions and the column $T[-1]$ belongs to is a distinguished triangle.
+
+  We claim that $a:H_1\to T[-1]$ is an isomorphism. Indeed $V\in\F_1$, hence $f$ is a mono in $\clH$. Moreover, $f=ba$ and so $a$ too is a mono. The cokernel of $a$ is $T[-1]\nto{\lambda_2 c}f_2(t_2(V[1]))$, which is 0 since $f_2(t_2(V[1]))=0$. Hence $a$ is an isomorphism, since it is both mono and epi an the abelian category $\clH$. Thus, $\lambda_2[-1]$ too is an isomorphism. \todo{Fix the motivations. Write somewhere how Cokernels are constructed}
+
+  \smallskip\noindent
+  (c)$\Rightarrow$(e). Let $H\nto{\alpha}X$ be an epimorphism in $\clH_1$ with $H\in\clH$. Then
+  \begin{equation*}
+    \begin{tikzcd}
+      0\arrow{r}& \Ker_{\clH_1}(\alpha)\arrow{r}& H\arrow{r}{\alpha}& X\arrow{r} & 0
+    \end{tikzcd}
+  \end{equation*}
+  is an exact sequence in $\clH_1$. Since $\clH$ is a torsion free class in $\clH_1$, (c) implies that $X\in\clH$.
+
+  \smallskip\noindent
+  (e)$\Rightarrow$(c). Follows from the initial observation.
 
 \end{proof}
 
