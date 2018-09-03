@@ -5,15 +5,15 @@
 \begin{document}
 \begin{tikzpicture}[scale=3]
   \def\openingangle{35}
-  \node (Z') at (0, 0) {Z'};
-  \node (Y) at ($(Z') +(270-\openingangle:1)$) {Y};
-  \node (Y') at ($(Z') +(270+\openingangle:1)$) {Y'};
-  \node (X) at ($(Y) +(270-\openingangle:1)$) {X};
-  \node (X') at ($(Y') +(270+\openingangle:1)$) {X'};
+  \node (Z') at (0, 0) {$H_1[1]$};
+  \node (Y) at ($(Z') +(270-\openingangle:1)$) {$V[1]$};
+  \node (Y') at ($(Z') +(270+\openingangle:1)$) {$T$};
+  \node (X) at ($(Y) +(270-\openingangle:1)$) {$H_2$};
+  \node (X') at ($(Y') +(270+\openingangle:1)$) {$t_2(V[1])[1]$};
   \draw[white, name path=L1] (X) -- (Y');
   \draw[white, name path=L2] (X') -- (Y);
   \path[name intersections={of=L1 and L2, by=pZ}];
-  \node (Z) at (pZ) {Z};
+  \node (Z) at (pZ) {$f_2(V[1])$};
 
   \draw[-latex] (X) -- node[above left] {$u$} (Y);
   \draw[-latex] (X) -- node[below right] {$v \circ u$} (Z);

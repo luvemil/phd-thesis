@@ -1,0 +1,41 @@
+% Source: https://tex.stackexchange.com/questions/358450/how-to-latex-the-octahedral-axiom-diagram/358466
+\documentclass[crop,tikz]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+\usetikzlibrary{calc,intersections}% tikz package already loaded by 'tikz' option
+\usepackage{amsmath,amssymb}
+\usepackage{tikz-cd}
+\begin{document}
+\begin{tikzpicture}[scale=3,commutative diagrams/every diagram]
+  \def\openingangle{35}
+  \node (Z') at (0, 0) {$H_1[1]$};
+  \node (Y) at ($(Z') +(-1,0)$) {$V[1]$};
+  \node (Y') at ($(Z') +(0.25,-1)$) {$T$};
+  \node (X) at ($(Y) +(-1,0)$) {$H_2$};
+  \node (X') at ($(Y') +(0.25,-1)$) {$t_2(V[1])[1]$};
+  \draw[white, name path=L1] (X) -- (Y');
+  \draw[white, name path=L2] (X') -- (Y);
+  \path[name intersections={of=L1 and L2, by=pZ}];
+  \node (Z) at (pZ) {$f_2(V[1])$};
+  \node (sX) at ($(Z')!-1!(Y)$) {$H_2[1]$};
+  \node (sX') at ($(Y')!-1!(Z)$) {$H_2[1]$};
+  \node (sZ') at ($(X')!-2!(Y')$) {$H_1[2]$};
+  \node (sY) at ($(X')!-0.5!(Z)$) {$V[2]$};
+
+  \draw[commutative diagrams/.cd, every  arrow, every label] (X) -- node {$f^C$} (Y);
+  \draw[commutative diagrams/.cd, every  arrow, every label] (X) -- node[swap] {$\lambda_2 \circ f^c$} (Z);
+  \draw[commutative diagrams/.cd, every  arrow, every label] (Y) -- node {$-f^K[1]$} (Z');
+  \draw[commutative diagrams/.cd, every  arrow, every label] (Y) -- node {$\lambda_2$} (Z);
+  \draw[commutative diagrams/.cd, every  arrow, every label] (Z) -- (Y');
+  \draw[commutative diagrams/.cd, every  arrow, every label] (Z) -- node[swap] {$\mu_2$} (X');
+
+  \draw[commutative diagrams/.cd, every arrow, dashed, every label] (X') -- (sZ');
+  \path[commutative diagrams/.cd, every  arrow, every label] (X') edge node[commutative diagrams/description] {$-\varepsilon_2[1]$} (sY);
+  \draw[commutative diagrams/.cd, every arrow, dashed, every label] (Y') -- node {$\gamma$} (X');
+  \draw[commutative diagrams/.cd, every  arrow, every label] (Y') -- (sX');
+  \draw[commutative diagrams/.cd, every arrow, dashed, every label] (Z') -- node {$\alpha$} (Y');
+  \draw[commutative diagrams/.cd, every  arrow, every label] (Z') -- node {$-f[1]$} (sX);
+
+  \draw[commutative diagrams/.cd, every label, equal] (sX) -- (sX');
+  \draw[commutative diagrams/.cd, every  arrow, every label] (sX') -- node {$f^C[1]$} (sY);
+  \draw[commutative diagrams/.cd, every  arrow, every label] (sY) -- node {$-f^K[2]$} (sZ');
+\end{tikzpicture}
+\end{document}
