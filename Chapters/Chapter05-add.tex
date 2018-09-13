@@ -251,7 +251,14 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
   A pair $(\mathcal{A},\mathcal{B})$ of full subcategories of $\mathcal{T}$ is a t-structure
   in $\mathcal{T}$ if
   \begin{enumerate}[label=(\alph*)]
-    \item $\mathbbm{t}=(\mathcal{A},\mathcal{B}[-1])$ is a torsion pair in $\mathcal{T}$, and
+    \item $\mathcal{A}=\lhperp{\mathcal{B}[-1]}$ and $\mathcal{B}=\mathcal{A}[1]\rhperp$,
+    \item for any $X\in\mathcal{T}$ there is a distinguished triangle
+      \begin{equation*}
+        \begin{tikzcd}
+          U_X\arrow{r}& X\arrow{r}&V^X\arrow{r}&A_X[1]
+        \end{tikzcd}
+      \end{equation*}
+      with $U_X\in\mathcal{A}$ and $V^X\in\mathcal{B}[-1]$.
     \item $\mathcal{A}[1]\subseteq \mathcal{A}$.
   \end{enumerate}
 \end{definition}
@@ -265,6 +272,8 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
   $\mathcal{B}$ are closed under extensions and direct summands. Note that the t-structure
   $(\mathcal{A},\mathcal{B})$ depends only on $\mathcal{A}$, since $\mathcal{B}=\mathcal{A}^\perp[1]$.
 \end{rmk}
+
+The difference here with the definition of torsion pair that we gave earlier is that we are asking for the pseudokernel-pseudocokernel sequence to actually be a distinguished triangle.
 
 \begin{definition}
   A \emph{related} torsion pair $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ in triangulated category

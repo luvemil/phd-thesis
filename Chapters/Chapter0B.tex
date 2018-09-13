@@ -1,0 +1,140 @@
+\chapter{Partial results}
+
+\section{Torsion pairs in triangulated categories and t-structures}
+
+If we just assume that a torsion pair $(\A,\B)$ (in the sense of this work, i.e. where the approximation sequence is simply a pseudokernel/pseudocokernel sequence) we could not conclude that it induces a t-structure $(\A,\B[1])$ simply by assuming that $\A[1]\subseteq\A$
+
+
+We would like to prove a result along the lines of
+
+\begin{lemma}\label{lem:torsion_disinguished}
+  Let $(\U,\V)$ be a left (or right, or both) functorial torsion pair in a triangulated category $\mathcal{T}$. Then for any object $X\in\mathcal{T}$ there is a distinguished triangle
+  \begin{equation*}
+    \begin{tikzcd}
+      U_X\arrow{r}& X\arrow{r}&V^X\arrow{r}&A_X[1]
+    \end{tikzcd}
+  \end{equation*}
+  with $U_X\in\U$ and $V^X\in\V$.
+\end{lemma}
+
+Partial results are the following
+\begin{lemma}
+  Let $(\U,\V)$ be a left functorial torsion pair in $\mathcal{T}$ and let
+  \begin{equation*}
+    \begin{tikzcd}
+      U_X\arrow{r}& X\arrow{r}&V^X
+    \end{tikzcd}
+  \end{equation*}
+  be a pseudokernel-pseudocokernel sequence with $U_X\in\U$ and $V^X\in\V$. Then, $t(X)$ is a direct summand of $\Cone(\lambda)[-1]$.
+\end{lemma}
+
+\begin{proof}
+  Fix an object $X\in\mathcal{T}$ and consider a pseudokernel-pseudocokernel sequence
+  \begin{equation*}
+    \begin{tikzcd}
+      t(X)\arrow{r}{\varepsilon_X}& X\arrow{r}{\lambda}&V^X
+    \end{tikzcd}
+  \end{equation*}
+  where $t:\mathcal{T} \to\U$ is the coreflection given by the functoriality, i.e. the right adjoint of $i:\U\to \mathcal{T}$. Since $\Cone(\lambda)[-1]\nto{k}X$ is a pseudocokernel of $\lambda$, there is a morphism $v:\Cone(\lambda)[-1]\to t(X)$ such that $\varepsilon_X\circ v= k$. Similarly there is a morphism $u:t(X)\to\Cone(\lambda)[-1]$ such that $k\circ u=\varepsilon_X$. Hence,
+  \begin{equation*}
+    \varepsilon_X\circ v\circ u= \varepsilon_X.
+  \end{equation*}
+  Observe that $v\circ u\colon t(X)\to t(X)$ makes the following diagram commute
+  \begin{equation*}
+    \begin{tikzcd}[column sep=small]
+      t(X)\arrow[dashed]{rr}{v\circ u}\arrow{dr}{\varepsilon_X}
+      &&t(X)\arrow{dl}{\varepsilon_X}\\
+      & X,&
+    \end{tikzcd}
+  \end{equation*}
+  but the dashed arrow is unique by Lemma \ref{rmk:1.1}, and obviously $1_{t(X)}$ satisfies the same condition, so $v\circ u=1_{t(X)}$. Since idempotents split in $\mathcal{T}$, we have that $t(X)$ is a direct summand of $\Cone(\lambda)[-1]$.
+\end{proof}
+
+\begin{lemma}
+  Same hypothesis as above, or maybe assume that the torsion pair is functorial on both sides. The followings are homotopy cartesian diagrams:
+  \begin{equation*}
+    \begin{tikzcd}
+      \Cone(\varepsilon)[-1]\arrow{r}\arrow{d}&t(X)\arrow{d}\\
+      f(X)[-1]\arrow{r}&\Cone(\lambda)[-1]
+    \end{tikzcd}
+  \end{equation*}
+
+  \begin{equation*}
+    \begin{tikzcd}
+      \Cone(\varepsilon)[-1]\arrow{r}&t(X)\\
+      f(X)[-1]\arrow{r}\arrow{u}&\Cone(\lambda)[-1]\arrow{u}
+    \end{tikzcd}
+  \end{equation*}
+\end{lemma}
+
+\begin{proof}
+  In the following diagram whose rows are distinguished triangles, there exists the dashed arrow by TR3.
+  \begin{equation*}
+    \begin{tikzcd}
+      t(X)\arrow{r}{\varepsilon}\arrow{d}
+      & X\arrow{r}\arrow{d}
+      & \Cone(\varepsilon)\arrow{r}\arrow[dashed]{d}
+      & t(X)[1]\arrow{d}
+      \\
+      0\arrow{r}
+      & f(X)\arrow{r}
+      & f(X)\arrow{r}
+      & 0
+    \end{tikzcd}
+  \end{equation*}
+  (essentially the reason why $\Cone(\varepsilon)$ is a pseudocokernel of $\varepsilon$). Similarly there is a morphism $\Cone(\varepsilon)\to f(X)$ since $f(X)$ is a pseudocokernel.
+
+  In the following diagram there exists the dashed arrow making it into a morphism of distinguished triangles:
+  \begin{equation*}
+    \begin{tikzcd}
+      t(X)\arrow{r}{\varepsilon}\arrow[dashed]{d}
+      & X\arrow{r}\arrow{d}
+      & \Cone(\varepsilon)\arrow{r}\arrow{d}
+      & t(X)[1]\arrow[dashed]{d}\\
+      \Cone(\lambda)[-1]\arrow{r}
+      & X\arrow{r}
+      & f(X)\arrow{r}
+      & \Cone(\lambda)
+    \end{tikzcd}
+  \end{equation*}
+  Moreover, the arrow can be chosen so that
+  \begin{equation*}
+    \begin{tikzcd}
+      \Cone(\varepsilon)[-1]\arrow{r}\arrow{d}&t(X)\arrow{d}\\
+      f(X)[-1]\arrow{r}&\Cone(\lambda)[-1]
+    \end{tikzcd}
+  \end{equation*}
+  is a homotopy cartesian diagram.
+
+  Similarly for the other.
+\end{proof}
+
+Observe that by the fact that
+\begin{equation*}
+  \begin{tikzcd}
+    \Cone(\varepsilon)[-1]\arrow{r}&t(X)\\
+    f(X)[-1]\arrow{r}\arrow{u}&\Cone(\lambda)[-1]\arrow{u}
+  \end{tikzcd}
+\end{equation*}
+there is a distinguished triangle
+\begin{equation*}
+  \begin{tikzcd}
+    f(X)[-1]\arrow{r}
+    & \Cone(\varepsilon)[-1]\oplus \Cone(\lambda)[-1]\arrow{r}
+    & t(X)\arrow{r}
+    & f(X)
+  \end{tikzcd}
+\end{equation*}
+and, moreover, the last arrow is 0 since $t(X)\in\A$ and $f(X)\in\B$. So the triangle is split, i.e.
+\begin{equation*}
+  \Cone(\varepsilon)[-1]\oplus \Cone(\lambda)[-1]
+  \cong f(X)[-1]\oplus t(X)
+\end{equation*}
+
+\textbf{Question} Can these results be used to conclude that a functorial torsion pair in a triangulated category s.t. $\A[1]\subseteq \A$ is a t-structure?
+
+What we can achieve here is that $\Cone(\lambda)[-1]\cong t(X)\oplus T$ and $\Cone(\varepsilon)\cong f(X)\oplus F$, without further conditions on $T$ and $F$. Of course if either $T\in\A$ or $T=0$ or $F\in\B$ or $F=0$ we would be able to conclude.
+
+By the homotopy cartesian diagrams we can get
+\[ \Cone(\lambda)[-1]\oplus \Cone(\varepsilon)[-1] \cong f(X)[-1]\oplus t(X). \]
+Maybe further investigation of the maps can lead to a better result.
