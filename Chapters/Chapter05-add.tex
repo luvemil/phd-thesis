@@ -244,15 +244,15 @@ t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
 
 \subsection{Nakaoka contexts in triangulated categories}
 
-Let $\mathscr{C}=\mathcal{T}$ be a triangulated category on which idempotents split.
-We start by recalling the definition of a t-structure in $\mathcal{T}$.
+Let $\mathscr{C}=\cat{T}$ be a triangulated category on which idempotents split.
+We start by recalling the definition of a t-structure in $\cat{T}$.
 
 \begin{definition}
-  A pair $(\mathcal{A},\mathcal{B})$ of full subcategories of $\mathcal{T}$ is a t-structure
-  in $\mathcal{T}$ if
+  A pair $(\mathcal{A},\mathcal{B})$ of full subcategories of $\cat{T}$ is a t-structure
+  in $\cat{T}$ if
   \begin{enumerate}[label=(\alph*)]
     \item $\mathcal{A}=\lhperp{\mathcal{B}[-1]}$ and $\mathcal{B}=\mathcal{A}[1]\rhperp$,
-    \item for any $X\in\mathcal{T}$ there is a distinguished triangle
+    \item for any $X\in\cat{T}$ there is a distinguished triangle
       \begin{equation*}
         \begin{tikzcd}
           U_X\arrow{r}& X\arrow{r}&V^X\arrow{r}&A_X[1]
@@ -263,41 +263,32 @@ We start by recalling the definition of a t-structure in $\mathcal{T}$.
   \end{enumerate}
 \end{definition}
 
-\todo{Is this definition correct? Shouldn't we ask for the functoriality in this stage, given the definition of a torsion pair that was given above?}
-
 \begin{rmk}
-  It is well known that any t-structure $(\mathcal{A},\mathcal{B})$ in $\mathcal{T}$
+  It is well known that any t-structure $(\mathcal{A},\mathcal{B})$ in $\cat{T}$
   gives a functorial torsion pair $\mathbbm{t}=(\mathcal{A},\mathcal[-1])$ and
   $\mathcal{B}[-1]\subseteq\mathcal{B}$. Furthermore, $\mathcal{A}$ and
   $\mathcal{B}$ are closed under extensions and direct summands. Note that the t-structure
   $(\mathcal{A},\mathcal{B})$ depends only on $\mathcal{A}$, since $\mathcal{B}=\mathcal{A}^\perp[1]$.
 \end{rmk}
 
-The difference here with the definition of torsion pair that we gave earlier is that we are asking for the pseudokernel-pseudocokernel sequence to actually be a distinguished triangle.
-
 \begin{definition}
-  A \emph{related} torsion pair $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ in triangulated category
-  $\mathcal{T}$ consists of the torsion pairs $\mathbbm{t}_1=(\mathcal{T}_1,\mathcal{F}_1)$
-  and $\mathbbm{t}=(\mathcal{T}_2,\mathcal{F}_2)$ in $\mathcal{T}$ such that
+  Let $\t_1=(\T_1,\F_2)$ and $\t_2=(\T_2,\F_2)$ be two torsion pairs in a triangulated category $\cat{T}$.
+  We will say that $\t$ is a \emph{related} pair if $(\T_1,\F_1[1])$ and $(\T_2,\F_2[1])$ are t-structures and
   $\mathcal{T}_1[1]\subseteq \mathcal{T}_2\subseteq\mathcal{T}_1$.
 \end{definition}
 
 \begin{prop}\label{prop:2.5}
-  Let $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ be a related torsion pair in $\mathcal{T}$. Then
+  Let $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ be a related pair in $\cat{T}$. Then
   \begin{enumerate}[label=(\alph*)]
-    \item $(\mathcal{T}_1,\mathcal{F}_1[1])$ and $(\mathcal{T}_2,\mathcal{F}_2[1])$
-    are t-structures in $\mathcal{T}$;
-  \item\label{prop:2.5:b} $\mathbbm{t}$ is a pre-Abelian Nakaoka context in $\mathcal{T}$;
-    \item the heart $\mathcal{H}_\mathbbm{t} := \mathcal{T}_1\cap\mathcal{F}_2[1]$ is a preabelian category.
+    \item\label{prop:2.5:b} $\mathbbm{t}$ is a pre-Abelian Nakaoka context in $\cat{T}$;
+    \item the heart $\mathcal{H}_\mathbbm{t} := \mathcal{T}_1\cap\mathcal{F}_2$ is a preabelian category.
   \end{enumerate}
 \end{prop}
 
 \begin{proof}
-  (a) follows by the inclusions $\T_1[1]\subseteq \T_2\subseteq \T_2$ and, assuming (b), (c) is a consequence of Theorem~\ref{pre_abelian_theorem}. It remains to prove (b), i.e. to show that axioms \ref{ax:ct1}, \ref{ax:ct2}, \ref{ax:ct3}, and \ref{ax:ct3op}.
+  Assuming (a), (b) is a consequence of Theorem~\ref{pre_abelian_theorem}. Therefore, it is enough to prove (a), i.e. to show that axioms \ref{ax:ct3} and \ref{ax:ct3op} hold, since \ref{ax:ct1} and \ref{ax:ct2} are essentially among the hypothesis.
 
   \begin{itemize}
-    \item[\ref{ax:ct1}] Follows from (a).
-    \item[\ref{ax:ct2}] Is in the hypothesis.
     \item[\ref{ax:ct3}] Let $g:H\to H'$ in $\clH$ and complete it to a triangle:
       \begin{equation*}
         \begin{tikzcd}
@@ -318,18 +309,20 @@ The difference here with the definition of torsion pair that we gave earlier is 
 \end{proof}
 
 \begin{definition}
-  A related torsion pair $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ in the triangulated category
-  $\mathcal{T}$ is \emph{strong} if for any morphism $f:H_1\to H_2$, in $\mathcal{H}:=\mathcal{T}_1\cap\mathcal{F}_2$,
-  and a distinguished triangle $Z\to H_1\nto{f}H_2\to Z[1]$, the following conditions
+  A related pair $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ in the triangulated category
+  $\cat{T}$ is \emph{strong} if for any morphism $f:H_1\to H_2$, in $\mathcal{H}:=\mathcal{T}_1\cap\mathcal{F}_2$,
+  and a distinguished triangle \[ Z\to H_1\nto{f}H_2\to Z[1],\] the following conditions
   hold true
   \begin{relatedtorsion}
-    \item $Z\in\mathcal{F}_1$ if and only if $Z\in\mathcal{F}_2[-1]$;
-    \item $Z[1]\in\mathcal{T}_2$ if and only if $Z\in\mathcal{T}_1$.
+  \item\label{ax:rst1} $Z\in\mathcal{F}_1$ implies $Z\in\mathcal{F}_2[-1]$;
+  \item\label{ax:rst2} $Z\in\mathcal{T}_2$ implies $Z\in\mathcal{T}_1[1]$.
   \end{relatedtorsion}
+
+  We will call such pairs \emph{strongly related}.
 \end{definition}
 
 \begin{thm}\label{thm:2.6}
-  Let $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ be a strongly related torsion pair in
+  Let $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ be a strongly related pair in
   the triangulated category $\mathcal{T}$. Then, the heart $\mathcal{H}=\mathcal{H}_\mathbbm{t}$
   is an abelian category.
 \end{thm}
@@ -366,65 +359,11 @@ In the next example we use the previous theorem to recover the classical result,
   is an abelian category (BBD theorem).
 \end{example}
 
-\begin{example}\label{example_tria}
-  Let $\mathcal{D}$ be a triangulated category with two $t$-structures
-  $(\mathcal{U}_1,\mathcal{U}_1^\perp)$ and $(\mathcal{U}_2,\mathcal{U}_2^\perp)$ such that
-  $\mathcal{U}_1[1]\subseteq\mathcal{U}_2\subseteq\mathcal{U}_1$. Observe that for any
-  morphism $f$ in $\mathcal{D}$, the cone $\mathrm{Cone}(f)$ of $f$ in $\mathcal{D}$ is
-  always a pseudocokernel $f$, and similarly the shifted cone $\mathrm{Cone}(f)[-1]$ is always
-  a pseudokernel of $f$.
-
-  If, moreover, $\mathrm{Cone}(f)\in\mathcal{U}_1$\todo{This is actually always true} for any morphism
-  $f$ in $\mathcal{U}_1$ and $\mathrm{Cone}(f)[-1]\in\mathcal{U}_2^\perp$, then
-  $\mathbbm{t}=((\mathcal{U}_1,\mathcal{U}_1^\perp),(\mathcal{U}_2,\mathcal{U}_2^\perp))$ satisfy
-  axioms \ref{ax:ct1}-\ref{ax:ct3},\ref{ax:ct3op}, hence $\mathcal{H}=\mathcal{U}_1\cap\mathcal{U}_2^\perp$ has
-  kernels and cokernels.
-
-  In this case, moreover, the following are equivalent:
-  \begin{enumerate}
-    \item[1.a] \ref{ax:ct4} holds.
-    \item[1.b]\label{ax:eqb} If $V_1\to H_1\nto{f} H_2\nto{+}$ is a distinguished triangle such
-    that $H_1, H_2\in\mathcal{H}$ and $V_1\in\mathcal{U}_1^\perp$, then $V_1\in\mathcal{U}_2^\perp[-1]$.
-  \end{enumerate}
-  And, dually, there is an equivalence of the following:
-  \begin{enumerate}
-    \item[2.a] \ref{ax:ct4op} holds.
-    \item[2.b]\label{ax:eqa} If $H_1\nto{f}H_2\to U_2\nto{+}$ is a distinguished triangle such
-    that $H_1,H_2\in\mathcal{H}$ and $U_2\in\mathcal{U}_2$, then $U_2\in\mathcal{U}_1[1]$.
-  \end{enumerate}
-\end{example}
-
-\begin{proof}[Proof of the equivalences in example 2]
-  Let $\mathcal{D}$ be a triangulated category with two t-structures as in example 3. The pseudocokernel
-  of a morphism in $\mathcal{U}_1$ can be computed by taking the cone in $\mathcal{D}$, i.e. given a morphism
-  $f:U_1\to U_1'$ in $\mathcal{U}_1$ we can compute a pseudocokernel in $\mathcal{U}_1$ by completing $f$
-  to a triangle
-  \begin{equation*}
-    U_1\nto{f}U_1'\to \mathrm{Cone}(f)\nto{+}.
-  \end{equation*}
-  Moreover, this pseudocokernel satisfies \ref{ax:ct3}.
-
-  Now, assume that \ref{ax:ct1}-\ref{ax:ct3},\ref{ax:ct3op} are satisfied together with axiom
-  \textbf{1.b}, and consider the solid part of the diagram as in \ref{ax:ct4}:
-  \begin{equation*}
-    \begin{tikzcd}
-      \mathrm{Cone}(f)[-1]\arrow{r}{f^K}
-        & H_1\arrow{r}{f}\arrow{d}{\alpha}
-          & H_1\arrow{r}{f^C}\arrow[equal]{d}
-            & \mathrm{Cone}(f)\arrow{d}{\lambda}\\
-      \tau_{\mathcal{U}_1}(V_2)\arrow{r}{\varepsilon}\arrow[dotted]{ur}{\beta}
-        & V_2\arrow{r}
-          & H_2\arrow{r}
-            & \tau^{\mathcal{U}_2^\perp}\mathrm{Cone}(f)
-    \end{tikzcd}
-  \end{equation*}
-  with $\mathrm{Cone}(f)[-1]\in\mathcal{U}_1^\perp$ and where the upper row is a
-  distinguished triangle. By \textbf{1.b} then it belongs
-  to $\mathcal{U}_2^\perp[-1]$, i.e. $\mathrm{Cone}(f)\in\mathcal{U}_2^\perp$, so
-  $\lambda$ is an iso, conseguently $\alpha$ is an iso and so is $\varepsilon$, so
-  there exist a map $\beta=\alpha^{-1}\circ\varepsilon$ making the diagram commute, that
-  is \ref{ax:ct4} holds.
-
+\begin{lemma}
+  Let $\t=(\t_1,\t_2)$ be a related pair in a triangulated category $\cat{T}$. Then, \ref{ax:rst1} is equivalent to \ref{ax:ct4} and dually \ref{ax:rst2} is equivalent to \ref{ax:ct4op}.
+\end{lemma}
+\begin{proof}
+  \todo{Change the notation. This was taken straight from the example}
   Conversely, assume that \ref{ax:ct1}-\ref{ax:ct3},\ref{ax:ct3op} are satisfied together with
   \ref{ax:ct4}. Consider again the solid part of the diagram
   \begin{equation*}
@@ -533,13 +472,14 @@ In the next example we use the previous theorem to recover the classical result,
   proves \triangb.
 \end{proof}
 
+
 \begin{lemma}\label{lemma_tria}
-\textcolor{blue}{  In the case of \ref{example_tria}, assume that \ref{ax:ct4} and \ref{ax:ct4op} hold, then:
+  Let $\t=(\t_1,\t_2)$ be a strongly related pair in $\cat{T}$. Then:
   \begin{enumerate}
     \item\label{lemma_tria_a} For any $H,H'\in\clH_\mathbbm{t}$, $(H,H'[-1])=0$,
     \item\label{lemma_tria_b} $A\to B\to C$ is a short exact sequence in $\mathcal{H}_\mathbbm{t}$ iff $A\to B\to C\nto{+}$ is
     a triangle in $\X$.
-  \end{enumerate}}
+  \end{enumerate}
 \end{lemma}
 
 \begin{proof}
@@ -618,7 +558,7 @@ functor $H^0_1:\mathcal{T}\to \mathcal{H}_1:=\mathcal{U}_1\cap\mathcal{U}_1^\per
             \text{ satisfying } \\ \mathcal{U}_1[1]\subseteq \mathcal{U}_2\subseteq\mathcal{U}_1
           \end{array}
         \right\}\\
-      (\mathscr{C},\mathcal{Y})\arrow[mapsto]{r}
+      (\mathcal{X},\mathcal{Y})\arrow[mapsto]{r}
         & (\mathcal{U}_2,\mathcal{U}_2^\perp[1])\\
       (\mathcal{U}_2\cap\mathcal{H}_1,\mathcal{U}_2^\perp\cap\mathcal{H}_1)\arrow[mapsfrom]{r}
         & (\mathcal{U}_2,\mathcal{U}_2^\perp[1])
@@ -626,7 +566,7 @@ functor $H^0_1:\mathcal{T}\to \mathcal{H}_1:=\mathcal{U}_1\cap\mathcal{U}_1^\per
   \end{equation*}
   where
   \begin{align*}
-    \mathcal{U}_2 = \{X\in\mathcal{U}_1\,|\,H^0_1(X)\in\mathscr{C}\}\\
+    \mathcal{U}_2 = \{X\in\mathcal{U}_1\,|\,H^0_1(X)\in\mathcal{X}\}\\
     \mathcal{U}_2^\perp = \{Y\in\mathcal{U}_1^\perp\,|\,H^0_1(Y)\in\mathcal{Y}\}.
   \end{align*}
 \end{prop}
@@ -641,6 +581,27 @@ functor $H^0_1:\mathcal{T}\to \mathcal{H}_1:=\mathcal{U}_1\cap\mathcal{U}_1^\per
       $\mathcal{H}_1:=\mathcal{U}_1\cap\mathcal{U}_1^\perp[1]$.
   \end{enumerate}
 \end{rmk}
+
+\begin{lemma}\label{lem:thm:2.9}
+  Let $\t= (\t_1,\t_2)$ be a related pair in a triangulated category $\cat{T}$. Let $\clH:=\clH_\t=\T_1\cap \F_2$ and $\clH_1=\T\cap \F_1[1]$. Observe that $\clH_1$ is abelian since it is the heart of a t-structure and $\clH_\t\subseteq \clH_1$. Then, $\clH_\t$ is closed under kernels taken in $\clH_1$.
+\end{lemma}
+\begin{proof}
+  Let $V\nto{f^K}H_1\nto{f}H_2\nto{f^C}V[1]$ be a distinguished triangle in $\cat{T}$, with $H_1,H_2\in\clH$. We recall that $\clH$ is a preabelian category, by Proposition \ref{prop:2.5}\ref{prop:2.5:b}.
+
+  Consider the kernels $\Ker_{\clH_1}(f)\to H_1$ and $\Ker_{\clH}(f)\to H_1$ of $f$ in $\clH_1$ and $\clH$ respectively and draw the diagram (in $\T$)
+  \begin{equation*}
+    \begin{tikzcd}
+      t_1(V)=\Ker_\clH(f)\arrow{d}
+      & \Ker_{\clH_1}(f)\arrow{d}\arrow[dashed]{dl}{\exists !}\arrow[dashed]{l}{\exists !}
+        & &\\
+      V\arrow{r}
+      & H_1\arrow{r}{f}
+      & H_2\arrow{r}
+      & V[1]
+    \end{tikzcd}
+  \end{equation*}
+  whose solid part is commutative and where the row is a distinguished triangle. The arrow $\Ker_{\clH_1}(f)\to V$ exists and is unique by \ref{ax:ct3op} and $\Ker_{\clH_1}(f)\to \Ker_\clH(f)$ exists and is unique by the functoriality of the t-structure $(\T_1,\F_1[1])$. Moreover, $\Ker_{\clH_1}(f) \to H_1$ is obviously a mono in $\clH_1$, so $\Ker_{\clH_1}(f)\to \Ker_\clH$ is a mono in $\clH_1$. Since $\clH$ is a torsion free class in $\clH_1$, this means that $\Ker_{\clH_1}(f)\in\clH$. In particular, $\Ker_{\clH_1}(f)\to H_1$ is the kernel of $f$ in $\clH$. This also proves that monomorphisms in $\clH$ are mono in $\clH_1$ too.
+\end{proof}
 
 \begin{thm}\label{thm:2.9}
   Let $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ be a related torsion pair in a triangulated
@@ -664,26 +625,7 @@ functor $H^0_1:\mathcal{T}\to \mathcal{H}_1:=\mathcal{U}_1\cap\mathcal{U}_1^\per
 \end{thm}
 
 \begin{proof}
-  Let $V\nto{f^K}H_1\nto{f}H_2\nto{f^C}V[1]$ be a distinguished triangle in $\T$, with $H_1,H_2\clH$. We recall that $\clH$ is a preabelian category, by Proposition \ref{prop:2.5}\ref{prop:2.5:b}. Furthermore $\clH_1:=\T_1\cap\F_1[1]$ is an abelian category (BBD Theorem).
-
-  Consider the kernels $\Ker_{\clH_1}(f)\to H_1$ and $\Ker_{\clH}(f)\to H_1$ of $f$ in $\clH_1$ and $\clH$ respectively and draw the diagram (in $\T$)
-  \begin{equation*}
-    \begin{tikzcd}
-      t_1(V)=\Ker_\clH(f)\arrow{d}
-      & \Ker_{\clH_1}(f)\arrow{d}\arrow[dashed]{dl}{\exists !}\arrow[dashed]{l}{\exists !}
-        & &\\
-      V\arrow{r}
-      & H_1\arrow{r}{f}
-      & H_2\arrow{r}
-      & V[1]
-    \end{tikzcd}
-  \end{equation*}
-  whose solid part is commutative and where the row is a distinguished triangle. The arrow $\Ker_{\clH_1}(f)\to V$ exists and is unique by \ref{ax:ct3op} and $\Ker_{\clH_1}\to \Ker_\clH$ exists and is unique by the functoriality of the t-structure $(\T_1,\F_1[1])$. Moreover, $\Ker_{\clH_1}(f) \to H_1$ is obviously a mono in $\clH_1$, so $\Ker_{\clH_1}\to \Ker_\clH$ is a mono in $\clH_1$. Since $\clH$ is a torsion free class in $\clH_1$, this means that $\Ker_{\clH_1}\in\clH$. In particular, $\Ker_{\clH_1}\to H_1$ is the kernel of $f$ in $\clH$. This also proves that monomorphisms in $\clH$ are mono in $\clH_1$ too.
-
-  With this observation, we can procede with the proof.
-
-  \smallskip\noindent
-  (a)$\Rightarrow$(b). Let $f$ be a monomorphism in $\clH_1$. Then $0=\Ker_{\clH_1}(f)=\Ker_\clH$, so $V\in\F_1$ (by \ref{prop:1.4}). By (a), it follows that $V[1]\in\F_2$. In the following diagram the solid part is commutative:
+  (a)$\Rightarrow$(b). Let $f$ be a monomorphism in $\clH_1$. By Lemma \ref{lem:thm:2.9} $0=\Ker_{\clH_1}(f)=\Ker_\clH(f)$, so $V\in\F_1$ (by \ref{prop:1.4}). By (a), it follows that $V[1]\in\F_2$. In the following diagram the solid part is commutative:
   \begin{equation*}
     \begin{tikzcd}
       & & \Coker_{\clH_1}(f)\arrow[bend left=50,dashed]{dd}{\exists s}\\
@@ -693,7 +635,9 @@ functor $H^0_1:\mathcal{T}\to \mathcal{H}_1:=\mathcal{U}_1\cap\mathcal{U}_1^\per
       & & f_2(V[1]).
     \end{tikzcd}
   \end{equation*}
-  By (the dual of) Proposition \ref{prop:1.4} $\Coker_\clH(f)=\lambda_2\circ f^C$. Since $V[1]\in\F_2$, $\lambda_2$ is an isomorphism. There is a map $r$ making the triangle $rf^C=\pi$ is commutative, since $\pi f =0$ and $V[1]$ is pseudocokernel of $f$. Similarly, the map $s$ exists by the cokernel property of $\Coker_{\clH_1}(f)$ in $\clH_1$.
+  By (the dual of) Lemma \ref{5:lem:3}, $\Coker_\clH(f)=\lambda_2\circ f^C$.
+
+  Since $V[1]\in\F_2$, $\lambda_2$ is an isomorphism. Since $\pi f =0$ and $V[1]$ is pseudocokernel of $f$, there is a map $r$ such that $rf^C=\pi$. Similarly, the map $s$ exists by the cokernel property of $\Coker_{\clH_1}(f)$ in $\clH_1$.
 
   Define $\overline{s}:=r\lambda_2^{-1}$. We have $\overline{s}s\pi=\overline{s}t=\pi$. Since $\pi$ is an epimorphism in $\clH_1$, we have that $\overline{s}s=1$, hence
   \begin{equation*}
@@ -744,7 +688,7 @@ functor $H^0_1:\mathcal{T}\to \mathcal{H}_1:=\mathcal{U}_1\cap\mathcal{U}_1^\per
   \end{equation*}
   where $T[-1]\in\clH$ since $\clH$ is closed under extensions and the column $T[-1]$ belongs to is a distinguished triangle.
 
-  We claim that $a:H_1\to T[-1]$ is an isomorphism. Indeed $V\in\F_1$, hence $f$ is a mono in $\clH$. Moreover, $f=ba$ and so $a$ too is a mono. The cokernel of $a$ is $T[-1]\nto{\lambda_2 c}f_2(t_2(V[1]))$, which is 0 since $f_2(t_2(V[1]))=0$. Hence $a$ is an isomorphism, since it is both mono and epi an the abelian category $\clH$. Thus, $\lambda_2[-1]$ too is an isomorphism. \todo{Fix the motivations. Write somewhere how Cokernels are constructed}
+  We claim that $a:H_1\to T[-1]$ is an isomorphism. Indeed $V\in\F_1$, hence $f$ is a mono in $\clH$. Moreover, $f=ba$ and so $a$ too is a mono. The cokernel of $a$ is $T[-1]\nto{\lambda_2 c}f_2(t_2(V[1]))$, which is $0$ since $f_2(t_2(V[1]))=0$. Hence $a$ is an isomorphism, since it is both mono and epi an the abelian category $\clH$. Thus, $\lambda_2[-1]$ too is an isomorphism. \todo{Fix the motivations. Write somewhere how Cokernels are constructed}
 
   \smallskip\noindent
   (c)$\Rightarrow$(e). Let $H\nto{\alpha}X$ be an epimorphism in $\clH_1$ with $H\in\clH$. Then
@@ -753,10 +697,21 @@ functor $H^0_1:\mathcal{T}\to \mathcal{H}_1:=\mathcal{U}_1\cap\mathcal{U}_1^\per
       0\arrow{r}& \Ker_{\clH_1}(\alpha)\arrow{r}& H\arrow{r}{\alpha}& X\arrow{r} & 0
     \end{tikzcd}
   \end{equation*}
-  is an exact sequence in $\clH_1$. Since $\clH$ is a torsion free class in $\clH_1$, (c) implies that $X\in\clH$.
+  is an exact sequence in $\clH_1$.
+  \footnote{TODO: another proof from this point is the following.
+
+    Since $\clH$ is a torsion free class in $\clH_1$, and is abelian by (c) it must be closed by quotients in $\clH_1$, i.e. $X\in\clH$.
+
+    However, I was not able to find a reference for the fact that abelian torsion free subcategories of abelian categories are closed by quotients.
+}
+
+By Lemma \ref{lemma_tria} there is a distinguished triangle in $\cat{T}$
+\[ \Ker_{\clH_1}(\alpha)\to H\to X\to \Ker_{\clH_1}(\alpha)[1]. \]
+
+Let $T\in\T_2$, by applying $\Hom(T,-)$ to the above triangle we find that $\Ker_{\clH_1}(\alpha)\in\F_2$, that is $\Ker_{\clH_1}(\alpha)\in\clH$. Together with (c), this implies that $X\in\clH$.
 
   \smallskip\noindent
-  (e)$\Rightarrow$(c). Follows from the initial observation.
+  (e)$\Rightarrow$(c). Follows from Lemma \ref{lem:thm:2.9}.
 
 \end{proof}
 
