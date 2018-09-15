@@ -265,7 +265,7 @@ We start by recalling the definition of a t-structure in $\cat{T}$.
 
 \begin{rmk}
   It is well known that any t-structure $(\mathcal{A},\mathcal{B})$ in $\cat{T}$
-  gives a functorial torsion pair $\mathbbm{t}=(\mathcal{A},\mathcal[-1])$ and
+  gives a functorial torsion pair $\mathbbm{t}=(\mathcal{A},\mathcal{B}[-1])$ and
   $\mathcal{B}[-1]\subseteq\mathcal{B}$. Furthermore, $\mathcal{A}$ and
   $\mathcal{B}$ are closed under extensions and direct summands. Note that the t-structure
   $(\mathcal{A},\mathcal{B})$ depends only on $\mathcal{A}$, since $\mathcal{B}=\mathcal{A}^\perp[1]$.
@@ -312,7 +312,7 @@ We start by recalling the definition of a t-structure in $\cat{T}$.
   A related pair $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ in the triangulated category
   $\cat{T}$ is \emph{strong} if for any morphism $f:H_1\to H_2$, in $\mathcal{H}:=\mathcal{T}_1\cap\mathcal{F}_2$,
   and a distinguished triangle \[ Z\to H_1\nto{f}H_2\to Z[1],\] the following conditions
-  hold true
+  hold true:
   \begin{relatedtorsion}
   \item\label{ax:rst1} $Z\in\mathcal{F}_1$ implies $Z\in\mathcal{F}_2[-1]$;
   \item\label{ax:rst2} $Z\in\mathcal{T}_2$ implies $Z\in\mathcal{T}_1[1]$.
@@ -328,10 +328,10 @@ We start by recalling the definition of a t-structure in $\cat{T}$.
 \end{thm}
 
 \begin{proof}
-  By Proposition~\ref{prop:2.5} $\t$ is a pre-Abelian Nakaoka context. Therefore, by Proposition~\ref{prop:2.5} it is enough to check that \ref{ax:ct4} and \ref{ax:ct4op} hold.
+  By Proposition~\ref{prop:2.5}, $\t$ is a pre-Abelian Nakaoka context. Therefore, by Proposition~\ref{prop:2.5} it is enough to check that \ref{ax:ct4} and \ref{ax:ct4op} hold.
 
   \begin{itemize}
-    \item[\ref{ax:ct4}] Consider a map $f\colon H\to H'$ in $\clH$ that admits a pseudo-kernel $f^K\colon H''\to H$ in $\F_2$ such that $H''\in\F_1$ as in the statement of \ref{ax:ct4} and consider the commutative diagram \todo{maybe use $T_1$ instead of $H''[1]$ and explain why they can be used interchangeably}
+    \item[\ref{ax:ct4}] Consider a map $f\colon H\to H'$ in $\clH$ that admits a pseudo-kernel $f^K\colon H''\to H$ in $\F_2$ such that $H''\in\F_1$ as in the statement of \ref{ax:ct4} and consider the commutative diagram
       \begin{equation*}
         \begin{tikzcd}
           H''\arrow{r}\arrow{d}{\lambda_2[-1]}
@@ -363,7 +363,6 @@ In the next example we use the previous theorem to recover the classical result,
   Let $\t=(\t_1,\t_2)$ be a related pair in a triangulated category $\cat{T}$. Then, \ref{ax:rst1} is equivalent to \ref{ax:ct4} and dually \ref{ax:rst2} is equivalent to \ref{ax:ct4op}.
 \end{lemma}
 \begin{proof}
-  \todo{Change the notation. This was taken straight from the example}
   \ref{ax:rst1}$\Rightarrow$\ref{ax:ct4} was proved in Theorem \ref{thm:2.6}.
 
   Conversely, assume that
@@ -372,38 +371,38 @@ In the next example we use the previous theorem to recover the classical result,
     \begin{tikzcd}
       \mathrm{Cone}(f)[-1]\arrow{r}{f^K}\arrow{d}{\lambda[-1]}
         & H_1\arrow{r}{f}\arrow{d}{\alpha}
-          & H_1\arrow{r}{f^C}\arrow[equal]{d}
+          & H_2\arrow{r}{f^C}\arrow[equal]{d}
             & \mathrm{Cone}(f)\arrow{d}{\lambda}\\
        f_2(\mathrm{Cone}(f))[-1]\arrow{r}
-        & V_2\arrow{r}
+        & F_2\arrow{r}
           & H_2\arrow{r}
-            &  f_2\mathrm{Cone}(f)\\
-        &  t_1(V_2)\arrow{u}{\varepsilon}\arrow[dotted, crossing over, bend left=70]{uu}[near end,']{\beta}
+            &  f_2(\mathrm{Cone}(f))\\
+        &  t_1(F_2)\arrow{u}{\varepsilon}\arrow[dotted, crossing over, bend left=70]{uu}[near end,']{\beta}
         & &
     \end{tikzcd}
   \end{equation*}
   with $\mathrm{Cone}(f)[-1]\in\F_1$. Neeman \cite[Lemma~1.4.3]{Nee01} guarantees
   that $\alpha$ can be taken so that the square on the left is a pullback. Axiom \ref{ax:ct4}
-  gives the existence of $\beta: t_1(V_2)\to H_1$ such that $\alpha\circ\beta=\varepsilon$.
+  gives the existence of $\beta: t_1(F_2)\to H_1$ such that $\alpha\circ\beta=\varepsilon$.
 
   Since $ t_1$ is a functor, there is also a morphism
-  $ t_1(\alpha): t_1(H_1)=H_1\to  t_1(V_2)$ such that
+  $ t_1(\alpha): t_1(H_1)=H_1\to  t_1(F_2)$ such that
   $\varepsilon\circ t_1(\alpha)=\alpha$, hence
   $\varepsilon\circ t_1(\alpha)\circ\beta = \varepsilon$. By the functoriality of
   the torsion pair $(\T_1,\F_1)$, this means that
-  $ t_1(\alpha)\circ\beta=1_{ t_1(V_2)}$. Then, $\beta$ is a section.
+  $ t_1(\alpha)\circ\beta=1_{ t_1(F_2)}$. Then, $\beta$ is a section.
 
-  Hence, we can write $ t_1(\alpha):H_1\to  t_1(V_2)$
+  Hence, we can write $ t_1(\alpha):H_1\to  t_1(F_2)$
   as
   \begin{equation*}
     \begin{tikzcd}
-       t_1(\alpha): t_1(V_2)\oplus H_1'
+       t_1(\alpha): t_1(F_2)\oplus H_1'
       \arrow{r}{
           \begin{psmallmatrix}
             \ast \amsamp 0
           \end{psmallmatrix}
           }
-        &  t_1(V_2)
+        &  t_1(F_2)
     \end{tikzcd}
   \end{equation*}
   for some $H_1'\underset{\oplus}{<} H_1$ such that
@@ -419,7 +418,7 @@ In the next example we use the previous theorem to recover the classical result,
         & & &\\
       \mathrm{Cone}( t_1(\alpha))[-1]\arrow{r}
         & H_1\arrow{r}{ t_1(\alpha)}
-          &  t_1(V_2)\arrow[dashed]{r}{+}
+          &  t_1(F_2)\arrow[dashed]{r}{+}
             & {}
     \end{tikzcd}
   \end{equation*}
@@ -433,7 +432,7 @@ In the next example we use the previous theorem to recover the classical result,
       \mathrm{Cone}(f)[-1]\arrow{r}{f^K}\arrow{d}{\lambda[-1]}
         & H_1\arrow{d}{\alpha} \\
        f_2(\mathrm{Cone}(f))[-1]\arrow{r}
-        & V_2
+        & F_2
     \end{tikzcd}
   \end{equation*}
   is a pullback. Moreover, $\mathrm{Cone}(\lambda)[-1] = ( t_2(\mathrm{Cone}(f))[1])[-1]
@@ -441,15 +440,15 @@ In the next example we use the previous theorem to recover the classical result,
   $ f_1(\mathrm{Cone}(\alpha))=0$, that is,
   $\mathrm{Cone}(\alpha)\in\T_1$, and since there is a distinguished triangle
   \begin{equation*}
-    H_1\nto{\alpha} V_2\to \mathrm{Cone}(\alpha)\nto{+}
+    H_1\nto{\alpha} F_2\to \mathrm{Cone}(\alpha)\nto{+}
   \end{equation*}
   with $H_1,\mathrm{Cone}(\alpha)\in\T_1$ it follows that
-  $V_2\in\T_1$. Hence, $ t_1(V_2)\cong V_2$.
+  $F_2\in\T_1$. Hence, $ t_1(F_2)\cong F_2$.
 
-  We can then write $V_2\underset{\oplus}{<}H_1$ and consider the commutative diagram
+  We can then write $F_2\underset{\oplus}{<}H_1$ and consider the commutative diagram
   \begin{equation*}
     \begin{tikzcd}
-      H_1 \cong H_1'\oplus V_2\arrow{r}{
+      H_1 \cong H_1'\oplus F_2\arrow{r}{
         \begin{psmallmatrix}
           f' \amsamp \tilde{f}
         \end{psmallmatrix}
@@ -459,17 +458,17 @@ In the next example we use the previous theorem to recover the classical result,
         \end{psmallmatrix}
       }
         & H_2\arrow[equal]{d}\\
-      V_2\arrow{r}
+      F_2\arrow{r}
         & H_2
     \end{tikzcd}
   \end{equation*}
   so $f'=0$. Hence, the inclusion $
   \begin{psmallmatrix}
     1 \\ 0
-  \end{psmallmatrix}:H_1'\to H_1'\oplus V_2$ can be lifted to
+  \end{psmallmatrix}:H_1'\to H_1'\oplus F_2$ can be lifted to
   $\mathrm{Cone}(f)[-1]$ and $H_1'\underset{\oplus}{<}\mathrm{Cone}(f)[-1]$.
   Since $\mathrm{Cone}(f)[-1]\in \F_1$, so does $H_1'$. Similarly,
-  $H_1'\in\T_1$ because $H_1\in\T_1$. Hence, $H_1'=0$ and $\alpha:H_1\to V_2$ is an iso.
+  $H_1'\in\T_1$ because $H_1\in\T_1$. Hence, $H_1'=0$ and $\alpha:H_1\to F_2$ is an iso.
   The same follows for $\lambda$. Therefore, $\mathrm{Cone}(f)\in\F_2$ which
   proves \ref{ax:ct4}.
 \end{proof}
@@ -667,8 +666,9 @@ functor $H^0_1:\mathcal{T}\to \mathcal{H}_1:=\mathcal{U}_1\cap\mathcal{U}_1^\per
           & t_2(V[1])[1]
     \end{tikzcd}
   \end{equation*}
-  is an isomorphism. To see that, apply the octaedral axiom to $H_2\nto{f^C}V[1]\nto{f_2}(V[1])$ to get
+  is an isomorphism. To see that, apply the octaedral axiom to $H_2\nto{f^C}V[1]\nto{f_2}(V[1])$ to get the following:
 
+  \smallskip\noindent
   \includestandalone{gfx/octaedral_by_hand_thm_2_9}
 
   From this diagram, by setting $a:= -\alpha[-1]$, $b:=-\beta[-1]$ and $c=-\gamma[-1]$ we get the following commutative diagram:
