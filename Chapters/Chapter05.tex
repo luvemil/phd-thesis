@@ -10,14 +10,26 @@ In both cases the construction of the abelian structure, i.e. of the kernels and
 This result recovers both cases above giving a unified way of constructing kernels and cokernels in the heart.
 
 Keeping this setting in mind, we will provide a set of axioms for a pair of torsion pairs $\t_1=(\T_1,\F_1)$ and $\t_2=(\T_2,\F_2)$ in a (sufficiently nice) \todo{Give a better specification of what this means}
-additive category in such a way that $\clH = \T_1\cap\F_2$ becomes an abelian category. In a sense, our objective is to axiomatize $\underline{\mathscr{C}}$ and the pairs which are referred to as $(\underline{\C}^-,\underline{\V})$ and $(\underline{\U},\underline{\C}^+)$ in \cite{Nakaokaa}. \todo{Add example of remove}
+additive category in such a way that $\clH = \T_1\cap\F_2$ becomes an abelian category. % In a sense, our objective is to axiomatize $\underline{\mathscr{C}}$ and the pairs which are referred to as $(\underline{\C}^-,\underline{\V})$ and $(\underline{\U},\underline{\C}^+)$ in \cite{Nakaokaa}. \todo{Add example of remove}
 
 Since we don't have a triangulated structure to rely on, the axioms will impose some requirements on $\t_1$ and $\t_2$ to compensate. Moreover, we will require that idempotents split in $\mathscr{C}$.\todo{check this hypothesis}
+
+In Section~\ref{sec:torsion_pairs} we will introduce the notion of torsion pairs in additive categories and show some elementary properties of left (and right) functorial torsion pairs. These will coincide with the usual notion of torsion pairs in the case of Abelian categories. Moreover, any t-structure $(\T^{\leq 0},\T^{\geq 0})$ induces a torsion pair $(\T^{\leq 0},\T^{\geq 1})$ in this sense.
+
+In Section~\ref{sec:nakaoka_contexts} we will use these as building bricks to define Nakaoka contexts, i.e. couples of torsion pairs $\t_1=(\T_1,\F_1)$ and $\t_2=(\T_2,\F_2)$ such that $\T_2\subseteq \T_1$, $\t_1$ is left functorial and $\t_2$ is right functorial. In particular, we will be interested in pre-Abelian Nakaoka contexts, namely those whose heart $\clH:=\T_1\cap\F_2$ has all kernels and cokernels. Finally, we will give conditions for a pre-Abelian Nakaoka context that will ensure the abelianity of $\clH$.
+
+In Section~\ref{sec:nakaoka_special} we will study Nakaoka contexts in Abelian and triangulated categories.
+
+A Nakaoka context in an Abelian category $\mathscr{A}$ is simply a couple of torsion pairs $(\t_1,\t_2)$ such that $\T_2\subseteq\T_1$, since their functoriality is automatic. Furthermore, any Nakaoka context is pre-Abelian, and actually its heart is an integral category. In this setting, it is possible to show that the heart $\clH$ of a Nakaoka context is abelian if and only if it is closed under kernels and cokernels in $\mathscr{A}$ (Theorem~\ref{thm_2_4}).
+
+In the case of triangulated categories we will restrict our attention to a special class of Nakaoka contexts arising from t-structures that we will call related pairs. The important property of these Nakaoka contexts is that they satisfy the additional inclusion $\T_1[1]\subseteq\T_2$. We will show that any related pair is a pre-Abelian Nakaoka context, and that strongly related pairs have an abelian heart (Theorem~\ref{thm:2.6}).
+
+Finally, starting with a related pair $\t=(\t_1,\t_2)$, we will use Polishchuk correspondence to see that its heart $\clH$ is a torsion free class in $\clH_1:=\T_1\cap\F_1[1]$ (i.e. the heart of the t-structure $(\T_1,\F_1[1])$). From this, we will prove that $\clH$ is abelian if and only if it is closed under quotients in $\clH_1$ (Theorem~\ref{thm:2.9}) and that there is a bijection between related pairs with abelian heart and t-structures whose heart contains a cohereditary torsion pair (Theorem~\ref{thm:2.11}).
 
 The results in this chapter are part of a work in preparation by the author in conjunction with Manuel Saor\'in, Simone Virili and Octavio Mendoza.
 
 %*****************************************
-\section{Torsion pairs}
+\section{Torsion pairs}\label{sec:torsion_pairs}
 %*****************************************
 
 Let $\mathscr{C}$ be an additive category and $\A\subseteq \mathscr{C}$ a class of objects. We introduce the following notation:
@@ -91,7 +103,7 @@ The following lemma gives basic properties of left functorial torsion pairs. The
 \end{enumerate}
 \end{lemma}
 
-\section{Nakaoka contexts in additive categories}
+\section{Nakaoka contexts in additive categories}\label{sec:nakaoka_contexts}
 \todo{Add intro}
 \subsection{Nakaoka contexts and the heart construction}
 
