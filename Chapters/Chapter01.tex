@@ -4,7 +4,17 @@
 
 Model categories were introduced by Quillen for the first time in \cite{Q} as a formal way of dealing with the notion of homotopy in a category. The main problem is the following: we have a class of morphisms, called weak equivalences, and we want to treat them as if they were isomorphisms. Formally inverting these weak equivalences does not necessarily produce nice results, since we have to resort to some kind of calculus of fractions to construct the morphisms in the quotient category, and these methods are not guaranteed to yield a \emph{set} of homomorphisms. This, however, happens whenever the weak equivalences are part of a model structure on a model category.
 
-The theory of model categories applies to a wide variety of
+There are different examples of model categories. In \cite{Q}, Quillen constructs model structures for simplicial categories, while in \cite{Hov99} Hovey adds, among the others, the category of modules over a Frobenius ring and the category of cochain complexes of modules over any ring.
+
+In \cite{Hov02} Hovey proved that there is a bijective correspondence between abelian model structures on abelian categories and certain couple of complete cotorsion pairs. Namely, if $\clQ$, $\W$, and $\R$ are the classes of cofibrant, trivial, and fibrant objects respectively, then $(\clQ,\W\cap\F)$ and $(\clQ\cap\W,\F)$ are complete cotorsion pairs, and conversely given three such classes forming two complete cotorsion pair, there is an abelian model structure whose cofibrant, trivial and fibrant objects are exactly those classes.
+
+This turns model categories into powerful tools for studying localizations of abelian categories, especially since it is possible to prove the existence of a recollement via
+
+In the first part of the thesis, our objective is to study the derived category of an exact subcategory of the category of modules over a ring, so we will construct the relevant theory of model structures on exact categories and apply it to our cases of interest.
+
+\begin{equation}
+K(R)
+\end{equation}
 
 %*****************************************
 %*****************************************
