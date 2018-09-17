@@ -6,9 +6,33 @@ Model categories were introduced by Quillen for the first time in \cite{Q} as a 
 
 There are different examples of model categories. In \cite{Q}, Quillen constructs model structures for simplicial categories, while in \cite{Hov99} Hovey adds, among the others, the category of modules over a Frobenius ring and the category of cochain complexes of modules over any ring.
 
-In \cite{Hov02} Hovey proved that there is a bijective correspondence between abelian model structures on abelian categories and certain couple of complete cotorsion pairs. Namely, if $\clQ$, $\W$, and $\R$ are the classes of cofibrant, trivial, and fibrant objects respectively, then $(\clQ,\W\cap\F)$ and $(\clQ\cap\W,\F)$ are complete cotorsion pairs, and conversely given three such classes forming two complete cotorsion pair, there is an abelian model structure whose cofibrant, trivial and fibrant objects are exactly those classes.
+In \cite{Hov02} Hovey proved that there is a bijective correspondence between abelian model structures on abelian categories and certain couple of complete cotorsion pairs. Namely, if $\clQ$, $\W$, and $\R$ are the classes of cofibrant, trivial, and fibrant objects respectively, then $(\clQ,\W\cap\R)$ and $(\clQ\cap\W,\R)$ are complete cotorsion pairs, and conversely given three such classes forming two complete cotorsion pair, there is an abelian model structure, indicated by $(\clQ,\W,\R)$, whose cofibrant, trivial and fibrant objects are exactly those classes.
 
-This turns model categories into powerful tools for studying localizations of abelian categories, especially since it is possible to prove the existence of a recollement via
+Two elementary but very important examples of model structures on the category of unbounded cochain complexes of $R$-modules are the following:
+\begin{itemize}
+  \item $(\Ch(R),\E,dg \Inj(R))$, where:
+    \begin{itemize}
+      \item all cochain complexes are cofibrant;
+      \item the class of trivial objects $\E$ is the class of all acyclic complexes;
+      \item the class of fibrant objects $dg \Inj(R)$ is the class of dg-injective complexes, i.e. those complexes $I^\bullet$ with $I^n\in\Inj(R)$ and such that any map $E^\bullet \to I^\bullet$ with $E^\bullet\in\E$ is null homotopic.
+    \end{itemize}
+  \item $(\Ch(R),\W,dw \Inj(R))$, where:
+    \begin{itemize}
+      \item all cochain complexes are cofibrant;
+      \item $\W$ is some class of modules making this into a model structure, its existence is guaranteed by \cite{G4};
+      \item the class of fibrant objects $dw \Inj(R)$ is the class of all complexes with injective components.
+    \end{itemize}
+\end{itemize}
+
+The quotient categories, called homotopy categories, of these model structures are respectively the derived category of the ring $D(R)$ and the cochain homotopy category $K(R)$.
+
+This turns model categories into powerful tools for studying localizations of abelian categories, especially since it is possible to prove the existence of a recollement via the techniques described in \cite{G7}. In the case described above the recollement would be:
+
+\begin{equation*}
+\recdiagram{K_{ac}(R)}{K(R)}{D(R)}
+\end{equation*}
+
+Where $K_{ac}(R)$ is the full subcategory of $K(R)$ consisting of acyclic cochain complexes.
 
 In the first part of the thesis, our objective is to study the derived category of an exact subcategory of the category of modules over a ring, so we will construct the relevant theory of model structures on exact categories and apply it to our cases of interest.
 
