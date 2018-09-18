@@ -1,5 +1,6 @@
 %************************************************
-\chapter{Introduction}\label{ch:introduction}
+\chapter*{Introduction}\label{ch:introduction}
+\addcontentsline{toc}{chapter}{Introduction}
 %************************************************
 
 Model categories were introduced by Quillen for the first time in \cite{Q} as a formal way of dealing with the notion of homotopy in a category. The main problem is the following: we have a class of morphisms, called weak equivalences, and we want to treat them as if they were isomorphisms. Formally inverting these weak equivalences does not necessarily produce nice results, since we have to resort to some kind of calculus of fractions to construct the morphisms in the quotient category, and these methods are not guaranteed to yield a \emph{set} of homomorphisms. This, however, happens whenever the weak equivalences are part of a model structure on a model category.
@@ -64,9 +65,69 @@ Furthermore, we address the problem of finding a recollement ending in $D(\B)$. 
 
 The condition $ex(\B)=\wac{\B}$ is satisfied whenever all objects of $\A$ have finite projective dimension. This condition however is not necessary, in fact it was shown in \cite{BCIE} that the class $\Cot(R)$ of cotorsion modules satisfies $ex\Cot(R)=\wac{\Cot(R)}$. The problem of finding a necessary condition for a cotorsion pair $(\A,\B)$ in $\ModR$, or more generally in a Grothendieck category with a projective generator, remains open.
 
-\smallskip
+\section*{Chapter \ref{ch:nakaoka}: Nakaoka contexts with abelian hearts}
 
-In \cite{bbd82} Beilinson, Bernstein and Deligne introduced the notion of t-structure in a triangulated in order to build the category of perverse sheaves. They also proved that to any t-structures is associated an abelian category.
+\todo{Fix ref}
+
+In \cite{bbd82} Beilinson, Bernstein and Deligne introduced the notion of t-structure in a triangulated in order to build the category of perverse sheaves. They also proved that to any t-structure is associated an abelian category, called its heart. In \cite{Nakaoka}, Nakaoka proved that starting from any torsion pair $(\U,\V)$ in a triangulated category $\mathscr{C}$ it is possible to find an abelian heart $\underline{\clH}$ in the quotient category $\underline{\mathscr{C}}:=\mathscr{C}/\W$, where $\W=\U[1]\cap\V$. This result motivates the second part of this thesis, where use torsion pairs in additive categories to build what we call Nakaoka contexts, and show that under certain hypothesis they have an abelian heart.
+
+A (pre-Abelian) Nakaoka context in an additive category $\mathscr{C}$ is a couple $\t=(\t_1,\t_2)$ of torsion pairs $\t_i=(\T_i,\F_i)$ satisfying the following axioms:
+
+\begin{enumerate}
+  \item[(CT.1)] $\t_1=(\T_1,\F_1)$ and $\t_2=(\T_2,\F_2)$ are respectively a left functorial and a right functorial torsion pair;
+  \item[(CT.2)] $\T_2\subseteq \T_1$ (equiv. $\F_1\subseteq\F_2$);
+  \item[(CT.3)] any  $g\colon H\to H'$ in $\clH:=\T_1\cap\F_2$ admits a pseudocokernel $g^C\colon H'\to C$ in $\T_1$, such that
+    \begin{equation*}
+      \begin{tikzcd}
+        0\arrow{r} &(C,-)_{|\F_2}\arrow{r}{(g^C,-)} & (H',-)_{|\F_2}\arrow{r}{(g,-)}& (H,-)_{|\F_2}
+      \end{tikzcd}
+    \end{equation*}
+    is an exact sequence in $\Func(\F_2,\Ab)$;
+  \item[(CT.3)$^\ast$] dual of \textbf{(CT.3)}.
+\end{enumerate}
+
+Axioms \textbf{(CT.1)} and \textbf{(CT.2)} are simply setting the stage of two torsion pairs with the appropriate inclusions and functoriality. The fundamental axioms are \textbf{(CT.3)} and its dual, since they allow us to construct kernels and cokernels in the heart $\clH:=\T_1\cap\F_2$: given a morphism $f\in\clH$, take a pseudocokernel $C\in\T_1$ satisfying \textbf{(CT.3)}, then the kernel of $f$ in $\clH$ is the torsion-free part $f_2(C)$ of $C$ with respect to $\F_2$. This result is stated in Theorem~\ref{pre_abelian_theorem}.
+
+Observe that \textbf{(CT.3)} is essentially stating that there is a special pseudocokernel in $\T_1$, so we can regard pre-Abelian Nakaoka contexts as couples of torsion pairs with pseudokernels and pseudocokernels satisfying additional properties. In particular, since we already have a pre-Abelian heart $\clH$, we want to give additional requirements for the pseudokernels and pseudocokernels in such a way that $\clH$ becomes abelian.
+
+In order to make the proofs of the abelianity easier, we will first give axioms \textbf{(CT.4.1)} and \textbf{(CT.4.1)$^\ast$} that guarantee the integrality of $\clH$, and subsequently add \textbf{(CT.4.2)} and \textbf{(CT.4.2)$^\ast$} to force the abelianity of $\clH$. Finally, in Theorem~\ref{thm:2.6} we show that these axioms together are equivalent to the abelianity of $\clH$. The same Theorem gives an alternative pair of dual axioms for a pre-Abelian Nakaoka context:
+\begin{enumerate}
+  \item[(CT.4)] given a morphism $f\colon H\to H'$ in $\clH$ that admits a pseudo-kernel $f^K\colon H''\to H$ in $\F_2$, such that $H''\in \F_1$, and the commutative diagram
+    \begin{equation*}
+      \xymatrix{
+        & H\ar[d]^{a}\ar[r]^{f} & H'\ar@{=}[d]\ar[r]^{f^C} & T_1\ar[d]^{\lambda_{2,T_1}}\\
+        t_1F_2\ar@{.>}[ur]^{b}\ar[r]^{\varepsilon_{1,F_2}} & F_2\ar[r]^{g^K} & H'\ar[r]^{g} & f_2T_1
+      }
+    \end{equation*}
+    where $f^C$  is a pseudo-cokernel of $f$ in $\T_1$ and $g^K$ is a pseudo-kernel of $g$ in $\F_2$, there exists a morphism $b\colon t_1F_2\to H_1$ such that $ab=\varepsilon_{1,F_2}$;
+  \item[(CT.4)$^\ast$] dual to \textbf{(CT.4)}.
+\end{enumerate}
+
+After laying the theory, we study pre-Abelian Nakaoka contexts in special categories, namely Abelian and triangulated categories.
+
+In the setting of Abelian categories we prove the following:
+
+\begin{nonlisting_thm}[\ref{thm_2_4}]
+  Let $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ Nakaoka context in an abelian category
+  $\mathscr{A}$. Then, for
+  $\mathcal{H}:=\mathcal{T}_1\cap\mathcal{F}_2$ the following statements are equivalent:
+  \begin{enumerate}[label=(\alph*)]
+    \item $\mathcal{H}$ is an abelian category.
+    \item The following conditions hold:
+      \begin{enumerate}[label=(\alph{enumi}\arabic*)]
+        \item For any $f:H\to H'$ in $\mathcal{H}$, with $\Ker(f)\in\mathcal{F}_1$,
+        we have that $\Ker(f)=0$.
+        \item For any $f:H\to H'$ in $\mathcal{H}$, with $\Coker(f)\in\mathcal{T}_2$,
+        we have that $\Coker(f)=0$.
+        \item $\mathcal{H}$ is closed under kernels (resp. cokernels) of epimorphisms
+        (resp. monomorphisms) in $\mathscr{A}$.
+      \end{enumerate}
+    \item $\mathcal{H}$ is closed under kernels and cokernels in $\mathscr{A}$.
+  \end{enumerate}
+\end{nonlisting_thm}
+
+
+
 
 %*****************************************
 %*****************************************
