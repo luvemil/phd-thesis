@@ -26,15 +26,27 @@ Two elementary but very important examples of model structures on the category o
 
 The quotient categories, called homotopy categories, of these model structures are respectively the derived category of the ring $D(R)$ and the cochain homotopy category $K(R)$.
 
-This turns model categories into powerful tools for studying localizations of abelian categories, especially since it is possible to prove the existence of a recollement via the techniques described in \cite{G7}. In the case described above the recollement would be:
-
+This turns model categories into powerful tools for studying localizations of abelian categories, especially since it is possible to prove the existence of a recollement via the techniques described in \cite{G7}. A recollement is a diagram of functors
 \begin{equation*}
-\recdiagram{K_{ac}(R)}{K(R)}{D(R)}
+  \begin{tikzcd}
+    \mathscr{X}\arrow{r}{i_\ast}
+    & \mathscr{Y}\arrow[bend left=50]{l}{i^!}\arrow[bend right=50]{l}[']{i^\ast}\arrow{r}{j^\ast}
+    & \mathscr{Z}\arrow[bend left=50]{l}{j_\ast}\arrow[bend right=50]{l}[']{j_!}
+  \end{tikzcd}
 \end{equation*}
+between triangulated categories satisfying, among other conditions, the requirement that $(i^\ast,i_\ast)$, $(i_\ast,i^!)$, $(j_!,j^\ast)$, and $(j^\ast,j_\ast)$ are adjoint pairs. Beilinson, Bernstein and Deligne introduced them in \cite{bbd82} and developed techniques to glue t-structures along recollements.
 
-Where $K_{ac}(R)$ is the full subcategory of $K(R)$ consisting of acyclic cochain complexes. Saying that the functor diagram above is a recollement condenses a lot of information.
+A classical example of a recollement can be found in the setting of the category of cochain complexes using the cotorsion pairs mentioned above. The recollement is:
+\begin{equation*}
+\recdiagram{K_{ac}(R)}{K(R)}{D(R)},
+\end{equation*}
+where $K_{ac}(R)$ is the full subcategory of $K(R)$ consisting of acyclic cochain complexes.
 
-In the first part of the thesis we will consider a complete hereditary cotorsion pair $(\A,\B)$ in $\ModR$ and find the following recollements ending in $D(R)$ involving respectively the derived category of $\B$ and the cochain homotopy category of $\B$:
+This thesis is divided into two parts, the first based on the joint work \cite{bazzoni2018recollements} with Silvana Bazzoni and the second on a work in preparation with Manuel Saor\'in, Simone Virili and Octavio Mendoza.
+
+\smallskip
+
+In the first part our objective will be to construct model structures in exact subcategories of $\Ch(\ModR)$ in order to prove the existence of interesting recollements between their homotopy categories. We will consider a complete hereditary cotorsion pair $(\A,\B)$ in $\ModR$ and find the following recollements ending in $D(R)$ involving respectively the derived category of $\B$ and the cochain homotopy category of $\B$:
 
 \begin{equation*}
   \recdiagram{\frac{ex \B}{\sim}}{D(\B)}{D(R)},
@@ -49,6 +61,12 @@ Furthermore, we address the problem of finding a recollement ending in $D(\B)$. 
 \begin{equation*}
   \recdiagram{\frac{ex \B}{\sim}}{K(\B)}{D(\B)}.
 \end{equation*}
+
+The condition $ex(\B)=\wac{\B}$ is satisfied whenever all objects of $\A$ have finite projective dimension. This condition however is not necessary, in fact it was shown in \cite{BCIE} that the class $\Cot(R)$ of cotorsion modules satisfies $ex\Cot(R)=\wac{\Cot(R)}$. The problem of finding a necessary condition for a cotorsion pair $(\A,\B)$ in $\ModR$, or more generally in a Grothendieck category with a projective generator, remains open.
+
+\smallskip
+
+In \cite{bbd82} Beilinson, Bernstein and Deligne introduced the notion of t-structure in a triangulated in order to build the category of perverse sheaves. They also proved that to any t-structures is associated an abelian category.
 
 %*****************************************
 %*****************************************
