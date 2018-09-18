@@ -126,6 +126,28 @@ In the setting of Abelian categories we prove the following:
   \end{enumerate}
 \end{nonlisting_thm}
 
+In triangulated categories we restrict our attention to special Nakaoka contexts built from t-structures, that we call \emph{related pairs}:
+\begin{nonlisting_def}[\ref{def:related_pair}]
+  Let $\t_1=(\T_1,\F_2)$ and $\t_2=(\T_2,\F_2)$ be two torsion pairs in a triangulated category $\cat{T}$.
+  We will say that $\t$ is a \emph{related} pair if $(\T_1,\F_1[1])$ and $(\T_2,\F_2[1])$ are t-structures and
+  $\mathcal{T}_1[1]\subseteq \mathcal{T}_2\subseteq\mathcal{T}_1$.
+\end{nonlisting_def}
+
+We show in Proposition~\ref{prop:2.5} that any related pair is a pre-Abelian Nakaoka context. The reason why we restrict to related pairs is that by requiring that our torsion pairs are in fact t-structures we can compute the pseudokernels and pseudocokernels using cones and cocones. This allows us to give a much easier formulation of the axioms \textbf{(CT.4)} and \textbf{(CT.4)$^\ast$}, in particulare Lemma~\ref{lemma_rst_equiv} states that they are equivalent to the following:
+
+\begin{nonlisting_def}[\ref{def:strongly_related}]
+  A related pair $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ in the triangulated category
+  $\cat{T}$ is \emph{strong} if for any morphism $f:H_1\to H_2$, in $\mathcal{H}:=\mathcal{T}_1\cap\mathcal{F}_2$,
+  and a distinguished triangle \[ Z\to H_1\nto{f}H_2\to Z[1],\] the following conditions
+  hold true:
+  \begin{relatedtorsion}
+  \item $Z\in\mathcal{F}_1$ implies $Z\in\mathcal{F}_2[-1]$;
+  \item $Z\in\mathcal{T}_2$ implies $Z\in\mathcal{T}_1[1]$.
+  \end{relatedtorsion}
+
+  We will call such pairs \emph{strongly related}.
+\end{nonlisting_def}
+
 
 
 
