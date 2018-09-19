@@ -138,17 +138,52 @@ We show in Proposition~\ref{prop:2.5} that any related pair is a pre-Abelian Nak
 \begin{nonlisting_def}[\ref{def:strongly_related}]
   A related pair $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ in the triangulated category
   $\cat{T}$ is \emph{strong} if for any morphism $f:H_1\to H_2$, in $\mathcal{H}:=\mathcal{T}_1\cap\mathcal{F}_2$,
-  and a distinguished triangle \[ Z\to H_1\nto{f}H_2\to Z[1],\] the following conditions
+  and a distinguished triangle \[ V\to H_1\nto{f}H_2\to V[1],\] the following conditions
   hold true:
   \begin{relatedtorsion}
-  \item $Z\in\mathcal{F}_1$ implies $Z\in\mathcal{F}_2[-1]$;
-  \item $Z\in\mathcal{T}_2$ implies $Z\in\mathcal{T}_1[1]$.
+  \item $V\in\mathcal{F}_1$ implies $V\in\mathcal{F}_2[-1]$;
+  \item $V\in\mathcal{T}_2$ implies $V\in\mathcal{T}_1[1]$.
   \end{relatedtorsion}
 
   We will call such pairs \emph{strongly related}.
 \end{nonlisting_def}
 
-Finally, Polishchuk \todo{Finish}
+We have an analogous of Theorem~\ref{thm_2_4}:
+\begin{nonlisting_thm}[\ref{thm:2.9}]
+  Let $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ be a related pair in a triangulated
+  category $\mathcal{T}$. Then, the following statements are equivalent.
+  \begin{enumerate}[label=(\alph*)]
+    \item \ref{ax:rst1} holds.
+    \item For any monomorphism $\alpha:H_1\into H_2$, in the abelian category
+      $\mathcal{H}_1:=\mathcal{T}_1\cap\mathcal{F}_1[1]$, with $H_1,H_2\in\mathcal{H}$,
+      we have that $\Coker_{\mathcal{H}_1}(\alpha)\in\mathcal{H}$.
+    \item $\mathcal{H}$ is closed under kernels and cokernels in the abelian category
+      $\mathcal{H}_1$
+    \item $\mathcal{H}$ is an abelian category.
+    \item For any epimorphism $H\onto X$ in $\mathcal{H}_1$, with $H\in\mathcal{H}$,
+      we have that $X\in\mathcal{H}$ (i.e. $\mathcal{H}$ is closed under quotients in $\mathcal{H}_1$).
+  \end{enumerate}
+\end{nonlisting_thm}
+
+From the Theorem above and the related proofs, it is clear that there is some relation between the heart
+$\clH$ of a related pair $\t=(\t_1,\t_2)$, and the heart $\clH_1=\T_1\cap\F_1[1]$ of the t-structure induced by $\t_1$.
+This relation is made clear in Theorem~\ref{thm:2.11}, where we show that there is a bijection between the following two classes:
+
+\[RtAb(\mathcal{T}):=\{\text{related pairs }\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)
+\text{ in }\mathcal{T}\text{ s.t. }\mathcal{H}_\mathbbm{t}\text{ is abelian}\};\]
+\begin{equation*}
+  \mathrm{t-}stCoh(\mathcal{T}) :=
+  \left\{
+    \begin{array}{c}
+      \text{pairs }(\overline{\mathbbm{t}}_1,\tau)\text{ s.t. }
+      \overline{\mathbbm{t}}_1\text{ is a t-structure in }\mathcal{T}\text{ and }
+      \tau\text{ is a}\\
+      \text{ cohereditary torsion pair in the abelian category } \\
+      \mathcal{H}_1:=\T_1\cap\F_1[1] \text{, where }$\overline{\t}_1=(\T_1,\F_1[1])$
+    \end{array}
+  \right\}.
+\end{equation*}
+
 
 %*****************************************
 %*****************************************
