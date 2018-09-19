@@ -65,6 +65,7 @@ in order to characterize them we recall the following definition.
 \item $\C'$ is \emph{coresolving} in $\C$ if $C\in \C'$ for every exact sequence $0\to A\to B\to C\to 0$ in $\C$ with $A, B\in \C'$.
 \end{enumerate}
 \end{defn}
+\todo{Check the definition of resolving and coresolving... we are doing something wrong here}
 
 It can be shown that a complete cotorsion pair $(\A, \B)$ is hereditary \iff $\A$ is resolving or, equivalently, \iff $\B$ is coresolving:
 \begin{lem}{\cite[Lemma~6.17]{Sto13}}
@@ -73,7 +74,7 @@ It can be shown that a complete cotorsion pair $(\A, \B)$ is hereditary \iff $\A
     \item $\Ext^n_\C(A,B)=0$ for each $A\in\A$, $B\in\B$, and $n\geq 1$.
     \item $\Ext^2_\C(A,B)=0$ for each $A\in\A$ and $B\in\B$.
     \item If $0\to \Ker(f)\to A_1\nto{f}A_2\to 0$ is a short exact sequence with $A_1,A_2\in\A$, then $\Ker(f)\in\A$.
-    \item If $0\to B_1\nto{g} B_2\nto{\Coker(g)}\to 0$ is a short exact sequence with $B_1,B_2\in\B$, then $\Coker(g)\in\B$.
+    \item If $0\to B_1\nto{g} B_2\to\Coker(g)\to 0$ is a short exact sequence with $B_1,B_2\in\B$, then $\Coker(g)\in\B$.
   \end{enumerate}
 \end{lem}
 
@@ -112,6 +113,25 @@ We explicitly state the aforementioned Hovey's correspondence, in the setting of
 \begin{thm}\label{T:correspondence} (\cite{Hov07}, \cite{G5}) Let $\C$ be a WIC exact category with an exact model structure. Let $\clQ$ be the class of cofibrant objects, $\R$ the class of fibrant objects and $\W$ the class of trivial objects. Then $\W$ is a thick subcategory of $\C$, and $(\clQ, \R\cap \W)$ and $(\clQ\cap\W, \R)$ are complete cotorsion pairs in $\C$.
 Conversely, given three classes $\W, \clQ, \R$ such that $\W$ is thick in $\C$, $(\clQ, \R\cap \W)$ and $(\clQ\cap\W, \R)$ are complete cotorsion pairs in $\C$, then there is an exact model structure on $\C$ where $\clQ$ are the cofibrant objects, $\R$ are the fibrant objects and $\W$ the trivial objects.
 \end{thm}
+
+Given an exact model structure on $\C$, let $\clQ$, $\W$, and $\R$ the three classes from the Theorem, we will follow the usual convention and indicate the model structure via $\M=(\clQ,\W,\R)$ and call it a \emph{Hovey triple}.
+
+The reason why people use model structure is to be able to do homotopy theory, i.e. define good homotopy relations between maps and study the equivalence classes of morphisms modulo homotopy. The usual setting is that of a bicomplete category, however it is not necessary to assume that our category has all limits and colimits, and in fact an exact category has enough limits and colimits to be able to construct left and right homotopy theory from a model structure.
+
+The following Proposition characterizes left and right homotopies in terms of cotorsion pairs.
+
+\begin{prop}{\cite[Proposition~2.5]{G7}}
+  Let $\C$ be an exact category with an exact model structure. Let $(\clQ,\W\cap\R$ and $(\clQ\cap\W,\R)$ be the corresponding complete cotorsion pairs from Theorem \ref{T:correspondence}.
+  \begin{enumerate}
+    \item Two maps $f,g:X\to Y$ in $\C$ are \emph{right homotopic} \iff $g-f$ factors through a trivially cofibrant object, i.e. one in $\clQ\cap\W$.
+    \item Two maps $f,g:X\to Y$ in $\C$ are \emph{left homotopic} \iff $g-f$ factors through a trivially fibrant object, i.e. one in $\W\cap\R$.
+    \item Suppose $Y$ is fibrant, i.e. $Y\in \R$. Then two maps $f,g:X\to Y$ in $\C$ are right homotopic \iff $g-f$ factors through an object of $\clQ\cap\W\cap\R$.
+    \item Suppose $X$ is cofibrant, i.e. $X\in\clQ$. Then two maps $f,g:X\to Y$ in $\C$ are left homotopic \iff $g-f$ factors through an object of $\clQ\cap\W\cap\R$.
+    \item Suppose $X$ is cofibrant and $Y$ is fibrant. Then two maps $f,g:X\to Y$ in $\C$ are homotopic \iff $g-f$ factors through an object of $\clQ\cap\W\cap\R$ \iff $g-f$ factors through an object of $\clQ\cap\W$ \iff $g-f$ factors through an object of $\R\cap\W$.
+  \end{enumerate}
+\end{prop}
+
+\todo{Move injective model structures here and add universal properties of homotopy category}
 
 \subsection{Cotorsion pairs in unbounded cochain complexes}
 
@@ -438,8 +458,8 @@ Let $\Inj$ denote the class of injective objects of $\G$. The following hold tru
 \end{enumerate}
 Moreover, if $\G=\Modr R$ and $\B$ contains the class $ \B_{\infty}$ defined in Notation~\ref{N:notations}~(5) then
 \begin{enumerate}
-\item[(3)] $\widetilde{\B}{}^\perp{}\cap dw \B=dg \Inj$.
-\item[(4)] ${}^\perp{} dg\Inj\cap dw\B=ex \B$
+  \item[(3)]\label{L:Cot-inj.3} $\widetilde{\B}{}^\perp{}\cap dw \B=dg \Inj$.
+\item[(4)]\label{L:Cot-inj.4} ${}^\perp{} dg\Inj\cap dw\B=ex \B$
 \end{enumerate}
 
 %
@@ -478,6 +498,7 @@ Conversely, if $\widetilde{\B}{}^\perp{}\cap dw \B=dw \Inj$, then $dw\Inj\subset
 \begin{rem} If  $\G$ has enough projective objects, then the dual of the statements in Lemma~\ref{L:Cot-inj}~(1) and (2) hold  substituting the right orthogonal with the left orthogonal and $\Inj$ with $\Proj$.
 \end{rem}
 
+Points \ref{L:Cot-inj.3} and \ref{L:Cot-inj.4} of the previous Lemma can be generalized, with essentially the same proof, to a complete hereditary cotorsion pair $(\A,\B)$ in a Grothendieck category $\G$ such that $ex \Inj\subseteq \wac{\B}$.
 
 %
 %
@@ -537,13 +558,25 @@ Thus, an injective cotorsion pair $(\A, \B)$ corresponds to the model structure 
 An injective complete cotorsion pair $(\A, \B)$ in $\C$ is called a \emph{localizing cotorsion pair}. If $(\A, \B)$ and $(\B, \D)$ are injective cotorsion pairs in $\C$, then $(\A, \B, \D)$ is called a \emph{localizing cotorsion triple} in $\C$.
 \end{defn}
 
-\begin{rem}\label{R:inj-proj-model} By \cite[Proposition 4.2]{G7}, a complete hereditary cotorsion pair  in a WIC Frobenius category is an injective cotorsion pair if and only if it is a projective cotorsion pair if and only if $\A$ is thick if and only if $\B$ is thick.
+Of course, the fact that $\C$ is Frobenius can be used to find several description of a localizing cotorsion pairs. These are listed in \cite[Proposition 4.2]{G7}, that we state here for the reader's convenience:
 
-%
-%
-%
-%
-\end{rem}
+\todo{After having checked the definition of resolving and coresolving in the previous part, fix here too}
+\begin{prop}{ \cite[Proposition 4.2]{G7}}
+  Let $(\A,\B)$ be a cotorsion pair in a WIC Frobenius category $\C$. Then, the following are equivalent:
+  \begin{enumerate}
+    \item $(\A,\B)$ is hereditary with $\A$ coresolving and $\B$ resolving,
+    \item $\A$ is both resolving and coresolving,
+    \item $\B$ is both resolving and coresolving,
+    \item $\A$ is thick,
+    \item $\B$ is thick.
+  \end{enumerate}
+
+  Moreover, if $(\A,\B)$ is complete then the conditions above are also equivalent to:
+  \begin{enumerate}\setcounter{enumi}{5}
+    \item $(\A,\B)$ is an injective cotorsion pair,
+    \item $(\A,\B)$ is a projective cotorsion pair.
+  \end{enumerate}
+\end{prop}
 
 %
 %
