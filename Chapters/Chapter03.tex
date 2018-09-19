@@ -120,18 +120,116 @@ The reason why people use model structure is to be able to do homotopy theory, i
 
 The following Proposition characterizes left and right homotopies in terms of cotorsion pairs.
 
-\begin{prop}{\cite[Proposition~2.5]{G7}}
+\begin{prop}{\cite[Proposition~2.5]{G7}}\label{prop:gil_homotopy}
   Let $\C$ be an exact category with an exact model structure. Let $(\clQ,\W\cap\R$ and $(\clQ\cap\W,\R)$ be the corresponding complete cotorsion pairs from Theorem \ref{T:correspondence}.
-  \begin{enumerate}
+  \begin{enumerate}[label=(\arabic*)]
     \item Two maps $f,g:X\to Y$ in $\C$ are \emph{right homotopic} \iff $g-f$ factors through a trivially cofibrant object, i.e. one in $\clQ\cap\W$.
     \item Two maps $f,g:X\to Y$ in $\C$ are \emph{left homotopic} \iff $g-f$ factors through a trivially fibrant object, i.e. one in $\W\cap\R$.
     \item Suppose $Y$ is fibrant, i.e. $Y\in \R$. Then two maps $f,g:X\to Y$ in $\C$ are right homotopic \iff $g-f$ factors through an object of $\clQ\cap\W\cap\R$.
     \item Suppose $X$ is cofibrant, i.e. $X\in\clQ$. Then two maps $f,g:X\to Y$ in $\C$ are left homotopic \iff $g-f$ factors through an object of $\clQ\cap\W\cap\R$.
-    \item Suppose $X$ is cofibrant and $Y$ is fibrant. Then two maps $f,g:X\to Y$ in $\C$ are homotopic \iff $g-f$ factors through an object of $\clQ\cap\W\cap\R$ \iff $g-f$ factors through an object of $\clQ\cap\W$ \iff $g-f$ factors through an object of $\R\cap\W$.
+      \item\label{prop:gil_homotopy.5} Suppose $X$ is cofibrant and $Y$ is fibrant. Then two maps $f,g:X\to Y$ in $\C$ are homotopic \iff $g-f$ factors through an object of $\clQ\cap\W\cap\R$ \iff $g-f$ factors through an object of $\clQ\cap\W$ \iff $g-f$ factors through an object of $\R\cap\W$.
   \end{enumerate}
 \end{prop}
 
-\todo{Move injective model structures here and add universal properties of homotopy category}
+For a WIC exact category $\C$, it is possible to show that the homotopy category of an exact model structure satisfies a universal property, namely that it is the triangulated localization of $\C$ with respect to the class $\W$ of trivial objects. This was done explicitly in \cite{G7} in the context of injective model structure.
+
+First, let's observe that the class of weak equivalence, and hence the homotopy category, depend only on the trivial objects.
+
+\begin{lem}{\cite[Lemma~3.1]{G7}}
+  Let $\C$ be a WIC exact category with an exact model structure, and let $\W$ denote the class of trivial objects. Then, a map $f$ is a weak equivalence \iff it factors as an admissible monomorphism with cokernel in $\W$ followed by an admissible epimorphism with kernel in $\W$.
+\end{lem}
+
+Hence, whenever we have a model structure $\M=(\clQ,\W,\R)$ on $\C$ its homotopy category depends only on $\W$ and will be denoted as $\C/\W$, or, when it is important to remember the rest of the model structure, by $\Ho(\M)$.
+
+To be more explicit, we denote by $\gamma\colon\C\to\C/\W$ the canonical functor to the category $\C/\W$ where we formally inverted weak equivalences. It is a fundamental result of the theory of model categories that
+\[ \C/\W=\Ho(\M)\cong (\clQ\cap\R)/\sim \]
+where $\sim$ denotes the equivalence relation in Proposition~\ref{prop:gil_homotopy}\ref{prop:gil_homotopy.5}.
+
+We will deal mainly with injective or projective model structure, so we will introduce them.
+The notions of injective and projective Hovey triples and of injective and projective cotorsion pairs have been introduced in \cite{G7} following the analogous concepts defined in \cite{Beck14} and \cite{G6}.
+
+
+
+%
+\begin{defn}  Assume that a WIC exact category $\C$ has enough injective objects.
+%
+A complete cotorsion pair $(\A, \B)$ in $\C$ is an \emph{injective cotorsion pair} if $\A$ is thick and contains the injective objects.
+Symmetrically, assume that $\C$ has enough projective objects.
+%
+A complete cotorsion pair $(\A, \B)$ in $\C$ is a \emph{projective cotorsion pair} if $\B$ is thick and contains the projective objects.
+
+
+\end{defn}
+%
+Thus, an injective cotorsion pair $(\A, \B)$ corresponds to the model structure $(\C, \A, \B)$ where all objects are cofibrant and a projective cotorsion pair $(\A, \B)$ corresponds to the model structure $ (\A, \B, \C)$ where all objects are fibrant.
+
+%
+%
+Finally, we collect some important information about the localization $\gamma$ in the following Proposition.
+
+\begin{prop}{\cite[Proposition~3.2]{G7}}
+  Let $\M=(\W,\R)$ be an injective cotorsion pair in a WIC exact category $\C$ with enough injectives. Then:
+  \begin{enumerate}
+    \item $\R$ naturally inherits the structure of a Frobenius category with the projective-injective objects being precisely the injectives from $\C$.
+    \item The functor $\gamma\colon\C\to\C/\W=\Ho(\M)\cong {\R/\sim}$ is exact in the sense that it takes short exact sequences in $\A$ to exact triangles in $\Ho(\M)$.
+    \item $\gamma$ is universal among triangulated categories $\T$ which "kill" $\W$. That is, given another exact functor $F\colon \C\to \T$ with $F(\W)=0$, it factors uniquely through $\gamma$.
+  \end{enumerate}
+\end{prop}
+
+\subsection{Recollements}
+
+\todo{Add definition of recollement}
+
+In the case of multiple injective cotorsion pairs on a WIC exact category it is possible to define functors that give rise to a recollement.
+
+\begin{lem}{\cite[Lemma~3.3]{G7}}\label{lemma:gill_quotient_functor}
+  Let $\C$ be a WIC exact category with enough injectives and suppose we have injective cotorsion pairs $\M=(\W,\R)$ and $\M'=(\W',\R')$ with $\R'\subseteq \R$, and indicate with $\gamma_\W$ and $\gamma_{\W'}$ the localization functors associated with the respective model structures. Then, the quotient functor $Q:{\R/\sim}\to \C/\W'$ defined by $Q([f])=\gamma_{\W'}(f)$ is well defined
+\end{lem}
+
+We have the following \emph{Injective Recollement Theorem}:
+
+\begin{thm}{\cite[Theorem~3.4]{G7}}
+  Let $\C$ be a WIC exact category with enough injective and suppose we have three injective cotorsion pairs
+  \[
+    \M_1=(\W_1,\R_1)\text{,\hfill}\M_2=(\W_2,\R_2)\text{,\hfill}\M_3=(\W_3,\R_3)
+  \]
+  such that $\R_2,\R_3\subseteq \R_1$. If $\W_3\cap\R_1=\R_2$ (or equivalently $\W_2\cap\W_3=\W_1$, and $\R_2\subseteq \W_3$), then there exists a recollement
+  \begin{equation*}
+    \begin{tikzcd}
+      {\R_2/\sim}\arrow{r}{I}
+      & {\R_1/\sim}\arrow[bend left=50]{l}\arrow[bend right=50]{l}\arrow{r}{Q}
+      & \C/\W_3\arrow[bend left=50]{l}{\rho}\arrow[bend right=50]{l}[']{\lambda}
+    \end{tikzcd}
+  \end{equation*}
+  where the functor $I$ is simply the inclusion and $Q$ is the quotient functor of Lemma~\ref{lemma:gill_quotient_functor}. Moreover, $\lambda$ has essential image $(\W\cap\R_1)/\sim$, $\rho$ has essential image ${\R_3/\sim}$, and they provide an equivalence $\lambda\colon{\R_3/\sim} \leftrightarrow (\W_2\cap\R_1)/\sim\colon\rho$.
+\end{thm}
+
+Injective (and projective) cotorsion pairs will turn out to be extremely powerful in the case of Frobenius categories, especially in order to find recollements as we will see in the next section. For now we will give
+
+\begin{defn} (\cite[Definition 4.3]{G7}) Let $\C$ be a WIC Frobenius category.
+An injective complete cotorsion pair $(\A, \B)$ in $\C$ is called a \emph{localizing cotorsion pair}. If $(\A, \B)$ and $(\B, \D)$ are injective cotorsion pairs in $\C$, then $(\A, \B, \D)$ is called a \emph{localizing cotorsion triple} in $\C$.
+\end{defn}
+
+Of course, the fact that $\C$ is Frobenius can be used to find several description of a localizing cotorsion pairs. These are listed in \cite[Proposition 4.2]{G7}, that we state here for the reader's convenience:
+
+\todo{After having checked the definition of resolving and coresolving in the previous part, fix here too}
+\begin{prop}{ \cite[Proposition 4.2]{G7}}
+  Let $(\A,\B)$ be a cotorsion pair in a WIC Frobenius category $\C$. Then, the following are equivalent:
+  \begin{enumerate}
+    \item $(\A,\B)$ is hereditary with $\A$ coresolving and $\B$ resolving,
+    \item $\A$ is both resolving and coresolving,
+    \item $\B$ is both resolving and coresolving,
+    \item $\A$ is thick,
+    \item $\B$ is thick.
+  \end{enumerate}
+
+  Moreover, if $(\A,\B)$ is complete then the conditions above are also equivalent to:
+  \begin{enumerate}\setcounter{enumi}{5}
+    \item $(\A,\B)$ is an injective cotorsion pair,
+    \item $(\A,\B)$ is a projective cotorsion pair.
+  \end{enumerate}
+\end{prop}
+
 
 \subsection{Cotorsion pairs in unbounded cochain complexes}
 
@@ -533,50 +631,6 @@ Points \ref{L:Cot-inj.3} and \ref{L:Cot-inj.4} of the previous Lemma can be gene
 
 To show that $(\A\cap\D, \B)$ is complete, let $(\ast)\quad 0\to B\to A\to D\to 0$ be a special $\A $-precover of an object $D\in \D$, then $A\in \A\cap\D$, since $\D$ is extension closed, hence $(\ast)$ is a special $\A\cap \D $-precover of $D$. If $ (\ast\ast):\quad 0\to D\to B\to A\to 0$ is a special $\B $-preenvelope of $D\in \D$, then $A\in \D$ since $\D$ is coresolving, hence $(\ast\ast)$ is  special $\B$-preenvelope of $D$ \wrt to  $(\A\cap\D, \B)$. \end{proof}
 
-
-The notions of injective and projective Hovey triples and of injective and projective cotorsion pairs have been introduced in \cite{G7} following the analogous concepts defined in \cite{Beck14} and \cite{G6}.
-
-
-
-%
-\begin{defn}  Assume that a WIC exact category $\C$ has enough injective objects.
-%
-A complete cotorsion pair $(\A, \B)$ in $\C$ is an \emph{injective cotorsion pair} if $\A$ is thick and contains the injective objects.
-Symmetrically, assume that $\C$ has enough projective objects.
-%
-A complete cotorsion pair $(\A, \B)$ in $\C$ is a \emph{projective cotorsion pair} if $\B$ is thick and contains the projective objects.
-
-
-\end{defn}
-%
-Thus, an injective cotorsion pair $(\A, \B)$ corresponds to the model structure $(\C, \A, \B)$ where all objects are cofibrant and a projective cotorsion pair $(\A, \B)$ corresponds to the model structure $ (\A, \B, \C)$ where all objects are fibrant.
-
-%
-%
-
-\begin{defn} (\cite[Definition 4.3]{G7}) Let $\C$ be a WIC Frobenius category.
-An injective complete cotorsion pair $(\A, \B)$ in $\C$ is called a \emph{localizing cotorsion pair}. If $(\A, \B)$ and $(\B, \D)$ are injective cotorsion pairs in $\C$, then $(\A, \B, \D)$ is called a \emph{localizing cotorsion triple} in $\C$.
-\end{defn}
-
-Of course, the fact that $\C$ is Frobenius can be used to find several description of a localizing cotorsion pairs. These are listed in \cite[Proposition 4.2]{G7}, that we state here for the reader's convenience:
-
-\todo{After having checked the definition of resolving and coresolving in the previous part, fix here too}
-\begin{prop}{ \cite[Proposition 4.2]{G7}}
-  Let $(\A,\B)$ be a cotorsion pair in a WIC Frobenius category $\C$. Then, the following are equivalent:
-  \begin{enumerate}
-    \item $(\A,\B)$ is hereditary with $\A$ coresolving and $\B$ resolving,
-    \item $\A$ is both resolving and coresolving,
-    \item $\B$ is both resolving and coresolving,
-    \item $\A$ is thick,
-    \item $\B$ is thick.
-  \end{enumerate}
-
-  Moreover, if $(\A,\B)$ is complete then the conditions above are also equivalent to:
-  \begin{enumerate}\setcounter{enumi}{5}
-    \item $(\A,\B)$ is an injective cotorsion pair,
-    \item $(\A,\B)$ is a projective cotorsion pair.
-  \end{enumerate}
-\end{prop}
 
 %
 %
