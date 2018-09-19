@@ -1,5 +1,79 @@
 %\section{Projective cotorsion pairs in the exact category $\Ch(\B)$}\label{S:B}
+%======================
 \chapter{Recollements from cotorsion pairs}\label{ch:recoll}
+%======================
+
+In \cite{Nee08} Neemann described the homotopy category of the projective modules as a localization of the homotopy category of flat modules and he obtained a recollement  with middle  term the homotopy category of flat modules. His recollement can be compared with the classical one having the homotopy category of a ring $R$ as middle term, the derived category of $R$ as right term and the category of acyclic complexes modulo the homotopy relation as left term.
+
+
+In this paper we exhibit many other examples of recollements of analogous type.
+
+Our results are strongly based on the two papers ~\cite{G6} and \cite{G7} by Gillespie and also inspired by Becker's idea in \cite{Beck12} to consider triples of injective cotorsion pairs giving rise to model structures and to the corresponding recollements.
+
+
+Starting from a complete hereditary cotorsion pair $(\A, \B)$ in a Grothendieck category, we consider triples of examples of injective and projective cotorsion pairs on the categories of unbounded complexes with components in the exact categories $\A$ or $\B$.
+The examples are constructed in order that the associated model structures on the categories of complexes satisfy the assumptions allowing to build the relevant recollements.
+
+Our aim is mainly to describe the homotopy categories $K(\B)$ and $K(\A)$ as well as the derived categories $\D(\B)$ and $\D(\A)$.
+
+Imposing some mild conditions on a Grothendieck category $\G$ (which are always satisfied by module categories), Theorem~\ref{T:triple-B} gives the recollement % and Theorem~\ref{T:triple-A} give recollements
+\vskip0.7cm
+\[
+  \xymatrix{ (\ast) \quad \dfrac{ex\B}{\sim} \ar[rr]^{inc} &&{K(\B)} \ar@/^2pc/[ll]\ar@/_2pc/[ll] \ar[rr]^{Q}
+                                           &&{\dfrac{\Ch(\B)}{ex\B }}\ar@/^2pc/ [ll] \ar@/_2pc/ [ll] },
+\]
+\vskip0.7cm
+ where for every subcategory $\C$ of $\G$, $ex{\C}$ denotes the class of acyclic unbounded complexes with terms in $\C$.
+The dual is given by Theorem~\ref{T:triple-A}.
+
+%\[
+%\xymatrix{\dfrac{ex\A}{\sim} \ar[rr]^{inc} &&{K(\A)} \ar@/^2pc/[ll]\ar@/_2pc/[ll] \ar[rr]^{Q}
+%&&{\dfrac{\Ch(\A)}{ex\A }}\ar@/^2pc/ [ll] \ar@/_2pc/ [ll] }
+%\]
+%\vskip0.7cm
+
+ The  recollement $(\ast)$ generalizes the recollement obtained by Krause (~\cite{Kr05}) where the middle term is the homotopy category of the injective objects.
+
+ %
+
+For a complete hereditary cotorsion pair $(\A, \B)$ the term $\dfrac{\Ch(\B)}{ex\B }$ is equivalent to the derived category $\D(\G)$ of the Grothendieck category, essentially because $\Ch(\B)$ contains the dg-injective complexes. Analogously, if $\G$ has enough projectives, $\dfrac{\Ch(\A)}{ex\A}$ is equivalent to the derived category $\D(\G)$ of the Grothendieck category, since $\Ch(\A)$ contains the dg-projective complexes.
+
+Concerning the derived categories $\D(\B)$ and $\D(\A)$, recall that
+by Neeman~\cite{Nee90} the derived category of an idempotent complete exact category $\C$ is defined as the quotient $\dfrac{\Ch(\C)}{\widetilde{\C}}$, where $\widetilde{\C}$ denotes the class of unbounded complexes acyclic in $\C$, meaning that the differentials factor through short exact sequences in $\C$. By Theorem~\ref{T:derived-B} we get the recollement
+
+\vskip0.7cm
+\[
+\xymatrix{\dfrac{ex\B}{\sim} \ar[rr]^{inc} &&{\D(\B)} \ar@/^2pc/[ll]\ar@/_2pc/[ll] \ar[rr]^{Q}
+                                           &&{\D(\G)}\ar@/^2pc/ [ll] \ar@/_2pc/ [ll] }
+\]
+\vskip0.7cm
+and its dual in Theorem~\ref{T:derived-A}.
+% \label{T:derived-B}
+
+It would be important to get recollements analogous to $(\ast)$, but with right term $\D(\B)$ and $\D(\A)$, that is the derived categories of the exact categories $\B$ or $\A$. Of course, if $\widetilde{\B}=ex\B$ or $\widetilde{\A}=ex{\A}$, the recollement $(\ast)$ degenerates into
+\vskip0.7cm
+\[
+  \xymatrix{(\ast \ast)\quad \dfrac{\widetilde{\B}}{\sim} \ar[rr]^{inc} &&{K(\B)} \ar@/^2pc/[ll]\ar@/_2pc/[ll] \ar[rr]^{Q}
+&&{\dfrac{\Ch(\B)}{\widetilde{\B} }}\ar@/^2pc/ [ll] \ar@/_2pc/ [ll] }
+\]
+\vskip0.7cm
+(and dually for $\A$).
+
+%\[
+%\xymatrix{\dfrac{\widetilde{\A}}{\sim} \ar[rr]^{inc} &&{K(\A)} \ar@/^2pc/[ll]\ar@/_2pc/[ll] \ar[rr]^{Q}
+%&&{\dfrac{\Ch(\A)}{\widetilde{\A} }}\ar@/^2pc/ [ll] \ar@/_2pc/ [ll] }
+%.\]
+%\vskip0.7cm
+
+The condition $\widetilde{\B}=ex\B$ is very strong, hence it would be interesting to find other examples of $(\ast \ast)$ for the case $\widetilde{\B}\subsetneq ex\B$.
+
+The only non degenerate example of this type of which we are aware is given by the cotorsion pair $(\A, \FpInj)$ over a coherent ring, where $\FpInj$ denotes the class of Fp-injective modules, that is the right Ext-orthogonal to the class of finitely presented modules. This follows by \sto's results in \cite{sto14} which we are able to slightly generalize in Proposition~\ref{P:B-inj-n}.
+
+Symmetrically, it seems there are very few non degenerate examples of such recollements for the case $\widetilde{\A}\subsetneq ex\A$. The more important one follows by the celebrated Neeman's result in \cite{Nee08} and it is the case when $\A$ is class of flat modules. We show a slight generalization of this situation in Proposition~\ref{P:A-flat}.%
+
+From the results in Section~\ref{S:2} and the results in a recent paper~\cite{BCIE} we obtain examples of cotorsion pairs $(\A, \B)$ in module categories satisfying the condition $\widetilde{\B}=ex\B$. These include tilting and cotilting cotorsion pairs, the closure of the cotorsion pair generated by the compact objects of finite projective dimension and the cotorsion pair $(\F, \C)$ of the flat and cotorsion modules.
+
+
 \section{Projective cotorsion pairs in the exact category \texorpdfstring{$\Ch(\B)$}{Ch(B)}}\label{S:B}
 
 

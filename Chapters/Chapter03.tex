@@ -7,75 +7,7 @@ It got an enormous impulse thanks to the discovery by Hovey~\cite{Hov07} of the 
 
 A famous example of cotorsion pair is given by the pair $(\F, \C)$ where $\F$ is the class of flat objects. It gave rise to the celebrated Flat Cover Conjecture by Enochs and solved in \cite{BEE} in the case of module categories and in ~\cite{ElB} for Grothendieck categories. It is particularly important in categories with no nonzero projective objects like for instance the categories of coherent sheaves.
 
-In \cite{Nee08} Neemann described the homotopy category of the projective modules as a localization of the homotopy category of flat modules and he obtained a recollement  with middle  term the homotopy category of flat modules. His recollement can be compared with the classical one having the homotopy category of a ring $R$ as middle term, the derived category of $R$ as right term and the category of acyclic complexes modulo the homotopy relation as left term.
-
-
-In this paper we exhibit many other examples of recollements of analogous type.
-
-Our results are strongly based on the two papers ~\cite{G6} and \cite{G7} by Gillespie and also inspired by Becker's idea in \cite{Beck12} to consider triples of injective cotorsion pairs giving rise to model structures and to the corresponding recollements.
-
-
-Starting from a complete hereditary cotorsion pair $(\A, \B)$ in a Grothendieck category, we consider triples of examples of injective and projective cotorsion pairs on the categories of unbounded complexes with components in the exact categories $\A$ or $\B$.
-The examples are constructed in order that the associated model structures on the categories of complexes satisfy the assumptions allowing to build the relevant recollements.
-
-Our aim is mainly to describe the homotopy categories $K(\B)$ and $K(\A)$ as well as the derived categories $\D(\B)$ and $\D(\A)$.
-
-Imposing some mild conditions on a Grothendieck category $\G$ (which are always satisfied by module categories), Theorem~\ref{T:triple-B} gives the recollement % and Theorem~\ref{T:triple-A} give recollements
-\vskip0.7cm
-\[
-  \xymatrix{ (\ast) \quad \dfrac{ex\B}{\sim} \ar[rr]^{inc} &&{K(\B)} \ar@/^2pc/[ll]\ar@/_2pc/[ll] \ar[rr]^{Q}
-                                           &&{\dfrac{\Ch(\B)}{ex\B }}\ar@/^2pc/ [ll] \ar@/_2pc/ [ll] },
-\]
-\vskip0.7cm
- where for every subcategory $\C$ of $\G$, $ex{\C}$ denotes the class of acyclic unbounded complexes with terms in $\C$.
-The dual is given by Theorem~\ref{T:triple-A}.
-
-%\[
-%\xymatrix{\dfrac{ex\A}{\sim} \ar[rr]^{inc} &&{K(\A)} \ar@/^2pc/[ll]\ar@/_2pc/[ll] \ar[rr]^{Q}
-%&&{\dfrac{\Ch(\A)}{ex\A }}\ar@/^2pc/ [ll] \ar@/_2pc/ [ll] }
-%\]
-%\vskip0.7cm
-
- The  recollement $(\ast)$ generalizes the recollement obtained by Krause (~\cite{Kr05}) where the middle term is the homotopy category of the injective objects.
-
- %
-
-For a complete hereditary cotorsion pair $(\A, \B)$ the term $\dfrac{\Ch(\B)}{ex\B }$ is equivalent to the derived category $\D(\G)$ of the Grothendieck category, essentially because $\Ch(\B)$ contains the dg-injective complexes. Analogously, if $\G$ has enough projectives, $\dfrac{\Ch(\A)}{ex\A}$ is equivalent to the derived category $\D(\G)$ of the Grothendieck category, since $\Ch(\A)$ contains the dg-projective complexes.
-
-Concerning the derived categories $\D(\B)$ and $\D(\A)$, recall that
-by Neeman~\cite{Nee90} the derived category of an idempotent complete exact category $\C$ is defined as the quotient $\dfrac{\Ch(\C)}{\widetilde{\C}}$, where $\widetilde{\C}$ denotes the class of unbounded complexes acyclic in $\C$, meaning that the differentials factor through short exact sequences in $\C$. By Theorem~\ref{T:derived-B} we get the recollement
-
-\vskip0.7cm
-\[
-\xymatrix{\dfrac{ex\B}{\sim} \ar[rr]^{inc} &&{\D(\B)} \ar@/^2pc/[ll]\ar@/_2pc/[ll] \ar[rr]^{Q}
-                                           &&{\D(\G)}\ar@/^2pc/ [ll] \ar@/_2pc/ [ll] }
-\]
-\vskip0.7cm
-and its dual in Theorem~\ref{T:derived-A}.
-% \label{T:derived-B}
-
-It would be important to get recollements analogous to $(\ast)$, but with right term $\D(\B)$ and $\D(\A)$, that is the derived categories of the exact categories $\B$ or $\A$. Of course, if $\widetilde{\B}=ex\B$ or $\widetilde{\A}=ex{\A}$, the recollement $(\ast)$ degenerates into
-\vskip0.7cm
-\[
-  \xymatrix{(\ast \ast)\quad \dfrac{\widetilde{\B}}{\sim} \ar[rr]^{inc} &&{K(\B)} \ar@/^2pc/[ll]\ar@/_2pc/[ll] \ar[rr]^{Q}
-&&{\dfrac{\Ch(\B)}{\widetilde{\B} }}\ar@/^2pc/ [ll] \ar@/_2pc/ [ll] }
-\]
-\vskip0.7cm
-(and dually for $\A$).
-
-%\[
-%\xymatrix{\dfrac{\widetilde{\A}}{\sim} \ar[rr]^{inc} &&{K(\A)} \ar@/^2pc/[ll]\ar@/_2pc/[ll] \ar[rr]^{Q}
-%&&{\dfrac{\Ch(\A)}{\widetilde{\A} }}\ar@/^2pc/ [ll] \ar@/_2pc/ [ll] }
-%.\]
-%\vskip0.7cm
-
-The condition $\widetilde{\B}=ex\B$ is very strong, hence it would be interesting to find other examples of $(\ast \ast)$ for the case $\widetilde{\B}\subsetneq ex\B$.
-
-The only non degenerate example of this type of which we are aware is given by the cotorsion pair $(\A, \FpInj)$ over a coherent ring, where $\FpInj$ denotes the class of Fp-injective modules, that is the right Ext-orthogonal to the class of finitely presented modules. This follows by \sto's results in \cite{sto14} which we are able to slightly generalize in Proposition~\ref{P:B-inj-n}.
-
-Symmetrically, it seems there are very few non degenerate examples of such recollements for the case $\widetilde{\A}\subsetneq ex\A$. The more important one follows by the celebrated Neeman's result in \cite{Nee08} and it is the case when $\A$ is class of flat modules. We show a slight generalization of this situation in Proposition~\ref{P:A-flat}.%
-
-From the results in Section~\ref{S:2} and the results in a recent paper~\cite{BCIE} we obtain examples of cotorsion pairs $(\A, \B)$ in module categories satisfying the condition $\widetilde{\B}=ex\B$. These include tilting and cotilting cotorsion pairs, the closure of the cotorsion pair generated by the compact objects of finite projective dimension and the cotorsion pair $(\F, \C)$ of the flat and cotorsion modules.
+This chapter is based on the joint work \cite{bazzoni2018recollements}. We will give an overview of the theory of cotorsion pairs and exact model structures in exact categories.
 
 \section{Preliminaries}
 
@@ -91,16 +23,16 @@ For more details see \cite{Kel90} or \cite{Bu}.
 
 We will deal with weakly idempotent complete (WIC) additive categories, that is categories such that every section has a cokernel or, equivalently, every retraction has a kernel.
 
-Given a class $\X$ of objects in an exact category $\C$, the right orthogonal class $\X^{\perp_1}$ consists of the objects $Y$ such that $\Ext^1_{\C}(X,Y)=0$ for each object $X\in \X$. Similarly, the left orthogonal class $^{\perp_1}\X $ consists of the objects $Y$ such that $\Ext^1_{\C}(Y,X)=0$ for each object $X\in \X$.
-$\X^\perp$ will denote the class of objects $Y$ such that $\Ext^i_{\C}(X,Y)=0$ for each object $X\in \X$ and each $i\geq 1$. Similarly, for the orthogonal $^\perp\X $.
-%
+Given a class $\X$ of objects in an exact category $\C$, the right orthogonal class $\X^{\perp}$ consists of the objects $Y$ such that $\Ext^1_{\C}(X,Y)=0$ for each object $X\in \X$. Similarly, the left orthogonal class $^{\perp}\X $ consists of the objects $Y$ such that $\Ext^1_{\C}(Y,X)=0$ for each object $X\in \X$.
+
 \begin{defn}\label{D:cotorsion-pair} A pair of classes $(\A, \B)$ in an exact category $\C$ is called a cotorsion pair if
 \begin{enumerate}
 \item $\A^{\perp_1}=\B$ and $^{\perp_1} \B=\A$.
 \item A cotorsion pair is \emph{generated (cogenerated)} by a class $\X$ of objects if $\B=\X^{\perp_1} (\A={^{\perp_1}\X})$.
 \item A cotorsion pair $(\A, \B)$ has \emph{enough projectives} if every object $C\in \C$ has a special $\A$-precover, that is there is a short exact sequence $0\to B\to A\to C\to 0$ in $\C$ with $A\in \A$ and $\B\in B$. Dually, we say that  $(\A, \B)$ has \emph{enough injective} if every object $C\in \C$ has a special $\B$-preenvelope, that is there is a short exact sequence $0\to C\to B\to A\to 0$ in $\C$ with $A\in \A$ and $\B\in B$.
 \item A cotorsion pair is \emph{complete} when it has \emph{enough injectives} and \emph{enough projectives}.
-\item A cotorsion pair is called \emph{hereditary} if $\A^\perp=\B$ and $^{\perp} \B=\A$.
+\item A cotorsion pair is called \emph{hereditary} if $\A$ is generating, $\B$ is cogenerating, and
+  \[ \Ext^i_{\C}(A,B)=0 \text{ for all }A\in \A\text{, }B\in \B\text{, and } i\geq 1. \]
 \end{enumerate}
 \end{defn}
 A class $\C$ of objects in an exact category is \emph{deconstructible} and denoted by $\F ilt\ \clS$, if there is a set $\clS$ of objects such that every object of $\C$ is a transfinite extension of objects of $\clS$ (for more details see \cite[Definition 3.7 and 3.10]{Sto13}).
@@ -134,7 +66,16 @@ in order to characterize them we recall the following definition.
 \end{enumerate}
 \end{defn}
 
-A complete cotorsion pair $(\A, \B)$ is hereditary \iff $\A$ is resolving or, equivalently, \iff $\B$ is coresolving  (see for instance \cite[Lemma 6.17]{Sto13}).
+It can be shown that a complete cotorsion pair $(\A, \B)$ is hereditary \iff $\A$ is resolving or, equivalently, \iff $\B$ is coresolving:
+\begin{lem}{\cite[Lemma~6.17]{Sto13}}
+  Let $\C$ be a WIC exact category and $(\A,\B)$ be a cotorsion pair in $\C$ such that $\A$ is generating and $\B$ is cogenerating (e.g. if $(\A,\B)$ is complete). Then the following are equivalent:
+  \begin{enumerate}
+    \item $\Ext^n_\C(A,B)=0$ for each $A\in\A$, $B\in\B$, and $n\geq 1$.
+    \item $\Ext^2_\C(A,B)=0$ for each $A\in\A$ and $B\in\B$.
+    \item If $0\to \Ker(f)\to A_1\nto{f}A_2\to 0$ is a short exact sequence with $A_1,A_2\in\A$, then $\Ker(f)\in\A$.
+    \item If $0\to B_1\nto{g} B_2\nto{\Coker(g)}\to 0$ is a short exact sequence with $B_1,B_2\in\B$, then $\Coker(g)\in\B$.
+  \end{enumerate}
+\end{lem}
 
 %
 %
@@ -145,7 +86,13 @@ The notion of model structures on categories with finite limits and colimits was
 For our purposes we refer to the book by Hovey \cite{Hov99} or to the survey \cite{Sto13}.
 
 We only recall that a \emph{model structure} on a category $\C$ consists
-of three classes of morphisms Cof, W, Fib called \emph{cofibrations}, \emph{weak equivalences} and \emph{fibrations}, respectively, satisfying certain axioms. An object $X\in \C$ is \emph{cofibrant} if $0\to X$ is a cofibration,  \emph{fibrant} if $X\to 0$ is a fibration and it is \emph{trivial} if $0\to X$ is a weak equivalence.
+of three classes of morphisms Cof, W, Fib called \emph{cofibrations}, \emph{weak equivalences} and \emph{fibrations}, respectively, satisfying certain axioms.
+
+\begin{defn}
+  Let Cof, W, Fib be a model structure on a category $\C$.
+  An object $X\in \C$ is \emph{cofibrant} if $0\to X$ is a cofibration,  \emph{fibrant} if $X\to 0$ is a fibration and it is \emph{trivial} if $0\to X$ is a weak equivalence.
+\end{defn}
+
 In particular, the class $\W$ of trivial objects has the 2-out-of-3 property.
 %A \emph{model category} $\C$ is an abelian cocomplete category with a model structure.
  The \emph{homotopy category} $\Ho \C$ is obtained by  formally inverting all morphisms in W.
@@ -159,9 +106,14 @@ In \cite{G5} Gillespie extended the notion of model structures on exact categori
    An \emph{abelian model structures} is an exact model structure on an abelian category considered as an exact category with the exact structure given precisely by the class of short exact sequences.
 \end{defn}
 %
+
+We explicitly state the aforementioned Hovey's correspondence, in the setting of WIC exact categories.
+
 \begin{thm}\label{T:correspondence} (\cite{Hov07}, \cite{G5}) Let $\C$ be a WIC exact category with an exact model structure. Let $\clQ$ be the class of cofibrant objects, $\R$ the class of fibrant objects and $\W$ the class of trivial objects. Then $\W$ is a thick subcategory of $\C$, and $(\clQ, \R\cap \W)$ and $(\clQ\cap\W, \R)$ are complete cotorsion pairs in $\C$.
 Conversely, given three classes $\W, \clQ, \R$ such that $\W$ is thick in $\C$, $(\clQ, \R\cap \W)$ and $(\clQ\cap\W, \R)$ are complete cotorsion pairs in $\C$, then there is an exact model structure on $\C$ where $\clQ$ are the cofibrant objects, $\R$ are the fibrant objects and $\W$ the trivial objects.
 \end{thm}
+
+\subsection{Cotorsion pairs in unbounded cochain complexes}
 
 We denote by $\Ch(\C)$ the category of cochain complexes $X$ with component $X^n\in \C$ in degree $n$ and with differential $d^n_X\colon X^n\to X^{n+1}$ for every $n\in \bbZ$. The morphisms in $\Ch(\C)$ are the usual cochain maps. The suspension is denoted by $[-]$.
  If $\C$ is an exact category, then $\Ch(C)$ is equipped with the exact structure where the short exact sequences are the sequences which are exact in each degree. We can also consider the exact structure on $\Ch(\C)$ where the short exact sequences are degreewise splitting. $\Ext_{dw}(X, Y)$ denotes the Yoneda group of these degreewise splitting sequences.
