@@ -311,11 +311,11 @@ We start by recalling the definition of a t-structure in $\cat{T}$.
 \begin{definition}\label{def:strongly_related}
   A related pair $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ in the triangulated category
   $\cat{T}$ is \emph{strong} if for any morphism $f:H_1\to H_2$, in $\mathcal{H}:=\mathcal{T}_1\cap\mathcal{F}_2$,
-  and a distinguished triangle \[ Z\to H_1\nto{f}H_2\to Z[1],\] the following conditions
+  and a distinguished triangle \[ V\to H_1\nto{f}H_2\to V[1],\] the following conditions
   hold true:
   \begin{relatedtorsion}
-  \item\label{ax:rst1} $Z\in\mathcal{F}_1$ implies $Z\in\mathcal{F}_2[-1]$;
-  \item\label{ax:rst2} $Z\in\mathcal{T}_2$ implies $Z\in\mathcal{T}_1[1]$.
+  \item\label{ax:rst1} $V\in\mathcal{F}_1$ implies $V\in\mathcal{F}_2[-1]$;
+  \item\label{ax:rst2} $V\in\mathcal{T}_2$ implies $V\in\mathcal{T}_1[1]$.
   \end{relatedtorsion}
 
   We will call such pairs \emph{strongly related}.
@@ -608,7 +608,7 @@ functor $H^0_1:\mathcal{T}\to \mathcal{H}_1:=\T_1\cap\F_1[1]$
   Let $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ be a related pair in a triangulated
   category $\mathcal{T}$. Then, the following statements are equivalent.
   \begin{enumerate}[label=(\alph*)]
-    \item For any distinguished triangle $V\to H_1\nto{f}H_2\nto{+}$, with
+    \item \ref{ax:rst1} holds, i.e. for any distinguished triangle $V\to H_1\nto{f}H_2\to V[1]$, with
       $f$ a morphism in $\mathcal{H}=\mathcal{H}_\mathbbm{t}:=\mathcal{T}_1\cap\mathcal{F}_2$,
       we have that
       \begin{equation*}
