@@ -178,6 +178,32 @@ Finally, we collect some important information about the localization $\gamma$ i
 
 \subsection{Recollements}
 
+A recollement is a functor diagram among triangulated categories summarizing many properties of the functors involved. They were introduced in the seminal paper \cite{bbd82} by Beilinson, Bernstein, and Deligne.
+
+\begin{defn}
+  Let $\mathscr{X}$, $\mathscr{Y}$, and $\mathscr{Z}$ be triangulated categories. A \emph{recollement} is a diagram of functors
+  \begin{equation*}
+    \begin{tikzcd}
+      \mathscr{X}\arrow{r}{i_\ast}
+      & \mathscr{Y}\arrow[bend left=50]{l}{i^!}\arrow[bend right=50]{l}[']{i^\ast}\arrow{r}{j^\ast}
+      & \mathscr{Z}\arrow[bend left=50]{l}{j_\ast}\arrow[bend right=50]{l}[']{j_!}
+    \end{tikzcd}
+  \end{equation*}
+  such that
+  \begin{enumerate}[label=(\arabic*)]
+    \item $(i^\ast,i_\ast)$, $(i_\ast,i^!)$, $(j_!,j^\ast)$, and $(j^\ast,j_\ast)$ are adjoint pairs;
+    \item $i_\ast$, $j_\ast$, and $j_!$ are full embeddings;
+    \item $i^!\circ j_\ast$ (hence, $j^\ast\circ i_\ast=0$ and $i^\ast\circ j_!=0$ too);
+    \item for each $Y\in\mathscr{Y}$ there are triangles
+      \[
+        i_\ast i^! Y\to Y\to j_\ast j^\ast Y\to i_\ast i^! Y[1]
+      \]
+      \[
+        j_\ast j^\ast Y\to Y\to i_\ast i^\ast Y\to j_\ast j^\ast Y[1]
+      \]
+  \end{enumerate}
+\end{defn}
+
 \todo{Add definition of recollement}
 
 In the case of multiple injective cotorsion pairs on a WIC exact category it is possible to define functors that give rise to a recollement.
@@ -188,7 +214,7 @@ In the case of multiple injective cotorsion pairs on a WIC exact category it is 
 
 We have the following \emph{Injective Recollement Theorem}:
 
-\begin{thm}{\cite[Theorem~3.4]{G7}}
+\begin{thm}{\cite[Theorem~3.4]{G7}}\label{thm:gil_inj_recoll}
   Let $\C$ be a WIC exact category with enough injective and suppose we have three injective cotorsion pairs
   \[
     \M_1=(\W_1,\R_1)\text{,\hfill}\M_2=(\W_2,\R_2)\text{,\hfill}\M_3=(\W_3,\R_3)
@@ -204,13 +230,13 @@ We have the following \emph{Injective Recollement Theorem}:
   where the functor $I$ is simply the inclusion and $Q$ is the quotient functor of Lemma~\ref{lemma:gill_quotient_functor}. Moreover, $\lambda$ has essential image $(\W\cap\R_1)/\sim$, $\rho$ has essential image ${\R_3/\sim}$, and they provide an equivalence $\lambda\colon{\R_3/\sim} \leftrightarrow (\W_2\cap\R_1)/\sim\colon\rho$.
 \end{thm}
 
-Injective (and projective) cotorsion pairs will turn out to be extremely powerful in the case of Frobenius categories, especially in order to find recollements as we will see in the next section. For now we will give
+Injective (and projective) cotorsion pairs will turn out to be extremely powerful in the case of Frobenius categories, especially in order to find recollements as we will see at the end of this section.
 
 \begin{defn} (\cite[Definition 4.3]{G7}) Let $\C$ be a WIC Frobenius category.
 An injective complete cotorsion pair $(\A, \B)$ in $\C$ is called a \emph{localizing cotorsion pair}. If $(\A, \B)$ and $(\B, \D)$ are injective cotorsion pairs in $\C$, then $(\A, \B, \D)$ is called a \emph{localizing cotorsion triple} in $\C$.
 \end{defn}
 
-Of course, the fact that $\C$ is Frobenius can be used to find several description of a localizing cotorsion pairs. These are listed in \cite[Proposition 4.2]{G7}, that we state here for the reader's convenience:
+Of course, the fact that $\C$ is Frobenius can be used to find several descriptions of a localizing cotorsion pairs. These are listed in \cite[Proposition 4.2]{G7}, that we state here for the reader's convenience:
 
 \todo{After having checked the definition of resolving and coresolving in the previous part, fix here too}
 \begin{prop}{ \cite[Proposition 4.2]{G7}}
@@ -229,6 +255,25 @@ Of course, the fact that $\C$ is Frobenius can be used to find several descripti
     \item $(\A,\B)$ is a projective cotorsion pair.
   \end{enumerate}
 \end{prop}
+
+\begin{rem}
+  In any WIC Frobenius category there is a canonical cotorsion pair $\M=(\W,\C)$, where $\W$ is the class of projective-injective objects. $\M$ is localizing, and when regarded as a projective cotorsion pair it yields the trivial model structure $(\W,\C,\C)$. However, it can also be considered an injective cotorsion pair, yielding a model structure $(\C,\W,\C)$ whose homotopy category is the stable category ${\C/\sim}$ of $\C$.
+\end{rem}
+
+Finally, if we have a localizing cotorsion triple in a WIC Frobenius categories we get a recollement via the following:
+
+\begin{cor}{\cite[Corollary~4.5]{G7}}
+  Let $(\X,\Y,\Z)$ be a localizing cotorsion triple in a WIC Frobenius category $\C$. Then, there is an equivalence of triangulated categories:
+  \[ {\X/\sim} \cong {\C/\Y}  \cong {\Z/\sim} \]
+  where $\X/\sim$ and $\Z/\sim$ are the images of $\X$ and $\Z$ in the stable category $\C/\sim$.
+
+  Moreover, applying Theorem~\ref{thm:gil_inj_recoll} to the injective cotorsion pairs
+  \[ \M_1=(\W,\C)\text{, }\M_2=(\X,\Y)\text{, and }\M_3=(\Y,\X) \]
+  where $\M_1$ is the canonical localizing cotorsion pair, yields a recollement
+  \begin{equation*}
+    \recdiagram{\Y/\sim}{\C/\sim}{\C/\Y}.
+  \end{equation*}
+\end{cor}
 
 
 \subsection{Cotorsion pairs in unbounded cochain complexes}
