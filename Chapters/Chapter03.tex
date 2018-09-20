@@ -9,7 +9,7 @@ A famous example of cotorsion pair is given by the pair $(\F, \C)$ where $\F$ is
 
 This chapter is based on the joint work \cite{bazzoni2018recollements}. We will give an overview of the theory of cotorsion pairs and exact model structures in exact categories.
 
-\section{Preliminaries}
+\section{Preliminaries}\label{sec:preliminaries}
 
 \subsection{Cotorsion pairs}\label{S:cot-pair}
 
@@ -179,7 +179,7 @@ Finally, we collect some important information about the localization $\gamma$ i
 
 A recollement is a functor diagram among triangulated categories summarizing many properties of the functors involved. They were introduced in the seminal paper \cite{bbd82} by Beilinson, Bernstein, and Deligne.
 
-\begin{defn}
+\begin{defn}\label{def:recoll}
   Let $\mathscr{X}$, $\mathscr{Y}$, and $\mathscr{Z}$ be triangulated categories. A \emph{recollement} is a diagram of functors
   \begin{equation*}
     \begin{tikzcd}
@@ -264,7 +264,7 @@ Of course, the fact that $\C$ is Frobenius can be used to find several descripti
 
 Finally, if we have a localizing cotorsion triple in a WIC Frobenius categories we get a recollement via the following:
 
-\begin{cor}{\cite[Corollary~4.5]{G7}}
+\begin{cor}{\cite[Corollary~4.5]{G7}}\label{cor:gill_local_recoll}
   Let $(\X,\Y,\Z)$ be a localizing cotorsion triple in a WIC Frobenius category $\C$. Then, there is an equivalence of triangulated categories:
   \[ {\X/\sim} \cong {\C/\Y}  \cong {\Z/\sim} \]
   where $\X/\sim$ and $\Z/\sim$ are the images of $\X$ and $\Z$ in the stable category $\C/\sim$.
@@ -278,7 +278,7 @@ Finally, if we have a localizing cotorsion triple in a WIC Frobenius categories 
 \end{cor}
 
 
-\subsection{Cotorsion pairs in unbounded cochain complexes}
+\section{More on Cotorsion Pairs}\label{sec:more_cot}
 
 We denote by $\Ch(\C)$ the category of cochain complexes $X$ with component $X^n\in \C$ in degree $n$ and with differential $d^n_X\colon X^n\to X^{n+1}$ for every $n\in \bbZ$. The morphisms in $\Ch(\C)$ are the usual cochain maps. The suspension is denoted by $[-]$.
  If $\C$ is an exact category, then $\Ch(C)$ is equipped with the exact structure where the short exact sequences are the sequences which are exact in each degree. We can also consider the exact structure on $\Ch(\C)$ where the short exact sequences are degreewise splitting. $\Ext_{dw}(X, Y)$ denotes the Yoneda group of these degreewise splitting sequences.
@@ -335,7 +335,7 @@ is an exact sequence of complexes in $\Ch(\bbZ)$ and it is also right exact prov
 \end{proof}
 %
 %
-\section{Hereditary cotorsion pairs in Grothendieck categories}
+\subsection{Hereditary cotorsion pairs in Grothendieck categories}
 
 We recall some results which will be used throughout. Their proof can be found in \cite{St10-deconstr}, \cite{Sto13},  \cite{G4}, \cite{G6}.
 
@@ -431,7 +431,7 @@ The dual statement is proved in similar ways.
 \end{proof}
 
 %\section{Cotorsion pairs $(\A, \B)$ satisfying $ex\B=\tilde{\B}$}\label{S:2}
-\section{Cotorsion pairs \texorpdfstring{$(\A, \B)$}{(A,B)} satisfying \texorpdfstring{$ex\B=\tilde{\B}$}{ex B = tilde B} }\label{S:2}
+\subsection{Cotorsion pairs \texorpdfstring{$(\A, \B)$}{(A,B)} satisfying \texorpdfstring{$ex\B=\tilde{\B}$}{ex B = tilde B} }\label{S:2}
 We are interested in describing cotorsion pairs $(\A, \B)$ such that $ex\B=\tilde \B$ or $ex\A=\tilde \A$, since in these cases we have the following important consequences on the corresponding model structures.
 %
 \begin{cor}\label{C:cofibrant-fibrant}  Let $(\A, \B)$ be a complete hereditary cotorsion pairs in a Grothendieck category $\G$. The following hold true:
@@ -663,7 +663,7 @@ Points \ref{L:Cot-inj.3} and \ref{L:Cot-inj.4} of the previous Lemma can be gene
 %
 
 
- \section{Cotorsion pairs in exact categories}
+ \subsection{Cotorsion pairs in exact categories}
 
  We state a result valid in general for cotorsion pairs in exact categories.
  %
@@ -723,7 +723,9 @@ We first collect some well known facts.
 
 %
 
- The next Proposition~\ref{P:prop7.3} is a generalization of \cite[Proposition 7.3]{G7} which was formulated for the case of the cotorsion pair $(\F, \C)$ in a module category. %
+We conclude this chapter by giving several propositions that allow us to restrict a cotorsion pair in $\Ch(G)$ to the exact subcategories $\Ch(\A)$ or $(\Ch(\B)$ and the Frobenius categories $\Ch(\A)_{dw}$ and $\Ch(\B)_{dw}$.
+
+ The following Proposition~\ref{P:prop7.3} is a generalization of \cite[Proposition 7.3]{G7} which was formulated for the case of the cotorsion pair $(\F, \C)$ in a module category. %
 
 Moreover, in Proposition~\ref{P:prop7.3-dual} we state a generalization of the dual of \cite[Proposition 7.3]{G7}.
 %
@@ -748,6 +750,25 @@ Moreover,  \[\Big([\hat\A\cap dw \B]_K, \hat\B\Big)\] is a localizing cotorsion 
 \begin{proof}
   Dual of \ref{P:prop7.3}.
 Note that Theorem 6.3 and Proposition 6.4 in \cite{G7} have  obvious dual statements for projective cotorsion pairs from which the second statement of our proposition follows.\end{proof}
+
+The next proposition is the analogue of \cite[Proposition 7.2 ]{G7} and its dual is state in \ref{P:prop7.2}.
+ %
+
+ \begin{prop}\label{P:7.2-Groth} Let $\G$ be a Grothendieck category with enough projective objects and let $(\clP, \W)$ be a projective cotorsion pair in $\Ch(\G)$ with $\clP\subseteq dw\Proj$.
+ Let $(\A, \B)$ be a complete hereditary cotorsion pair in $\G$. Then,
+ \[(\clP, \W\cap dw\A)\] is a projective cotorsion pair in $\Ch(\A)$ and \[\Big([\clP]_K, \W\cap dw \A\Big)\] is a localizing cotorsion pair in the Frobenius category $\Ch(\A)_{dw}$. A complex $X\in \Ch(\A)$ is in $[\clP]_K$ if and only if it is chain homotopy equivalent to a complex in $P\in \clP$.
+ \end{prop}
+ \begin{proof} $(\clP, \W\cap dw\A)$ is a complete cotorsion pair by Proposition~\ref{P:inducing} and it is automatically a projective cotorsion pair. The second statement follows by the dual of \cite[Theorem 6.3, Proposition 6.4]{G7}.
+\end{proof}
+
+
+\begin{prop}\label{P:prop7.2} Let $\G$ be a Grothendieck category and let $(\W, \I)$ be an injective cotorsion pair in $\Ch(\G)$ with $\I\subseteq dw \Inj$ and let $(\A, \B)$ be a complete hereditary cotorsion pair in $\G$. Then \[\Big(\W\cap dw \B, \I\Big)\] is an injective cotorsion pair in $\Ch(\B)$ and \[\Big(\W\cap dw \B, [\I]_K\Big)\] is a localizing cotorsion pair in the Frobenius category $\Ch(\B)_{dw}$, where a complex $X\in \Ch(\B)$ belongs to $[\I]_K$ if and only if it is chain homotopy equivalent to a complex in $\I$.
+\end{prop}
+
+%
+\begin{proof} The first statement follows by Proposition~\ref{P:inducing}. The second statement follows by \cite[Theorem 6.3]{G7}.
+\end{proof}
+
 
 
 %
