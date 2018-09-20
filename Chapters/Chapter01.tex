@@ -9,61 +9,19 @@ There are different examples of model categories. In \cite{Q}, Quillen construct
 
 In \cite{Hov02} Hovey proved that there is a bijective correspondence between abelian model structures on abelian categories and certain couple of complete cotorsion pairs. Namely, if $\clQ$, $\W$, and $\R$ are the classes of cofibrant, trivial, and fibrant objects respectively, then $(\clQ,\W\cap\R)$ and $(\clQ\cap\W,\R)$ are complete cotorsion pairs, and conversely given three such classes forming two complete cotorsion pair, there is an abelian model structure, indicated by $(\clQ,\W,\R)$, whose cofibrant, trivial and fibrant objects are exactly those classes.
 
-Two elementary but very important examples of model structures on the category of unbounded cochain complexes of $R$-modules are the following:
-\begin{itemize}
-  \item $(\Ch(R),\E,dg \Inj(R))$, where:
-    \begin{itemize}
-      \item all cochain complexes are cofibrant;
-      \item the class of trivial objects $\E$ is the class of all acyclic complexes;
-      \item the class of fibrant objects $dg \Inj(R)$ is the class of dg-injective complexes, i.e. those complexes $I^\bullet$ with $I^n\in\Inj(R)$ and such that any map $E^\bullet \to I^\bullet$ with $E^\bullet\in\E$ is null homotopic.
-    \end{itemize}
-  \item $(\Ch(R),\W,dw \Inj(R))$, where:
-    \begin{itemize}
-      \item all cochain complexes are cofibrant;
-      \item $\W$ is some class of modules making this into a model structure, its existence is guaranteed by \cite{G4};
-      \item the class of fibrant objects $dw \Inj(R)$ is the class of all complexes with injective components.
-    \end{itemize}
-\end{itemize}
+This correspondence allows us to look for models of important triangulated categories, for example the derived category of a ring, simply by looking for complete cotorsion pairs. Moreover, if several model structures on a category satisfy certain inclusions, it is possible to find a recollement between their homotopy categories.
 
-The quotient categories, called homotopy categories, of these model structures are respectively the derived category of the ring $D(R)$ and the cochain homotopy category $K(R)$.
+Subsequently, the same techniques have been applied to cotorsion pairs in exact categories, showing that the Hovey's correspondence holds in the case of exact model structures in exact categories. This has greatly helped the theory of localization of model structures, since it applies easily to the case of subcategories of Grothendieck categories.
 
-This turns model categories into powerful tools for studying localizations of abelian categories, especially since it is possible to prove the existence of a recollement via the techniques described in \cite{G7}. A recollement is a diagram of functors
-\begin{equation*}
-  \begin{tikzcd}
-    \mathscr{X}\arrow{r}{i_\ast}
-    & \mathscr{Y}\arrow[bend left=50]{l}{i^!}\arrow[bend right=50]{l}[']{i^\ast}\arrow{r}{j^\ast}
-    & \mathscr{Z}\arrow[bend left=50]{l}{j_\ast}\arrow[bend right=50]{l}[']{j_!}
-  \end{tikzcd}
-\end{equation*}
-between triangulated categories satisfying, among other conditions, the requirement that $(i^\ast,i_\ast)$, $(i_\ast,i^!)$, $(j_!,j^\ast)$, and $(j^\ast,j_\ast)$ are adjoint pairs. Beilinson, Bernstein and Deligne introduced them in \cite{bbd82} and developed techniques to glue t-structures along recollements.
+The first part of this thesis follows this idea and our objective will be to construct model structures in exact subcategories of $\Ch(\G)$ in order to prove the existence of interesting recollements between their homotopy categories. We will consider a complete hereditary cotorsion pair $(\A,\B)$ in a Grothendieck category $\G$ and construct model structures on $\Ch(\B)$ in order to find recollements involving $K(\B)$, $D(\B)$ together with $D(\G)$.
 
-A classical example of a recollement can be found in the setting of the category of cochain complexes using the cotorsion pairs mentioned above. The recollement is:
-\begin{equation*}
-\recdiagram{K_{ac}(R)}{K(R)}{D(R)},
-\end{equation*}
-where $K_{ac}(R)$ is the full subcategory of $K(R)$ consisting of acyclic cochain complexes.
+The second part of this thesis is devoted to a different topic of research, although our applications will still be mainly in triangulated categories.
 
-This thesis is divided into two parts, the first based on the joint work \cite{bazzoni2018recollements} with Silvana Bazzoni and the second on a work in preparation with Manuel Saor\'in, Simone Virili and Octavio Mendoza.
+In \cite{bbd82} Beilinson, Bernstein and Deligne introduced the notion of t-structure in a triangulated in order to build the category of perverse sheaves. They also proved that to any t-structure is associated an abelian category, called its heart. In \cite{Nakaoka}, Nakaoka proved that starting from any torsion pair $(\U,\V)$ in a triangulated category $\mathscr{C}$ it is possible to find an abelian heart $\underline{\clH}$ in the quotient category $\underline{\mathscr{C}}:=\mathscr{C}/\W$, where $\W=\U[1]\cap\V$. This result motivates the second part of this thesis, where we use torsion pairs in additive categories to build what we call Nakaoka contexts, and show that if they satisfy certain axioms they have an abelian heart.
 
-\smallskip
+We will then investigate the behaviour of Nakaoka contexts in Abelian and triangulated categories, with particular interest to the case of t-structures.
 
-In the first part our objective will be to construct model structures in exact subcategories of $\Ch(\ModR)$ in order to prove the existence of interesting recollements between their homotopy categories. We will consider a complete hereditary cotorsion pair $(\A,\B)$ in $\ModR$ and find the following recollements ending in $D(R)$ involving respectively the derived category of $\B$ and the cochain homotopy category of $\B$:
-
-\begin{equation*}
-  \recdiagram{\frac{ex \B}{\sim}}{D(\B)}{D(R)},
-\end{equation*}
-
-\begin{equation*}
-  \recdiagram{\frac{ex \B}{\sim}}{K(\B)}{D(R)}.
-\end{equation*}
-
-Furthermore, we address the problem of finding a recollement ending in $D(\B)$. We show that, assuming $ex(\B)=\wac{\B}$, it is possible to find a recollement:
-
-\begin{equation*}
-  \recdiagram{\frac{ex \B}{\sim}}{K(\B)}{D(\B)}.
-\end{equation*}
-
-The condition $ex(\B)=\wac{\B}$ is satisfied whenever all objects of $\A$ have finite projective dimension. This condition however is not necessary, in fact it was shown in \cite{BCIE} that the class $\Cot(R)$ of cotorsion modules satisfies $ex\Cot(R)=\wac{\Cot(R)}$. The problem of finding a necessary condition for a cotorsion pair $(\A,\B)$ in $\ModR$, or more generally in a Grothendieck category with a projective generator, remains open.
+\medskip
 
 This thesis is articulated as follows:
 \begin{itemize}
