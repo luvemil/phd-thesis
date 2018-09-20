@@ -65,7 +65,6 @@ in order to characterize them we recall the following definition.
 \item $\C'$ is \emph{coresolving} in $\C$ if $C\in \C'$ for every exact sequence $0\to A\to B\to C\to 0$ in $\C$ with $A, B\in \C'$.
 \end{enumerate}
 \end{defn}
-\todo{Check the definition of resolving and coresolving... we are doing something wrong here}
 
 It can be shown that a complete cotorsion pair $(\A, \B)$ is hereditary \iff $\A$ is resolving or, equivalently, \iff $\B$ is coresolving:
 \begin{lem}{\cite[Lemma~6.17]{Sto13}}
@@ -73,8 +72,8 @@ It can be shown that a complete cotorsion pair $(\A, \B)$ is hereditary \iff $\A
   \begin{enumerate}
     \item $\Ext^n_\C(A,B)=0$ for each $A\in\A$, $B\in\B$, and $n\geq 1$.
     \item $\Ext^2_\C(A,B)=0$ for each $A\in\A$ and $B\in\B$.
-    \item If $0\to \Ker(f)\to A_1\nto{f}A_2\to 0$ is a short exact sequence with $A_1,A_2\in\A$, then $\Ker(f)\in\A$.
-    \item If $0\to B_1\nto{g} B_2\to\Coker(g)\to 0$ is a short exact sequence with $B_1,B_2\in\B$, then $\Coker(g)\in\B$.
+    \item $\A$ is resolving.
+    \item $\B$ is coresolving.
   \end{enumerate}
 \end{lem}
 
@@ -204,8 +203,6 @@ A recollement is a functor diagram among triangulated categories summarizing man
   \end{enumerate}
 \end{defn}
 
-\todo{Add definition of recollement}
-
 In the case of multiple injective cotorsion pairs on a WIC exact category it is possible to define functors that give rise to a recollement.
 
 \begin{lem}{\cite[Lemma~3.3]{G7}}\label{lemma:gill_quotient_functor}
@@ -227,7 +224,7 @@ We have the following \emph{Injective Recollement Theorem}:
       & \C/\W_3\arrow[bend left=50]{l}{\rho}\arrow[bend right=50]{l}[']{\lambda}
     \end{tikzcd}
   \end{equation*}
-  where the functor $I$ is simply the inclusion and $Q$ is the quotient functor of Lemma~\ref{lemma:gill_quotient_functor}. Moreover, $\lambda$ has essential image $(\W\cap\R_1)/\sim$, $\rho$ has essential image ${\R_3/\sim}$, and they provide an equivalence $\lambda\colon{\R_3/\sim} \leftrightarrow (\W_2\cap\R_1)/\sim\colon\rho$.
+  where the functor $I$ is simply the inclusion and $Q$ is the quotient functor of Lemma~\ref{lemma:gill_quotient_functor}. Moreover, $\lambda$ has essential image $(\W\cap\R_1)/\sim$, $\rho$ has essential image ${\R_3/\sim}$, and they provide an equivalence \[\lambda\colon{\R_3/\sim} \longleftrightarrow (\W_2\cap\R_1)/\sim\colon\rho.\]
 \end{thm}
 
 Injective (and projective) cotorsion pairs will turn out to be extremely powerful in the case of Frobenius categories, especially in order to find recollements as we will see at the end of this section.
@@ -236,15 +233,20 @@ Injective (and projective) cotorsion pairs will turn out to be extremely powerfu
 An injective complete cotorsion pair $(\A, \B)$ in $\C$ is called a \emph{localizing cotorsion pair}. If $(\A, \B)$ and $(\B, \D)$ are injective cotorsion pairs in $\C$, then $(\A, \B, \D)$ is called a \emph{localizing cotorsion triple} in $\C$.
 \end{defn}
 
-Of course, the fact that $\C$ is Frobenius can be used to find several descriptions of a localizing cotorsion pairs. These are listed in \cite[Proposition 4.2]{G7}, that we state here for the reader's convenience:
+Of course, the fact that $\C$ is Frobenius can be used to find several descriptions of a localizing cotorsion pairs. These are listed in \cite[Proposition 4.2]{G7}, that we state here for the reader's convenience, but first we recall the definition of syzygy and cosyzygy.
 
-\todo{After having checked the definition of resolving and coresolving in the previous part, fix here too}
+\begin{defn}
+  In any Frobenius category $\C$, the formal suspension of an object $X\in\C$ is an object $\Sigma X$ such that there is a short exact sequence
+  \[ 0\to X\to W\to \Sigma X\to 0 \]
+  where $W$ is injective. $\Sigma X$ is called the cosyzygy of $X$ an is unique up to a canonical isomorphism in the stable category.
+\end{defn}
+
 \begin{prop}{ \cite[Proposition 4.2]{G7}}
   Let $(\A,\B)$ be a cotorsion pair in a WIC Frobenius category $\C$. Then, the following are equivalent:
   \begin{enumerate}
-    \item $(\A,\B)$ is hereditary with $\A$ coresolving and $\B$ resolving,
-    \item $\A$ is both resolving and coresolving,
-    \item $\B$ is both resolving and coresolving,
+    \item $(\A,\B)$ is hereditary with $\A$ cosyzygy closed and $\B$ syzygy closed,
+    \item $\A$ is both syzygy and cosyzygy closed,
+    \item $\B$ is both syzygy and cosyzygy closed,
     \item $\A$ is thick,
     \item $\B$ is thick.
   \end{enumerate}
