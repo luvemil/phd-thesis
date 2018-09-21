@@ -7,11 +7,11 @@ Model categories were introduced by Quillen for the first time in \cite{Q} as a 
 
 In \cite{Hov02} Hovey proved that there is a bijective correspondence between abelian model structures on abelian categories and certain couples of complete cotorsion pairs. Namely, if $\clQ$, $\W$, and $\R$ are the classes of cofibrant, trivial, and fibrant objects respectively, then $(\clQ,\W\cap\R)$ and $(\clQ\cap\W,\R)$ are complete cotorsion pairs, and conversely given three such classes forming two complete cotorsion pair, there is an abelian model structure, indicated by $(\clQ,\W,\R)$, whose cofibrant, trivial and fibrant objects are exactly those classes.
 
-This correspondence allows us to look for models of important triangulated categories, for example the derived category of a ring, simply by looking for complete cotorsion pairs. Moreover, if several model structures on a category satisfy certain inclusions, it is possible to find a recollement between their homotopy categories.
+This correspondence allows to look for models structures simply by looking for complete cotorsion pairs, for example given a ring $R$ there is a model structure (and, in fact, many of them) on the category $\Ch(R)$ of unbounded cochain complexes of $R$-modules whose homotopy category is the derived category of $R$. Moreover, if several model structures on a category satisfy certain inclusions, it is possible to find a recollement between their homotopy categories.
 
-Subsequently, the same techniques have been applied to cotorsion pairs in exact categories, showing that the Hovey's correspondence holds in the case of exact model structures in exact categories. This has greatly helped the theory of localization of model structures, since it applies easily to the case of subcategories of Grothendieck categories.
+Subsequently, the same techniques have been applied to cotorsion pairs in exact categories, showing that Hovey's correspondence holds in the case of exact model structures in exact categories. This has greatly helped the theory of localization of model structures, since it applies easily to the case of extension closed subcategories of Grothendieck categories.
 
-The first part of this thesis follows this idea and our objective will be to construct model structures in exact subcategories of $\Ch(\G)$ in order to prove the existence of interesting recollements between their homotopy categories. We will consider a complete hereditary cotorsion pair $(\A,\B)$ in a Grothendieck category $\G$ and construct model structures on $\Ch(\B)$ in order to find recollements involving $K(\B)$, $D(\B)$ together with $D(\G)$.
+The first part of this thesis follows this idea and our objective will be to construct model structures in exact subcategories of the category $\Ch(\G)$ of unbounded cochain complexes on a Grothendieck category $\G$, in order to prove the existence of interesting recollements between their homotopy categories. More precisely, we will consider a complete hereditary cotorsion pair $(\A,\B)$ in a Grothendieck category $\G$ and construct model structures on $\Ch(\B)$ in order to find recollements involving $K(\B)$, $D(\B)$ together with $D(\G)$.
 
 The second part of this thesis is devoted to a different topic of research, although our applications will still be mainly in triangulated categories.
 
@@ -23,7 +23,7 @@ We will then investigate the behaviour of Nakaoka contexts in Abelian and triang
 
 This thesis is articulated as follows:
 \begin{itemize}
-  \item In Chapter~\ref{ch:acycexact} we introduce the notions of cotorsion pairs, model structures, and recollements, giving the statements of the main results in the field and constructing the important cotorsion pairs that will be used later. This chapter is based on the first half of the joint work \cite{bazzoni2018recollements} with Silvana Bazzoni.
+  \item In Chapter~\ref{ch:acycexact} we introduce the notions of cotorsion pairs, model structures, and recollements, giving the statements of the main known results in the field and constructing the important cotorsion pairs that will be used later. This chapter is based on the first half of the joint work \cite{bazzoni2018recollements} with Silvana Bazzoni.
   \item In Chapter~\ref{ch:recoll} we use the theory introduced in the previous chapter to build many new recollements in the setting of exact subcategories of the category of cochain complexes on a Grothendieck category. This chapter is based on the second half of the joint work \cite{bazzoni2018recollements}.
   \item In Chapter~\ref{ch:nakaoka} we introduce and study Nakaoka contexts and their hearts in the setting of additive categories, with the objective of finding an axiomatization that would guarantee the existence of an abelian heart. We examine in particular Nakaoka contexts in abelian and triangulated categories. This chapter is based on the joint work (in preparation) \cite{mstv2018} with Manuel Saor\'in, Simone Virili, and Octavio Mendoza.
 \end{itemize}
@@ -35,10 +35,17 @@ Next, we will give a detailed summary of each chapter of the thesis.
 In this chapter we give a summary of the main results regarding cotorsion pairs and model structures in exact categories.
 
 In Section \ref{sec:preliminaries} we give the relevant definitions of cotorsion pairs and model structure and state Hovey's correspondence explicitly in Theorem~\ref{T:correspondence}.
-Then, in Definition \ref{def:recoll} we define what a recollement is and we state the main tools we will use in order to find recollements, namely Gillespie's Theorem~3.4 and Corollary~4.5 in \cite{G7} (here numbered Theorem~\ref{thm:gil_inj_recoll} and Corollary~\ref{cor:gill_local_recoll} respectively).
+Then, in Definition \ref{def:recoll} we define what a recollement is and we state the main tools we will use in order to find recollements, namely Gillespie's Theorem~3.4 and Corollary~4.5 in \cite{G7} (numbered Theorem~\ref{thm:gil_inj_recoll} and Corollary~\ref{cor:gill_local_recoll} respectively in this work).
+
+First, recall the definition of injective cotorsion pair:
+\begin{nonlisting_def}
+  A complete cotorsion pair $(\W,\R)$ is \emph{injective} if $\W$ is thick and contains the injective objects.
+
+  If $(\W,\R)$ is an injective cotorsion pair in $\C$, it induces a model structure $(\C,\W,\R)$.
+\end{nonlisting_def}
 
 \begin{nonlisting_thm}[\ref{thm:gil_inj_recoll}]
-  Let $\C$ be a WIC exact category with enough injective and suppose we have three injective cotorsion pairs
+  Let $\C$ be a weakly idempotent complete (WIC) exact category with enough injective and suppose we have three injective cotorsion pairs
   \[
     \M_1=(\W_1,\R_1)\text{,\hfill}\M_2=(\W_2,\R_2)\text{,\hfill}\M_3=(\W_3,\R_3)
   \]
@@ -53,6 +60,8 @@ Then, in Definition \ref{def:recoll} we define what a recollement is and we stat
   where the functor $I$ is simply the inclusion and $Q$ is the quotient functor of Lemma~\ref{lemma:gill_quotient_functor}. Moreover, $\lambda$ has essential image $(\W\cap\R_1)/\sim$, $\rho$ has essential image ${\R_3/\sim}$, and they provide an equivalence \[\lambda\colon{\R_3/\sim} \longleftrightarrow (\W_2\cap\R_1)/\sim\colon\rho.\]
 \end{nonlisting_thm}
 
+In the case of a Frobenius category, an injective cotorsion pair is called \emph{localizing}. If $(\X,\Y)$ and $(\Y,\Z)$ are both localizing cotorsion pairs in a Frobenius category, we call $(\X,\Y,\Z)$ a \emph{localizing cotorsion triple}.
+
 \begin{nonlisting_cor}[\ref{cor:gill_local_recoll}]
   Let $(\X,\Y,\Z)$ be a localizing cotorsion triple in a WIC Frobenius category $\C$. Then, there is a recollement
   \begin{equation*}
@@ -61,7 +70,7 @@ Then, in Definition \ref{def:recoll} we define what a recollement is and we stat
   where $\C/\sim$ is the stable category.
 \end{nonlisting_cor}
 
-In Section \ref{sec:more_cot} we give the tools needed to construct the cotorsion pairs we will use in the next chapter. We will see that starting from a completely hereditary cotorsion pair $(\A,\B)$ in a Grothendieck category we can find several complete hereditary cotorsion pairs in $\Ch(\G)$, namely $({^\perp dw\B},dw \B)$, $(dw \A,{dw \A^\perp})$, $({^\perp ex\B},ex \B)$, $(ex\A, {ex\A^\perp})$, $(\wac{A},dg \B)$, and $(dg \A,\wac{\B})$.
+In Section \ref{sec:more_cot} we give the tools needed to construct the cotorsion pairs we will use in the next chapter. We will see that starting from a completely hereditary cotorsion pair $(\A,\B)$ in a Grothendieck category we can find several complete hereditary cotorsion pairs in $\Ch(\G)$, namely $({^\perp dw\B},dw \B)$, $(dw \A,{dw \A^\perp})$, $({^\perp ex\B},ex \B)$, $(ex\A, {ex\A^\perp})$, $(\wac{A},dg \B)$, and $(dg \A,\wac{\B})$ (see Notation \ref{N:notation} for the meaning of these symbols).
 
 We conclude the chapter by stating several restriction propositions, namely \ref{P:prop7.3}, \ref{P:prop7.3-dual}, \ref{P:prop7.2}, and \ref{P:7.2-Groth}. Given a complete hereditary cotorsion pair $(\A,\B)$ in a Grothendieck category $\G$, these results give conditions under which it is possible to restrict a cotorsion pair in $\Ch(\G)$ to one in $\Ch(\B)$ (or, dually, $\Ch(\A)$).
 
@@ -76,25 +85,45 @@ In this chapter our objective is to find similar recollements, involving the cla
 
 In Theorem~\ref{T:derived-B} we prove that there is a recollement
 \begin{equation*}
-  \recdiagram{\dfrac{ex\B}{\sim}}{D(\B)}{D(\G)}.
+  \recdiagram{\dfrac{ex\B}{\sim}}{D(\B)}{D(\G)}
 \end{equation*}
+where $D(\B)$ is the derived category of $\B$ in Neeman's sense, and the homotopy category $ex\B/\sim$ on the left hand side is the full subcategory of $D(\B)$ consisting of the exact complexes with terms in $\B$.
 
-Then, by constructing a localizing cotorsion triple of the form $(-,ex\B,-)$ we use Corollary~\ref{cor:gill_local_recoll} to find in Theorem~\ref{T:triple-B} a recollement
+Then, by constructing a localizing cotorsion triple on $\Ch(\B)$ of the form $(-,ex\B,-)$, where $ex\B$ is the class of exact complexes in $\Ch(\G)$ with terms in $\B$, we use Corollary~\ref{cor:gill_local_recoll} to find in Theorem~\ref{T:triple-B} a recollement
 \begin{equation*}
   \recdiagram{\dfrac{ex\B}{\sim}}{K(\B)}{D(\G)}.
 \end{equation*}
 
-We observe that in the case where $ex\B=\wac{\B}$ the previous recollement becomes
+It would be interesting to find cases where the previous recollement ends in the derived category $D(\B)$. To this aim, we observe that when $ex\B=\wac{\B}$, where $\wac{\B}$ is the class of complexes $B^\bullet\in ex\B$ such that $Z^n(B^\bullet)\in\B$ for all $n\in\mathbb{Z}$,  the previous recollement becomes
 \begin{equation*}
   \recdiagram{\dfrac{\wac{\B}}{\sim}}{K(\B)}{D(\B)}
 \end{equation*}
-and find in Section~\ref{S:tildeB} several cases where this happens. A first example is that of a cotorsion pair $(\A,\B)$ where all objects in $\A$ have finite projective dimension, however this condition is far from necessary. In fact it was proved in \cite{BCIE} that the cotorsion modules satisfy $ex\Cot=\wac{\Cot}$.
+and in Section~\ref{S:tildeB} we describe several cases where this happens. A first example is that of a cotorsion pair $(\A,\B)$ where all objects in $\A$ have finite projective dimension, thus including the case of a tilting cotorsion pair, however this condition is far from necessary. In fact it was proved in \cite{BCIE} that the cotorsion modules satisfy $ex\Cot=\wac{\Cot}$.
 
 Moreover, it is possible to find the previous recollement for cotorsion pairs that do not satisfy $ex\B=\wac{\B}$, e.g. the complete hereditary cotorsion pair $(^\perp\FpInj,\FpInj)$ generated by the class of finitely presented modules over a coherent ring, provided by \sto\  in \cite{Stopurity}.
+
+We also study the dual case, and find that when $ex\A=\wac{\A}$ we can find the dual recollement. Again, the condition $ex\A=\wac{\A}$ is satisfied when $\B$ consists of objects of finite injective dimension, this is true for example for a cotilting cotorsion pair.
+
+Finally, one example in the case of $R$-modules of a cotorsion pair $(\A,\B)$ with $\wac{\A}\subsetneq ex\A$ can be found when $\A=\Flat$ is the class of flat modules and follows by Neeman's~\cite{Nee08}.
 
 \section*{Chapter \ref{ch:nakaoka}: Nakaoka contexts with abelian hearts}
 
 In this chapter we will give a quick overview of the notion of torsion pair in an additive category. The difference with the usual notion of torsion pair is that, in lack of short exact sequences, we will resort to require the existence of pseudokernels and pseudocokernels. This will not be a problem, since our notion of torsion pair will coincide with the usual concept in Abelian categories, and t-structures in triangulated category will be (up to shift) torsion pairs.
+
+\begin{nonlisting_def}
+  Let $\T,\F$ be subclasses of the additive category $\mathscr{C}$, $(\T,\F)$ is a \emph{torsion pair} if:
+  \begin{enumerate}
+    \item $\F=\{X|\Hom_\mathscr{C}(T,X)=0\text{ for all }T\in\T\}$;
+    \item $\T=\{X|\Hom_\mathscr{C}(X,F)=0\text{ for all }F\in\F\}$;
+    \item for any $X\in\mathscr{C}$ there are two maps $\varepsilon_X$ and $\lambda_X$
+      \[
+        T_X\nto{\varepsilon_X}X\nto{\lambda_X}F^X
+      \]
+      such $T_X\in\T$, $F^X\in\F$, $\varepsilon_X$ is a pseudokernel of $\lambda_X$, and $\lambda_X$ is a pseudocokernel of $\varepsilon_X$.
+  \end{enumerate}
+
+  The torsion pair $(\T,\F)$ is called left (resp. right) functorial if the inclusion functor $i:\T\to \mathscr{C}$ (resp. $j:\F\to\mathscr{C}$) has a right (resp. left) adjoint $t:\mathscr{C}\to \T$ (resp. $f:\mathscr{C}\to \F$).
+\end{nonlisting_def}
 
 The central notion of this chapter is the following:
 \begin{nonlisting_def}
