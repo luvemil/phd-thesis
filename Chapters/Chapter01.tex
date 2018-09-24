@@ -1,6 +1,10 @@
 %************************************************
+\phantomsection
+\manualmark
+\markboth{\spacedlowsmallcaps{Introduction}}{\spacedlowsmallcaps{Introduction}}%
+\addtocontents{toc}{\protect\vspace{\beforebibskip}}%
+\addcontentsline{toc}{chapter}{\tocEntry{Introduction}}%
 \chapter*{Introduction}\label{ch:introduction}
-\addcontentsline{toc}{chapter}{Introduction}
 %************************************************
 
 Model categories were introduced by Quillen for the first time in \cite{Q} as a formal way of dealing with the notion of homotopy in a category. The main problem is the following: we have a class of morphisms, called weak equivalences, and we want to treat them as if they were isomorphisms. Formally inverting these weak equivalences does not necessarily produce nice results, since we have to resort to some kind of calculus of fractions to construct the morphisms in the quotient category, and these methods are not guaranteed to yield a \emph{set} of homomorphisms. This, however, happens whenever the weak equivalences are part of a model structure on a model category.
