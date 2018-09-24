@@ -14,7 +14,7 @@ This chapter is based on the joint work \cite{bazzoni2018recollements}. We will 
 \subsection{Cotorsion pairs}\label{S:cot-pair}
 
 The notion of an \emph{exact category} was introduced by Quillen in \cite{Q}.
- An exact category is an additive category  $\C$ endowed with  a collection $\Phi$ of kernel-cokernel pairs  satisfying some axioms which allow to work with the sequences  in $\Phi$ as if they were exact sequences in an abelian category. An element $E\in \Phi$ is denoted by $0\to A\overset{i}\to B\overset{d}\to C\to 0$ and is called a \emph{conflation or short exact sequence}. The map $i$ is called \emph{inflation} and $p$ is called \emph{deflation}.
+An exact category is an additive category  $\C$ endowed with  a collection $\Phi$ of kernel-cokernel pairs  satisfying some axioms which allow to work with the sequences  in $\Phi$ as if they were exact sequences in an abelian category. An element $E\in \Phi$ is denoted by $0\to A\overset{i}\to B\overset{d}\to C\to 0$ and is called a \emph{conflation or short exact sequence}. The map $i$ is called \emph{inflation} or \emph{admissible monomorphism} and $d$ is called \emph{deflation} or \emph{admissible epimorphism}.
 In an exact category pushouts (pullbacks) of inflations (deflations) exist and inflations (deflations) are stable under pushouts (pullbacks).
 
 The axioms on conflations allow to define the Yoneda functor $\Ext^i_{\C}(M,N)$ for every pair of objects $M,N$
@@ -27,8 +27,8 @@ Given a class $\X$ of objects in an exact category $\C$, the right orthogonal cl
 
 \begin{defn}\label{D:cotorsion-pair} A pair of classes $(\A, \B)$ in an exact category $\C$ is called a cotorsion pair if
 \begin{enumerate}
-\item $\A^{\perp_1}=\B$ and $^{\perp_1} \B=\A$.
-\item A cotorsion pair is \emph{generated (cogenerated)} by a class $\X$ of objects if $\B=\X^{\perp_1} (\A={^{\perp_1}\X})$.
+\item $\A^{\perp}=\B$ and $^{\perp} \B=\A$.
+\item A cotorsion pair is \emph{generated (cogenerated)} by a class $\X$ of objects if $\B=\X^{\perp} (\A={^{\perp}\X})$.
 \item A cotorsion pair $(\A, \B)$ has \emph{enough projectives} if every object $C\in \C$ has a special $\A$-precover, that is there is a short exact sequence $0\to B\to A\to C\to 0$ in $\C$ with $A\in \A$ and $\B\in B$. Dually, we say that  $(\A, \B)$ has \emph{enough injective} if every object $C\in \C$ has a special $\B$-preenvelope, that is there is a short exact sequence $0\to C\to B\to A\to 0$ in $\C$ with $A\in \A$ and $\B\in B$.
 \item A cotorsion pair is \emph{complete} when it has \emph{enough injectives} and \emph{enough projectives}.
 \item A cotorsion pair is called \emph{hereditary} if $\A$ is generating, $\B$ is cogenerating, and
@@ -85,7 +85,7 @@ It can be shown that a complete cotorsion pair $(\A, \B)$ is hereditary \iff $\A
 The notion of model structures on categories with finite limits and colimits was introduced by Quillen in \cite{QHtp}.
 For our purposes we refer to the book by Hovey \cite{Hov99} or to the survey \cite{Sto13}.
 
-We only recall that a \emph{model structure} on a category $\C$ consists
+We recall that a \emph{model structure} on a category $\C$ consists
 of three classes of morphisms Cof, W, Fib called \emph{cofibrations}, \emph{weak equivalences} and \emph{fibrations}, respectively, satisfying certain axioms.
 
 \begin{defn}
@@ -97,7 +97,7 @@ In particular, the class $\W$ of trivial objects has the 2-out-of-3 property.
 %A \emph{model category} $\C$ is an abelian cocomplete category with a model structure.
  The \emph{homotopy category} $\Ho \C$ is obtained by  formally inverting all morphisms in W.
 
-A tremendous impulse to the theory was given by  Hovey who discovered ~\cite{Hov07} a bijective correspondence between abelian model structures and cotorsion pairs in abelian categories.
+A tremendous impulse to the theory was given by  Hovey who discovered in~\cite{Hov07} a bijective correspondence between abelian model structures and cotorsion pairs in abelian categories.
 %
 In \cite{G5} Gillespie extended the notion of model structures on exact categories and proved the analogous of Hovey's correspondence in this more general setting.
  We recall the basic notions and results.
@@ -115,7 +115,7 @@ Conversely, given three classes $\W, \clQ, \R$ such that $\W$ is thick in $\C$, 
 
 Given an exact model structure on $\C$, let $\clQ$, $\W$, and $\R$ the three classes from the Theorem, we will follow the usual convention and indicate the model structure via $\M=(\clQ,\W,\R)$ and call it a \emph{Hovey triple}.
 
-The reason why people use model structure is to be able to do homotopy theory, i.e. define good homotopy relations between maps and study the equivalence classes of morphisms modulo homotopy. The usual setting is that of a bicomplete category, however it is not necessary to assume that our category has all limits and colimits, and in fact an exact category has enough limits and colimits to be able to construct left and right homotopy theory from a model structure.
+The main reason to use model structure is to be able to do homotopy theory, i.e. define good homotopy relations between maps and study the equivalence classes of morphisms modulo homotopy. The usual setting is that of a bicomplete category, however it is not necessary to assume that our category has all limits and colimits, and in fact an exact category has enough limits and colimits to be able to construct left and right homotopies from a model structure.
 
 The following Proposition characterizes left and right homotopies in terms of cotorsion pairs.
 
@@ -164,7 +164,7 @@ Thus, an injective cotorsion pair $(\A, \B)$ corresponds to the model structure 
 
 %
 %
-Finally, we collect some important information about the localization $\gamma$ in the following Proposition.
+Finally, we collect some important information about the localization functor $\gamma$ in the following Proposition.
 
 \begin{prop}{\cite[Proposition~3.2]{G7}}
   Let $\M=(\W,\R)$ be an injective cotorsion pair in a WIC exact category $\C$ with enough injectives. Then:
@@ -233,12 +233,12 @@ Injective (and projective) cotorsion pairs will turn out to be extremely powerfu
 An injective complete cotorsion pair $(\A, \B)$ in $\C$ is called a \emph{localizing cotorsion pair}. If $(\A, \B)$ and $(\B, \D)$ are injective cotorsion pairs in $\C$, then $(\A, \B, \D)$ is called a \emph{localizing cotorsion triple} in $\C$.
 \end{defn}
 
-Of course, the fact that $\C$ is Frobenius can be used to find several descriptions of a localizing cotorsion pairs. These are listed in \cite[Proposition 4.2]{G7}, that we state here for the reader's convenience, but first we recall the definition of syzygy and cosyzygy.
+Of course, the fact that $\C$ is Frobenius can be used to find several descriptions of a localizing cotorsion pair. These are listed in \cite[Proposition 4.2]{G7}, that we state here for the reader's convenience, but first we recall the definition of syzygy and cosyzygy.
 
 \begin{defn}
   In any Frobenius category $\C$, the formal suspension of an object $X\in\C$ is an object $\Sigma X$ such that there is a short exact sequence
   \[ 0\to X\to W\to \Sigma X\to 0 \]
-  where $W$ is injective. $\Sigma X$ is called the cosyzygy of $X$ an is unique up to a canonical isomorphism in the stable category.
+  where $W$ is injective. $\Sigma X$ is called the cosyzygy of $X$ and is unique up to a canonical isomorphism in the stable category.
 \end{defn}
 
 \begin{prop}{ \cite[Proposition 4.2]{G7}}\label{prop:gil_localizing_pair}
@@ -751,7 +751,7 @@ Moreover,  \[\Big([\hat\A\cap dw \B]_K, \hat\B\Big)\] is a localizing cotorsion 
   Dual of \ref{P:prop7.3}.
 Note that Theorem 6.3 and Proposition 6.4 in \cite{G7} have  obvious dual statements for projective cotorsion pairs from which the second statement of our proposition follows.\end{proof}
 
-The next proposition is the analogue of \cite[Proposition 7.2 ]{G7} and its dual is state in \ref{P:prop7.2}.
+The next proposition is the analogue of \cite[Proposition 7.2 ]{G7} and its dual is stated in \ref{P:prop7.2}.
  %
 
  \begin{prop}\label{P:7.2-Groth} Let $\G$ be a Grothendieck category with enough projective objects and let $(\clP, \W)$ be a projective cotorsion pair in $\Ch(\G)$ with $\clP\subseteq dw\Proj$.
