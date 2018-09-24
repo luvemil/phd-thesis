@@ -41,7 +41,7 @@ For an Abelian category $\mathscr{A}$, any Nakaoka context is integral.
     Since $\mathcal{T}_1$ is closed under quotient objects, we get that $\Coker(g)\in\mathcal{T}_1$.
     Therefore, we can choose $c_g:T_1'\to\Coker(g)$ as $g^C:T_1'\to\PCok_\mathscr{A}(g)$.\todo{Is there an explicit choice
     that we made somewhere before when we talk about $\PCok_\mathscr{A}$?}
-    \varitem{^\ast} Anolagous to the previous.
+    \varitem{^\ast} Analogous to the previous.
   \end{torsionaxioms}
 
 \bigskip\bigskip
@@ -194,7 +194,7 @@ t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
 
   Thus, $\Coker(\alpha)\in\T_2\cap\F_1=0$ and so $\alpha$ is an isomorphism. By \eqref{thm_2_4_eq_1} is follows that $\Coker(f)\cong f_2(\Coker(f))\in\F_2$ and, using the fact that $T_1$ is closed under quotients, we conclude that $\Coker(f)\in\T_1\cap\F_2=\clH$. A dual argument shows that $\clH$ is closed under kernels of epimorphism in $\mathscr{A}$.
 
-  ($(b)\Rightarrow (a)$) We already know that $\clH$ is preabelian. On order to prove that $\clH$ is abelian we need to show that any monomorphism (resp. epimorphism) in $\clH$ is a kernel (resp. cokernel).
+  ($(b)\Rightarrow (a)$) We already know that $\clH$ is pre-Abelian. On order to prove that $\clH$ is abelian we need to show that any monomorphism (resp. epimorphism) in $\clH$ is a kernel (resp. cokernel).
 
   Let $f:H\to H'$ be a monomorphism in $\clH$. By \ref{cor:2.3} and $(b1)$, it follows that $f$ is a monomorphism in $\mathscr{A}$. Thus, we have a short exact sequence in $\mathscr{A}$
   \begin{equation*}
@@ -285,7 +285,7 @@ We start by recalling the definition of a t-structure in $\cat{T}$.
   Let $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ be a related pair in $\cat{T}$. Then
   \begin{enumerate}[label=(\alph*)]
     \item\label{prop:2.5:b} $\mathbbm{t}$ is a pre-Abelian Nakaoka context in $\cat{T}$;
-    \item the heart $\mathcal{H}_\mathbbm{t} := \mathcal{T}_1\cap\mathcal{F}_2$ is a preabelian category.
+    \item the heart $\mathcal{H}_\mathbbm{t} := \mathcal{T}_1\cap\mathcal{F}_2$ is a pre-Abelian category.
   \end{enumerate}
 \end{prop}
 
@@ -299,7 +299,7 @@ We start by recalling the definition of a t-structure in $\cat{T}$.
           H\arrow{r}{g}&H'\arrow{r}{g^C}&C\arrow{r}&H[1].
         \end{tikzcd}
       \end{equation*}
-      Since $\clH\subseteq \T_1$, we have that $H[1]\in\T_1[1]\subseteq \T_1$. Moreover, since $\T_1$ is closed under extensions, $C$ belongs to $\T_1$. Hence, $g^C:H'\to C$ is a pseusocokernel of $g$ in $\T_1$.\todo{It is a pseudocokernel because axioms of triangulated categories}
+      Since $\clH\subseteq \T_1$, we have that $H[1]\in\T_1[1]\subseteq \T_1$. Moreover, since $\T_1$ is closed under extensions, $C$ belongs to $\T_1$. Hence, $g^C:H'\to C$ is a pseudocokernel of $g$ in $\T_1$.\todo{It is a pseudocokernel because axioms of triangulated categories}
 
       Take $F\in\F_2$. Applying the functor $(-,F):=\Hom(-,F)$ to the triangle above yields an exact sequence of abelian groups
       \begin{equation*}
@@ -482,7 +482,7 @@ In the next example we use the previous theorem to recover the classical result,
   Let $\t=(\t_1,\t_2)$ be a strongly related pair in $\cat{T}$. Then:
   \begin{enumerate}
     \item\label{lemma_tria_a} For any $H,H'\in\clH_\mathbbm{t}$, $(H,H'[-1])=0$,
-    \item\label{lemma_tria_b} $A\to B\to C$ is a short exact sequence in $\mathcal{H}_\mathbbm{t}$ iff $A\to B\to C\nto{+}$ is
+    \item\label{lemma_tria_b} $A\to B\to C$ is a short exact sequence in $\mathcal{H}_\mathbbm{t}$ \iff $A\to B\to C\nto{+}$ is
       a triangle in $\cat{T}$.
   \end{enumerate}
 \end{lemma}
@@ -591,7 +591,7 @@ functor $H^0_1:\mathcal{T}\to \mathcal{H}_1:=\T_1\cap\F_1[1]$
   Let $\t= (\t_1,\t_2)$ be a related pair in a triangulated category $\cat{T}$. Let $\clH:=\clH_\t=\T_1\cap \F_2$ and $\clH_1=\T\cap \F_1[1]$. Observe that $\clH_1$ is abelian since it is the heart of a t-structure and $\clH_\t\subseteq \clH_1$. Then, $\clH_\t$ is closed under kernels taken in $\clH_1$.
 \end{lemma}
 \begin{proof}
-  Let $V\nto{f^K}H_1\nto{f}H_2\nto{f^C}V[1]$ be a distinguished triangle in $\cat{T}$, with $H_1,H_2\in\clH$. We recall that $\clH$ is a preabelian category, by Proposition \ref{prop:2.5}\ref{prop:2.5:b}.
+  Let $V\nto{f^K}H_1\nto{f}H_2\nto{f^C}V[1]$ be a distinguished triangle in $\cat{T}$, with $H_1,H_2\in\clH$. We recall that $\clH$ is a pre-Abelian category, by Proposition \ref{prop:2.5}\ref{prop:2.5:b}.
 
   Consider the kernels $\Ker_{\clH_1}(f)\to H_1$ and $\Ker_{\clH}(f)\to H_1$ of $f$ in $\clH_1$ and $\clH$ respectively and draw the diagram (in $\T$)
   \begin{equation*}
@@ -660,7 +660,7 @@ functor $H^0_1:\mathcal{T}\to \mathcal{H}_1:=\T_1\cap\F_1[1]$
   (c)$\Rightarrow$(d). Trivial.
 
   \smallskip\noindent
-  (d)$\Rightarrow$(a). Let $V\nto{f^K}H_1\nto{f}H_2\nto{f^C}V[1]$ be a distinguished triangle with $V\in\F_1$. To prove that $V[1]\in\F_2$ it is enought to show that the arrow $\lambda_2$ in the approximation triangle
+  (d)$\Rightarrow$(a). Let $V\nto{f^K}H_1\nto{f}H_2\nto{f^C}V[1]$ be a distinguished triangle with $V\in\F_1$. To prove that $V[1]\in\F_2$ it is enough to show that the arrow $\lambda_2$ in the approximation triangle
   \todo{Is the name approximation triangle correct in this case? Check the definitions for t-structures}
   \begin{equation*}
     \begin{tikzcd}
