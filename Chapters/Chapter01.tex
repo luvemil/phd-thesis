@@ -1,8 +1,8 @@
 %************************************************
-\phantomsection
-\manualmark
+%\phantomsection
+%\manualmark
 \markboth{\spacedlowsmallcaps{Introduction}}{\spacedlowsmallcaps{Introduction}}%
-\addtocontents{toc}{\protect\vspace{\beforebibskip}}%
+%\addtocontents{toc}{\protect\vspace{\beforebibskip}}%
 \addcontentsline{toc}{chapter}{\tocEntry{Introduction}}%
 \chapter*{Introduction}\label{ch:introduction}
 %************************************************
@@ -53,7 +53,8 @@ First, recall the definition of injective cotorsion pair:
   \[
     \M_1=(\W_1,\R_1)\text{,\hfill}\M_2=(\W_2,\R_2)\text{,\hfill}\M_3=(\W_3,\R_3)
   \]
-  such that $\R_2,\R_3\subseteq \R_1$. If $\W_3\cap\R_1=\R_2$ (or equivalently $\W_2\cap\W_3=\W_1$, and $\R_2\subseteq \W_3$), then there exists a recollement
+  \begin{sloppypar}
+  such that $\R_2,\R_3\subseteq \R_1$. If $\W_3\cap\R_1=\R_2$ (or equivalently ${\W_2\cap\W_3=\W_1}$, and $\R_2\subseteq \W_3$), then there exists a recollement
   \begin{equation*}
     \begin{tikzcd}
       {\R_2/\sim}\arrow{r}{I}
@@ -62,6 +63,7 @@ First, recall the definition of injective cotorsion pair:
     \end{tikzcd}
   \end{equation*}
   where the functor $I$ is simply the inclusion and $Q$ is the quotient functor of Lemma~\ref{lemma:gill_quotient_functor}. Moreover, $\lambda$ has essential image $(\W\cap\R_1)/\sim$, $\rho$ has essential image ${\R_3/\sim}$, and they provide an equivalence \[\lambda\colon{\R_3/\sim} \longleftrightarrow (\W_2\cap\R_1)/\sim\colon\rho.\]
+\end{sloppypar}
 \end{nonlisting_thm}
 
 In the case of a Frobenius category, an injective cotorsion pair is called \emph{localizing}. If $(\X,\Y)$ and $(\Y,\Z)$ are both localizing cotorsion pairs in a Frobenius category, we call $(\X,\Y,\Z)$ a \emph{localizing cotorsion triple}.
@@ -160,7 +162,9 @@ In Theorem~\ref{thm:2.6} we show that the abelianity of $\clH$ is equivalent to 
         t_1F_2\ar@{.>}[ur]^{b}\ar[r]^{\varepsilon_{1,F_2}} & F_2\ar[r]^{g^K} & H'\ar[r]^{g} & f_2T_1
       }
     \end{equation*}
-    where $f^C$  is a pseudo-cokernel of $f$ in $\T_1$ and $g^K$ is a pseudo-kernel of $g$ in $\F_2$, there exists a morphism $b\colon t_1F_2\to H_1$ such that $ab=\varepsilon_{1,F_2}$;
+    \begin{sloppypar}
+    where $f^C$  is a pseudo-cokernel of $f$ in $\T_1$ and $g^K$ is a pseudo-kernel of $g$ in $\F_2$, there exists a morphism ${b\colon t_1F_2\to H_1}$ such that $ab=\varepsilon_{1,F_2}$;
+  \end{sloppypar}
   \item[(CT.4)$^\ast$] dual to \textbf{(CT.4)}.
 \end{enumerate}
 
