@@ -38,9 +38,11 @@ For an Abelian category $\mathscr{A}$, any Nakaoka context is integral.
     \begin{equation*}
       \Coker_\mathscr{A}(T_1\nto{g}T_1')=(T_1'\nto{c_g}\Coker(g)).
     \end{equation*}
-    Since $\mathcal{T}_1$ is closed under quotient objects, we get that $\Coker(g)\in\mathcal{T}_1$.
-    Therefore, we can choose $c_g:T_1'\to\Coker(g)$ as $g^C:T_1'\to\PCok_\mathscr{A}(g)$.\todo{Is there an explicit choice
+    \begin{sloppypar}
+    Since $\mathcal{T}_1$ is closed under quotient objects, we get that ${\Coker(g)\in\mathcal{T}_1}$.
+    Therefore, we can choose ${c_g:T_1'\to\Coker(g)}$ as ${g^C:T_1'\to\PCok_\mathscr{A}(g)}$.\todo{Is there an explicit choice
     that we made somewhere before when we talk about $\PCok_\mathscr{A}$?}
+  \end{sloppypar}
     \varitem{^\ast} Analogous to the previous.
   \end{torsionaxioms}
 
@@ -52,7 +54,9 @@ X\ar@{}[dr]|{P.B.}\ar@{.>}[d]_{x_H}\ar@{.>}[r]^{x_K}&K\ar[r]^{x_K^C}\ar[d]^{g}&C
 H\ar[r]_f&H'\ar[r]_{f^C}&C
 }
 \]
-where $x_K^C\colon K\to C$ is a pseudo-cokernel of $x_K$. Clearly $X\leq H\oplus K$, so that $X\in \F_2$.
+\begin{sloppypar}
+where $x_K^C\colon K\to C$ is a pseudo-cokernel of $x_K$. Clearly ${X\leq H\oplus K}$, so that $X\in \F_2$.
+\end{sloppypar}
 \[
 \xymatrix{
 t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
@@ -84,15 +88,17 @@ t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
 \end{corollary}
 
 \begin{proof}
-  \ref{cor:2.3:a} and \ref{cor:2.3:b} follow from the proof of \ref{rmk:2.2}\todo{this should be a remark, fix it}
+  \ref{cor:2.3:a} and \ref{cor:2.3:b} follow from the proof of Lemmas \ref{rmk:2.2}
   and \ref{5:lem:3}.
 
   \ref{cor:2.3:c}
   \begin{enumerate}
     \item[$\Leftarrow$] is trivial.
     \item[$\Rightarrow$] By \ref{prop:1.4}\ref{prop:1.4:b} there exists $f^C:H_2\to T_2$, where
-      $T_2=\Coker_{T_1}(f)\in\mathcal{T}_2$. Then, we have
+      \[T_2=\Coker_{T_1}(f)\in\mathcal{T}_2.\] Then, we have
 
+\begingroup
+\setlength{\abovedisplayskip}{0pt}
       \begin{minipage}[b]{0.45\linewidth}
         \begin{equation*}
           \begin{tikzcd}[column sep=tiny]
@@ -113,9 +119,12 @@ t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
           \right.
         \end{equation*}
       \end{minipage}
+\endgroup
 
+\begin{sloppypar}
       Hence, $uvc_f=c_f$, but $c_f$ is epi, therefore $uv=1$. Hence, $\Coker(f)$ is a direct
-      summand of $T_2\in\mathcal{T}_2$ so $\Coker(f)\in\mathcal{T}_2$.
+      summand of $T_2\in\mathcal{T}_2$ so ${\Coker(f)\in\mathcal{T}_2}$.
+    \end{sloppypar}
   \end{enumerate}
 
   \ref{cor:2.3:d} Similar to the previous proof.
@@ -143,7 +152,7 @@ t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
 \begin{proof}
   ($(a)\Rightarrow (b1),(b2)$) Assume that $\clH$ is an abelian category. By \ref{cor:2.3}\ref{cor:2.3:d}, $(b1)$ holds if and only if any monomorphism in $\clH$ is a monomorphism in $\mathscr{A}$.
 
-  Observe that for any $f:H\to H'$, we have that $\Ker_\clH(f)\nto{\tilde{f}^H}H$ is a monomorphism in $\mathscr{A}$. Indeed, by \ref{cor:2.3}\ref{cor:2.3:b}, we know that $\tilde{f}^H$ is the composition of
+  Observe that for any $f:H\to H'$, we have that \[\Ker_\clH(f)\nto{\tilde{f}^H}H\] is a monomorphism in $\mathscr{A}$. Indeed, by \ref{cor:2.3}\ref{cor:2.3:b}, we know that $\tilde{f}^H$ is the composition of
   \begin{equation*}
     \begin{tikzcd}
       t_1(\Ker(f))\arrow{r}{\varepsilon_{1,\Ker(f)}}
@@ -174,7 +183,7 @@ t_1X\ar@{.>}[rrd]\ar@{.>}[ddr]\\
             & 0
     \end{tikzcd}
   \end{equation}
-  is commutative and has exact rows. Then, by Snake's lemma we get that $\Ker(\alpha)=0$ and $\Coker(\alpha)\cong\Ker(\lambda_2)=t_2(\Coker(f))\in\T_2$.
+  is commutative and has exact rows. Then, by Snake's lemma we get that $\Ker(\alpha)=0$ and \[\Coker(\alpha)\cong\Ker(\lambda_2)=t_2(\Coker(f))\in\T_2.\]
 
   Since $\clH$ is abelian, we know that $f=\Ker_\clH(\Coker_\clH(f))$. Therefore, by $\ref{cor:2.3}$ and \eqref{thm_2_4_eq_1}, we get that the dashed morphism
   in the following commutative diagram exists
@@ -356,11 +365,13 @@ We start by recalling the definition of a t-structure in $\cat{T}$.
 In the next example we use the previous theorem to recover the classical result, that is the heart of any t-structure in a triangulated category is abelian.
 
 \begin{example}
+  \begin{sloppypar}
   Let $(\mathcal{A},\mathcal{B})$ be a t-structure in $\mathcal{T}$. Consider
-  $\mathbbm{t}_1:=(\mathcal{A},\mathcal{B}[-1])$ and $\mathbbm{t}_2 :=(\mathcal{A}[1],\mathcal{B})$.
-  It is not hard to see that $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ is a strongly related
+  ${\mathbbm{t}_1:=(\mathcal{A},\mathcal{B}[-1])}$ and ${\mathbbm{t}_2 :=(\mathcal{A}[1],\mathcal{B})}$.
+  It is not hard to see that ${\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)}$ is a strongly related
   torsion pair in $\mathcal{T}$. In this case, by \ref{thm:2.6-tria}, we get that $\mathcal{H}=\mathcal{A}\cap\mathcal{B}$
-  is an abelian category (BBD theorem).
+  is an abelian category (recovering the classical result found in \cite{bbd82}).
+\end{sloppypar}
 \end{example}
 
 \begin{lemma}\label{lemma_rst_equiv}
@@ -390,7 +401,7 @@ In the next example we use the previous theorem to recover the classical result,
   gives the existence of $\beta: t_1(F_2)\to H_1$ such that $\alpha\circ\beta=\varepsilon$.
 
   Since $ t_1$ is a functor, there is also a morphism
-  $ t_1(\alpha): t_1(H_1)=H_1\to  t_1(F_2)$ such that
+  \[ t_1(\alpha): t_1(H_1)=H_1\to  t_1(F_2)\] such that
   $\varepsilon\circ t_1(\alpha)=\alpha$, hence
   $\varepsilon\circ t_1(\alpha)\circ\beta = \varepsilon$. By the functoriality of
   the torsion pair $(\T_1,\F_1)$, this means that
@@ -439,15 +450,17 @@ In the next example we use the previous theorem to recover the classical result,
         & F_2
     \end{tikzcd}
   \end{equation*}
-  is a pullback. Moreover, $\mathrm{Cone}(\lambda)[-1] = ( t_2(\mathrm{Cone}(f))[1])[-1]
-  = t_2(\mathrm{Cone}(f))$. Hence, $\mathrm{Cone}(\alpha)\in \T_2$ and
+  \begin{sloppypar}
+  is a pullback. Moreover, \[\mathrm{Cone}(\lambda)[-1] = ( t_2(\mathrm{Cone}(f))[1])[-1]
+  = t_2(\mathrm{Cone}(f)).\] Hence, $\mathrm{Cone}(\alpha)\in \T_2$ and
   $ f_1(\mathrm{Cone}(\alpha))=0$, that is,
-  $\mathrm{Cone}(\alpha)\in\T_1$, and since there is a distinguished triangle
+  ${\mathrm{Cone}(\alpha)\in\T_1}$, and since there is a distinguished triangle
   \begin{equation*}
     H_1\nto{\alpha} F_2\to \mathrm{Cone}(\alpha)\nto{+}
   \end{equation*}
   with $H_1,\mathrm{Cone}(\alpha)\in\T_1$ it follows that
-  $F_2\in\T_1$. Hence, $ t_1(F_2)\cong F_2$.
+  $F_2\in\T_1$. Hence, ${ t_1(F_2)\cong F_2}$.
+\end{sloppypar}
 
   We can then write $F_2\underset{\oplus}{<}H_1$ and consider the commutative diagram
   \begin{equation*}
@@ -471,6 +484,7 @@ In the next example we use the previous theorem to recover the classical result,
     1 \\ 0
   \end{psmallmatrix}:H_1'\to H_1'\oplus F_2$ can be lifted to
   $\mathrm{Cone}(f)[-1]$ and $H_1'\underset{\oplus}{<}\mathrm{Cone}(f)[-1]$.
+
   Since $\mathrm{Cone}(f)[-1]\in \F_1$, so does $H_1'$. Similarly,
   $H_1'\in\T_1$ because $H_1\in\T_1$. Hence, $H_1'=0$ and $\alpha:H_1\to F_2$ is an iso.
   The same follows for $\lambda$. Therefore, $\mathrm{Cone}(f)\in\F_2$ which
@@ -489,7 +503,7 @@ In the next example we use the previous theorem to recover the classical result,
 
 \begin{proof}
   \ref{lemma_tria_a} follows observing that
-  $\clH[-1]=\T_1[-1]\cap\F_2[-1]\subseteq \F_2[-1]\subseteq(\F_1[1])[-1]=\F_1$.
+  \[\clH[-1]=\T_1[-1]\cap\F_2[-1]\subseteq \F_2[-1]\subseteq(\F_1[1])[-1]=\F_1.\]
 
   To prove \ref{lemma_tria_b} first consider a short exact sequence $A\nto{f} B\to C$ in $\mathcal{H}$, we want to
   prove that it is a triangle. Consider the triangle
@@ -501,7 +515,7 @@ In the next example we use the previous theorem to recover the classical result,
   This implies that $\mathrm{Cone}(f)$ is the cokernel of $f$ and so $A\nto{f} B\to C\nto{+}$ is a triangle.
 
   Conversely, assume that $A\nto{f} B\nto{g} C\nto{+}$ is a triangle. Then, $\mathrm{Cone}(f)\cong C\in\clH=\T_1\cap\F_2$ and
-  so $\mathrm{Cone}(f)[-1]\in\F_2[-1]\subseteq \F_1$. Hence, $f$ is mono. A dual argument
+  so \[\mathrm{Cone}(f)[-1]\in\F_2[-1]\subseteq \F_1.\] Hence, $f$ is mono. A dual argument
   shows that $g$ is epi. Therefore, $A\nto{f} B\nto{g} C$ is a short exact sequence in $\mathcal{H}$.
 \end{proof}
 
@@ -522,29 +536,31 @@ In the next example we use the previous theorem to recover the classical result,
     \mathcal{F}_I &:= \{M\in\Mod{R}\,|\,Ix=0\text{ and }x\in M\Rightarrow x=0\}.
   \end{align*}
 
-  Consider the t-structure (Happel-Reiten-Smalo) $(\mathcal{D}^{\leq 0}_{t_I}(R), \mathcal{D}^{\geq 0}_{t_I}(R))$
+  Consider the t-structure by Happel, Reiten, and Smal\o's \cite{hrs96} \[(\mathcal{D}^{\leq 0}_{t_I}(R), \mathcal{D}^{\geq 0}_{t_I}(R))\]
   associated to the torsion pair $t_I=(\mathcal{C}_I,\mathcal{T}_I)$, where
   \begin{align*}
     \mathcal{D}^{\leq 0}_{t_I}(R) &:= \{ X\in\mathcal{D}^{\leq 0}(R)\,|\, H^0(X)\in\mathcal{C}_I \},\\
     \mathcal{D}^{\geq 0}_{t_I}(R) &:= \{ X\in\mathcal{D}^{\geq 0}(R)\,|\, H^0(X)\in\mathcal{T}_I \}.
   \end{align*}
 
+  \begin{sloppypar}
   It can be seen that $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ where
   $\mathbbm{t}_1:=(\mathcal{D}^{\leq 0}(R),\mathcal{D}^{\geq 1}(R))$ and
   $\mathbbm{t}_2:=(\mathcal{D}^{\leq 0}_{t_I}(R),\mathcal{D}^{\geq 1}_{t_I}(R))$, is a strongly
-  related pair in $\mathcal{T}=\mathcal{D}(R)$.
+  related pair in ${\mathcal{T}=\mathcal{D}(R)}$.
+\end{sloppypar}
 \end{example}
 
 \subsection{Polishchuk correspondence}
 
-We recall the following bijection given by A. Polishchuk in \cite{Polishchuk2006}, and in order to do that,
-for a t-structure $(\T_1,\F_1[1])$ in $\mathcal{T}$, we have the cohomological
-functor $H^0_1:\mathcal{T}\to \mathcal{H}_1:=\T_1\cap\F_1[1]$
-($\mathcal{H}_1$ is an abelian category).
+\begin{sloppypar}
+We recall the following bijection given by A. Polishchuk in \cite{Polishchuk2006}, where
+for a t-structure $(\T_1,\F_1[1])$ in $\mathcal{T}$, we indicate its heart by $\clH_1:=\T_1\cap\F_1[1]}$.
+\end{sloppypar}
 
-\begin{prop}[Polishchuk]\label{prop:2.7}
+\begin{prop}[Polishchuk's bijection]\label{prop:2.7}
   Let $(\T_1,\F_1[1])$ be a t-structure in a triangulated category.
-  Then we have a bijection (Polishchuk's bijection)
+  Then we have a bijection
   \begin{equation*}
     \begin{tikzcd}
       \left\{
@@ -605,14 +621,16 @@ functor $H^0_1:\mathcal{T}\to \mathcal{H}_1:=\T_1\cap\F_1[1]$
       & V[1]
     \end{tikzcd}
   \end{equation*}
-  whose solid part is commutative and where the row is a distinguished triangle. The arrow $\Ker_{\clH_1}(f)\to V$ exists and is unique by \ref{ax:ct3op} and $\Ker_{\clH_1}(f)\to \Ker_\clH(f)$ exists and is unique by the functoriality of the t-structure $(\T_1,\F_1[1])$. Moreover, $\Ker_{\clH_1}(f) \to H_1$ is obviously a mono in $\clH_1$, so $\Ker_{\clH_1}(f)\to \Ker_\clH$ is a mono in $\clH_1$. Since $\clH$ is a torsion free class in $\clH_1$, this means that $\Ker_{\clH_1}(f)\in\clH$. In particular, $\Ker_{\clH_1}(f)\to H_1$ is the kernel of $f$ in $\clH$. This also proves that monomorphisms in $\clH$ are mono in $\clH_1$ too.
+  \begin{sloppypar}
+    whose solid part is commutative and where the row is a distinguished triangle. The arrow $\Ker_{\clH_1}(f)\to V$ exists and is unique by \ref{ax:ct3op} and $\Ker_{\clH_1}(f)\to \Ker_\clH(f)$ exists and is unique by the functoriality of the t-structure $(\T_1,\F_1[1])$. Moreover, ${\Ker_{\clH_1}(f) \to H_1}$ is obviously a mono in $\clH_1$, so ${\Ker_{\clH_1}(f)\to \Ker_\clH}$ is a mono in $\clH_1$. Since $\clH$ is a torsion free class in $\clH_1$, this means that $\Ker_{\clH_1}(f)\in\clH$. In particular, $\Ker_{\clH_1}(f)\to H_1$ is the kernel of $f$ in $\clH$. This also proves that monomorphisms in $\clH$ are mono in $\clH_1$ too.
+\end{sloppypar}
 \end{proof}
 
 \begin{thm}\label{thm:2.9}
   Let $\mathbbm{t}=(\mathbbm{t}_1,\mathbbm{t}_2)$ be a related pair in a triangulated
   category $\mathcal{T}$. Then, the following statements are equivalent.
   \begin{enumerate}[label=(\alph*)]
-    \item \ref{ax:rst1} holds, i.e. for any distinguished triangle $V\to H_1\nto{f}H_2\to V[1]$, with
+    \item \ref{ax:rst1} holds, i.e. for any distinguished triangle \[V\to H_1\nto{f}H_2\to V[1],\] with
       $f$ a morphism in $\mathcal{H}=\mathcal{H}_\mathbbm{t}:=\mathcal{T}_1\cap\mathcal{F}_2$,
       we have that
       \begin{equation*}
@@ -654,7 +672,9 @@ functor $H^0_1:\mathcal{T}\to \mathcal{H}_1:=\T_1\cap\F_1[1]$
   So $\Coker_{\clH_1}(f)\in\clH$, since $\clH$ is a torsion free class in $\clH_1$.
 
   \smallskip\noindent
-  (b)$\Rightarrow$(c). It is enough to show that $\clH$ is closed under cokernels in $\clH_1$. Let $H_1\nto{f}H_2$ in $\clH$. Then, $\Img_{\clH_1}(f)\into H_2$ and so $\Img_{\clH_1}(f)\in\clH$, since $\clH$ is torsion free in $\clH_1$. Therefore, $\Coker_{\clH_1}(f)\in\clH$.
+  \begin{sloppypar}
+  (b)$\Rightarrow$(c). It is enough to show that $\clH$ is closed under cokernels in $\clH_1$. Let $H_1\nto{f}H_2$ in $\clH$. Then, $\Img_{\clH_1}(f)\into H_2$ and so $\Img_{\clH_1}(f)\in\clH$, since $\clH$ is torsion free in $\clH_1$. Therefore, ${\Coker_{\clH_1}(f)\in\clH}$.
+\end{sloppypar}
 
   \smallskip\noindent
   (c)$\Rightarrow$(d). Trivial.
