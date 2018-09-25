@@ -445,8 +445,8 @@ We exhibit now another case of cotorsion pairs giving rise to a result analogous
 &0 & 0 & 0
 }
 \]
-where  $D\in \B$, since $\B$ is coresolving. We have inj.dim $D=$ inj.dim $B-1$, hence w.l.o.g. we can assume that in our starting sequence  $(\ast)$ $B$ has injective dimension at most $1$. Thus, in the above diagram we have that $D$ is injective and, by Fact~\ref{F:periodic}~(1), we conclude that $M_1$ is injective. The latter implies that inj.dim $M\leq 1$.
-Let $A\in \A.$ Then $0=\Ext^1_R(A, B)\to \Ext^1_R(A, M)\to \Ext^2_R(A, M)=0$, hence $M\in \B$ and
+where  $D\in \B$, since $\B$ is coresolving. We have \[ \mathrm{inj.dim} D= \mathrm{inj.dim} B-1, \] hence w.l.o.g. we can assume that in our starting sequence  $(\ast)$ $B$ has injective dimension at most $1$. Thus, in the above diagram we have that $D$ is injective and, by Fact~\ref{F:periodic}~(1), we conclude that $M_1$ is injective. The latter implies that inj.dim $M\leq 1$.
+Let $A\in \A.$ Then \[0=\Ext^1_R(A, B)\to \Ext^1_R(A, M)\to \Ext^2_R(A, M)=0,\] hence $M\in \B$ and
 $\widetilde{\FpInj}\cap dw \B=\tilde{\B}$  by Fact~\ref{F:periodic}~(2).  Hence, the equality $ ^\perp dw\Inj \cap dw\B=\tilde{\B}$ is obtained by intersecting with $dw\B$ the equality $^\perp{} dw\Inj\cap dw \FpInj=\widetilde{\FpInj}$ from \cite[Proposition 6.11 ]{Stopurity}.
 
 The existence of a recollement as in the statement follows by the same arguments as in the proof of Proposition~\ref{P:fp-inj} applied to the cotorsion pair $(\A, \B)$ in the assumptions.\end{proof}
@@ -466,15 +466,17 @@ Starting with a complete hereditary cotorsion pair $(\A, \B)$ in a Grothendieck 
 
  \begin{expl}\label{E:exam-A-inj}
  \begin{enumerate}
-\item The complete hereditary cotorsion pair $( \widetilde{\A}, dg\B)$ in $\Ch(\G)$ satisfies the conditions in  Proposition~\ref{P:prop7.3}, hence we have the injective cotorsion pair:
+   \begin{sloppypar}
+   \item The complete hereditary cotorsion pair ${( \widetilde{\A}, dg\B)}$ in $\Ch(\G)$ satisfies the conditions in  Proposition~\ref{P:prop7.3}, hence we have the injective cotorsion pair:
 %
-\[\Delta_1=\Big(\tilde\A, dg{\B}\cap dw\A\Big)\] in $\Ch(\A)$ and the localizing cotorsion pair $\Big(\tilde\A,  [dg{\B}\cap dw\A]_K\Big)$ in $\Ch(\A)_{dw}.$
+\[\Delta_1=\Big(\tilde\A, dg{\B}\cap dw\A\Big)\] in $\Ch(\A)$ and the localizing cotorsion pair \[\Big(\tilde\A,  [dg{\B}\cap dw\A]_K\Big)\] in $\Ch(\A)_{dw}.$
 
-\item Also the complete hereditary cotorsion pair $(dg\A, \widetilde{\B})$ in $\Ch(\G)$ satisfies the conditions in  Proposition~\ref{P:prop7.3},  hence we have the injective cotorsion pair:
- \[\Delta_2=\Big(dg\A, \tilde\B\cap dw\A\Big)\] in $\Ch(\A)$ and the localizing cotorsion pair $\Big(dg\A,  [\tilde\B\cap dw\A]_K\Big)$ in $\Ch(\A)_{dw}.$
+\item The complete hereditary cotorsion pair $(dg\A, \widetilde{\B})$ in $\Ch(\G)$ satisfies the conditions in  Proposition~\ref{P:prop7.3},  hence we have the injective cotorsion pair:
+ \[\Delta_2=\Big(dg\A, \tilde\B\cap dw\A\Big)\] in $\Ch(\A)$ and the localizing cotorsion pair \[\Big(dg\A,  [\tilde\B\cap dw\A]_K\Big)\] in $\Ch(\A)_{dw}.$
 
 \item If $\A$ is deconstructible, then by Proposition~\ref{P:complete?}~(5) $(ex\A, ex\A{}^\perp{})$ is a complete hereditary cotorsion pair in $\Ch(\G)$ and it satisfies the conditions in Proposition~\ref{P:prop7.3}, hence we have the injective cotorsion pair
- \[\Delta_3=\Big(ex\A, ex\A{}^\perp{}\cap dw\A\Big)\] in $\Ch(\A)$ and the localizing cotorsion pair $\Big(ex\A,  [ex{}^\perp{}\A\cap dw\B]_K\Big)$ in $\Ch(\A)_{dw}.$
+ \[\Delta_3=\Big(ex\A, ex\A{}^\perp{}\cap dw\A\Big)\] in $\Ch(\A)$ and the localizing cotorsion pair \[\Big(ex\A,  [ex{}^\perp{}\A\cap dw\B]_K\Big)\] in $\Ch(\A)_{dw}.$
+ \end{sloppypar}
 
  \end{enumerate}
  \end{expl}
@@ -502,7 +504,7 @@ where $\sim$ denotes the homotopy relation associated to the corresponding model
 \end{thm}
 %
 %
-\begin{thm}\label{T:derived-A}  In the setting of Example~\ref{E:exam-A-inj}~(1), $\Delta_1=\Big(dw{\A}, \widetilde{\A}, dg\B\cap dw \A\Big)$ is an exact model structure in the category $\Ch(\A)$.
+\begin{thm}\label{T:derived-A}  In the setting of Example~\ref{E:exam-A-inj}~(1), \[\Delta_1=\Big(dw{\A}, \widetilde{\A}, dg\B\cap dw \A\Big)\] is an exact model structure in the category $\Ch(\A)$.
  In particular, we can define the derived category $\D(\A)$ as the quotient  $\Ch(\A)/\widetilde{\A}$.
 
  Moreover, we have the following triangle equivalences between the derived category of $\D(\A)$ and the homotopy category of the model structure $\Delta_1$:
@@ -525,8 +527,11 @@ where $ex\A/\sim$ is the full subcategory of $\D(\A)$ consisting of exact comple
  %
  Another way to obtain the exact model structure of Theorem~\ref{T:derived-A} is to use results by Gillespie in \cite{G4}, \cite{G8} and \cite{G9}.
 
- \begin{thm}\label{T:Gill-A}  Let $(\A, \B)$ be a complete hereditary cotorsion pair in $\G$ such that $\A$ is deconstructible.  The two cotorsion pairs
- $(dw\A, dw\A{}^\perp{} )$ and $(\tilde\A, dg\B)$ in $\Ch(\G)$ are hereditary and complete and give rise to a cofibrantly generated model structure $\N=\Big(dw\A, \W, dg\B\Big)$ in $\Ch(\G)$ satisfying $\W\cap dw\A=\tilde\A$ and $\W\cap dg\B=dw\A{}^\perp{} $ whose restriction in $\Ch(\A)$ is the exact model structure $\N_1=\Big(dw{\A}, \widetilde{\A},  dw \A\cap dg\B\Big)$ of Theorem~\ref{T:derived-A}.
+ \begin{thm}\label{T:Gill-A}
+   \begin{sloppypar}
+   Let $(\A, \B)$ be a complete hereditary cotorsion pair in $\G$ such that $\A$ is deconstructible.  The two cotorsion pairs
+   ${(dw\A, dw\A{}^\perp{} )}$ and $(\tilde\A, dg\B)$ in $\Ch(\G)$ are hereditary and complete and give rise to a cofibrantly generated model structure ${\N=\Big(dw\A, \W, dg\B\Big)}$ in $\Ch(\G)$ satisfying ${\W\cap dw\A=\tilde\A}$ and ${\W\cap dg\B=dw\A{}^\perp{} }$ whose restriction in $\Ch(\A)$ is the exact model structure $\N_1=\Big(dw{\A}, \widetilde{\A},  dw \A\cap dg\B\Big)$ of Theorem~\ref{T:derived-A}.
+ \end{sloppypar}
 
 %
 %
@@ -552,11 +557,11 @@ Starting with a complete hereditary cotorsion pair $(\A, \B)$ in a Grothendieck 
 %
  \begin{enumerate}
 \item  By Proposition~\ref{P:complete?}~(3), $(dw\Proj, dw \Proj{}^\perp{})$ is a complete cotorsion pair  in $\Ch(\G)$, and it is a projective cotorsion pair. By Proposition~\ref{P:7.2-Groth},  we have the projective cotorsion pair:
- \[\Gamma_1=\Big(dw\Proj, dw \Proj{}^\perp{}\cap dw\A\Big)\] in $\Ch(\A)$ and the localizing cotorsion pair $\Big([dw\Proj]_K, dw \Proj{}^\perp{}\cap\A\Big)$ in $\Ch(\A)_{dw}.$
+ \[\Gamma_1=\Big(dw\Proj, dw \Proj{}^\perp{}\cap dw\A\Big)\] in $\Ch(\A)$ and the localizing cotorsion pair \[\Big([dw\Proj]_K, dw \Proj{}^\perp{}\cap\A\Big)\] in $\Ch(\A)_{dw}.$
  \item By Proposition~\ref{P:complete?}~(6), $(ex\Proj, ex\Proj{}^\perp{})$ is a projective cotorsion pair in $\Ch(\G)$ and by Proposition~\ref{P:7.2-Groth} we have the projective cotorsion pair:
-  \[\Gamma_2=\Big(ex\Proj, ex \Proj{}^\perp{}\cap dw\A\Big)\] in $\Ch(\A)$ and the localizing cotorsion pair $\Big([ex\Proj]_K, ex \Proj{}^\perp{}\cap\A\Big)$ in $\Ch(\A)_{dw}.$
+  \[\Gamma_2=\Big(ex\Proj, ex \Proj{}^\perp{}\cap dw\A\Big)\] in $\Ch(\A)$ and the localizing cotorsion pair \[\Big([ex\Proj]_K, ex \Proj{}^\perp{}\cap\A\Big)\] in $\Ch(\A)_{dw}.$
   \item Since $(dg\Proj, \E )$ is a projective cotorsion pair in $\Ch(\G)$, by Proposition~\ref{P:7.2-Groth} we have the projective cotorsion pair:
-  \[\Gamma_3=\Big(dg\Proj, ex\A\Big)\]  in $\Ch(\A)$ and the localizing cotorsion pair $\Big([dg\Proj]_K, ex\A\Big)$ in $\Ch(\A)_{dw}.$
+  \[\Gamma_3=\Big(dg\Proj, ex\A\Big)\]  in $\Ch(\A)$ and the localizing cotorsion pair \[\Big([dg\Proj]_K, ex\A\Big)\] in $\Ch(\A)_{dw}.$
 \end{enumerate}
 \end{expl}
 
@@ -591,7 +596,9 @@ and a recollement:
 .\]
 \vskip0.7cm
 \end{thm}
-\begin{proof} By Examples~\ref{E:exam-A-inj}~(3) and Examples~\ref{E:exam-A-proj}~(3)  we have two localizing cotorsion pairs $\Big([dg\Proj]_K, ex\A\Big)$ and $\Big(ex\A, [ex\A{}^\perp{}\cap dw\A]_K)$ in $\Ch(\A)_{dw}$.  Thus, the statement follows by arguing as in the proof of Theorem~\ref{T:triple-B}.
+\begin{proof}
+  \begin{sloppypar}
+  By Examples~\ref{E:exam-A-inj}~(3) and Examples~\ref{E:exam-A-proj}~(3)  we have two localizing cotorsion pairs ${\Big([dg\Proj]_K, ex\A\Big)}$ and ${\Big(ex\A, [ex\A{}^\perp{}\cap dw\A]_K\Big)}$ in $\Ch(\A)_{dw}$.  Thus, the statement follows by arguing as in the proof of Theorem~\ref{T:triple-B}.
 \end{proof}
 
 
@@ -617,9 +624,11 @@ The most famous example of this situation is provided by the cotorsion pair $(\F
 \vskip0.7cm
 
 Another case of cotorsion pairs giving rise to a result analogous to the previous one is provided by the following:
-\begin{prop}\label{P:A-flat} Let $(\A, \B)$ be a complete hereditary cotorsion pair in $\Modr R$. Assume that $\A\subseteq \Flat$ and that $\A\subseteq \clP_n$, where $\clP_n$ is the class of modules of projective dimension at most $n$.
- Then, every flat $\A$-periodic module belongs to $\A$. Thus $\widetilde{\Flat}\cap dw \A=\tilde{\A}$, $ (dw\Proj)^\perp\cap dw\A=\tilde{\A}$ and there is a recollement:
- \vskip0.7cm
+\begin{prop}\label{P:A-flat}
+  \begin{sloppypar}
+  Let $(\A, \B)$ be a complete hereditary cotorsion pair in $\Modr R$. Assume that $\A\subseteq \Flat$ and that $\A\subseteq \clP_n$, where $\clP_n$ is the class of modules of projective dimension at most $n$.
+  Then, every flat $\A$-periodic module belongs to $\A$. Thus ${\widetilde{\Flat}\cap dw \A=\tilde{\A}}$, ${ (dw\Proj)^\perp\cap dw\A=\tilde{\A}}$ and there is a recollement:
+\end{sloppypar}
 \[
 \xymatrix{\dfrac{\widetilde{\A} }{\sim} \ar[rr]^{inc} &&{K(\A)} \ar@/^2pc/[ll]\ar@/_2pc/[ll] \ar[rr]^{Q}
 &&{\dfrac{\Ch(\A)}{\widetilde{\A} }}\ar@/^2pc/ [ll] \ar@/_2pc/ [ll] }
@@ -638,7 +647,7 @@ Another case of cotorsion pairs giving rise to a result analogous to the previou
 }
 \]
 where  $Q\in \A$, since $\A$ is resolving. We have p.dim $Q=$ p.dim $A-1$, hence w.l.o.g. we can assume that in our starting sequence  $0\to F\to A\to F\to 0$ $A$ has projective dimension at most $1$. Thus, in the above diagram we have that $Q$ is projective and by \cite{BG}, $F_1$ is projective. The latter implies that p.dim $F\leq 1$.
-Let $B\in \B.$ Then $0=\Ext^1_R(A, B)\to \Ext^1_R(F, B)\to \Ext^2_R(F, B)=0$, hence $F\in \A$ and
+Let $B\in \B.$ Then \[0=\Ext^1_R(A, B)\to \Ext^1_R(F, B)\to \Ext^2_R(F, B)=0,\] hence $F\in \A$ and
 $\widetilde{\Flat}\cap dw \A=\tilde{\A}$ by Fact~\ref{F:periodic}~(2).  Now the equality $ (dw\Proj)^\perp\cap dw\A=\tilde{\A}$ is obtained by intersecting with $dw\A$ the equality $dw(\Proj)^\perp\cap dw{\Flat}=\widetilde{\Flat}$ from \cite[Theorem 8.6]{Nee08}.
 
 The arguments used above to obtain the recollement $(a)$ for the cotorsion pair $(\Flat, \Cot)$ can be repeated for the case of the cotorsion pair $(\A, \B)$ in our assumption to obtain the stated recollement.\end{proof}
