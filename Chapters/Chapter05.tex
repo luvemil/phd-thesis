@@ -90,7 +90,9 @@ Recall that a full subcategory $\T$ of $\mathscr{C}$ is \emph{coreflective} (res
 \end{proof}
 
 
+\begin{sloppypar}
 It is a classical result that torsion pairs in Abelian categories are automatically functorial. Similarly, if $(\T^{\leq 0},\T^{\geq 0})$ is a $t$-structure in a triangulated category, $(\T^{\leq 0}[1],\T^{\geq 0})$ is an example of functorial torsion pair.
+\end{sloppypar}
 
 The following lemma gives basic properties of left functorial torsion pairs. The proof is omitted, since it is a straightforward application of the definitions. Of course, the dual statement holds for right functorial torsion pairs.
 
@@ -99,7 +101,9 @@ The following lemma gives basic properties of left functorial torsion pairs. The
 \begin{enumerate}[label=(\alph*)]
 \item\label{rmk:1.1a} for any $M\in\mathscr{C}$, $T'\in\T$ and $\alpha\in\Hom_\mathscr{C}(T',M)$ there is a unique $\alpha'\in\Hom_\mathscr{C}(T',t(M))$ such that $\varepsilon_M\circ\alpha'=\alpha$;
 
-\item\label{rmk:1.1b} for a morphis $g:T_1\to T_2$ in $\T$, any pseudocokernel $g^C:T_2\to C$ in $\T$ is also a pseudocokernel of $g$ in $\mathscr{C}$.
+  \begin{sloppypar}
+\item\label{rmk:1.1b} for a morphism $g:T_1\to T_2$ in $\T$, any pseudocokernel ${g^C:T_2\to C}$ in $\T$ is also a pseudocokernel of $g$ in $\mathscr{C}$.
+\end{sloppypar}
 \end{enumerate}
 \end{lemma}
 
@@ -131,7 +135,9 @@ In this section we will introduce the notion of a Nakaoka context in an additive
 \end{tikzcd}
 \end{equation*}
 
-The counit of the adjunction $(i_1,t_1)$ will be denoted by $\varepsilon_1\colon t_1i_1\to \id_{\T_1}$, while the unit of $(f_2,j_2)$ will be denoted by $\lambda_2\colon \id_{\F_2}\to f_2j_2$.
+\begin{sloppypar}
+The counit of the adjunction $(i_1,t_1)$ will be denoted by ${\varepsilon_1\colon t_1i_1\to \id_{\T_1}}$, while the unit of $(f_2,j_2)$ will be denoted by ${\lambda_2\colon \id_{\F_2}\to f_2j_2}$.
+\end{sloppypar}
 \end{notation}
 
 \begin{definition}
@@ -151,18 +157,23 @@ Let $\t=(\t_1,\t_2)$ be a Nakaoka context. Then, the followings hold true:
 (a) Since $\T_2\subseteq\T_1$, we have $\F_1\cap\T_2\subseteq \F_1\cap\T_1=0$.
 
 \smallskip\noindent
-(b) Let $T_2\in\T_2$ and $F_2\in\F_2$. Then, $\Hom_\mathscr{C}(T_2,t_1(F_2))\cong \Hom_\mathscr{C}(T_2,F_2)=0$.
+(b) Let $T_2\in\T_2$ and $F_2\in\F_2$. Then, \[\Hom_\mathscr{C}(T_2,t_1(F_2))\cong \Hom_\mathscr{C}(T_2,F_2)=0.\]
 Hence, $t_1(F_2)\in\T_2^\perp = \F_2$. An analogous proof shows that $f_2(\T_1)\subseteq\T_1$.
 \end{proof}
 
 In the following lemma we introduce a technical condition under which we can easily construct kernels of morphisms in the heart of a given Nakaoka context.
 
 \begin{lemma}\label{5:lem:3}
-Let $\t=(\t_1,\t_2)$ be a Nakaoka context and let $f\colon H\to H'$ be a morphism in the heart $\clH=\clH_\t$. If there is a morphism $f^K\colon K\to H$, with $K\in \F_2$, such that the following sequence is exact in $\Func(\T_1, \Ab)$
+  \begin{sloppypar}
+  Let $\t=(\t_1,\t_2)$ be a Nakaoka context and let ${f\colon H\to H'}$ be a morphism in the heart $\clH=\clH_\t$. If there is a morphism $f^K\colon K\to H$, with $K\in \F_2$, such that the following sequence is exact in $\Func(\T_1, \Ab)$
+\end{sloppypar}
 
+\begingroup
+\setlength{\abovedisplayskip}{0pt}
 \begin{equation*}
 (*)\qquad 0\to (-,K)\restriction_{\T_1}\to (-,H)\restriction_{\T_1}\to (-,H')\restriction_{\T_1},
 \end{equation*}
+\endgroup
 then the composition $f^K\circ \varepsilon_{1,K}\colon t_1K\to K\to H$ is a kernel for $f$ in $\clH$.
 \end{lemma}
 \begin{proof}
@@ -170,7 +181,11 @@ Consider the exact sequence in $(*)$ and notice that it gives, by restriction of
 \begin{equation*}
 0\to (-,K)\restriction_{\clH}\to (-,H)\restriction_{\clH}\to (-,H')\restriction_{\clH}.
 \end{equation*}
-The map $\varepsilon_{1,K}\colon t_1K\to K$, induces a natural isomorphism $(-,t_1K)\restriction_\clH \to (-,K)\restriction_\clH$, so we get an exact sequence
+\begin{sloppypar}
+The map $\varepsilon_{1,K}\colon t_1K\to K$, induces a natural isomorphism ${(-,t_1K)\restriction_\clH \to (-,K)\restriction_\clH}$, so we get an exact sequence
+\end{sloppypar}
+\begingroup
+\setlength{\abovedisplayskip}{0pt}
 \begin{equation*}
 \begin{tikzcd}
   0\arrow{r}
@@ -179,6 +194,7 @@ The map $\varepsilon_{1,K}\colon t_1K\to K$, induces a natural isomorphism $(-,t
   & (-,H')\restriction_{\clH}.
 \end{tikzcd}
 \end{equation*}
+\endgroup
 To conclude one notices that, since $t_1K\in\clH$ by Lemma \ref{5:lem:2}, the above exact sequence means exactly that $f^K\circ \varepsilon_{1,K}$ is a kernel of $f$.
 \end{proof}
 
@@ -210,11 +226,13 @@ This is a consequence of the axioms, Lemma \ref{5:lem:3} and its dual.
 In the following proposition we give a characterization of those morphisms that are monomorphisms in the heart. For this, remember that, in a pre-Abelian category, a morphism is mono if and only if its kernel is trivial.
 
 \begin{prop}\label{prop:1.4}
-  The following are equivalent for a morphism $f\colon H\to H'$ in the heart $\clH=\clH_\t$ of a pre-Abelian Nakaoka context $\t=(\t_1,\t_2)$:
+  \begin{sloppypar}
+    The following are equivalent for a morphism ${f\colon H\to H'}$ in the heart $\clH=\clH_\t$ of a pre-Abelian Nakaoka context ${\t=(\t_1,\t_2)}$:
   \begin{enumerate}[label=(\alph*)]
     \item $f$ is a monomorphism (in $\clH$);
-    \item\label{prop:1.4:b} there is a pseudokernel $f^K\colon K\to H$ of $f$ in $\F_2$ such that $K\in \F_1$.
+    \item\label{prop:1.4:b} there is a pseudokernel $f^K\colon K\to H$ of $f$ in $\F_2$ such that ${K\in \F_1}$.
   \end{enumerate}
+\end{sloppypar}
 \end{prop}
 \begin{proof}
   For any morphism $f\colon H\to H'$ in $\clH$, by the axiom (CT.$3^*$), we can consider a diagram as follows
@@ -273,7 +291,9 @@ A\ar@{}[dr]|{PB}\ar[r]^{f'}\ar[d]_{g'}&B\ar[d]^g\\
 C\ar[r]_{f}&D
 }
 \]
-and suppose that $f$ is an epi in $\clH$. By (the dual of) Proposition \ref{prop:1.4}, we can find a pseudo-cokernel $f^C\colon D\to T_2$ of $f$, with $T_2\in \T_2$. By the axiom (CT.4.1), we obtain a commutative diagram as follows
+\begin{sloppypar}
+and suppose that $f$ is an epi in $\clH$. By (the dual of) Proposition \ref{prop:1.4}, we can find a pseudo-cokernel $f^C\colon D\to T_2$ of $f$, with ${T_2\in \T_2}$. By the axiom (CT.4.1), we obtain a commutative diagram as follows
+\end{sloppypar}
 \[
 \xymatrix{
 X\ar@{.>}[d]_{x_C}\ar@{.>}[r]^{x_B}&B\ar[r]^{f''}\ar[d]^{g}&T'_2\\
@@ -298,7 +318,7 @@ X\ar[d]_{x_H}\ar[r]^{x_K}\ar@{}[dr]|{PB}&K\ar[d]^{g}\\
 H\ar[r]_f&H'
 }
 \]
-Now, by the integrality of $\clH$, $x_K$ is an epimorphism in $\clH$ and so, by Proposition \ref{prop:1.4}, it admits a pseudo-cockernel $K\to C'$ (in $\T_1$) such that $C'\in \T_1$.
+Now, by the integrality of $\clH$, $x_K$ is an epimorphism in $\clH$ and so, by Proposition \ref{prop:1.4}, it admits a pseudo-cokernel $K\to C'$ (in $\T_1$) such that $C'\in \T_1$.
 \end{proof}
 
 \subsection{Abelian Nakaoka contexts}
@@ -333,7 +353,9 @@ The following are equivalent for a pre-Abelian Nakaoka context $\t=(\t_1,\t_2)$:
 t_1F_2\ar@{.>}[ur]^{b}\ar[r]^{\varepsilon_{1,F_2}} & F_2\ar[r]^{g^K} & H'\ar[r]^{g} & f_2T_1
 }
 \end{equation*}
-where $f^C$  is a pseudo-cokernel of $f$ in $\T_1$ and $g^K$ is a pseudo-kernel of $g$ in $\F_2$, there exists a morphism $b\colon t_1F_2\to H_1$ such that $ab=\varepsilon_{1,F_2}$;
+\begin{sloppypar}
+where $f^C$  is a pseudo-cokernel of $f$ in $\T_1$ and $g^K$ is a pseudo-kernel of $g$ in $\F_2$, there exists a morphism ${b\colon t_1F_2\to H_1}$ such that $ab=\varepsilon_{1,F_2}$;
+\end{sloppypar}
 \setcounter{enumi}{4}
 \varitem{\ast}\label{ax:ct4op} dual to (CT.4).
 \end{torsionaxioms}
@@ -352,21 +374,32 @@ Let $f\colon H\to H'$ be a morphism in $\clH$ that admits a pseudo-kernel $f^K\c
 t_1F_2\ar[r]^{\varepsilon_{1,F_2}} & F_2\ar[r]^{g^K} & H'\ar[r]^{g} & f_2T_1
 }
 \end{equation*}
-where $f^C$  is a pseudo-cokernel of $f$ in $\T_1$ and $g^K$ is a pseudo-kernel of $g$ in $\F_2$. Since $f$ is a monomorphism in $\clH$ by Proposition \ref{prop:1.4} (a), and $\clH$ is Abelian, we have that $f=\Ker_\clH \Coker_\clH (f)$. On the other hand, by Lemma \ref{rmk:1.1} (a), there is $\beta\colon H_1\to t_1F_2$ such that $\varepsilon_{1,F_2}\beta = a$ completing the diagram above. Since $f=\Ker \Coker(f)$, it follows that $\beta$ is an isomorphism and (CT.4) follows by setting $b:=\beta^{-1}$. (CT.4$^*$) can be verified by a dual argument.
+\begin{sloppypar}
+where $f^C$  is a pseudo-cokernel of $f$ in $\T_1$ and $g^K$ is a pseudo-kernel of $g$ in $\F_2$. Since $f$ is a monomorphism in $\clH$ by Proposition \ref{prop:1.4} (a), and $\clH$ is Abelian, we have that ${f=\Ker_\clH \Coker_\clH (f)}$. On the other hand, by Lemma \ref{rmk:1.1} (a), there is $\beta\colon H_1\to t_1F_2$ such that $\varepsilon_{1,F_2}\beta = a$ completing the diagram above. Since $f=\Ker \Coker(f)$, it follows that $\beta$ is an isomorphism and (CT.4) follows by setting $b:=\beta^{-1}$. (CT.4$^*$) can be verified by a dual argument.
+\end{sloppypar}
 
 
 
 \smallskip\noindent
+\begin{sloppypar}
 (c)$\Rightarrow$(a). By Theorem \ref{pre_abelian_theorem}, $\clH$ is pre-Abelian. To prove that $\clH$ is Abelian, we just need to show that any monomorphism (resp. epimorphism) is a kernel (resp. cokernel).
-Hence, let $f\colon H\to H'$ be a monomorphism in $\clH$; by Proposition~\ref{prop:1.4}\todo{Check this reference, the original refers to a lemma}
+Hence, let ${f\colon H\to H'}$ be a monomorphism in $\clH$; by Proposition~\ref{prop:1.4}
 we know that $f$ admits a pseudo-kernel in $\F_2$ that belongs in $\F_1$ and thus, by (CT.4), we get a commutative diagram as follows
+\end{sloppypar}
+\begingroup
+\setlength{\abovedisplayskip}{0pt}
 \begin{equation*}
 \begin{tikzcd}
  & H\arrow{r}{f}\arrow{d}{a} & H'\arrow{r}{f^C}\arrow[equal]{d} & T_1\arrow{d}{\lambda_{2,T_1}}\\
 t_1F_2\arrow{ur}{b}\arrow{r}{\varepsilon_{1,F_2}} & F_2\arrow{r}{g^K} & H'\arrow{r}{g} & f_2T_1
 \end{tikzcd}
 \end{equation*}
-where $f^C$  is a pseudo-cokernel of $f$ in $\T_1$ and $g^K$ is a pseudo-kernel of $g$ in $\F_2$. Let $\alpha\colon H\to H'$ be a morphism such that $g\alpha =0$. Since $F_2$ is a pseudo-kernel of $g$, there is a morphism $\alpha'\colon H\to F_2$ such that $g^K\alpha'=\alpha$. By Lemma \ref{rmk:1.1}, $\alpha'$ factors through  $\varepsilon_{1,F_2}$, as in the following diagram:
+\endgroup
+\begin{sloppypar}
+where $f^C$  is a pseudo-cokernel of $f$ in $\T_1$ and $g^K$ is a pseudo-kernel of $g$ in $\F_2$. Let $\alpha\colon H\to H'$ be a morphism such that ${g\alpha =0}$. Since $F_2$ is a pseudo-kernel of $g$, there is a morphism $\alpha'\colon H\to F_2$ such that $g^K\alpha'=\alpha$. By Lemma \ref{rmk:1.1}, $\alpha'$ factors through  $\varepsilon_{1,F_2}$, as in the following diagram:
+\end{sloppypar}
+\begingroup
+\setlength{\abovedisplayskip}{0pt}
 \begin{equation*}
 \begin{tikzcd}
 & H_1\arrow{r}{f}\arrow{d}{a} & H_2\arrow{r}{f^C}\arrow[equal]{d}& T_1\arrow{d}{\lambda_{2,T_1}}\\
@@ -374,7 +407,8 @@ t_1F_2\arrow{ur}{b}\arrow{r}{\varepsilon_{1,F_2}} & F_2\arrow{r}{g^K} & H_2\arro
 & H.\arrow{ur}{\alpha}\arrow[dotted]{u}[description]{\alpha'}\arrow[dotted]{ul}[description]{\alpha''} & &
 \end{tikzcd}
 \end{equation*}
-By setting $\alpha''' := b\alpha''\colon H\to H$, we get $f\alpha''' = g^K ab\alpha'' = g^K\varepsilon_{1,F_2}\alpha''=g^K\alpha' = \alpha$. Thus, any morphism $\alpha\colon H \to H'$ such that $g\alpha =0$ factors through $f$.
+\endgroup
+By setting $\alpha''' := b\alpha''\colon H\to H$, we get \[f\alpha''' = g^K ab\alpha'' = g^K\varepsilon_{1,F_2}\alpha''=g^K\alpha' = \alpha.\] Thus, any morphism $\alpha\colon H \to H'$ such that $g\alpha =0$ factors through $f$.
 \end{proof}
 
 

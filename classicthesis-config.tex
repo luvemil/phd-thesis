@@ -10,6 +10,10 @@
 % http://postcards.miede.de
 % ****************************************************************************************************
 
+% Stuff that go first here
+% spelling
+\hyphenation{Groth-en-dieck}
+\hyphenation{in-jec-tive}
 
 % ****************************************************************************************************
 % 0. Set the encoding of your files. UTF-8 is the only sensible encoding nowadays. If you can't read
@@ -93,6 +97,8 @@
   maxcitenames=1, % default: 3, et al.
   %uniquelist=false, % default: 3, et al.
   firstinits=true,
+  isbn=false,
+  doi=false,
   %backref=true,%
   natbib=false % natbib compatibility mode (\citep and \citet still work)
 }{biblatex}
@@ -346,6 +352,7 @@
 
 \input{macros.tex}
 \input{recoll_macros.tex}
+
 
 % HARD FIXES
 \DeclareUnicodeCharacter{301}{o}
